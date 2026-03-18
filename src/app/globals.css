@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #009fb8;
+  --color-secondary: #5b656e;
+  --color-dark: #1c2023;
+  --color-white: #ffffff;
+}
+
+/* Esto para matar el espacio blanco */
+@layer base {
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
