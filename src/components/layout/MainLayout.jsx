@@ -5,7 +5,7 @@ export default function MainLayout({ children }) {
     // Añadimos w-full y overflow-x-hidden
     <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
       <Header />
-      <main className="flex-grow w-full">{children}</main>
+      <main className="grow w-full">{children}</main>
     </div>
   );
 }
