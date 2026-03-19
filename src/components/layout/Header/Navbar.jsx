@@ -16,20 +16,20 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-primary w-full shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-center md:justify-center items-center">
-        {/* Links Escritorio - Alineados a la izquierda y más compactos */}
-        <div className="hidden md:flex font-medium text-white text-sm uppercase tracking-wide">
-          {" "}
-          {/* Texto más chico */}
+    /* IMPORTANTE: 'relative' y 'z-[999]' aseguran que este componente
+      esté por encima del Hero (z-10) y permita que el menú absoluto flote.
+    */
+    <nav className="bg-primary w-full shadow-md relative z-[999]">
+      <div className="max-w-6xl mx-auto flex justify-center items-center">
+        {/* --- LINKS ESCRITORIO --- */}
+        <div className="hidden md:flex justify-center w-full font-medium text-white text-[13px] uppercase tracking-wide">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               className={`px-5 py-3.5 transition-colors duration-200 border-r border-cyan-600/40 last:border-r-0 flex items-center h-full ${
-                // Padding reducido
                 link.current
-                  ? "bg-cyan-500/40 font-semibold" // Resaltado más sutil
+                  ? "bg-cyan-500/40 font-semibold"
                   : "hover:bg-cyan-600/30"
               }`}
             >
@@ -38,24 +38,33 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Botón Hamburguesa (solo móvil) - Más compacto */}
+        {/* --- CABECERA MÓVIL (Botón Hamburguesa) --- */}
         <div className="md:hidden flex justify-between items-center w-full px-5 py-3">
-          {" "}
-          {/* Padding reducido */}
-          <div className="text-white font-bold text-sm">MENÚ</div>
+          <div className="text-white font-bold text-sm tracking-widest">
+            MENÚ
+          </div>
+
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white p-1.5 text-xl"
+            className="text-white p-2 text-2xl focus:outline-none transition-transform duration-300"
+            style={{ transform: isOpen ? "rotate(90deg)" : "rotate(0deg)" }}
+            aria-label="Abrir menú"
           >
+            {/* Animación simple de icono de X a Hamburguesa */}
             {isOpen ? "✕" : "☰"}
           </button>
         </div>
       </div>
 
-      {/* Menú Móvil - Pasamos los links completos */}
-      {isOpen && (
-        <MobileMenu onClose={() => setIsOpen(false)} navLinks={navLinks} />
-      )}
+      {/* COMPONENTIZACIÓN:
+        Pasamos el estado para controlar la animación de la "persiana"
+        internamente en MobileMenu.
+      */}
+      <MobileMenu
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        navLinks={navLinks}
+      />
     </nav>
   );
 }
