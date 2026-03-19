@@ -2,9 +2,9 @@
 
 @theme {
   --color-primary: #009fb8;
-  --color-secondary: #5b656e;
+  --color-secondary: #3f454c;
   --color-dark: #1c2023;
-  --color-white: #ffffff;
+  --color-white: #f5f5f5;
 }
 
 /* Esto para matar el espacio blanco */
