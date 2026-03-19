@@ -16,7 +16,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    /* IMPORTANTE: 'relative' y 'z-[999]' aseguran que este componente 
+    /* IMPORTANTE: 'relative' y 'z-[999]' aseguran que este componente
       esté por encima del Hero (z-10) y permita que el menú absoluto flote.
     */
     <nav className="bg-primary w-full shadow-md relative z-[999]">
@@ -27,7 +27,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className={`px-5 py-3.5 transition-colors duration-200 border-r border-cyan-600/40 last:border-r-0 flex items-center h-full ${
+              className={`px-5 py-3.5 transition-colors duration-200 border-r border-cyan-600/40 last:border-r-0 flex items-center h-full font-[inter] ${
                 link.current
                   ? "bg-cyan-500/40 font-semibold"
                   : "hover:bg-cyan-600/30"
@@ -40,7 +40,7 @@ export default function Navbar() {
 
         {/* --- CABECERA MÓVIL (Botón Hamburguesa) --- */}
         <div className="md:hidden flex justify-between items-center w-full px-5 py-3">
-          <div className="text-white font-bold text-sm tracking-widest">
+          <div className="text-white font-bold text-sm tracking-widest font-[inter]">
             MENÚ
           </div>
 
@@ -56,8 +56,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* COMPONENTIZACIÓN: 
-        Pasamos el estado para controlar la animación de la "persiana" 
+      {/* COMPONENTIZACIÓN:
+        Pasamos el estado para controlar la animación de la "persiana"
         internamente en MobileMenu.
       */}
       <MobileMenu
