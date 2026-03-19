@@ -11,7 +11,7 @@ const CONTACT_INFO = {
 export default function TopBar() {
   return (
     <div className="bg-dark text-white w-full border-b border-gray-800">
-      <div className="max-w-7xl mx-auto flex flex-row justify-between items-center px-6 py-2 md:py-0 md:h-20">
+      <div className="max-w-6xl mx-auto flex flex-row justify-between items-center px-6 py-2 md:py-0 md:h-20">
         {/* LOGO: Siempre a la izquierda */}
         <div className="flex items-center">
           <Image
