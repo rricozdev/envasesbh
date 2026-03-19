@@ -11,7 +11,7 @@ const CONTACT_INFO = {
 export default function TopBar() {
   return (
     <div className="bg-dark text-white w-full border-b border-gray-800">
-      <div className="max-w-6xl mx-auto flex flex-row justify-between items-center px-6 py-2 md:py-0 md:h-20">
+      <div className="max-w-6xl mx-auto flex flex-row justify-between items-center px-6 py-2 md:py-0 md:h-20 font-[inter]">
         {/* LOGO: Siempre a la izquierda */}
         <div className="flex items-center">
           <Image
@@ -31,7 +31,7 @@ export default function TopBar() {
             {/* Email Desktop */}
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="flex items-center gap-3 group transition-all"
+              className="flex items-center gap-3 group transition-all font-[inter]"
             >
               <div className="border border-white/10 rounded-full p-2 group-hover:border-primary">
                 <svg
@@ -53,7 +53,7 @@ export default function TopBar() {
                 <span className="text-[9px] text-gray-500 font-bold uppercase tracking-widest leading-none">
                   Contáctanos
                 </span>
-                <span className="text-sm text-white group-hover:text-primary">
+                <span className="text-sm text-white group-hover:text-primary font-[inter]">
                   {CONTACT_INFO.email}
                 </span>
               </div>

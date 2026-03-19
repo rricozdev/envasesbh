@@ -27,7 +27,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className={`px-5 py-3.5 transition-colors duration-200 border-r border-cyan-600/40 last:border-r-0 flex items-center h-full ${
+              className={`px-5 py-3.5 transition-colors duration-200 border-r border-cyan-600/40 last:border-r-0 flex items-center h-full font-[inter] ${
                 link.current
                   ? "bg-cyan-500/40 font-semibold"
                   : "hover:bg-cyan-600/30"
@@ -40,7 +40,7 @@ export default function Navbar() {
 
         {/* --- CABECERA MÓVIL (Botón Hamburguesa) --- */}
         <div className="md:hidden flex justify-between items-center w-full px-5 py-3">
-          <div className="text-white font-bold text-sm tracking-widest">
+          <div className="text-white font-bold text-sm tracking-widest font-[inter]">
             MENÚ
           </div>
 

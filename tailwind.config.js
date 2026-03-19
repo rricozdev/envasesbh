@@ -1,10 +1,12 @@
-export default {
+const config = {
   theme: {
     extend: {
       fontFamily: {
-        body: ["var(--font-inter)"],
-        heading: ["var(--font-source-sans-3)"],
+        inter: ["var(--font-inter)"],
+        sans3: ["var(--font-source-sans-3)"],
       },
     },
   },
 };
+
+export default config;

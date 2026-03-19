@@ -22,7 +22,7 @@ export default function Hero({
     <section className="relative min-h-[calc(100vh-200px)] w-full overflow-hidden flex flex-col justify-center items-center lg:justify-center py-20">
       <picture className="absolute inset-0 -z-10">
         {imageMobile && (
-          <source media="(max-width: 1000px)" srcSet={imageMobile} />
+          <source media="(max-width: 765px)" srcSet={imageMobile} />
         )}
 
         {imageDesktop && (
@@ -47,7 +47,7 @@ export default function Hero({
           className={`w-full lg:w-1/2 flex flex-col justify-center ${variantStyles[variant]}`}
         >
           {/* ===== Título ===== */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl leading-tight font-bold text-white lg:text-secondary mb-4 animate-fade-in font-[Source Sans 3]">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl leading-tight font-bold text-white lg:text-secondary mb-4 animate-fade-in font-heading">
             {title}{" "}
             {highlightWord && (
               <span className="text-primary">{highlightWord}</span>
@@ -95,7 +95,7 @@ export default function Hero({
             {primaryAction && (
               <button
                 onClick={primaryAction.onClick}
-                className="bg-primary hover:bg-sky-800 text-white font-bold py-3 px-6 rounded-lg transition text-sm md:text-base flex items-center justify-center gap-2 w-full sm:w-auto font-[inter]"
+                className="bg-primary hover:bg-sky-800 text-white font-bold py-3 px-6 rounded-lg transition text-sm md:text-base flex items-center justify-center gap-2 w-full sm:w-auto font-[inter] cursor-pointer"
               >
                 {primaryAction.label}
               </button>
@@ -104,7 +104,7 @@ export default function Hero({
             {secondaryAction && (
               <button
                 onClick={secondaryAction.onClick}
-                className="border-2 border-white lg:border-secondary hover:bg-gray-50 text-white hover:text-secondary lg:text-secondary font-bold py-3 px-6 rounded-lg transition text-sm md:text-base w-full sm:w-auto font-[inter]"
+                className="border-2 border-white lg:border-secondary/80 hover:bg-gray-50 text-white hover:text-secondary lg:text-secondary font-bold py-3 px-6 rounded-lg transition text-sm md:text-base w-full sm:w-auto font-[inter] cursor-pointer"
               >
                 {secondaryAction.label}
               </button>
