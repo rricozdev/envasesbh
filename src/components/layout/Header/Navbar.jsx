@@ -19,7 +19,7 @@ export default function Navbar() {
     <nav className="bg-primary w-full shadow-md">
       <div className="max-w-7xl mx-auto flex justify-center md:justify-center items-center">
         {/* Links Escritorio - Alineados a la izquierda y más compactos */}
-        <div className="hidden md:flex font-medium text-white text-[13px] uppercase tracking-wide">
+        <div className="hidden md:flex font-medium text-white text-sm uppercase tracking-wide">
           {" "}
           {/* Texto más chico */}
           {navLinks.map((link) => (

@@ -27,7 +27,7 @@ export default function Hero() {
       <div className="max-w-7xl w-full mx-auto px-4 md:px-6 relative z-10 pb-8 sm:pb-10 lg:pb-0">
         <div className="w-full flex flex-col justify-center items-center lg:w-1/2">
           {/* Título */}
-          <h1 className="text-2xl sm:text-3xl lg:text-5xl text-center lg:text-left font-bold text-white lg:text-secondary mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl lg:leading-15 text-center lg:text-left font-bold text-white lg:text-secondary mb-4 leading-tight">
             Fabricamos <span className="text-primary">Envases PET</span> para la
             industria mexicana
           </h1>
