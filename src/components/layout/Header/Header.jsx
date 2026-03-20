@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 export default function Header() {
   return (
-    <header className="w-full flex flex-col overflow-hidden">
+    <header className="sticky top-0 z-[9999]">
       <TopBar />
       <Navbar />
     </header>
