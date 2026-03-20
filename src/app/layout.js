@@ -10,13 +10,15 @@ const sourceSans3 = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-source-sans-3",
 });
+
 export const metadata = {
-  title: "Envases BH",
+  title: "Envases BH | Soluciones en Envases PET",
+  description: "Catálogo de envases PET de alta calidad",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" className="scroll-smooth">
       <body className={`${inter.variable} ${sourceSans3.variable}`}>
         <MainLayout>{children}</MainLayout>
       </body>

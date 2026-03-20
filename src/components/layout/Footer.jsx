@@ -88,7 +88,7 @@ export default function Footer() {
               {/* Logo */}
               <div className="mb-4 flex items-center gap-2">
                 <Image
-                  src="/images/logo.png"
+                  src="/logo-bh-3.png"
                   alt="Envases BH"
                   width={120}
                   height={40}
@@ -239,12 +239,12 @@ export default function Footer() {
             <p>
               Diseñado y desarrollado por{" "}
               <a
-                href="https://bizplin.com"
+                href="https://www.linkedin.com/in/ricardo-ricoz/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors duration-300 hover:text-primary"
               >
-                Bizplin
+                OrbitUI
               </a>
             </p>
           </div>
