@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import { notFound } from "next/navigation";
+import AddToCartButton from "../../../components/features/cart/AddToCartButton";
 
 export default async function ProductoDetalle({ params }) {
   // 1. Desenvolver params (Requerido en Next.js 15+)
@@ -138,20 +139,13 @@ export default async function ProductoDetalle({ params }) {
               </div>
             </div>
 
-            {/* BOTÓN WHATSAPP */}
+            {/* BOTONES DE ACCIÓN */}
             <div className="mt-8">
-              <a
-                href={`https://wa.me/525558247722?text=Hola%20Envases%20BH,%20solicito%20cotización%20del%20${nombreCompleto}%20visto%20en%20su%20catálogo.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-full bg-secondary text-white hover:bg-primary py-4 rounded-xl font-bold uppercase tracking-widest transition-all shadow-lg shadow-secondary/20 active:scale-[0.98]"
-              >
-                Cotizar vía WhatsApp
-              </a>
-              <p className="text-center mt-4 text-[9px] text-gray-400 uppercase font-black tracking-[0.2em]">
-                Precios preferenciales por mayoreo
-              </p>
+              <AddToCartButton product={{ id: producto.id, nombre: nombreCompleto, imagen: producto.imagen }} />
             </div>
+            <p className="text-center mt-4 text-[9px] text-gray-400 uppercase font-black tracking-[0.2em]">
+              Precios preferenciales por mayoreo
+            </p>
           </div>
         </div>
       </Container>
