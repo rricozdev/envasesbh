@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileMenu from "./MobileMenu";
+import CartButton from "../../features/cart/CartButton";
 
 // Definición de rutas para evitar ReferenceError
 const navLinks = [
@@ -47,10 +48,14 @@ export default function Navbar() {
               </Link>
             );
           })}
+          {/* Botón de carrito para escritorio */}
+          <CartButton className="!fixed !bottom-auto !right-auto relative p-2 ml-4 text-white hover:bg-cyan-600/30 rounded-full transition-colors duration-200" />
         </div>
 
         {/* --- NAVEGACIÓN MÓVIL --- */}
         <div className="md:hidden flex justify-between items-center w-full px-5 py-3 text-white">
+          {/* Botón de carrito para móvil */}
+          <CartButton className="!fixed !bottom-auto !right-auto relative p-2 text-white hover:bg-cyan-600/30 rounded-full transition-colors duration-200" />
           <div className="font-bold text-sm tracking-widest uppercase">
             MENÚ
           </div>
