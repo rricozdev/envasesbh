@@ -86,7 +86,7 @@ const vehicles = [
     volume: "2.5 m³",
     maxWeight: "800 kg",
     description: "Perfecta para pedidos pequeños y entregas locales",
-    image: "/images/fleet/van-pequena.jpg",
+    image: "/van-pequena.jpg",
     color: "bg-blue-50",
   },
   {
@@ -96,7 +96,7 @@ const vehicles = [
     volume: "5 m³",
     maxWeight: "2,000 kg",
     description: "Ideal para volúmenes medianos con entregas rápidas",
-    image: "/images/fleet/van-mediana.jpg",
+    image: "/van-mediana.jpg",
     color: "bg-indigo-50",
   },
   {
@@ -106,7 +106,7 @@ const vehicles = [
     volume: "8.5 m³",
     maxWeight: "3,500 kg",
     description: "Solución versátil para cargas estándar",
-    image: "/images/fleet/camion-35.jpg",
+    image: "/camion35t.png",
     color: "bg-teal-50",
   },
   {
@@ -116,7 +116,7 @@ const vehicles = [
     volume: "12 m³",
     maxWeight: "5,000 kg",
     description: "Para grandes volúmenes de envases PET",
-    image: "/images/fleet/camion-5t.jpg",
+    image: "/camion5T.png",
     color: "bg-cyan-50",
   },
   {
@@ -126,7 +126,7 @@ const vehicles = [
     volume: "25 m³",
     maxWeight: "12,000 kg",
     description: "Máxima capacidad para entregas en volumen",
-    image: "/images/fleet/trailer.jpg",
+    image: "/trailer.png",
     color: "bg-sky-50",
   },
 ];
@@ -358,7 +358,7 @@ export default function Home() {
           {/* HEADER SECCIÓN */}
           <div className="mb-16 text-center animate-fade-in">
             <h2 className="mb-4 font-heading text-4xl font-semibold tracking-tight text-secondary md:text-5xl">
-              Desde nuetra fabrica hasta tu puerta
+              Desde nuestra fábrica hasta tu puerta
             </h2>
             <p className="mx-auto max-w-2xl text-base font-body text-secondary md:text-lg">
               Con 5 opciones de transporte de diferentes capacidades,
