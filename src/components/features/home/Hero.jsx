@@ -1,116 +1,157 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+import { Check } from "lucide-react";
+import { motion } from "framer-motion";
+
+// Este componente define un Hero (sección principal) reutilizable para una landing page.
+// Su propósito es mostrar un mensaje principal (title + description),
+// acompañado de elementos de apoyo como highlights (beneficios),
+// acciones (botones CTA) y una imagen de fondo.
+
+// Utiliza Next.js:
+// - Image → optimización automática de imágenes (performance)
+// - Link → navegación interna eficiente (SPA)
+
+// Usa framer-motion para animaciones:
+// - 'stagger' permite animar los elementos hijos de forma secuencial
+// - 'item' define la animación individual de cada elemento (fade + slide)
+
+// Integra diseño visual moderno:
+// - Fondo con imagen + overlay degradado para mejorar contraste
+// - Tipografía jerárquica (título fuerte, descripción secundaria)
+// - Badge superior para contexto comercial
+// - Lista de highlights con íconos (refuerzo visual)
+
+// Incluye CTAs (Call To Action):
+// - primaryAction → acción principal (más destacada)
+// - secondaryAction → acción secundaria (menos prominente)
+
+// Es un componente flexible:
+// - Recibe contenido dinámico por props
+// - Permite reutilización en distintas páginas cambiando textos y acciones
+
+// Además, incluye detalles UX:
+// - Animaciones suaves de entrada
+// - Diseño responsive
+// - Separación clara de responsabilidades (componente presentacional)
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 
 export default function Hero({
   title,
-  highlightWord,
   description,
   highlights = [],
   primaryAction,
   secondaryAction,
-  imageDesktop,
-  imageMobile,
-  variant = "left", // left | right | center
 }) {
-  // 🎯 Variantes de layout
-  const variantStyles = {
-    left: "lg:items-start text-center lg:text-left",
-    right: "lg:items-end text-center lg:text-right ml-auto",
-    center: "items-center text-center mx-auto",
-  };
-
   return (
-    <section className="relative min-h-[calc(100vh-200px)] w-full overflow-hidden flex flex-col justify-center items-center lg:justify-center py-20">
-      <picture className="absolute inset-0 -z-10">
-        {imageMobile && (
-          <source media="(max-width: 765px)" srcSet={imageMobile} />
-        )}
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <Image
+        src="/img/bg.webp"
+        alt="Hero background"
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 via-secondary/60 to-secondary/10" />
 
-        {imageDesktop && (
-          <Image
-            src={imageDesktop}
-            alt="Hero background"
-            fill
-            priority
-            quality={90}
-            className="object-cover object-top"
-            sizes="100vw"
-          />
-        )}
-      </picture>
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 lg:hidden -z-10"></div>
-
-      {/* ===== Contenido ===== */}
-      <div className="max-w-6xl w-full mx-auto px-4 md:px-6 relative z-10 py-10 lg:py-0">
-        <div
-          className={`w-full lg:w-1/2 flex flex-col justify-center ${variantStyles[variant]}`}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 py-24 w-full">
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          animate="show"
+          className="max-w-2xl flex flex-col gap-6"
         >
-          {/* ===== Título ===== */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl leading-tight font-bold text-white lg:text-secondary mb-4 animate-fade-in font-heading">
-            {title}{" "}
-            {highlightWord && (
-              <span className="text-primary">{highlightWord}</span>
-            )}
-          </h1>
+          {/* BADGE */}
+          <motion.span
+            variants={item}
+            className="inline-flex w-fit items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full"
+          >
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            Fabricante y Distribuidor en México
+          </motion.span>
 
-          {/* ===== Descripción ===== */}
-          <p className="text-sm sm:text-base lg:text-lg text-white/90 lg:text-secondary/90 mb-6 md:mb-8 leading-relaxed animate-fade-in delay-100 font-[inter]">
+          {/* TÍTULO */}
+          <motion.h1
+            variants={item}
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight"
+          >
+            {title}
+          </motion.h1>
+
+          {/* DESCRIPCIÓN */}
+          <motion.p
+            variants={item}
+            className="text-base sm:text-lg text-white/80 leading-relaxed"
+          >
             {description}
-          </p>
+          </motion.p>
 
-          {/* ===== Highlights ===== */}
+          {/* HIGHLIGHTS */}
           {highlights.length > 0 && (
-            <div className="flex flex-col items-center justify-center sm:flex-row sm:flex-wrap lg:flex-nowrap lg:items-start gap-3 mb-6 md:mb-8 animate-fade-in delay-200">
-              {highlights.map((text, i) => (
-                <div
+            <motion.ul
+              variants={item}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-6"
+            >
+              {highlights.map((h, i) => (
+                <li
                   key={i}
-                  className="flex items-center justify-center gap-2 bg-sky-50/60 lg:bg-sky-100 px-3 py-2 rounded-full w-max animate-fade-in"
+                  className="flex items-center gap-2 text-white/90 text-sm font-medium"
                 >
-                  <div className="w-4 h-4 rounded-full bg-sky-500 flex items-center justify-center shrink-0">
-                    <svg
-                      className="w-2.5 h-2.5 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={3}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-xs sm:text-sm font-medium text-dark whitespace-nowrap font-[inter]">
-                    {text}
-                  </span>
-                </div>
+                  <Check className="w-4 h-4 text-terciary shrink-0" />
+                  {h}
+                </li>
               ))}
-            </div>
+            </motion.ul>
           )}
 
-          {/* ===== Botones ===== */}
-          <div className="flex flex-col md:justify-center md:align-center sm:flex-row gap-3 md:gap-4 animate-fade-in delay-300">
+          {/* BOTONES */}
+          <motion.div
+            variants={item}
+            className="flex flex-col sm:flex-row gap-3 pt-2"
+          >
             {primaryAction && (
-              <button
-                onClick={primaryAction.onClick}
-                className="bg-primary hover:bg-sky-800 text-white font-bold py-3 px-6 rounded-lg transition text-sm md:text-base flex items-center justify-center gap-2 w-full sm:w-auto font-[inter] cursor-pointer"
+              <Link
+                href={primaryAction.href || "/contacto"}
+                className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-semibold text-sm px-7 py-3.5 rounded-lg transition-all shadow-lg hover:-translate-y-0.5"
               >
                 {primaryAction.label}
-              </button>
+              </Link>
             )}
-
             {secondaryAction && (
-              <button
-                onClick={secondaryAction.onClick}
-                className="border-2 border-white lg:border-secondary/80 hover:bg-gray-50 text-white hover:text-secondary lg:text-secondary font-bold py-3 px-6 rounded-lg transition text-sm md:text-base w-full sm:w-auto font-[inter] cursor-pointer"
+              <Link
+                href={secondaryAction.href || "/productos"}
+                className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white font-semibold text-sm px-7 py-3.5 rounded-lg transition-all hover:-translate-y-0.5"
               >
                 {secondaryAction.label}
-              </button>
+              </Link>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* WAVE */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg
+          viewBox="0 0 1440 60"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 60L1440 60L1440 20C1200 60 900 0 720 20C540 40 240 0 0 20L0 60Z"
+            fill="white"
+          />
+        </svg>
       </div>
     </section>
   );
