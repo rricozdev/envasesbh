@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import Hero from "@/components/features/home/Hero";
 import TestimonialsCarousel from "@/components/features/home/TestimonialsCarousel";
 import {
@@ -15,8 +17,7 @@ import {
   Package,
   Gauge,
 } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import FleetHeader from "@/components/features/home/FleetHeader";
 
 export const metadata = {
   title: "Envases PET de Calidad para Manufactura | Envases BH - México",
@@ -86,7 +87,7 @@ const vehicles = [
     volume: "2.5 m³",
     maxWeight: "800 kg",
     description: "Perfecta para pedidos pequeños y entregas locales",
-    image: "/van-pequena.jpg",
+    image: "/van-pequena.webp",
     color: "bg-blue-50",
   },
   {
@@ -96,7 +97,7 @@ const vehicles = [
     volume: "5 m³",
     maxWeight: "2,000 kg",
     description: "Ideal para volúmenes medianos con entregas rápidas",
-    image: "/van-mediana.jpg",
+    image: "/vans.webp",
     color: "bg-indigo-50",
   },
   {
@@ -108,26 +109,6 @@ const vehicles = [
     description: "Solución versátil para cargas estándar",
     image: "/camion35t.png",
     color: "bg-teal-50",
-  },
-  {
-    id: 4,
-    name: "Camión 5T",
-    capacity: "4,000 kg",
-    volume: "12 m³",
-    maxWeight: "5,000 kg",
-    description: "Para grandes volúmenes de envases PET",
-    image: "/camion5T.png",
-    color: "bg-cyan-50",
-  },
-  {
-    id: 5,
-    name: "Tráiler",
-    capacity: "8,000 kg",
-    volume: "25 m³",
-    maxWeight: "12,000 kg",
-    description: "Máxima capacidad para entregas en volumen",
-    image: "/trailer.png",
-    color: "bg-sky-50",
   },
 ];
 
@@ -192,8 +173,11 @@ export default function Home() {
         variant="left"
         title={
           <>
-            Fabricante de <span className="text-primary">Envases PET</span>,
-            para la industria mexicana
+            Fabricante de{" "}
+            <span className="bg-primary text-white px-2 py-0.5 rounded-md">
+              Envases PET
+            </span>
+            , para la industria mexicana
           </>
         }
         description={
@@ -210,7 +194,7 @@ export default function Home() {
           "Entregas a domicilio",
           "Envases Personalizables",
         ]}
-        imageDesktop="/og-image.png"
+        imageDesktop="/og-envasesbh.webp"
         imageMobile="/mobile.jpeg"
         primaryAction={{ label: "Agendar Consultoría" }}
         secondaryAction={{ label: "Ver Catálogo" }}
@@ -356,16 +340,7 @@ export default function Home() {
       <section className="py-20 px-4 md:py-28 lg:px-0 bg-linear-to-b from-white to-gray-50">
         <div className="container max-w-6xl mx-auto">
           {/* HEADER SECCIÓN */}
-          <div className="mb-16 text-center animate-fade-in">
-            <h2 className="mb-4 font-heading text-4xl font-semibold tracking-tight text-secondary md:text-5xl">
-              Desde nuestra fábrica hasta tu puerta
-            </h2>
-            <p className="mx-auto max-w-2xl text-base font-body text-secondary md:text-lg">
-              Con 5 opciones de transporte de diferentes capacidades,
-              garantizamos que tu envío llega seguro, a tiempo y en las mejores
-              condiciones. Una flota diseñada para tu negocio.
-            </p>
-          </div>
+          <FleetHeader />
 
           {/* GRID DE VEHÍCULOS */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

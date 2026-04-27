@@ -5,6 +5,8 @@
   --color-secondary: #3f454c;
   --color-dark: #1c2023;
   --color-white: #f5f5f5;
+  --color-accent: #125d93;
+  --color-terciary: #fde38c;
 
   /* fuentes */
   --font-inter: var(--font-inter);
