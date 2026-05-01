@@ -9,13 +9,8 @@
   --color-terciary: #fde38c;
 
   /* fuentes */
-  --font-inter: var(--font-inter);
-  --font-sans: var(--font-source-sans-3);
-}
-
-:root {
-  --font-inter: var(--font-inter);
-  --font-sans: var(--font-source-sans-3);
+  --font-primary: var(--font-inter);
+  --font-secondary: var(--font-source-sans-3);
 }
 
 /* Base */
