@@ -25,7 +25,7 @@ export const metadata = {
   description:
     "Fabricante y distribuidor de envases PET de calidad superior. Especificaciones exactas, entregas confiables, costos pskyecibles. Con opción de personalización según necesites.",
 
-  canonical: "https://envasesbh.com.mx",
+  canonical: "https://envasesbh.mx",
 
   keywords: [
     "envases PET México",
@@ -42,7 +42,7 @@ export const metadata = {
     description:
       "Fabricamos y distribuimos envases PET de calidad. Especificaciones exactas, producción confiable, personalización disponible.",
     image: "/og-image.png",
-    url: "https://envasesbh.com.mx",
+    url: "https://envasesbh.mx",
   },
 };
 
