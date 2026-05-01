@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
+import SectionContent from "@/components/ui/SectionContent";
 
 export const metadata = {
   title: "Blog Informativo | Envases BH",
@@ -9,7 +9,7 @@ export const metadata = {
 export default function BlogPage() {
   return (
     <main className="min-h-[70vh] flex items-center bg-white py-20">
-      <Container>
+      <SectionContent>
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           {/* ICONO DE LECTURA / NOTICIAS (SVG Manual) */}
           <div className="mb-8 p-6 bg-gray-50 rounded-full border border-gray-100 shadow-sm">
@@ -59,7 +59,7 @@ export default function BlogPage() {
             ))}
           </div>
         </div>
-      </Container>
+      </SectionContent>
     </main>
   );
 }

@@ -1,9 +1,9 @@
 "use client";
-import { useState, useMemo, useEffect } from "react";
-import { PRODUCTOS } from "@/data/productos";
 import ProductFilter from "@/components/features/productos/ProductFilter";
 import ProductGrid from "@/components/features/productos/ProductGrid";
-import Container from "@/components/ui/Container";
+import SectionContent from "@/components/ui/SectionContent";
+import { PRODUCTOS } from "@/data/productos";
+import { useEffect, useMemo, useState } from "react";
 
 export default function ProductosPage() {
   const [categoria, setCategoria] = useState("Todos");
@@ -44,7 +44,7 @@ export default function ProductosPage() {
     <main className="min-h-screen pb-16 bg-white">
       {/* HERO COMPACTO: py-8 en mobile y py-12 en desktop */}
       <section className="bg-secondary py-8 md:py-12 border-b border-white/5">
-        <Container>
+        <SectionContent>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2">
             <div>
               <h1 className="text-2xl md:text-4xl font-bold text-white uppercase italic tracking-tighter">
@@ -61,11 +61,11 @@ export default function ProductosPage() {
               {filtrados.length} Modelos Disponibles
             </div>
           </div>
-        </Container>
+        </SectionContent>
       </section>
 
       {/* CUERPO DEL CATÁLOGO: Padding reducido de 10 a 6 */}
-      <Container className="py-6 md:py-10">
+      <SectionContent className="py-6 md:py-10">
         <div className="flex flex-col lg:flex-row gap-6 md:gap-10">
           {/* SIDEBAR / FILTROS: Ocupa el ancho completo en mobile */}
           <aside className="w-full lg:w-64 shrink-0">
@@ -122,7 +122,7 @@ export default function ProductosPage() {
             )}
           </section>
         </div>
-      </Container>
+      </SectionContent>
     </main>
   );
 }

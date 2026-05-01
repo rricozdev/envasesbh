@@ -1,15 +1,15 @@
-import Image from "next/image";
-import Link from "next/link";
-import Container from "@/components/ui/Container";
+import SectionContent from "@/components/ui/SectionContent";
 import SectionTitle from "@/components/ui/SectionTitle";
 import {
-  Factory,
-  Truck,
-  ShieldCheck,
   CalendarDays,
-  Package,
+  Factory,
   MapPin,
+  Package,
+  ShieldCheck,
+  Truck,
 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "Quiénes Somos | Envases BH",
@@ -90,7 +90,7 @@ export default function QuienesSomosPage() {
 
       {/* ── Hero ── */}
       <div className="bg-dark py-20">
-        <Container>
+        <SectionContent>
           <div className="max-w-2xl">
             <span className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold uppercase tracking-widest">
               Nuestra historia
@@ -103,12 +103,12 @@ export default function QuienesSomosPage() {
               y compromiso 100% mexicano.
             </p>
           </div>
-        </Container>
+        </SectionContent>
       </div>
 
       {/* ── Métricas ── */}
       <div className="bg-primary/5 border-y border-primary/10 py-12">
-        <Container>
+        <SectionContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {metricas.map(({ icono: Icon, valor, label }) => (
               <div
@@ -127,11 +127,11 @@ export default function QuienesSomosPage() {
               </div>
             ))}
           </div>
-        </Container>
+        </SectionContent>
       </div>
 
       {/* ── Historia: imagen + texto ── */}
-      <Container>
+      <SectionContent>
         <section className="py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Imagen */}
           <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
@@ -227,7 +227,7 @@ export default function QuienesSomosPage() {
             ))}
           </div>
         </section>
-      </Container>
+      </SectionContent>
     </main>
   );
 }
