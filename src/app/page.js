@@ -70,7 +70,6 @@ export default function Home() {
       <SectionService />
       <SectoinTestimonials />
       <SectionHighlight />
-      {/* CTA */}
       <section className="py-20 px-4 md:py-28 lg:px-0 bg-white">
         <div className="container mx-auto max-w-5xl">
           <div className="bg-linear-to-r from-primary to-primary rounded-xl p-8 md:p-12 lg:p-16 text-white text-center">
