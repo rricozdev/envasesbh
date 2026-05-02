@@ -93,7 +93,7 @@ export default function QuienesSomosPage() {
         <Container>
           <div className="max-w-2xl">
             <span className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold uppercase tracking-widest">
-              Nuestra historia
+              Nuestra Historia
             </span>
             <SectionTitle className="text-white">
               Quiénes <span className="text-primary italic">Somos</span>
