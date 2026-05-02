@@ -9,15 +9,9 @@ export default function SectionContent({
   className = "",
   containerClassName = "",
   align = "center",
-  variant = "default",
   animated = true, // 👈 control global
 }) {
   const isCenter = align === "center";
-
-  const variants = {
-    default: "bg-white",
-    secondary: "bg-secondary/5",
-  };
 
   // 🎬 Animaciones reutilizables
   const fadeUp = {
@@ -39,9 +33,9 @@ export default function SectionContent({
   };
 
   return (
-    <section className={`py-12 px-4 lg:px-0 ${variants[variant]}`}>
+    <section className={`py-12 px-4 lg:px-0 ${containerClassName} `}>
       <motion.div
-        className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ${containerClassName}`}
+        className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 `}
         variants={animated ? staggerContainer : {}}
         initial={animated ? "hidden" : false}
         whileInView={animated ? "visible" : false}
