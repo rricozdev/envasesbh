@@ -1,7 +1,6 @@
-import Link from "next/link";
-import Container from "@/components/ui/Container";
-// Al ser export default, NO lleva llaves {}
+import SectionContent from "@/components/ui/SectionContent";
 import SectionTitle from "@/components/ui/SectionTitle";
+import Link from "next/link";
 
 export const metadata = {
   title: "Proyectos a tu Medida | Envases BH",
@@ -10,7 +9,7 @@ export const metadata = {
 export default function ProyectosAMedidaPage() {
   return (
     <main className="min-h-[70vh] flex items-center bg-white py-20">
-      <Container>
+      <SectionContent>
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           <div className="mb-8 p-6 bg-gray-50 rounded-full border border-gray-100 shadow-inner">
             <svg
@@ -57,7 +56,7 @@ export default function ProyectosAMedidaPage() {
             </Link>
           </div>
         </div>
-      </Container>
+      </SectionContent>
     </main>
   );
 }
