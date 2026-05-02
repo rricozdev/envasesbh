@@ -64,7 +64,7 @@ export default function Hero({
         className="object-cover object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-linear-30-to-r from-secondary/90 via-secondary/60 to-secondary/10" />
+      <div className="absolute inset-0 bg-linear-to-r from-secondary/90 via-secondary/60 to-secondary/10" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 py-24 w-full">
         <motion.div
@@ -85,7 +85,7 @@ export default function Hero({
           {/* TÍTULO */}
           <motion.h1
             variants={item}
-            className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight"
+            className="font-primary text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight"
           >
             {title}
           </motion.h1>
