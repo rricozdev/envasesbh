@@ -42,6 +42,7 @@ export function SectionProblemSolution() {
       title="¿Por Qué Cambiar De Proveedor?"
       subtitle=" No es solo un proveedor. Es una decisión que impacta tu operación, tus
         costos y tu crecimiento."
+      containerClassName="bg-white"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
         {card_problem_solution.map((item) => (

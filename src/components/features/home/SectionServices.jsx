@@ -42,8 +42,9 @@ export function SectionService() {
       title=" Potencia tu Empaque con Servicios Especializados"
       subtitle="Servicios diseñados para elevar la percepción y rendimiento de tu
               producto."
+      containerClassName="bg-secondary/5"
     >
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2 ">
         {services.map((service) => (
           <div
             key={service.id}

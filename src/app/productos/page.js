@@ -20,6 +20,7 @@ export default function ProductosPage() {
 
   const itemsPorPagina = esMobile ? 6 : 12;
 
+  // todo: CORREGIR ESTO PLANTAR UN JSON CON DATA
   // 2. Lógica de Filtrado (Resetea página al filtrar)
   const filtrados = useMemo(() => {
     setPagina(1);
@@ -41,31 +42,28 @@ export default function ProductosPage() {
   }, [pagina]);
 
   return (
-    <main className="min-h-screen pb-16 bg-white">
-      {/* HERO COMPACTO: py-8 en mobile y py-12 en desktop */}
+    <>
       <section className="bg-secondary py-8 md:py-12 border-b border-white/5">
-        <SectionContent>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2">
-            <div>
-              <h1 className="text-2xl md:text-4xl font-bold text-white uppercase italic tracking-tighter">
-                Catálogo <span className="text-primary">Envases BH</span>
-              </h1>
-              {/* Oculto en mobile para ahorrar espacio crítico */}
-              <p className="hidden md:block text-white/50 mt-1 max-w-xl text-xs md:text-sm">
-                Soluciones integrales en envases PET para la industria nacional.
-              </p>
-            </div>
-
-            {/* Contador visual de stock */}
-            <div className="text-primary font-bold text-[10px] md:text-xs uppercase tracking-[0.2em]">
-              {filtrados.length} Modelos Disponibles
-            </div>
+        <div className=" mx-auto max-w-6xl flex flex-col md:flex-row md:items-end md:justify-between gap-2">
+          <div>
+            <h1 className="text-2xl md:text-4xl font-bold text-white uppercase italic tracking-tighter">
+              Catálogo <span className="text-primary">Envases BH</span>
+            </h1>
+            {/* Oculto en mobile para ahorrar espacio crítico */}
+            <p className="hidden md:block text-white/50 mt-1 max-w-xl text-xs md:text-sm">
+              Soluciones integrales en envases PET para la industria nacional.
+            </p>
           </div>
-        </SectionContent>
+
+          {/* Contador visual de stock */}
+          <div className="text-primary font-bold text-[10px] md:text-xs uppercase tracking-[0.2em]">
+            {filtrados.length} Modelos Disponibles
+          </div>
+        </div>
       </section>
 
       {/* CUERPO DEL CATÁLOGO: Padding reducido de 10 a 6 */}
-      <SectionContent className="py-6 md:py-10">
+      <SectionContent>
         <div className="flex flex-col lg:flex-row gap-6 md:gap-10">
           {/* SIDEBAR / FILTROS: Ocupa el ancho completo en mobile */}
           <aside className="w-full lg:w-64 shrink-0">
@@ -98,7 +96,7 @@ export default function ProductosPage() {
                     <button
                       key={i}
                       onClick={() => setPagina(i + 1)}
-                      className={`w-9 h-9 min-w-[36px] rounded-lg font-bold transition-all text-xs ${
+                      className={`w-9 h-9 min-w-9 rounded-lg font-bold transition-all text-xs ${
                         pagina === i + 1
                           ? "bg-primary text-white shadow-md shadow-primary/20"
                           : "text-secondary hover:bg-gray-100 border border-transparent"
@@ -123,6 +121,6 @@ export default function ProductosPage() {
           </section>
         </div>
       </SectionContent>
-    </main>
+    </>
   );
 }
