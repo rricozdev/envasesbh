@@ -5,6 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import ServicioDetalle from "./ServicioDetalle";
 
+// TODO: Cambia
+
 /**
  * @param {object}  servicio  - objeto del array servicios.js
  * @param {boolean} reverse   - alterna imagen/texto para cada fila
@@ -16,7 +18,7 @@ export default function ServicioCard({ servicio, reverse = false }) {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.55, ease: "easeOut" }}
-      className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg"
+      className="relative w-full aspect-4/3 rounded-2xl overflow-hidden shadow-lg"
     >
       <Image
         src={servicio.imagen}
@@ -68,7 +70,7 @@ export default function ServicioCard({ servicio, reverse = false }) {
   return (
     <section
       id={servicio.slug}
-      className="py-20 scroll-mt-20 border-b border-gray-100 last:border-0"
+      className="mb-12 scroll-mt-20 border-b border-gray-100 last:border-0"
     >
       <div
         className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${
