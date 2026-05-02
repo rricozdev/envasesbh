@@ -1,9 +1,9 @@
 import { PRODUCTOS } from "@/data/productos";
 import Image from "next/image";
 import Link from "next/link";
-import Container from "@/components/ui/Container";
 import { notFound } from "next/navigation";
 import AddToCartButton from "../../../components/features/cart/AddToCartButton";
+import SectionContent from "@/components/ui/SectionContent";
 
 export default async function ProductoDetalle({ params }) {
   // 1. Desenvolver params (Requerido en Next.js 15+)
@@ -29,7 +29,7 @@ export default async function ProductoDetalle({ params }) {
     <main className="min-h-screen bg-white">
       {/* NAVEGACIÓN / BREADCRUMBS */}
       <nav className="bg-gray-50 border-b border-gray-100 py-4">
-        <Container>
+        <SectionContent>
           <div className="flex items-center gap-2 text-[10px] md:text-xs font-medium uppercase tracking-widest text-secondary/40">
             <Link href="/" className="hover:text-primary transition-colors">
               Inicio
@@ -46,10 +46,10 @@ export default async function ProductoDetalle({ params }) {
               {producto.categoria}
             </span>
           </div>
-        </Container>
+        </SectionContent>
       </nav>
 
-      <Container className="pt-8 md:pt-16 pb-20">
+      <SectionContent className="pt-8 md:pt-16 pb-20">
         <div className="flex flex-col lg:flex-row gap-10 xl:gap-20">
           {/* COLUMNA IZQUIERDA: IMAGEN */}
           <div className="w-full lg:w-1/2">
@@ -141,19 +141,25 @@ export default async function ProductoDetalle({ params }) {
 
             {/* BOTONES DE ACCIÓN */}
             <div className="mt-8">
-              <AddToCartButton product={{ id: producto.id, nombre: nombreCompleto, imagen: producto.imagen }} />
+              <AddToCartButton
+                product={{
+                  id: producto.id,
+                  nombre: nombreCompleto,
+                  imagen: producto.imagen,
+                }}
+              />
             </div>
             <p className="text-center mt-4 text-[9px] text-gray-400 uppercase font-black tracking-[0.2em]">
               Precios preferenciales por mayoreo
             </p>
           </div>
         </div>
-      </Container>
+      </SectionContent>
 
       {/* SECCIÓN RELACIONADOS */}
       {relacionados.length > 0 && (
         <section className="bg-gray-50 border-t border-gray-100 py-16">
-          <Container>
+          <SectionContent>
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-secondary uppercase italic tracking-tighter">
@@ -196,7 +202,7 @@ export default async function ProductoDetalle({ params }) {
                 </Link>
               ))}
             </div>
-          </Container>
+          </SectionContent>
         </section>
       )}
     </main>

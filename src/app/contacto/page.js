@@ -1,4 +1,4 @@
-import Container from "@/components/ui/Container";
+import SectionContent from "@/components/ui/SectionContent";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Link from "next/link";
 
@@ -9,7 +9,7 @@ export const metadata = {
 export default function ContactoPage() {
   return (
     <main className="bg-white py-20 min-h-[80vh] flex items-center">
-      <Container>
+      <SectionContent>
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* COLUMNA IZQUIERDA: MENSAJE "EN CONSTRUCCIÓN" PERO OPERATIVO */}
@@ -118,7 +118,7 @@ export default function ContactoPage() {
             </div>
           </div>
         </div>
-      </Container>
+      </SectionContent>
     </main>
   );
 }

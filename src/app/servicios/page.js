@@ -1,6 +1,6 @@
-import Container from "@/components/ui/Container";
-import SectionTitle from "@/components/ui/SectionTitle";
 import ServicioCard from "@/components/features/servicios/ServicioCard";
+import SectionContent from "@/components/ui/SectionContent";
+import SectionTitle from "@/components/ui/SectionTitle";
 import { servicios } from "@/data/servicios";
 
 export const metadata = {
@@ -14,7 +14,7 @@ export default function ServiciosPage() {
     <main className="bg-white">
       {/* Hero de sección */}
       <div className="bg-dark py-20">
-        <Container>
+        <SectionContent>
           <div className="max-w-2xl">
             <span className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold uppercase tracking-widest">
               Lo que hacemos
@@ -28,11 +28,11 @@ export default function ServiciosPage() {
               necesidades de cada cliente.
             </p>
           </div>
-        </Container>
+        </SectionContent>
       </div>
 
       {/* Servicios alternados */}
-      <Container>
+      <SectionContent>
         {servicios.map((servicio, i) => (
           <ServicioCard
             key={servicio.id}
@@ -40,7 +40,7 @@ export default function ServiciosPage() {
             reverse={i % 2 !== 0}
           />
         ))}
-      </Container>
+      </SectionContent>
     </main>
   );
 }
