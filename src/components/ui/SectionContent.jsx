@@ -39,9 +39,9 @@ export default function SectionContent({
   };
 
   return (
-    <section className={`py-20 px-4 lg:px-0 ${variants[variant]}`}>
+    <section className={`py-12 px-4 lg:px-0 ${variants[variant]}`}>
       <motion.div
-        className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${containerClassName}`}
+        className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ${containerClassName}`}
         variants={animated ? staggerContainer : {}}
         initial={animated ? "hidden" : false}
         whileInView={animated ? "visible" : false}
