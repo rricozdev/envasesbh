@@ -6,23 +6,23 @@ import { useCart } from "@/context/CartContext";
 
 export default function ProductCard({ producto }) {
   const { addItem } = useCart();
-  // Aseguramos que el nombre sea descriptivo
+
   const nombreCompleto = producto.nombre.toLowerCase().includes("envase")
     ? producto.nombre
     : `Envase ${producto.nombre}`;
 
   return (
-    <div className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 flex flex-col h-full overflow-hidden">
-      {/* Área de Imagen con gradiente suave */}
-      <div className="aspect-square bg-gradient-to-br from-gray-50 to-white relative overflow-hidden p-8">
-        {/* Badge Flotante con Glassmorphism */}
-        <div className="absolute top-4 left-4 z-10">
-          <span className="bg-white/70 backdrop-blur-md text-primary border border-white/20 text-[9px] font-black uppercase tracking-widest px-2.5 py-1.5 rounded-full shadow-sm">
-            {producto.categoria}
-          </span>
-        </div>
+    <article className="group relative flex flex-col h-full bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      {/* BADGE */}
+      <div className="absolute top-3 left-3 z-10">
+        <span className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider bg-white/90 backdrop-blur border border-gray-200 px-3 py-1 rounded-full shadow-sm">
+          {producto.categoria}
+        </span>
+      </div>
 
-        <div className="w-full h-full relative group-hover:scale-110 group-hover:-rotate-2 transition-transform duration-700 ease-out">
+      {/* IMAGEN */}
+      <div className="relative aspect-square bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center p-6 transition-transform duration-500 group-hover:scale-110">
           <Image
             src={producto.imagen}
             alt={nombreCompleto}
@@ -32,20 +32,25 @@ export default function ProductCard({ producto }) {
             priority={producto.id <= 4}
           />
         </div>
+
+        {/* Overlay sutil en hover */}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
       </div>
 
-      {/* Cuerpo de información */}
-      <div className="p-6 flex flex-col flex-grow bg-white border-t border-gray-50">
-        <h3 className="text-secondary font-extrabold text-base md:text-lg leading-tight mb-2 group-hover:text-primary transition-colors line-clamp-2 uppercase italic tracking-tighter">
-          {nombreCompleto}
-        </h3>
+      {/* CONTENIDO */}
+      <div className="flex flex-col flex-grow p-5 gap-4">
+        {/* TEXTO */}
+        <div className="space-y-1">
+          <h3 className="text-sm font-semibold text-gray-900 leading-snug line-clamp-2 group-hover:text-primary transition-colors">
+            {nombreCompleto}
+          </h3>
 
-        <p className="text-gray-400 text-[11px] mb-6 font-medium uppercase tracking-wider">
-          Premium PET • Grado Alimenticio
-        </p>
+          <p className="text-xs text-gray-500">Premium PET • Uso alimenticio</p>
+        </div>
 
-        {/* Acciones */}
-        <div className="mt-auto space-y-2">
+        {/* ACCIONES */}
+        <div className="mt-auto flex flex-col gap-2">
+          {/* BOTÓN PRINCIPAL */}
           <button
             onClick={() =>
               addItem({
@@ -55,19 +60,20 @@ export default function ProductCard({ producto }) {
                 cantidad: 1,
               })
             }
-            className="w-full bg-secondary text-white hover:bg-primary py-3 rounded-xl text-[10px] font-black transition-all text-center uppercase tracking-[0.15em] shadow-lg shadow-secondary/10 active:scale-95"
+            className="w-full bg-primary hover:bg-primary/90 text-white font-semibold text-xs py-3 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.98]"
           >
             Añadir a Cotización
           </button>
-          
+
+          {/* BOTÓN SECUNDARIO */}
           <Link
             href={`/productos/${producto.slug}`}
-            className="block w-full text-gray-400 hover:text-primary py-2 rounded-lg text-[10px] font-bold transition-all text-center uppercase tracking-widest"
+            className="w-full text-center text-gray-700 hover:text-primary border border-gray-200 hover:border-primary font-semibold text-xs py-3 rounded-lg transition-all duration-200 hover:bg-gray-50"
           >
-            Ver Ficha Técnica
+            Ver detalles
           </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
