@@ -64,7 +64,7 @@ export default function SectionContent({
 
         <motion.div
           variants={animated ? fadeUp : {}}
-          className={`mt-12 ${className}`}
+          className={`${title || subtitle ? "mt-10" : ""} ${className}`}
         >
           {children}
         </motion.div>
