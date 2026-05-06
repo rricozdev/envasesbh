@@ -17,7 +17,7 @@ const services = [
       "Haz que tu producto destaque en estantería con etiquetas resistentes y de acabado profesional. Un envase perfecto sin la etiqueta adecuada es una oportunidad perdida.",
     image: "/img/etiquetado.png",
     cta: "Ver etiquetado",
-    ctaHref: "#etiquetado",
+    ctaHref: "servicios#etiquetado",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const services = [
       "Obtén colores precisos y consistentes sin comprometer calidad ni costos. Nuestra pigmentación personalizada asegura que tu producto mantenga su identidad visual en cada producción.",
     image: "/img/pigmentado.png",
     cta: "Ver pigmentación",
-    ctaHref: "#pigmentacion",
+    ctaHref: "servicios#pigmentacion",
   },
 ];
 
