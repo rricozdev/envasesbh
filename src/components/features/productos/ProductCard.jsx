@@ -1,8 +1,9 @@
 "use client";
 
+import { useCart } from "@/context/CartContext";
+import { FilePlusCorner, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useCart } from "@/context/CartContext";
 
 export default function ProductCard({ producto }) {
   const { addItem } = useCart();
@@ -38,7 +39,7 @@ export default function ProductCard({ producto }) {
       </div>
 
       {/* CONTENIDO */}
-      <div className="flex flex-col flex-grow p-5 gap-4">
+      <div className="flex flex-col grow px-5 pb-6 gap-4">
         {/* TEXTO */}
         <div className="space-y-1">
           <h3 className="text-sm font-semibold text-gray-900 leading-snug line-clamp-2 group-hover:text-primary transition-colors">
@@ -49,7 +50,7 @@ export default function ProductCard({ producto }) {
         </div>
 
         {/* ACCIONES */}
-        <div className="mt-auto flex flex-col gap-2">
+        <div className="mt-auto flex flex-row gap-4">
           {/* BOTÓN PRINCIPAL */}
           <button
             onClick={() =>
@@ -60,17 +61,17 @@ export default function ProductCard({ producto }) {
                 cantidad: 1,
               })
             }
-            className="w-full bg-primary hover:bg-primary/90 text-white font-semibold text-xs py-3 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.98]"
+            className="w-full h-10 bg-primary hover:bg-primary/90 text-white rounded-lg transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.98] cursor-pointer flex items-center justify-center "
           >
-            Añadir a Cotización
+            <ShoppingCart />
           </button>
 
           {/* BOTÓN SECUNDARIO */}
           <Link
             href={`/productos/${producto.slug}`}
-            className="w-full text-center text-gray-700 hover:text-primary border border-gray-200 hover:border-primary font-semibold text-xs py-3 rounded-lg transition-all duration-200 hover:bg-gray-50"
+            className="w-full h-10 text-gray-700 hover:text-primary border border-gray-200 hover:border-primary rounded-lg transition-all cursor-pointer duration-200 hover:bg-gray-50 flex items-center justify-center "
           >
-            Ver detalles
+            <FilePlusCorner />
           </Link>
         </div>
       </div>
