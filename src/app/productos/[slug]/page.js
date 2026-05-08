@@ -5,28 +5,36 @@ import { notFound } from "next/navigation";
 import AddToCartButton from "../../../components/features/cart/AddToCartButton";
 
 export default async function ProductoDetalle({ params }) {
-  // 1. Desenvolver params (Requerido en Next.js 15+)
   const { slug } = await params;
-
-  // 2. Buscar producto
   const producto = PRODUCTOS.find((p) => p.slug === slug);
 
-  if (!producto) {
-    notFound();
-  }
+  if (!producto) notFound();
 
   const nombreCompleto = producto.nombre.toLowerCase().includes("envase")
     ? producto.nombre
     : `Envase ${producto.nombre}`;
 
-  // 3. Obtener productos relacionados (misma categoría, excluyendo el actual)
   const relacionados = PRODUCTOS.filter(
     (p) => p.categoria === producto.categoria && p.id !== producto.id,
   ).slice(0, 4);
 
+  const { specs } = producto;
+
+  const SPECS_PRINCIPALES = [
+    {
+      label: "Capacidad",
+      value: specs?.capacidad ? `${specs.capacidad} ml` : null,
+    },
+    { label: "Peso", value: specs?.peso ? `${specs.peso} g` : null },
+    { label: "Corona", value: specs?.corona ?? null },
+    { label: "Altura", value: specs?.altura ? `${specs.altura} mm` : null },
+    { label: "Pzs x Empaque", value: specs?.pzsEmpaque ?? null },
+    { label: "Tipo de Empaque", value: specs?.tipoEmpaque ?? null },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
-      {/* NAVEGACIÓN / BREADCRUMBS */}
+      {/* BREADCRUMBS */}
       <nav className="bg-gray-50 border-b border-gray-100 py-4">
         <div className="flex py-5 max-w-6xl mx-auto items-center gap-2 text-[10px] md:text-xs font-medium uppercase tracking-widest text-secondary/40">
           <Link href="/" className="hover:text-primary transition-colors">
@@ -44,8 +52,8 @@ export default async function ProductoDetalle({ params }) {
         </div>
       </nav>
 
-      <div className=" py-8 md:pt-10  max-w-6xl mx-auto   flex flex-col lg:flex-row gap-10 xl:gap-20">
-        {/* COLUMNA IZQUIERDA: IMAGEN */}
+      <div className="py-8 md:pt-10 max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 xl:gap-20">
+        {/* IMAGEN */}
         <div className="w-full lg:w-1/2">
           <div className="aspect-square bg-[#f8f9fa] rounded-3xl border border-gray-100 relative overflow-hidden p-8 md:p-12 group">
             <Image
@@ -58,9 +66,9 @@ export default async function ProductoDetalle({ params }) {
           </div>
         </div>
 
-        {/* COLUMNA DERECHA: INFO */}
+        {/* INFO */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
-          {/* BOTÓN VOLVER INTELIGENTE */}
+          {/* VOLVER */}
           <Link
             href="/productos"
             className="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-6 group"
@@ -73,7 +81,7 @@ export default async function ProductoDetalle({ params }) {
               viewBox="0 0 256 256"
               className="group-hover:-translate-x-1 transition-transform"
             >
-              <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+              <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z" />
             </svg>
             Volver al Catálogo
           </Link>
@@ -88,53 +96,72 @@ export default async function ProductoDetalle({ params }) {
             {nombreCompleto}
           </h1>
 
-          <div className="space-y-6 text-gray-600 text-sm md:text-base leading-relaxed">
-            <p>
-              Este envase de alta claridad es ideal para el sector de{" "}
-              {producto.categoria.toLowerCase()}. Fabricado con polietileno
-              tereftalato (PET) virgen, ofrece la máxima resistencia y brillo
-              para resaltar la calidad de su contenido.
-            </p>
+          {/* COLORES */}
+          {specs?.colores?.length > 0 && (
+            <div className="flex items-center gap-2 mb-6">
+              <span className="text-[10px] text-secondary/40 font-bold uppercase tracking-widest">
+                Colores:
+              </span>
+              <div className="flex gap-1.5 flex-wrap">
+                {specs.colores.map((color) => (
+                  <span
+                    key={color}
+                    className="text-[10px] font-semibold uppercase tracking-wide bg-gray-100 text-secondary px-2 py-0.5 rounded-full"
+                  >
+                    {color}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
 
-            {/* FICHA TÉCNICA */}
-            <div className="grid grid-cols-2 gap-y-6 gap-x-4 py-8 border-y border-gray-100">
-              <div>
-                <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-1">
-                  Material
-                </span>
-                <span className="text-secondary font-semibold">
-                  PET 100% Reciclable
-                </span>
-              </div>
-              <div>
-                <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-1">
-                  Transparencia
-                </span>
-                <span className="text-secondary font-semibold">
-                  Alta (Cristal)
-                </span>
-              </div>
-              <div>
-                <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-1">
-                  Uso Sugerido
-                </span>
-                <span className="text-secondary font-semibold">
-                  {producto.categoria}
-                </span>
-              </div>
-              <div>
-                <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-1">
-                  Estado
-                </span>
-                <span className="text-primary font-bold italic underline decoration-2 underline-offset-4">
-                  Stock Inmediato
-                </span>
-              </div>
+          {/* FICHA TÉCNICA */}
+          <div className="border-y border-gray-100 py-6 mb-6">
+            <p className="text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-4">
+              Especificaciones Técnicas
+            </p>
+            <div className="grid grid-cols-2 gap-y-4 gap-x-6">
+              {SPECS_PRINCIPALES.filter((s) => s.value !== null).map(
+                ({ label, value }) => (
+                  <div key={label}>
+                    <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-0.5">
+                      {label}
+                    </span>
+                    <span className="text-secondary font-semibold text-sm">
+                      {value}
+                    </span>
+                  </div>
+                ),
+              )}
+
+              {/* Producción mínima — solo si existe */}
+              {specs?.produccionMinima && (
+                <div>
+                  <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-0.5">
+                    Producción Mínima
+                  </span>
+                  <span className="text-secondary font-semibold text-sm">
+                    {specs.produccionMinima.toLocaleString()} pzs
+                  </span>
+                </div>
+              )}
+
+              {/* Sobre pedido — solo si es true */}
+              {specs?.sobrePedido === true && (
+                <div>
+                  <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-0.5">
+                    Disponibilidad
+                  </span>
+                  <span className="text-primary font-bold italic underline decoration-2 underline-offset-4 text-sm">
+                    Sobre Pedido
+                  </span>
+                </div>
+              )}
             </div>
           </div>
 
-          {/* BOTONES DE ACCIÓN */}
-          <div className="mt-8">
+          {/* CTA */}
+          <div>
             <AddToCartButton
               product={{
                 id: producto.id,
@@ -149,10 +176,10 @@ export default async function ProductoDetalle({ params }) {
         </div>
       </div>
 
-      {/* SECCIÓN RELACIONADOS */}
+      {/* RELACIONADOS */}
       {relacionados.length > 0 && (
         <section className="bg-gray-50 border-t border-gray-100 py-16">
-          <div className=" mx-auto max-w-6xl flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div className="mx-auto max-w-6xl flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-secondary uppercase italic tracking-tighter">
                 También te puede <span className="text-primary">interesar</span>
