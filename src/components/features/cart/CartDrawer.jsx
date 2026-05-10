@@ -3,10 +3,8 @@
 import { useEffect, useRef } from "react";
 import { useCart } from "@/context/CartContext";
 import { generarMensajeWhatsApp } from "@/lib/whatsapp";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 import CartItem from "./CartItem";
-
-// Cambia este número por el tuyo: código de país + número, sin espacios ni +
-const WHATSAPP = "525563182026";
 
 export default function CartDrawer() {
   const { items, isOpen, closeCart, clearCart, totalItems } = useCart();
@@ -28,7 +26,7 @@ export default function CartDrawer() {
   }, [isOpen]);
 
   const handleWhatsApp = () => {
-    const url = generarMensajeWhatsApp(items, WHATSAPP);
+    const url = generarMensajeWhatsApp(items, WHATSAPP_NUMBER);
     if (url) window.open(url, "_blank");
   };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCart } from "@/context/CartContext";
-import { FilePlusCorner, ShoppingCart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,7 +11,6 @@ export default function ProductCard({ producto }) {
   const nombreCompleto = producto.nombre.toLowerCase().includes("envase")
     ? producto.nombre
     : `Envase ${producto.nombre}`;
-
   return (
     <article className="group relative flex flex-col h-full bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       {/* BADGE */}
@@ -59,6 +58,7 @@ export default function ProductCard({ producto }) {
                 nombre: nombreCompleto,
                 imagen: producto.imagen,
                 cantidad: 1,
+                specs: producto.specs,
               })
             }
             className="w-full h-10 bg-primary hover:bg-primary/90 text-white rounded-lg transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.98] cursor-pointer flex items-center justify-center "
@@ -71,7 +71,9 @@ export default function ProductCard({ producto }) {
             href={`/productos/${producto.slug}`}
             className="w-full h-10 text-gray-700 hover:text-primary border border-gray-200 hover:border-primary rounded-lg transition-all cursor-pointer duration-200 hover:bg-gray-50 flex items-center justify-center "
           >
-            <FilePlusCorner />
+            <button className="flex items-center justify-center px-4 py-2  text-xs font-bold text-secondary hover:bg-gray-50 transition-all cursor-pointer">
+              Ver
+            </button>
           </Link>
         </div>
       </div>

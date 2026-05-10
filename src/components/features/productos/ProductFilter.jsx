@@ -17,7 +17,7 @@ export default function ProductFilter({ activa, onSelect }) {
   return (
     <div className="w-full">
       {/* --- DISEÑO MOBILE: Scroll Horizontal --- */}
-      <div className="lg:hidden w-full overflow-x-auto no-scrollbar pb-4 -mt-2">
+      <div className="lg:hidden w-full overflow-x-auto no-scrollbar pb-4 -mt-2 ">
         <div className="flex flex-nowrap gap-2 px-1">
           {categorias.map((cat) => (
             <button
@@ -46,7 +46,7 @@ export default function ProductFilter({ activa, onSelect }) {
             <button
               key={cat}
               onClick={() => onSelect(cat)}
-              className={`text-left px-4 py-2.5 rounded-lg text-sm transition-all duration-200 ${
+              className={`text-left px-4 py-2.5 cursor-pointer rounded-lg text-sm transition-all duration-200 ${
                 activa === cat
                   ? "bg-primary text-white font-bold shadow-md shadow-primary/20"
                   : "text-secondary/70 hover:bg-gray-50 hover:text-primary"
