@@ -10,15 +10,18 @@ export function generarMensajeWhatsApp(items, telefono) {
     const nombre = item.nombre || item.name || "Producto";
     const cantidad = item.cantidad ?? 1;
     const referencia = item.referencia || item.slug || "";
-    return `${index + 1}. *${nombre}*${referencia ? ` (Ref: ${referencia})` : ""}\n   Cantidad: ${cantidad}`;
+    return `[${index + 1}] *${nombre}*${referencia ? ` (Ref: ${referencia})` : ""}
+- Empaque: ${item.specs?.tipoEmpaque}
+- Cantidad: ${cantidad}
+- Contenido: ${item.specs?.pzsEmpaque} und. \n`;
   });
 
   const mensaje = [
-    "🧾 *Solicitud de Cotización - Envases BH*",
+    "*Solicitud de Cotización - Envases BH*",
     "─────────────────────",
     ...lineas,
     "─────────────────────",
-    `📦 Total de productos: ${items.length}`,
+    `Total de referencias: ${items.length}`,
     "",
     "Por favor, me gustaría recibir información sobre disponibilidad y precios.",
   ].join("\n");

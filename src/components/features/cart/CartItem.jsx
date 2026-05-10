@@ -12,7 +12,6 @@ export default function CartItem({ item }) {
 
   const nombre = item.nombre || item.name || "Producto";
   const imagen = item.imagen || item.image || null;
-
   return (
     <li className="flex gap-3 py-4 border-b border-neutral-100 last:border-0 group">
       {/* Imagen */}
@@ -53,6 +52,9 @@ export default function CartItem({ item }) {
             Ref: {item.referencia}
           </p>
         )}
+        <p className="text-xs text-neutral-400 mt-1">
+          {item.specs?.tipoEmpaque} • {item.specs?.pzsEmpaque} und.
+        </p>
 
         {/* Cantidad */}
         <div className="flex items-center gap-2 mt-2">

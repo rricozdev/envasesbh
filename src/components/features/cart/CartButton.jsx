@@ -1,17 +1,22 @@
 "use client";
 
 import { useCart } from "@/context/CartContext";
+import { useUI } from "@/context/UIContext";
 
 export default function CartButton() {
   const { toggleCart, totalItems } = useCart();
+  const { activePanel } = useUI();
 
   return (
     <button
       onClick={toggleCart}
       aria-label={`Abrir cotización${totalItems > 0 ? `, ${totalItems} productos` : ""}`}
-      className="fixed bottom-24 right-6 z-9998 bg-primary hover:bg-primary-dark text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 flex items-center justify-center"
+      className={`fixed bottom-24 right-6 z-9998 bg-primary hover:bg-primary-dark text-white p-4 rounded-full shadow-lg hover:scale-110 active:scale-95 flex items-center justify-center cursor-pointer transition-all duration-300 ${
+        activePanel === "chat"
+          ? "opacity-0 pointer-events-none scale-90"
+          : "opacity-100 scale-100"
+      }`}
     >
-      {/* Ícono carrito */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="w-7 h-7"
@@ -27,9 +32,8 @@ export default function CartButton() {
         />
       </svg>
 
-      {/* Badge de cantidad */}
       {totalItems > 0 && (
-        <span className="absolute -top-1 -right-1 min-w-[20px] h-5 px-1 rounded-full bg-white text-primary text-[11px] font-black flex items-center justify-center leading-none shadow-sm">
+        <span className="absolute -top-1 -right-1 min-w-[20px] h-5 px-1 rounded-full bg-white text-red text-[11px] font-black flex items-center justify-center leading-none shadow-sm">
           {totalItems > 99 ? "99+" : totalItems}
         </span>
       )}
