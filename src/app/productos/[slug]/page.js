@@ -1,8 +1,10 @@
 import { PRODUCTOS } from "@/data/productos";
+import { COLOR_MAP } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AddToCartButton from "../../../components/features/cart/AddToCartButton";
+import ProductGallery from "@/components/features/productos/ProductGallery";
 
 export default async function ProductoDetalle({ params }) {
   const { slug } = await params;
@@ -36,7 +38,7 @@ export default async function ProductoDetalle({ params }) {
     <div className="min-h-screen bg-white">
       {/* BREADCRUMBS */}
       <nav className="bg-gray-50 border-b border-gray-100 py-4">
-        <div className="flex py-5 max-w-6xl mx-auto items-center gap-2 text-[10px] md:text-xs font-medium uppercase tracking-widest text-secondary/40">
+        <div className="flex py-5 max-w-6xl mx-auto items-center gap-2 text-[10px] md:text-xs font-medium uppercase tracking-widest text-secondary/40 px-4 md:px-6">
           <Link href="/" className="hover:text-primary transition-colors">
             Inicio
           </Link>
@@ -52,18 +54,15 @@ export default async function ProductoDetalle({ params }) {
         </div>
       </nav>
 
-      <div className="py-8 md:pt-10 max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 xl:gap-20">
+      <div className="py-8 md:pt-10 max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 xl:gap-20 px-4 md:px-6">
         {/* IMAGEN */}
+
         <div className="w-full lg:w-1/2">
-          <div className="aspect-square bg-[#f8f9fa] rounded-3xl border border-gray-100 relative overflow-hidden p-8 md:p-12 group">
-            <Image
-              src={producto.imagen}
-              alt={nombreCompleto}
-              fill
-              priority
-              className="object-contain transition-transform duration-700 group-hover:scale-105"
-            />
-          </div>
+          <ProductGallery
+            imagen={producto.imagen}
+            imagenes={producto.imagenes}
+            alt={nombreCompleto}
+          />
         </div>
 
         {/* INFO */}
@@ -102,14 +101,20 @@ export default async function ProductoDetalle({ params }) {
               <span className="text-[10px] text-secondary/40 font-bold uppercase tracking-widest">
                 Colores:
               </span>
-              <div className="flex gap-1.5 flex-wrap">
+              <div className="flex gap-2 flex-wrap">
                 {specs.colores.map((color) => (
-                  <span
-                    key={color}
-                    className="text-[10px] font-semibold uppercase tracking-wide bg-gray-100 text-secondary px-2 py-0.5 rounded-full"
-                  >
-                    {color}
-                  </span>
+                  <div key={color} className="flex items-center gap-1.5">
+                    <span
+                      className="w-3.5 h-3.5 rounded-full border border-gray-200 shadow-sm flex-shrink-0"
+                      style={{
+                        backgroundColor:
+                          COLOR_MAP[color.toLowerCase()] ?? "#ccc",
+                      }}
+                    />
+                    <span className="text-[10px] font-semibold uppercase tracking-wide text-secondary">
+                      {color}
+                    </span>
+                  </div>
                 ))}
               </div>
             </div>
@@ -134,7 +139,6 @@ export default async function ProductoDetalle({ params }) {
                 ),
               )}
 
-              {/* Producción mínima — solo si existe */}
               {specs?.produccionMinima && (
                 <div>
                   <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-0.5">
@@ -146,7 +150,6 @@ export default async function ProductoDetalle({ params }) {
                 </div>
               )}
 
-              {/* Sobre pedido — solo si es true */}
               {specs?.sobrePedido === true && (
                 <div>
                   <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-0.5">
@@ -167,6 +170,7 @@ export default async function ProductoDetalle({ params }) {
                 id: producto.id,
                 nombre: nombreCompleto,
                 imagen: producto.imagen,
+                specs: producto.specs,
               }}
             />
           </div>
@@ -179,7 +183,7 @@ export default async function ProductoDetalle({ params }) {
       {/* RELACIONADOS */}
       {relacionados.length > 0 && (
         <section className="bg-gray-50 border-t border-gray-100 py-16">
-          <div className="mx-auto max-w-6xl flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div className="mx-auto max-w-6xl flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 px-4 md:px-6">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-secondary uppercase italic tracking-tighter">
                 También te puede <span className="text-primary">interesar</span>

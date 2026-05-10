@@ -2,6 +2,7 @@ import "./globals.css";
 import MainLayout from "@/components/layout/MainLayout";
 import { CartProvider } from "@/context/CartContext";
 import { Inter, Source_Sans_3 } from "next/font/google";
+import { UIProvider } from "@/context/UIContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,9 +32,11 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${sourceSans3.variable} h-full antialiased scroll-smooth`}
     >
       <body className={`${inter.variable} ${sourceSans3.variable}`}>
-        <CartProvider>
-          <MainLayout>{children}</MainLayout>
-        </CartProvider>
+        <UIProvider>
+          <CartProvider>
+            <MainLayout>{children}</MainLayout>
+          </CartProvider>
+        </UIProvider>
       </body>
     </html>
   );
