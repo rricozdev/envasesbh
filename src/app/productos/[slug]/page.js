@@ -32,13 +32,23 @@ export default async function ProductoDetalle({ params }) {
     { label: "Altura", value: specs?.altura ? `${specs.altura} mm` : null },
     { label: "Pzs x Empaque", value: specs?.pzsEmpaque ?? null },
     { label: "Tipo de Empaque", value: specs?.tipoEmpaque ?? null },
+    {
+      label: "Producción Mínima",
+      value: specs?.produccionMinima
+        ? `${specs.produccionMinima.toLocaleString()} pzs`
+        : null,
+    },
+    {
+      label: "Disponibilidad",
+      value: specs?.sobrePedido === true ? "Sobre Pedido" : null,
+    },
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* BREADCRUMBS */}
       <nav className="bg-gray-50 border-b border-gray-100 py-4">
-        <div className="flex py-5 max-w-6xl mx-auto items-center gap-2 text-[10px] md:text-xs font-medium uppercase tracking-widest text-secondary/40 px-4 md:px-6">
+        <div className="flex py-5 max-w-6xl mx-auto px-4 md:px-6 items-center gap-2 text-[10px] md:text-xs font-medium uppercase tracking-widest text-secondary/40">
           <Link href="/" className="hover:text-primary transition-colors">
             Inicio
           </Link>
@@ -54,9 +64,8 @@ export default async function ProductoDetalle({ params }) {
         </div>
       </nav>
 
-      <div className="py-8 md:pt-10 max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 xl:gap-20 px-4 md:px-6">
+      <div className="py-8 md:pt-10 max-w-6xl mx-auto px-4 md:px-6 flex flex-col lg:flex-row gap-10 xl:gap-20">
         {/* IMAGEN */}
-
         <div className="w-full lg:w-1/2">
           <ProductGallery
             imagen={producto.imagen}
@@ -96,26 +105,28 @@ export default async function ProductoDetalle({ params }) {
           </h1>
 
           {/* COLORES */}
-          {specs?.colores?.length > 0 && (
+          {specs?.colores?.filter((c) => c).length > 0 && (
             <div className="flex items-center gap-2 mb-6">
               <span className="text-[10px] text-secondary/40 font-bold uppercase tracking-widest">
                 Colores:
               </span>
               <div className="flex gap-2 flex-wrap">
-                {specs.colores.map((color) => (
-                  <div key={color} className="flex items-center gap-1.5">
-                    <span
-                      className="w-3.5 h-3.5 rounded-full border border-gray-200 shadow-sm flex-shrink-0"
-                      style={{
-                        backgroundColor:
-                          COLOR_MAP[color.toLowerCase()] ?? "#ccc",
-                      }}
-                    />
-                    <span className="text-[10px] font-semibold uppercase tracking-wide text-secondary">
-                      {color}
-                    </span>
-                  </div>
-                ))}
+                {specs.colores
+                  .filter((c) => c)
+                  .map((color) => (
+                    <div key={color} className="flex items-center gap-1.5">
+                      <span
+                        className="w-3.5 h-3.5 rounded-full border border-gray-200 shadow-sm flex-shrink-0"
+                        style={{
+                          backgroundColor:
+                            COLOR_MAP[color.toLowerCase()] ?? "#ccc",
+                        }}
+                      />
+                      <span className="text-[10px] font-semibold uppercase tracking-wide text-secondary">
+                        {color}
+                      </span>
+                    </div>
+                  ))}
               </div>
             </div>
           )}
@@ -132,33 +143,13 @@ export default async function ProductoDetalle({ params }) {
                     <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-0.5">
                       {label}
                     </span>
-                    <span className="text-secondary font-semibold text-sm">
+                    <span
+                      className={`font-semibold text-sm ${label === "Disponibilidad" ? "text-primary italic underline decoration-2 underline-offset-4" : "text-secondary"}`}
+                    >
                       {value}
                     </span>
                   </div>
                 ),
-              )}
-
-              {specs?.produccionMinima && (
-                <div>
-                  <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-0.5">
-                    Producción Mínima
-                  </span>
-                  <span className="text-secondary font-semibold text-sm">
-                    {specs.produccionMinima.toLocaleString()} pzs
-                  </span>
-                </div>
-              )}
-
-              {specs?.sobrePedido === true && (
-                <div>
-                  <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-0.5">
-                    Disponibilidad
-                  </span>
-                  <span className="text-primary font-bold italic underline decoration-2 underline-offset-4 text-sm">
-                    Sobre Pedido
-                  </span>
-                </div>
               )}
             </div>
           </div>
@@ -183,7 +174,7 @@ export default async function ProductoDetalle({ params }) {
       {/* RELACIONADOS */}
       {relacionados.length > 0 && (
         <section className="bg-gray-50 border-t border-gray-100 py-16">
-          <div className="mx-auto max-w-6xl flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 px-4 md:px-6">
+          <div className="mx-auto max-w-6xl px-4 md:px-6 flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-secondary uppercase italic tracking-tighter">
                 También te puede <span className="text-primary">interesar</span>
@@ -200,7 +191,7 @@ export default async function ProductoDetalle({ params }) {
             </Link>
           </div>
 
-          <div className="mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mx-auto max-w-6xl px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {relacionados.map((rel) => (
               <Link
                 key={rel.id}
