@@ -1,7 +1,13 @@
-import { b } from "framer-motion/client";
-
 // Genera el link wa.me/ con el resumen formateado
 export const WHATSAPP_NUMBER = "573135344581";
+
+export const EMAIL_VENTAS = "direccionventas@envasesbh.mx";
+
+export const EMPRESA_DIRECCION =
+  "Callejón México Nuevo #1 Bod 7 Col. México Nuevo Atizapán de Zaragoza Estado de México cp 52966";
+export const EMPRESA_CIUDAD = "Ciudad de México, México";
+export const EMPRESA_HORARIO =
+  "Lun – Jue: 8:00am – 5:00pm - Vier: 8:00 am - 4:00 pm";
 
 export const COLOR_MAP = {
   cristal: "#E8F4F8",

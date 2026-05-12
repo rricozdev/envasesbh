@@ -10,6 +10,11 @@
   --color-green: #66bb6a;
   --color-red: #ef5350;
 
+  --color-border: #e5e7eb;
+  --color-muted: #6b7280;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f8fafc;
+
   /* fuentes */
   --font-primary: var(--font-inter);
   --font-secondary: var(--font-source-sans-3);
