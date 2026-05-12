@@ -14,6 +14,8 @@ export const COLOR_MAP = {
   negro: "#2B2B2B",
   blanco: "#FFFFFF",
   natural: "#F5F0E8",
+  morado: "#7B1FA2",
+  aqua: "#00BCD4",
   colores:
     "linear-gradient(135deg, #E8F4F8, #1565C0, #F48FB1, #FFB300, #66BB6A, #EF5350, #2B2B2B)",
 };
