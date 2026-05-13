@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { posts } from "@/data/blog";
 
 export async function generateStaticParams() {
@@ -168,6 +169,26 @@ export default async function BlogPostPage({ params }) {
 
                 return null;
               })}
+            </div>
+
+            {/* <--- volver al blog */}
+            <div className="max-w-5xl mx-auto px-6 pt-6">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-[0.2em] group"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                  className="group-hover:-translate-x-1 transition-transform"
+                >
+                  <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z" />
+                </svg>
+                Volver al Blog
+              </Link>
             </div>
 
             {/* FIRMA AUTOR */}

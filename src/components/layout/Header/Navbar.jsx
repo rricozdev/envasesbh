@@ -32,7 +32,11 @@ export default function Navbar() {
         <div className="hidden md:flex justify-center w-full font-medium text-white text-[13px] uppercase tracking-wide">
           {navLinks.map((link) => {
             // Detecta si la ruta actual coincide con el link para aplicar estilo activo
-            const isActive = pathname === link.href;
+            // const isActive = pathname === link.href;
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
 
             return (
               <Link
@@ -40,7 +44,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-5 py-3.5 transition-colors duration-200 border-r border-cyan-600/40 last:border-r-0 flex items-center h-full ${
                   isActive
-                    ? "bg-cyan-500/40 font-semibold"
+                    ? "bg-cyan-500/40 text-terciary font-semibold"
                     : "hover:bg-cyan-600/30"
                 }`}
               >
