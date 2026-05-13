@@ -81,15 +81,14 @@ const pilares = [
 
 export default function QuienesSomosPage() {
   return (
-    <main className="bg-white">
-      {/* JSON-LD */}
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* ── Hero ── */}
-      <div className="bg-dark py-20">
+      <div className="bg-dark">
         <SectionContent>
           <div className="max-w-2xl">
             <span className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold uppercase tracking-widest">
@@ -228,6 +227,6 @@ export default function QuienesSomosPage() {
           </div>
         </section>
       </SectionContent>
-    </main>
+    </>
   );
 }
