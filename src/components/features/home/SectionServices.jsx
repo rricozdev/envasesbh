@@ -32,7 +32,7 @@ const services = [
       "Obtén colores precisos y consistentes sin comprometer calidad ni costos. Nuestra pigmentación personalizada asegura que tu producto mantenga su identidad visual en cada producción.",
     image: "/img/pigmentado.png",
     cta: "Ver pigmentación",
-    ctaHref: "servicios#pigmentacion",
+    ctaHref: "servicios#pigmentado",
   },
 ];
 

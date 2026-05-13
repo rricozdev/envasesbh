@@ -21,7 +21,11 @@ const benefits = [
 
 export default function PigmentacionSection({ pigmentado }) {
   return (
-    <SectionContent containerClassName="bg-secondary/5" key={pigmentado.id}>
+    <SectionContent
+      id={pigmentado.id}
+      containerClassName="bg-secondary/5"
+      key={pigmentado.id}
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch h-full ">
         <div className="flex flex-col">
           <span className="font-primary text-xs text-primary uppercase tracking-wider mb-2 block">
