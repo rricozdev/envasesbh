@@ -27,7 +27,11 @@ const containers = [
 
 export default function EtiquetadoSection({ etiquetado }) {
   return (
-    <SectionContent containerClassName="bg-secondary/5" key={etiquetado.id}>
+    <SectionContent
+      id={etiquetado.id}
+      containerClassName="bg-secondary/5"
+      key={etiquetado.id}
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch h-full">
         {/* LEFT CONTENT */}
         <div className="flex flex-col">
