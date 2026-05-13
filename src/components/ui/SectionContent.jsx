@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 
 export default function SectionContent({
+  id,
   title,
   subtitle,
   children,
@@ -33,7 +34,7 @@ export default function SectionContent({
   };
 
   return (
-    <section className={`py-12 px-4 lg:px-0 ${containerClassName} `}>
+    <section id={id} className={`py-12 px-4 lg:px-0 ${containerClassName} `}>
       <motion.div
         className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 `}
         variants={animated ? staggerContainer : {}}
