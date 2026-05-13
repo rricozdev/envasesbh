@@ -1,5 +1,6 @@
 import Footer from "./Footer";
 import Header from "./Header/Header";
+import TopBar from "./Header/TopBar";
 import PanelController from "./PanelController";
 
 export default function MainLayout({ children }) {
@@ -7,6 +8,7 @@ export default function MainLayout({ children }) {
     // Contenedor principal de layout global de la aplicación
     // Define estructura base: Header + contenido + Footer + overlays/panels
     <div className="flex flex-col min-h-screen w-full">
+      <TopBar />
       {/* Header global de navegación (visible en todas las rutas) */}
       <Header />
       {/* Área principal donde Next.js renderiza las páginas */}
