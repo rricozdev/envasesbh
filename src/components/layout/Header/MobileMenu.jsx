@@ -2,86 +2,189 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 /**
  * MobileMenu
- * Menú lateral/desplegable para navegación en dispositivos móviles.
- * Recibe:
- * - isOpen: controla visibilidad del menú
- * - onClose: función para cerrar el menú al hacer click en un link
- * - navLinks: array de rutas de navegación
+ *
+ * Menú móvil con:
+ * - Animaciones suaves usando Framer Motion
+ * - Posicionamiento dinámico según scroll
+ * - Cierre automático al hacer scroll
+ * - Detección de link activo
  */
 export default function MobileMenu({ isOpen, onClose, navLinks }) {
-  // Obtiene la ruta actual para marcar el enlace activo
+  // Ruta actual
   const pathname = usePathname();
 
-  return (
-    <div
-      className={`
+  /*
+    Posición dinámica del menú.
+
+    Usamos style inline porque Tailwind
+    NO interpreta clases dinámicas
+    generadas desde useState.
+  */
+  const [menuTop, setMenuTop] = useState("112px");
+
+  /*
+    Detecta el scroll y ajusta
+    la posición del menú.
+  */
+  useEffect(() => {
+    const updateMenuPosition = () => {
+      /*
+        Cuando el Header ya está sticky.
+      */
+      if (window.scrollY > 20) {
+        setMenuTop("64px");
+      } else {
         /*
-          Contenedor principal del menú móvil:
-
-          - fixed: lo saca del flujo del documento
-          - top-[110px]: lo posiciona debajo del navbar
-          - w-full: ocupa todo el ancho
-          - z-[1000]: asegura que esté por encima del contenido
-
-          Animación tipo "persiana":
-          - overflow-hidden: oculta contenido al colapsar
-          - transition-all: anima cambios de tamaño/opacidad
-          - max-h: controla apertura/cierre
+          Cuando el TopBar sigue visible.
         */
-        fixed top-[110px] left-0 w-full z-[1000]
-        overflow-hidden transition-all duration-500 ease-in-out
-        bg-white
+        setMenuTop("120px");
+      }
+    };
 
-        /* Control de visibilidad del menú */
-        ${
-          isOpen
-            ? "max-h-[600px] opacity-100 visible shadow-2xl"
-            : "max-h-0 opacity-0 invisible"
-        }
-      `}
-    >
-      <div className="p-6 border-t border-gray-100">
-        <div className="flex flex-col space-y-4">
-          {/* Render de links de navegación */}
-          {navLinks.map((link) => {
-            // Detecta si la ruta actual coincide con el link
-            const isActive =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href);
+    // Ejecutar inmediatamente al montar
+    updateMenuPosition();
 
-            return (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={onClose} // Cierra el menú al seleccionar una opción
-                className={`
-                  block text-sm uppercase tracking-widest p-3 rounded-lg transition-all
+    window.addEventListener("scroll", updateMenuPosition);
 
-                  /* Estilo activo vs inactivo */
-                  ${
-                    isActive
-                      ? "bg-primary/10 text-primary font-bold"
-                      : "text-secondary hover:bg-gray-50 hover:text-primary"
-                  }
-                `}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
+    return () => {
+      window.removeEventListener("scroll", updateMenuPosition);
+    };
+  }, []);
 
-          {/* Sección inferior del menú */}
-          <div className="pt-4 border-t border-gray-50">
-            <button className="w-full bg-primary text-white py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg shadow-primary/25">
-              Cotizar ahora
-            </button>
+  /*
+    Cierra automáticamente el menú
+    cuando el usuario hace scroll
+    DESPUÉS de abrirlo.
+  */
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const initialScroll = window.scrollY;
+
+    const handleCloseOnScroll = () => {
+      /*
+        Evita cierre instantáneo
+        cuando ya estabas scrolleado.
+      */
+      if (Math.abs(window.scrollY - initialScroll) > 10) {
+        onClose();
+      }
+    };
+
+    window.addEventListener("scroll", handleCloseOnScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleCloseOnScroll);
+    };
+  }, [isOpen, onClose]);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          /*
+            Animación de entrada
+          */
+          initial={{
+            opacity: 0,
+            y: -12,
+          }}
+          /*
+            Estado visible
+          */
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          /*
+            Animación de salida
+          */
+          exit={{
+            opacity: 0,
+            y: -12,
+          }}
+          transition={{
+            duration: 0.25,
+            ease: "easeOut",
+          }}
+          className="
+            fixed left-0 w-full z-[9998]
+            bg-white shadow-2xl border-t border-gray-100
+          "
+          style={{
+            top: menuTop,
+          }}
+        >
+          {/* CONTENIDO */}
+          <div className="p-6">
+            <div className="flex flex-col space-y-4">
+              {/* LINKS */}
+              {navLinks.map((link) => {
+                /*
+                  Detecta link activo.
+                */
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(link.href);
+
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={onClose}
+                    className={`
+                      block
+                      p-3
+                      rounded-lg
+                      text-sm
+                      uppercase
+                      tracking-widest
+                      transition-all duration-200
+
+                      ${
+                        isActive
+                          ? "bg-primary/10 text-primary font-bold"
+                          : "text-secondary hover:bg-gray-50 hover:text-primary"
+                      }
+                    `}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+
+              {/* CTA */}
+              <div className="pt-4 border-t border-gray-100">
+                <button
+                  onClick={onClose}
+                  className="
+                    w-full
+                    py-3
+                    rounded-xl
+                    bg-primary
+                    text-white
+                    text-sm
+                    font-bold
+                    uppercase
+                    tracking-widest
+                    shadow-lg shadow-primary/25
+                    hover:opacity-90
+                    transition-all duration-200
+                  "
+                >
+                  Cotizar ahora
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
