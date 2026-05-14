@@ -1,5 +1,6 @@
 import EtiquetadoSection from "@/components/features/servicios/EtiquetadoSection";
 import PigmentacionSection from "@/components/features/servicios/PigmentaciónSection";
+import SectionContent from "@/components/ui/SectionContent";
 import { servicios } from "@/data/servicios";
 import Image from "next/image";
 
@@ -41,9 +42,9 @@ export const metadata = {
 export default function ServiciosPage() {
   return (
     <>
-      <section className="relative flex items-center overflow-hidden py-16 lg:py-24">
-        <div className="z-10 max-w-6xl mx-auto px-6 lg:px-8 w-full flex flex-col lg:flex-row gap-12 items-center">
-          {/* CONTENIDO */}
+      <SectionContent>
+        {/* CONTENIDO */}
+        <div className="flex flex-col md:flex-row gap-6">
           <div className="z-10 max-w-xl text-center lg:text-left">
             {/* BADGE MEJORADO */}
             <span className="inline-flex items-center gap-2 bg-black/5 border border-black/10 text-black/80 text-[10px] font-medium uppercase tracking-wide px-3 py-1 rounded-full mx-auto lg:mx-0">
@@ -80,7 +81,7 @@ export default function ServiciosPage() {
             <div className="absolute inset-0 bg-black/10" />
           </div>
         </div>
-      </section>
+      </SectionContent>
       <EtiquetadoSection etiquetado={etiquetado} key={etiquetado.id} />
       <PigmentacionSection pigmentado={pigmentado} key={pigmentado.id} />
     </>
