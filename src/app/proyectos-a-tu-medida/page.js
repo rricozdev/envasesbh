@@ -13,7 +13,7 @@ export default function ProyectosAMedidaPage() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight">
-                Proyectos <span className="text-primary">a tu mediad </span>
+                Proyectos <span className="text-primary">a tu medida </span>
               </h1>
               <p className="text-white/60 text-sm mt-2 max-w-lg">
                 Te acompañamos en cada paso. Desde tu concepto hasta tu envase

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useCallback } from "react";
+import { createContext, useCallback, useContext, useState } from "react";
 
 const UIContext = createContext(null);
 
@@ -10,10 +10,13 @@ export function UIProvider({ children }) {
 
   const openCart = useCallback(() => setActivePanel("cart"), []);
   const openChat = useCallback(() => setActivePanel("chat"), []);
+  const openModal = useCallback(() => setActivePanel("modal"), []);
   const closeAll = useCallback(() => setActivePanel(null), []);
 
   return (
-    <UIContext.Provider value={{ activePanel, openCart, openChat, closeAll }}>
+    <UIContext.Provider
+      value={{ activePanel, openCart, openChat, openModal, closeAll }}
+    >
       {children}
     </UIContext.Provider>
   );
