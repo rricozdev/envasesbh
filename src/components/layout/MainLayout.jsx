@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { AnnouncementModal } from "../ui/AnnouncementModal";
 import Footer from "./Footer";
 import Header from "./Header/Header";
 import TopBar from "./Header/TopBar";
@@ -10,6 +12,18 @@ export default function MainLayout({ children }) {
     <div className="flex flex-col min-h-screen w-full">
       <TopBar />
       {/* Header global de navegación (visible en todas las rutas) */}
+      <AnnouncementModal endDate="2026-06-6">
+        <div className="relative w-full max-w-140 h-70 mx-auto">
+          <Image
+            alt="Imagen promocional participación exposición"
+            className="object-contain object-center rounded-2xl"
+            fill
+            sizes="(max-width: 768px) 100vw, 420px"
+            priority
+            src="/img/promocional.webp"
+          />
+        </div>
+      </AnnouncementModal>
       <Header />
       {/* Área principal donde Next.js renderiza las páginas */}
       {/* "grow" permite que este bloque ocupe el espacio disponible */}
