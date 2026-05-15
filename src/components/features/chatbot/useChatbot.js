@@ -1,125 +1,95 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { chatbotFlow } from "@/data/chatbotFlow";
+import { createBotMessage, createUserMessage } from "./chatUtils";
+import {
+  resolveNode,
+  updateContext,
+  initialContext,
+} from "./conversationEngine"; // ← nuevo
 
-const LOCAL_STORAGE_KEY = "bh_chat_history";
-const BOT_TYPING_DELAY = 1000;
+const STORAGE_KEY = "bh_chat_history";
+const TYPING_DELAY = 1000;
+
+const saveHistory = (messages) => {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+  } catch {}
+};
+
+const loadHistory = () => {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+};
+
+const clearHistory = () => {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch {}
+};
 
 export const useChatbot = () => {
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
-
-  // 🔒 Referencia para limpiar timeouts (nivel pro)
+  const [context, setContext] = useState(initialContext); // ← nuevo
   const timeoutRef = useRef(null);
 
-  // 🔥 Función central SIN dependencias peligrosas
-  const processNode = useCallback((nodeId, currentMessages = []) => {
-    const node = chatbotFlow[nodeId];
+  const processNode = useCallback(
+    (nodeId, currentMessages = [], currentContext = initialContext) => {
+      const node = resolveNode(nodeId, currentContext); // ← usa engine
+      if (!node) return;
 
-    if (!node) {
-      console.error(`Chatbot Error: Nodo "${nodeId}" no encontrado.`);
-      return;
-    }
-
-    setIsTyping(true);
-
-    // Limpiar timeout anterior si existe
-    if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
-    }
+      setIsTyping(true);
 
-    timeoutRef.current = setTimeout(() => {
-      const newMessage = {
-        id: `bot-${Date.now()}-${Math.random().toString(16).slice(2)}`,
-        sender: "bot",
-        text: node.message,
-        options: node.options || [],
-        cta: node.cta || null,
-        timestamp: new Date().toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
-      };
+      timeoutRef.current = setTimeout(() => {
+        const next = [...currentMessages, createBotMessage(node)];
+        setMessages(next);
+        setIsTyping(false);
+        saveHistory(next);
+      }, TYPING_DELAY);
+    },
+    [],
+  );
 
-      const updatedMessages = [...currentMessages, newMessage];
-
-      setMessages(updatedMessages);
-      setIsTyping(false);
-
-      // Persistencia
-      try {
-        localStorage.setItem(
-          LOCAL_STORAGE_KEY,
-          JSON.stringify(updatedMessages),
-        );
-      } catch (e) {
-        console.warn("Error guardando chat:", e);
-      }
-    }, BOT_TYPING_DELAY);
-  }, []);
-
-  // 🚀 Inicialización controlada (sin loops)
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
-
-      if (saved) {
-        setMessages(JSON.parse(saved));
-      } else {
-        processNode("start", []);
-      }
-    } catch (e) {
-      console.warn("Error cargando historial:", e);
-      processNode("start", []);
+    const saved = loadHistory();
+    if (saved?.length) {
+      setMessages(saved);
+    } else {
+      processNode("start", [], initialContext);
     }
+    return () => clearTimeout(timeoutRef.current);
   }, [processNode]);
 
-  // 👤 Usuario selecciona opción
-  const handleOptionClick = (option) => {
-    const userMsg = {
-      id: `user-${Date.now()}`,
-      sender: "user",
-      text: option.label,
-      timestamp: new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
-    };
-
-    const updatedMessages = [...messages, userMsg];
-
-    setMessages(updatedMessages);
-
-    processNode(option.next, updatedMessages);
-  };
-
-  // 🔄 Reset limpio
-  const resetChat = () => {
-    if (timeoutRef.current) {
+  const handleOptionClick = useCallback(
+    (option) => {
       clearTimeout(timeoutRef.current);
-    }
 
-    localStorage.removeItem(LOCAL_STORAGE_KEY);
+      const updatedContext = updateContext(context, option.next); // ← actualiza contexto
+      setContext(updatedContext);
+
+      const userMsg = createUserMessage(option.label);
+      const updated = [...messages, userMsg];
+      setMessages(updated);
+
+      processNode(option.next, updated, updatedContext); // ← pasa contexto
+    },
+    [messages, context, processNode],
+  );
+
+  const resetChat = useCallback(() => {
+    clearTimeout(timeoutRef.current);
+    clearHistory();
     setMessages([]);
     setIsTyping(false);
+    setContext(initialContext); // ← reset contexto
+    processNode("start", [], initialContext);
+  }, [processNode]);
 
-    processNode("start", []);
-  };
-
-  // 🧹 Cleanup al desmontar (clave)
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
-
-  return {
-    messages,
-    isTyping,
-    handleOptionClick,
-    resetChat,
-  };
+  return { messages, isTyping, handleOptionClick, resetChat };
 };

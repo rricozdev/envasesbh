@@ -1523,6 +1523,7 @@ export const PRODUCTOS = [
       "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml.webp",
     imagenes: [
       "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml.webp",
+      "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml-blue.webp",
     ],
     slug: "pet-cilindro-publicitario-750-ml",
     specs: {

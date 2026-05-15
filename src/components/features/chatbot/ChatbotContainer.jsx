@@ -20,9 +20,9 @@ export const ChatbotContainer = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9997] flex flex-col items-end">
+    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
       {isOpen && (
-        <div className="mb-4 transition-all duration-300 transform origin-bottom-right scale-100 opacity-100">
+        <div className="mb-3 transition-all duration-300 transform origin-bottom-right scale-100 opacity-100">
           <ChatWindow
             messages={messages}
             isTyping={isTyping}
