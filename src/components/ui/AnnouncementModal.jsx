@@ -1,6 +1,7 @@
 "use client";
 
 import { useUI } from "@/context/UIContext";
+import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -9,18 +10,20 @@ import { createPortal } from "react-dom";
  * Modal de anuncio que se abre automáticamente
  * Solo se muestra si la fecha actual es menor a la fecha de cierre
  *
- * @param {string} endDate - Fecha de cierre en formato "YYYY-MM-DD" (ej: "2026-06-12")
+ * @param {string} endDate - Fecha de cierre en formato "YYYY-MM-DD"
  * @param {ReactNode} children - Contenido del modal
- * @param {boolean} isActive - Si está activo o no (default: true)
+ * @param {boolean} isActive - Si está activo o no
  */
 export function AnnouncementModal({ endDate, children, isActive = true }) {
   const { activePanel, closeAll, openModal } = useUI();
+
   const modalRef = useRef(null);
+
   const [isDateValid, setIsDateValid] = useState(false);
+
   const isOpen = activePanel === "modal";
 
   useEffect(() => {
-    // Verificar si la fecha actual es menor a la fecha de cierre
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -28,9 +31,9 @@ export function AnnouncementModal({ endDate, children, isActive = true }) {
     endDateTime.setHours(23, 59, 59, 999);
 
     const isValid = today <= endDateTime && isActive;
+
     setIsDateValid(isValid);
 
-    // Si es válido, abrir el modal automáticamente
     if (isValid) {
       openModal();
     }
@@ -60,35 +63,92 @@ export function AnnouncementModal({ endDate, children, isActive = true }) {
     }
   };
 
-  if (!isOpen || !isDateValid) return null;
+  if (!isDateValid) return null;
 
   return createPortal(
-    <div
-      className="fixed inset-0 bg-black/50 flex items-center justify-center z-300 animate-fadeIn"
-      onClick={handleBackdropClick}
-      role="dialog"
-      aria-modal="true"
-    >
-      <div
-        ref={modalRef}
-        className="bg-white rounded-lg shadow-lg max-w-md w-full mx-2 animate-slideUp"
-      >
-        <div className="flex justify-between items-center py-3 px-6 border-b border-gray-200">
-          <h2 className="text-lg font-primary  font-semibold text-primary">
-            Anuncio
-          </h2>
-          <button
-            onClick={closeAll}
-            className="text-red hover:text-red-700 cursor-pointer"
-            aria-label="Cerrar modal"
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="fixed inset-0 z-500 flex items-center justify-center bg-black/60 backdrop-blur-sm px-2"
+          onClick={handleBackdropClick}
+          role="dialog"
+          aria-modal="true"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+        >
+          <motion.div
+            ref={modalRef}
+            className="
+              w-full
+              max-w-3xl
+              overflow-hidden
+              rounded-2xl
+              bg-white
+              shadow-2xl
+            "
+            initial={{
+              opacity: 0,
+              scale: 0.92,
+              y: 30,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.96,
+              y: 20,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 22,
+            }}
           >
-            <X size={20} />
-          </button>
-        </div>
+            {/* HEADER */}
+            <div className="flex items-center justify-between border-b border-gray-200 px-6 py-4">
+              <h2 className="font-primary text-lg font-semibold text-primary">
+                Anuncio
+              </h2>
 
-        <div className="p-6">{children}</div>
-      </div>
-    </div>,
+              <button
+                onClick={closeAll}
+                className="
+                  rounded-full
+                  p-2
+                  text-gray-500
+                  transition-all
+                  duration-200
+                  hover:bg-gray-100
+                  hover:text-red-500
+                  cursor-pointer
+                "
+                aria-label="Cerrar modal"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* CONTENT */}
+            <motion.div
+              className="p-4 md:p-6"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.1,
+                duration: 0.3,
+              }}
+            >
+              {children}
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>,
     document.body,
   );
 }
