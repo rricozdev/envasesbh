@@ -45,7 +45,7 @@ export const flowLimpieza = {
 
   cta_limpieza_todos: {
     message: "Aquí está toda nuestra línea de limpieza:",
-    cta: { label: "Ver línea Limpieza", link: "/producto?categoria=Limpieza" },
+    cta: { label: "Ver línea Limpieza", link: "/productos?categoria=Limpieza" },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
       { label: "Volver al inicio", next: "start" },
@@ -56,7 +56,7 @@ export const flowLimpieza = {
     message: "Aquí puedes ver los formatos pequeños para limpieza:",
     cta: {
       label: "Ver limpieza hasta 500 ml",
-      link: "/producto?categoria=Limpieza",
+      link: "/productos?categoria=Limpieza",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -66,7 +66,10 @@ export const flowLimpieza = {
 
   cta_limpieza_mediano: {
     message: "Aquí están los formatos medianos para limpieza:",
-    cta: { label: "Ver limpieza 1–2 lt", link: "/producto?categoria=Limpieza" },
+    cta: {
+      label: "Ver limpieza 1–2 lt",
+      link: "/productos?categoria=Limpieza",
+    },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
       { label: "Volver al inicio", next: "start" },
@@ -77,7 +80,7 @@ export const flowLimpieza = {
     message: "Aquí puedes ver las garrafas y formatos industriales:",
     cta: {
       label: "Ver garrafas y galones",
-      link: "/producto?categoria=Limpieza",
+      link: "/productos?categoria=Limpieza",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },

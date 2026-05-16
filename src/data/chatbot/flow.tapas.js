@@ -53,7 +53,7 @@ export const flowTapas = {
     message: "Aquí está toda nuestra línea de tapas, bombas y triggers:",
     cta: {
       label: "Ver línea Tapas y Triggers",
-      link: "/producto?categoria=Tapas%2C+Bombas+y+Triggers",
+      link: "/productos?categoria=Tapas%2C+Bombas+y+Triggers",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -65,7 +65,7 @@ export const flowTapas = {
     message: "Aquí puedes ver todos los modelos de trigger disponibles:",
     cta: {
       label: "Ver triggers",
-      link: "/producto?categoria=Tapas%2C+Bombas+y+Triggers",
+      link: "/productos?categoria=Tapas%2C+Bombas+y+Triggers",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -78,7 +78,7 @@ export const flowTapas = {
       "Aquí puedes ver los atomizadores botón en las 3 roscas disponibles:",
     cta: {
       label: "Ver atomizadores",
-      link: "/producto?categoria=Tapas%2C+Bombas+y+Triggers",
+      link: "/productos?categoria=Tapas%2C+Bombas+y+Triggers",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -90,7 +90,7 @@ export const flowTapas = {
     message: "Aquí puedes ver las bombas dosificadoras disponibles:",
     cta: {
       label: "Ver bombas dosificadoras",
-      link: "/producto?categoria=Tapas%2C+Bombas+y+Triggers",
+      link: "/productos?categoria=Tapas%2C+Bombas+y+Triggers",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -103,7 +103,7 @@ export const flowTapas = {
       "Los flip tops están disponibles en roscas 24-410, 24-415 y 28-410 en natural y blanco:",
     cta: {
       label: "Ver flip tops",
-      link: "/producto?categoria=Tapas%2C+Bombas+y+Triggers",
+      link: "/productos?categoria=Tapas%2C+Bombas+y+Triggers",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -116,7 +116,7 @@ export const flowTapas = {
       "Los disk tops están disponibles en roscas 24-410 y 24-415 en natural y blanco — sobre pedido:",
     cta: {
       label: "Ver disk tops",
-      link: "/producto?categoria=Tapas%2C+Bombas+y+Triggers",
+      link: "/productos?categoria=Tapas%2C+Bombas+y+Triggers",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -128,7 +128,7 @@ export const flowTapas = {
     message: "La tapa vitrolero 110 mm está disponible en más de 10 colores:",
     cta: {
       label: "Ver tapas vitrolero",
-      link: "/producto?categoria=Tapas%2C+Bombas+y+Triggers",
+      link: "/productos?categoria=Tapas%2C+Bombas+y+Triggers",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },

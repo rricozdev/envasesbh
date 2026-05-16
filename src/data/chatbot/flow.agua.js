@@ -45,7 +45,7 @@ export const flowAgua = {
 
   cta_agua_todos: {
     message: "Aquí está toda nuestra línea de agua:",
-    cta: { label: "Ver línea Agua", link: "/producto?categoria=Agua" },
+    cta: { label: "Ver línea Agua", link: "/productos?categoria=Agua" },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
       { label: "Volver al inicio", next: "start" },
@@ -56,7 +56,7 @@ export const flowAgua = {
     message: "Puedes ver y comparar estos envases en el catálogo:",
     cta: {
       label: "Ver envases hasta 400 ml",
-      link: "/producto?categoria=Agua",
+      link: "/productos?categoria=Agua",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -66,7 +66,7 @@ export const flowAgua = {
 
   cta_agua_mediano: {
     message: "Estos son nuestros envases más vendidos:",
-    cta: { label: "Ver envases 500–600 ml", link: "/producto?categoria=Agua" },
+    cta: { label: "Ver envases 500–600 ml", link: "/productos?categoria=Agua" },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
       { label: "Volver al inicio", next: "start" },
@@ -75,7 +75,7 @@ export const flowAgua = {
 
   cta_agua_grande: {
     message: "Aquí puedes ver los envases de 1 lt y 1.5 lt:",
-    cta: { label: "Ver envases 1 lt+", link: "/producto?categoria=Agua" },
+    cta: { label: "Ver envases 1 lt+", link: "/productos?categoria=Agua" },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
       { label: "Volver al inicio", next: "start" },

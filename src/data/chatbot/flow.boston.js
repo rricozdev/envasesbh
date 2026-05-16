@@ -45,7 +45,7 @@ export const flowBoston = {
 
   cta_boston_todos: {
     message: "Aquí está toda nuestra línea Boston:",
-    cta: { label: "Ver línea Boston", link: "/producto?categoria=Boston" },
+    cta: { label: "Ver línea Boston", link: "/productos?categoria=Boston" },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
       { label: "Volver al inicio", next: "start" },
@@ -56,7 +56,7 @@ export const flowBoston = {
     message: "Aquí puedes ver los formatos pequeños de la línea Boston:",
     cta: {
       label: "Ver Boston hasta 150 ml",
-      link: "/producto?categoria=Boston",
+      link: "/productos?categoria=Boston",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -66,7 +66,7 @@ export const flowBoston = {
 
   cta_boston_mediano: {
     message: "Aquí puedes comparar las dos versiones del Boston 250 ml:",
-    cta: { label: "Ver Boston 250 ml", link: "/producto?categoria=Boston" },
+    cta: { label: "Ver Boston 250 ml", link: "/productos?categoria=Boston" },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
       { label: "Volver al inicio", next: "start" },
@@ -75,7 +75,7 @@ export const flowBoston = {
 
   cta_boston_grande: {
     message: "Aquí puedes ver los formatos grandes de la línea Boston:",
-    cta: { label: "Ver Boston 500 ml+", link: "/producto?categoria=Boston" },
+    cta: { label: "Ver Boston 500 ml+", link: "/productos?categoria=Boston" },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
       { label: "Volver al inicio", next: "start" },
