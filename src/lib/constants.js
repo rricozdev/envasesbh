@@ -15,6 +15,7 @@ export const COLOR_MAP = {
   rosa: "#F48FB1",
   humo: "#9E9E9E",
   verde: "#66BB6A",
+  amarillo: "#fdd835",
   ambar: "#FFB300",
   rojo: "#EF5350",
   negro: "#2B2B2B",

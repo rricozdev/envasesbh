@@ -37,7 +37,7 @@ export default function CartDrawer() {
         onClick={closeCart}
         className={`fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
           isOpen
-            ? "opacity-100 pointer-events-auto z-[10000]"
+            ? "opacity-100 pointer-events-auto z-[301]"
             : "opacity-0 pointer-events-none -z-10"
         }`}
         aria-hidden="true"

@@ -19,7 +19,7 @@ export default function Footer() {
     { label: "Quiénes Somos", href: "/quienes-somos" },
     { label: "Productos", href: "/productos" },
     { label: "Servicios", href: "/servicios" },
-    { label: "Proyectos a tu Medida", href: "/proyectos-a-medida" },
+    { label: "Proyectos a tu Medida", href: "/proyectos-a-tu-medida" },
     { label: "Blog", href: "/blog" },
     { label: "Contacto", href: "/contacto" },
   ];

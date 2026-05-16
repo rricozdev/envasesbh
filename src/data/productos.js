@@ -145,10 +145,10 @@ export const PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_6_1500ml-sinfin-37gr.webp",
     imagenes: [
       "/img/productos/agua/imagen_6_1500ml-sinfin-37gr.webp",
-      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-azul.webp",
-      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-rosa.webp",
-      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-humo.webp",
-      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-verde.webp",
+      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-blue.webp",
+      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-pink.webp",
+      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-smoke.webp",
+      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-green.webp",
       "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-infografia.webp",
     ],
     slug: "1500-ml",
@@ -564,7 +564,7 @@ export const PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_27_40ml-farma.webp",
     imagenes: [
       "/img/productos/amenidades/imagen_27_40ml-farma.webp",
-      "/img/productos/amenidades/imagen_27_40ml-farma-negro.webp",
+      "/img/productos/amenidades/imagen_27_40ml-farma-negra.webp",
     ],
     slug: "40-ml-farma",
     specs: {
@@ -664,7 +664,7 @@ export const PRODUCTOS = [
       "/img/productos/amenidades/imagen_32_40ml-cilindrica.webp",
       "/img/productos/amenidades/imagen_32_40ml-cilindrica-negra.webp",
     ],
-    slug: "40-ml-cilindrica",
+    slug: "30-ml-cilindrica",
     specs: {
       peso: 6.5,
       corona: 18,
@@ -1523,6 +1523,7 @@ export const PRODUCTOS = [
       "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml.webp",
     imagenes: [
       "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml.webp",
+      "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml-blue.webp",
     ],
     slug: "pet-cilindro-publicitario-750-ml",
     specs: {
