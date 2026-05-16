@@ -93,7 +93,7 @@ export const flowGreeting = {
   tiene_nombre: {
     message:
       "Te recomiendo buscarlo directamente en nuestro catálogo — tiene filtros por categoría y capacidad para encontrarlo rápido.",
-    cta: { label: "Ir al catálogo", link: "/catalogo" },
+    cta: { label: "Ir al catálogo", link: "/productos" },
     options: [
       { label: "Quiero que me ayude un asesor", next: "contacto" },
       { label: "Volver al inicio", next: "start" },
@@ -123,7 +123,7 @@ export const flowGreeting = {
   cta_catalogo_general: {
     message:
       "Puedes explorar todo el catálogo con filtros por categoría y capacidad.",
-    cta: { label: "Ver catálogo completo", link: "/catalogo" },
+    cta: { label: "Ver catálogo completo", link: "/productos" },
     options: [{ label: "Volver al inicio", next: "start" }],
   },
 };
