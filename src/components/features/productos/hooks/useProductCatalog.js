@@ -39,6 +39,14 @@ export default function useProductCatalog(productos) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Scroll automático al cambiar categoría
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [categoria]);
+
   /**
    * Productos por página
    */

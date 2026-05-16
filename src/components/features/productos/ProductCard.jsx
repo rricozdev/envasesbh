@@ -4,22 +4,30 @@ import { useCart } from "@/context/CartContext";
 import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { CATEGORIA_LABEL, CATEGORIA_BADGE } from "@/lib/constants";
 
 export default function ProductCard({ producto }) {
   const { addItem } = useCart();
+  const PREFIJOS_PROPIOS = [
+    "tapa",
+    "trigger",
+    "tarro",
+    "vitrolero",
+    "bomba",
+    "atomizador",
+    "flip",
+    "mini",
+  ];
 
-  const nombreCompleto = producto.nombre.toLowerCase().includes("envase")
+  const nombreCompleto = PREFIJOS_PROPIOS.some((p) =>
+    producto.nombre.toLowerCase().startsWith(p),
+  )
     ? producto.nombre
-    : `Envase ${producto.nombre}`;
+    : producto.nombre.toLowerCase().includes("envase")
+      ? producto.nombre
+      : `Envase ${producto.nombre}`;
   return (
     <article className="group relative flex flex-col h-full bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-      {/* BADGE */}
-      <div className="absolute top-3 left-3 z-10">
-        <span className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider bg-white/90 backdrop-blur border border-gray-200 px-3 py-1 rounded-full shadow-sm">
-          {producto.categoria}
-        </span>
-      </div>
-
       {/* IMAGEN */}
       <div className="relative aspect-square bg-gradient-to-br from-gray-50 to-white overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center p-6 transition-transform duration-500 group-hover:scale-110">
@@ -40,12 +48,29 @@ export default function ProductCard({ producto }) {
       {/* CONTENIDO */}
       <div className="flex flex-col grow px-5 pb-6 gap-4">
         {/* TEXTO */}
-        <div className="space-y-1">
+        <div className="space-y-2">
+          {/* BADGE CATEGORÍA */}
+          <span className="inline-block text-[10px] font-semibold text-primary uppercase tracking-wider bg-primary/10 px-2.5 py-1 rounded-md">
+            {CATEGORIA_BADGE[producto.categoria] ?? producto.categoria}
+          </span>
+
+          {/* NOMBRE */}
           <h3 className="text-sm font-semibold text-gray-900 leading-snug line-clamp-2 group-hover:text-primary transition-colors">
             {nombreCompleto}
           </h3>
 
-          <p className="text-xs text-gray-500">Premium PET • Uso alimenticio</p>
+          {/* COLORES DISPONIBLES */}
+          {producto.specs?.colores?.filter((c) => c).length > 1 && (
+            <p className="text-[10px] font-semibold text-primary/70 uppercase tracking-wider">
+              + {producto.specs.colores.filter((c) => c).length} colores
+              disponibles
+            </p>
+          )}
+
+          {/* ETIQUETA CATEGORÍA */}
+          <p className="text-xs text-gray-500">
+            {CATEGORIA_LABEL[producto.categoria] ?? "Premium PET • Uso general"}
+          </p>
         </div>
 
         {/* ACCIONES */}

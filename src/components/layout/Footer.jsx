@@ -105,7 +105,7 @@ export default function Footer() {
 
               {/* Propuesta de valor */}
               <p className="mb-6 text-sm font-body leading-relaxed text-gray-300">
-                10+ años de experiencia en distribución y manufactura de envases
+                25+ años de experiencia en distribución y manufactura de envases
                 PET de calidad. Acceso inmediato a catálogo amplio + opciones de
                 personalización sin cambiar de proveedor.
               </p>
