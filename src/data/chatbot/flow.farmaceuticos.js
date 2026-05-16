@@ -49,7 +49,7 @@ export const flowFarmaceuticos = {
     message: "Aquí está toda nuestra línea farmacéutica:",
     cta: {
       label: "Ver línea Farmacéuticos",
-      link: "/catalogo?categoria=Farmacéuticos",
+      link: "/producto?categoria=Farmacéuticos",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -61,7 +61,7 @@ export const flowFarmaceuticos = {
     message: "Aquí puedes ver y comparar los pastilleros disponibles:",
     cta: {
       label: "Ver pastilleros",
-      link: "/catalogo?categoria=Farmacéuticos",
+      link: "/producto?categoria=Farmacéuticos",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -73,7 +73,7 @@ export const flowFarmaceuticos = {
     message: "Aquí puedes ver los envases farma con rosca inviolable:",
     cta: {
       label: "Ver envases farma",
-      link: "/catalogo?categoria=Farmacéuticos",
+      link: "/producto?categoria=Farmacéuticos",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -85,7 +85,7 @@ export const flowFarmaceuticos = {
     message: "Aquí puedes ver las tapas de seguridad disponibles:",
     cta: {
       label: "Ver tapas farmacéuticas",
-      link: "/catalogo?categoria=Farmacéuticos",
+      link: "/producto?categoria=Farmacéuticos",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },

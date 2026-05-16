@@ -38,7 +38,7 @@ export const flowPublicitarios = {
     message: "Aquí está toda nuestra línea publicitaria:",
     cta: {
       label: "Ver línea Publicitarios",
-      link: "/catalogo?categoria=Publicitarios",
+      link: "/producto?categoria=Publicitarios",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -51,7 +51,7 @@ export const flowPublicitarios = {
       "El cilindro con flip top está disponible en 750 ml y 900 ml en 6 colores:",
     cta: {
       label: "Ver cilindros con flip top",
-      link: "/catalogo?categoria=Publicitarios",
+      link: "/producto?categoria=Publicitarios",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -64,7 +64,7 @@ export const flowPublicitarios = {
       "El cilindro con tapa ciega está disponible en 750 ml, 900 ml y 1 lt en 6 colores:",
     cta: {
       label: "Ver cilindros con tapa ciega",
-      link: "/catalogo?categoria=Publicitarios",
+      link: "/producto?categoria=Publicitarios",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -76,7 +76,7 @@ export const flowPublicitarios = {
     message: "Aquí puedes ver el tarro sport y la tapa r63 disponibles:",
     cta: {
       label: "Ver tarro sport",
-      link: "/catalogo?categoria=Publicitarios",
+      link: "/producto?categoria=Publicitarios",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
