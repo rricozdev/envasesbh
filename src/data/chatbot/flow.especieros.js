@@ -37,7 +37,7 @@ export const flowEspecieros = {
     message: "Aquí está toda nuestra línea de especieros:",
     cta: {
       label: "Ver línea Especieros",
-      link: "/producto?categoria=Especieros",
+      link: "/productos?categoria=Especieros",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -49,7 +49,7 @@ export const flowEspecieros = {
     message: "Aquí puedes comparar los dos modelos de especiero 120 ml:",
     cta: {
       label: "Ver especieros 120 ml",
-      link: "/producto?categoria=Especieros",
+      link: "/productos?categoria=Especieros",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -61,7 +61,7 @@ export const flowEspecieros = {
     message: "Aquí puedes ver las tapas disponibles para especieros:",
     cta: {
       label: "Ver tapas especiero",
-      link: "/producto?categoria=Especieros",
+      link: "/productos?categoria=Especieros",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
