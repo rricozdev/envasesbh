@@ -4,59 +4,52 @@ import {
   Mail,
   Phone,
   MapPin,
-  Linkedin,
   Facebook,
   Instagram,
   Youtube,
   MessageCircle,
 } from "lucide-react";
+import { navLinks } from "@/config/nav.config";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const navLinks = [
-    { label: "Inicio", href: "/" },
-    { label: "Quiénes Somos", href: "/quienes-somos" },
-    { label: "Productos", href: "/productos" },
-    { label: "Servicios", href: "/servicios" },
-    { label: "Proyectos a tu Medida", href: "/proyectos-a-tu-medida" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contacto", href: "/contacto" },
-  ];
-
   const products = [
-    { label: "Botellas PET", href: "/productos/botellas" },
-    { label: "Potes & Recipientes", href: "/productos/potes" },
-    { label: "Tarros Especiales", href: "/productos/tarros" },
-    { label: "Etiquetado", href: "/servicios#etiquetado" },
-    { label: "Pigmentación", href: "/servicios#pigmentacion" },
+    { name: "Botellas PET", href: "/productos" },
+    {
+      name: "Potes & Recipientes",
+      href: "/productos?categoria=Tarros+y+Vitroleros",
+    },
+    { name: "Tarros Especiales", href: "/productos?categoria=Boston" },
+    { name: "Etiquetado", href: "/servicios#etiquetado" },
+    { name: "Pigmentación", href: "/servicios#pigmentacion" },
   ];
 
   const contactInfo = [
     {
       type: "email",
-      label: "Email",
+      name: "Email",
       value: "info@envasesbh.com",
       href: "mailto:info@envasesbh.com",
       icon: Mail,
     },
     {
       type: "phone",
-      label: "Teléfono",
+      name: "Teléfono",
       value: "+52 (155) 5824 7722",
       href: "tel:+5215558247722",
       icon: Phone,
     },
     {
       type: "whatsapp",
-      label: "WhatsApp",
+      name: "WhatsApp",
       value: "+52 (155) 5824 8471",
       href: "https://wa.me/5215558248471",
       icon: MessageCircle,
     },
     {
       type: "address",
-      label: "Dirección",
+      name: "Dirección",
       value:
         "Callejón México Nuevo #1, Col. México Nuevo, Atizapán, Edo. de México",
       href: "#",
@@ -65,16 +58,25 @@ export default function Footer() {
   ];
 
   const legalLinks = [
-    { label: "Política de Privacidad", href: "/legal/privacidad" },
-    { label: "Términos de Servicio", href: "/legal/terminos" },
-    { label: "Política de Cookies", href: "/legal/cookies" },
+    { name: "Política de Privacidad", href: "/legal/privacidad" },
   ];
 
   const socialMedia = [
-    { name: "LinkedIn", Icon: Linkedin, href: "https://linkedin.com" },
-    { name: "Facebook", Icon: Facebook, href: "https://facebook.com" },
-    { name: "Instagram", Icon: Instagram, href: "https://instagram.com" },
-    { name: "YouTube", Icon: Youtube, href: "https://youtube.com" },
+    {
+      name: "Facebook",
+      Icon: Facebook,
+      href: "https://facebook.com/envasesbh",
+    },
+    {
+      name: "Instagram",
+      Icon: Instagram,
+      href: "https://www.instagram.com/envasesbh",
+    },
+    {
+      name: "YouTube",
+      Icon: Youtube,
+      href: "https://youtube.com/@davidambe5803",
+    },
   ];
 
   return (
@@ -140,7 +142,9 @@ export default function Footer() {
                     href={link.href}
                     className="block text-sm font-body text-gray-300 transition-colors duration-300 hover:text-primary"
                   >
-                    {link.label}
+                    {link.name
+                      .toLowerCase()
+                      .replace(/\b\w/g, (l) => l.toUpperCase())}
                   </Link>
                 ))}
               </nav>
@@ -158,7 +162,7 @@ export default function Footer() {
                     href={product.href}
                     className="block text-sm font-body text-gray-300 transition-colors duration-300 hover:text-primary"
                   >
-                    {product.label}
+                    {product.name}
                   </Link>
                 ))}
               </nav>
@@ -179,7 +183,7 @@ export default function Footer() {
                       </span>
                       <div className="flex-1">
                         <p className="text-xs font-semibold uppercase text-gray-400">
-                          {contact.label}
+                          {contact.name}
                         </p>
                         {contact.type === "address" ? (
                           <p className="text-sm font-body text-gray-300 leading-relaxed">
@@ -227,7 +231,7 @@ export default function Footer() {
                     href={link.href}
                     className="transition-colors duration-300 hover:text-primary"
                   >
-                    {link.label}
+                    {link.name}
                   </Link>
                 </div>
               ))}

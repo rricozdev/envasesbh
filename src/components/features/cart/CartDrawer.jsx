@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { generarMensajeWhatsApp } from "@/lib/whatsapp";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
@@ -86,7 +87,7 @@ export default function CartDrawer() {
 
           <button
             onClick={closeCart}
-            className="p-2 rounded-full hover:bg-neutral-100 transition-colors text-neutral-400 hover:text-neutral-600"
+            className="p-2 rounded-full hover:bg-neutral-100 transition-colors text-neutral-400 hover:text-neutral-600 cursor-pointer"
             aria-label="Cerrar carrito"
           >
             <svg
@@ -134,12 +135,13 @@ export default function CartDrawer() {
                   Agrega productos desde el catálogo
                 </p>
               </div>
-              <button
+              <Link
+                href="/productos"
                 onClick={closeCart}
-                className="mt-2 text-xs font-medium text-primary hover:underline"
+                className="mt-2 text-xs font-medium text-primary hover:underline cursor-pointer"
               >
                 Ver catálogo →
-              </button>
+              </Link>
             </div>
           ) : (
             <ul className="divide-y divide-neutral-100">
