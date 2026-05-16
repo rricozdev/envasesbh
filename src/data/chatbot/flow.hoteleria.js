@@ -35,7 +35,7 @@ export const flowHoteleria = {
     message: "Aquí está toda nuestra línea de amenidades hoteleras:",
     cta: {
       label: "Ver línea Hotelería",
-      link: "/catalogo?categoria=Amenidades+Hoteleras",
+      link: "/producto?categoria=Amenidades+Hoteleras",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
