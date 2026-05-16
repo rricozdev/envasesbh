@@ -49,7 +49,7 @@ export const flowCosmeticos = {
     message: "Aquí está toda nuestra línea de cosméticos:",
     cta: {
       label: "Ver línea Cosméticos",
-      link: "/catalogo?categoria=Cosméticos",
+      link: "/producto?categoria=Cosméticos",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -61,7 +61,7 @@ export const flowCosmeticos = {
     message: "Aquí puedes ver los formatos pequeños para cosméticos:",
     cta: {
       label: "Ver cosméticos hasta 150 ml",
-      link: "/catalogo?categoria=Cosméticos",
+      link: "/producto?categoria=Cosméticos",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -73,7 +73,7 @@ export const flowCosmeticos = {
     message: "Aquí puedes comparar los formatos medianos:",
     cta: {
       label: "Ver cosméticos 150–300 ml",
-      link: "/catalogo?categoria=Cosméticos",
+      link: "/producto?categoria=Cosméticos",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -85,7 +85,7 @@ export const flowCosmeticos = {
     message: "Aquí puedes ver los formatos grandes para cosméticos:",
     cta: {
       label: "Ver cosméticos 500 ml",
-      link: "/catalogo?categoria=Cosméticos",
+      link: "/producto?categoria=Cosméticos",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
