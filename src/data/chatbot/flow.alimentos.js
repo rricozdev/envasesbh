@@ -47,7 +47,7 @@ export const flowAlimentos = {
     message: "Aquí está toda nuestra línea de alimentos y bebidas:",
     cta: {
       label: "Ver línea Alimentos",
-      link: "/producto?categoria=Alimentos+y+Bebidas",
+      link: "/productos?categoria=Alimentos+y+Bebidas",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -59,7 +59,7 @@ export const flowAlimentos = {
     message: "Aquí puedes ver la línea Oliva Cuadrada completa:",
     cta: {
       label: "Ver línea Oliva",
-      link: "/producto?categoria=Alimentos+y+Bebidas",
+      link: "/productos?categoria=Alimentos+y+Bebidas",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -71,7 +71,7 @@ export const flowAlimentos = {
     message: "Aquí puedes ver los detalles de la Salsera y la línea Twist:",
     cta: {
       label: "Ver línea Salsas",
-      link: "/producto?categoria=Alimentos+y+Bebidas",
+      link: "/productos?categoria=Alimentos+y+Bebidas",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -83,7 +83,7 @@ export const flowAlimentos = {
     message: "Aquí está la línea Licorera completa:",
     cta: {
       label: "Ver línea Licoreras",
-      link: "/producto?categoria=Alimentos+y+Bebidas",
+      link: "/productos?categoria=Alimentos+y+Bebidas",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },

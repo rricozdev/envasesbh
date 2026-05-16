@@ -49,7 +49,7 @@ export const flowTarros = {
     message: "Aquí está toda nuestra línea de tarros y vitroleros:",
     cta: {
       label: "Ver línea Tarros y Vitroleros",
-      link: "/producto?categoria=Tarros+y+Vitroleros",
+      link: "/productos?categoria=Tarros+y+Vitroleros",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -61,7 +61,7 @@ export const flowTarros = {
     message: "Aquí puedes ver los tarros de 250 ml y 500 ml:",
     cta: {
       label: "Ver tarros hasta 500 ml",
-      link: "/producto?categoria=Tarros+y+Vitroleros",
+      link: "/productos?categoria=Tarros+y+Vitroleros",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -73,7 +73,7 @@ export const flowTarros = {
     message: "Aquí puedes ver los tarros de 1 litro y el especiero:",
     cta: {
       label: "Ver tarros 1 lt+",
-      link: "/producto?categoria=Tarros+y+Vitroleros",
+      link: "/productos?categoria=Tarros+y+Vitroleros",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -86,7 +86,7 @@ export const flowTarros = {
       "Los vitroleros de medio galón están disponibles en 4 formatos distintos — redondo, cuadrado, anillado y pata de elefante.",
     cta: {
       label: "Ver vitroleros medio galón",
-      link: "/producto?categoria=Tarros+y+Vitroleros",
+      link: "/productos?categoria=Tarros+y+Vitroleros",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
@@ -99,7 +99,7 @@ export const flowTarros = {
       "El vitrolero galón completo está disponible en formato redondo y cuadrado — ideal para distribución y almacenamiento a granel.",
     cta: {
       label: "Ver vitroleros galón",
-      link: "/producto?categoria=Tarros+y+Vitroleros",
+      link: "/productos?categoria=Tarros+y+Vitroleros",
     },
     options: [
       { label: "Quiero una cotización", next: "cotizacion_volumen" },
