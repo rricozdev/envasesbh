@@ -38,7 +38,7 @@ export default function ProductFilter({ activa, onSelect, search, setSearch }) {
       </div>
 
       {/* --- DISEÑO DESKTOP: Sidebar Vertical --- */}
-      <div className="hidden lg:block bg-white p-6 rounded-2xl border border-gray-100 shadow-sm sticky top-32">
+      <div className="hidden lg:block bg-white p-6 rounded-2xl border border-gray-100 shadow-sm sticky top-32 ">
         <h3 className="text-secondary font-bold mb-6 flex items-center gap-2 text-sm uppercase tracking-wider">
           <span className="w-1.5 h-5 bg-primary rounded-full"></span>
           Categorías

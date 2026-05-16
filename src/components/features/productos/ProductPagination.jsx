@@ -12,7 +12,7 @@ export default function ProductPagination({
         <button
           onClick={() => onPageChange((p) => Math.max(1, p - 1))}
           disabled={pagina === 1}
-          className="w-auto min-w-[110px] px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg text-xs md:text-sm font-semibold text-gray-700 hover:bg-white hover:border-gray-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200"
+          className="w-auto min-w-[110px] px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg text-xs md:text-sm font-semibold text-gray-700 hover:bg-white hover:border-gray-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer"
         >
           ← Anterior
         </button>
@@ -26,6 +26,7 @@ export default function ProductPagination({
                 key={num}
                 onClick={() => onPageChange(num)}
                 className={`
+                  cursor-pointer
                   shrink-0
                   w-9 h-9
                   rounded-lg
@@ -49,7 +50,7 @@ export default function ProductPagination({
         <button
           onClick={() => onPageChange((p) => Math.min(totalPaginas, p + 1))}
           disabled={pagina === totalPaginas}
-          className="w-auto min-w-[110px] px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg text-xs md:text-sm font-semibold text-gray-700 hover:bg-white hover:border-gray-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200"
+          className="w-auto min-w-[110px] px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg text-xs md:text-sm font-semibold text-gray-700 hover:bg-white hover:border-gray-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer"
         >
           Siguiente →
         </button>
