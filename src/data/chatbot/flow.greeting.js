@@ -24,6 +24,7 @@ export const flowGreeting = {
       { label: "No estoy seguro", next: "asesor_guiado" },
       { label: "Envases publicitarios", next: "rama_publicitarios" },
       { label: "Especieros", next: "rama_especieros" },
+      { label: "Farmacéuticos", next: "rama_farmaceuticos" },
     ],
   },
 

@@ -1,12 +1,16 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { createBotMessage, createUserMessage } from "./chatUtils";
+import {
+  createBotMessage,
+  createUserMessage,
+  playTypingSound,
+} from "./chatUtils";
 import {
   resolveNode,
   updateContext,
   initialContext,
-} from "./conversationEngine"; // ← nuevo
+} from "./conversationEngine";
 
 const STORAGE_KEY = "bh_chat_history";
 const TYPING_DELAY = 1000;
@@ -44,6 +48,7 @@ export const useChatbot = () => {
       if (!node) return;
 
       clearTimeout(timeoutRef.current);
+      playTypingSound();
       setIsTyping(true);
 
       timeoutRef.current = setTimeout(() => {

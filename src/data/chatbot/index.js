@@ -10,6 +10,7 @@ import { flowTarros } from "./flow.tarros";
 import { flowTapas } from "./flow.tapas";
 import { flowPublicitarios } from "./flow.publicitarios";
 import { flowEspecieros } from "./flow.especieros";
+import { flowFarmaceuticos } from "./flow.farmaceuticos";
 
 export const chatbotFlow = {
   ...flowGreeting,
@@ -24,4 +25,5 @@ export const chatbotFlow = {
   ...flowTapas,
   ...flowPublicitarios,
   ...flowEspecieros,
+  ...flowFarmaceuticos,
 };

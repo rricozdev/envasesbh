@@ -33,3 +33,33 @@ export const createUserMessage = (label) => ({
   filter: null,
   timestamp: getTimestamp(),
 });
+
+// ─── Sonido de typing — Web Audio API nativa ─────────────────────────────────
+export const playTypingSound = () => {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+
+    // Oscilador principal — bloop suave
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(520, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(440, ctx.currentTime + 0.12);
+
+    gain.gain.setValueAtTime(0, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0.08, ctx.currentTime + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
+
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.18);
+
+    // Cierra el contexto al terminar para no acumular recursos
+    osc.onended = () => ctx.close();
+  } catch {
+    // Navegadores que bloquean AudioContext sin interacción previa — silencio
+  }
+};

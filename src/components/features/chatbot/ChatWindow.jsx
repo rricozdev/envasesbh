@@ -161,7 +161,7 @@ export const ChatWindow = ({
             onClick={onReset}
             title="Reiniciar conversación"
             aria-label="Reiniciar chat"
-            className="p-1.5 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+            className="p-1.5 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer"
           >
             <RotateCcw size={14} />
           </button>
@@ -170,7 +170,7 @@ export const ChatWindow = ({
               onClick={onClose}
               title="Cerrar"
               aria-label="Cerrar chat"
-              className="p-1.5 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+              className="p-1.5 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer"
             >
               <X size={16} />
             </button>
@@ -206,7 +206,7 @@ export const ChatWindow = ({
               <button
                 key={`${lastBotMsg.id}-${i}`}
                 onClick={() => onOptionClick(opt)}
-                className="text-[11px] font-medium px-3 py-1.5 rounded-lg border border-gray-200 text-gray-600 bg-white hover:border-primary/40 hover:text-primary hover:bg-primary/[0.04] transition-all active:scale-95"
+                className="text-[11px] font-medium px-3 py-1.5 rounded-lg border border-gray-200 text-gray-600 bg-white hover:border-primary/40 hover:text-primary hover:bg-primary/[0.04] transition-all active:scale-95 cursor-pointer"
               >
                 {opt.label}
               </button>
