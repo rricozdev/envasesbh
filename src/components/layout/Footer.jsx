@@ -90,7 +90,7 @@ export default function Footer() {
               {/* Logo */}
               <div className="mb-4 flex items-center gap-2">
                 <Image
-                  src="/logo-bh-3.png"
+                  src="/logo-bh-3a.png"
                   alt="Envases BH"
                   width={120}
                   height={40}
