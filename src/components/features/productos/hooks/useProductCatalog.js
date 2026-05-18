@@ -1,12 +1,16 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation"; // lectura de query params
 
 export default function useProductCatalog(productos) {
+  const searchParams = useSearchParams();
   /**
    * Estado de categoría seleccionada
    */
-  const [categoria, setCategoria] = useState("Todos");
+  const [categoria, setCategoria] = useState(() => {
+    return searchParams.get("categoria") ?? "Todos";
+  });
 
   /**
    * Estado de paginación
@@ -34,6 +38,14 @@ export default function useProductCatalog(productos) {
 
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  // Scroll automático al cambiar categoría
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [categoria]);
 
   /**
    * Productos por página

@@ -50,6 +50,7 @@ export default function ProductGallery({ imagen, imagenes, alt }) {
               src={fotos[index]}
               alt={alt}
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               priority
               draggable={false}
               className="object-contain select-none"

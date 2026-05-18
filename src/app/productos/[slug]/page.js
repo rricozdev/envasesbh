@@ -54,7 +54,7 @@ export default async function ProductoDetalle({ params }) {
           </Link>
           <span>/</span>
           <Link
-            href="/productos"
+            href={`/productos?categoria=${encodeURIComponent(producto.categoria)}`}
             className="hover:text-primary transition-colors"
           >
             Productos
@@ -78,7 +78,7 @@ export default async function ProductoDetalle({ params }) {
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
           {/* VOLVER */}
           <Link
-            href="/productos"
+            href={`/productos?categoria=${encodeURIComponent(producto.categoria)}`}
             className="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-6 group"
           >
             <svg
@@ -203,6 +203,7 @@ export default async function ProductoDetalle({ params }) {
                     src={rel.imagen}
                     alt={rel.nombre}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-contain group-hover:scale-110 transition-transform"
                   />
                 </div>

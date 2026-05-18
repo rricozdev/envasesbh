@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { generarMensajeWhatsApp } from "@/lib/whatsapp";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
@@ -37,7 +38,7 @@ export default function CartDrawer() {
         onClick={closeCart}
         className={`fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
           isOpen
-            ? "opacity-100 pointer-events-auto z-[10000]"
+            ? "opacity-100 pointer-events-auto z-[301]"
             : "opacity-0 pointer-events-none -z-10"
         }`}
         aria-hidden="true"
@@ -86,7 +87,7 @@ export default function CartDrawer() {
 
           <button
             onClick={closeCart}
-            className="p-2 rounded-full hover:bg-neutral-100 transition-colors text-neutral-400 hover:text-neutral-600"
+            className="p-2 rounded-full hover:bg-neutral-100 transition-colors text-neutral-400 hover:text-neutral-600 cursor-pointer"
             aria-label="Cerrar carrito"
           >
             <svg
@@ -134,12 +135,13 @@ export default function CartDrawer() {
                   Agrega productos desde el catálogo
                 </p>
               </div>
-              <button
+              <Link
+                href="/productos"
                 onClick={closeCart}
-                className="mt-2 text-xs font-medium text-primary hover:underline"
+                className="mt-2 text-xs font-medium text-primary hover:underline cursor-pointer"
               >
                 Ver catálogo →
-              </button>
+              </Link>
             </div>
           ) : (
             <ul className="divide-y divide-neutral-100">
@@ -162,7 +164,7 @@ export default function CartDrawer() {
 
             <button
               onClick={handleWhatsApp}
-              className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bb5a] text-white font-black py-3.5 px-5 rounded-xl transition-colors duration-200 text-xs uppercase tracking-widest shadow-sm"
+              className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bb5a] text-white font-black py-3.5 px-5 rounded-xl transition-colors duration-200 text-xs uppercase tracking-widest shadow-sm cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +179,7 @@ export default function CartDrawer() {
 
             <button
               onClick={clearCart}
-              className="w-full text-xs text-neutral-400 hover:text-red-400 transition-colors py-1"
+              className="w-full text-xs text-neutral-400 hover:text-red-400 transition-colors py-1 cursor-pointer"
             >
               Vaciar cotización
             </button>
