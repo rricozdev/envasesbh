@@ -85,7 +85,7 @@ export default function CartItem({ item }) {
       {/* Eliminar */}
       <button
         onClick={() => removeItem(item.id)}
-        className="self-start mt-0.5 text-neutral-300 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100"
+        className="self-start mt-0.5 text-neutral-300 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 cursor-pointer"
         aria-label="Eliminar producto"
       >
         <svg
