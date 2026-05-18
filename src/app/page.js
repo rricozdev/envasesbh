@@ -3,7 +3,8 @@ import { SectionProblemSolution } from "@/components/features/home/SectionProble
 import { SectionService } from "@/components/features/home/SectionServices";
 import { SectoinTestimonials } from "@/components/features/home/SectionTestimonials";
 import { SectionHighlight } from "@/components/features/home/Sectionhighlight";
-import Link from "next/link";
+import Button from "@/components/ui/Button";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 export const metadata = {
   title: "Envases PET de Calidad para Manufactura | Envases BH - México",
@@ -13,15 +14,8 @@ export const metadata = {
 
   canonical: "https://envasesbh.mx",
 
-  keywords: [
-    "envases PET México",
-    "fabricante envases plásticos",
-    "distribuidor PET",
-    "envases de calidad",
-    "proveedores de empaque",
-    "envases a especificación",
-    "envases personalizados",
-  ],
+  keywords:
+    "envases PET México, fabricante envases plásticos, distribuidor PET, botellas plásticas personalizadas, envases a medida, etiquetado profesional, pigmentación PET, proveedor envases, empaque de calidad",
 
   openGraph: {
     title: "Envases PET - Fabricante y Distribuidor en México",
@@ -80,12 +74,16 @@ export default function Home() {
               Contáctanos hoy mismo para una consulta personalizada y descubre
               cómo podemos ayudarte a destacar en el mercado.
             </p>
-            <Link
-              href="/contacto"
-              className="inline-block bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors"
+            <Button
+              label="Solicitar Cotización"
+              sendMessageWassap={
+                "Hola, me gustaría solicitar una cotización sobre sus productos."
+              }
+              number={WHATSAPP_NUMBER}
+              className="inline-block bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 cursor-pointer transition scale-100 hover:scale-105 duration-300"
             >
               Solicitar Cotización
-            </Link>
+            </Button>
           </div>
         </div>
       </section>
