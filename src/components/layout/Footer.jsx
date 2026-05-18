@@ -1,15 +1,14 @@
-import Link from "next/link";
-import Image from "next/image";
+import { navLinks } from "@/config/nav.config";
 import {
-  Mail,
-  Phone,
-  MapPin,
   Facebook,
   Instagram,
-  Youtube,
+  Mail,
+  MapPin,
   MessageCircle,
+  Youtube,
 } from "lucide-react";
-import { navLinks } from "@/config/nav.config";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -28,23 +27,23 @@ export default function Footer() {
   const contactInfo = [
     {
       type: "email",
-      name: "Email",
-      value: "info@envasesbh.com",
-      href: "mailto:info@envasesbh.com",
+      name: "Email Mayoreo",
+      value: "direccionventas@envasesbh.com",
+      href: "mailto:direccionventas@envasesbh.com",
       icon: Mail,
     },
     {
-      type: "phone",
-      name: "Teléfono",
-      value: "+52 (155) 5824 7722",
-      href: "tel:+5215558247722",
-      icon: Phone,
+      type: "email",
+      name: "Email Menudeo",
+      value: "ventas3@envasesbh.com",
+      href: "mailto:ventas3@envasesbh.com",
+      icon: Mail,
     },
     {
       type: "whatsapp",
       name: "WhatsApp",
-      value: "+52 (155) 5824 8471",
-      href: "https://wa.me/5215558248471",
+      value: "+52 (55) 6318 2026",
+      href: "https://wa.me/525563182026",
       icon: MessageCircle,
     },
     {
@@ -112,7 +111,7 @@ export default function Footer() {
 
               {/* Social Media */}
               <div className="flex gap-3">
-                {socialMedia.map((social) => {
+                {socialMedia.map((social, i) => {
                   const Icon = social.Icon;
                   return (
                     <a
@@ -177,7 +176,7 @@ export default function Footer() {
                 {contactInfo.map((contact) => {
                   const Icon = contact.icon;
                   return (
-                    <div key={contact.type} className="flex gap-3">
+                    <div key={contact.name} className="flex gap-3">
                       <span className="flex-shrink-0 text-primary mt-0.5">
                         <Icon size={20} />
                       </span>
