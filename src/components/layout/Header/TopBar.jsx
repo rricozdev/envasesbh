@@ -15,7 +15,7 @@ export default function TopBar() {
         {/* LOGO: Siempre a la izquierda */}
         <div className="flex items-center">
           <Image
-            src="/logo-bh-3.png"
+            src="/logo-bh-3a.png"
             alt="Envases BH"
             width={180}
             height={50}
