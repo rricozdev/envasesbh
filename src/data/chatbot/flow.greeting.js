@@ -1,7 +1,14 @@
+import { WHATSAPP_NUMBER } from "@/lib/constants";
+
+const mensajeAsesor = encodeURIComponent(
+  "¡Hola! Me interesa conocer más sobre sus productos de empaque PET. ¿Podrían asesorarme?",
+);
+
 export const flowGreeting = {
   start: {
     message:
       "¡Hola! Soy el asistente de Envases BH. Fabricamos envases PET para todo tipo de industria. ¿Cómo puedo ayudarte hoy?",
+
     options: [
       { label: "Quiero conocer opciones", next: "explorar_categorias" },
       { label: "Ya sé lo que busco", next: "buscar_directo" },
@@ -112,8 +119,11 @@ export const flowGreeting = {
 
   contacto: {
     message:
-      "Nuestro equipo comercial está disponible para atenderte. Puedes escribirnos directamente o usar el formulario de contacto.",
-    cta: { label: "Ir a Contacto", link: "/contacto" },
+      "Nuestro equipo está disponible. Haz clic abajo para chatear con un asesor.",
+    cta: {
+      label: "Abrir WhatsApp",
+      link: `https://wa.me/${WHATSAPP_NUMBER}?text=${mensajeAsesor}`,
+    },
     options: [
       { label: "Ver el catálogo antes", next: "explorar_categorias" },
       { label: "Volver al inicio", next: "start" },

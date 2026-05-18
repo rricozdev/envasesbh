@@ -11,7 +11,7 @@ export default function CartButton() {
     <button
       onClick={toggleCart}
       aria-label={`Abrir cotización${totalItems > 0 ? `, ${totalItems} productos` : ""}`}
-      className={`fixed bottom-24 right-6 z-9998 bg-primary hover:bg-primary-dark text-white p-4 rounded-full shadow-lg hover:scale-110 active:scale-95 flex items-center justify-center cursor-pointer transition-all duration-300 ${
+      className={`fixed bottom-24 right-6 z-9998 bg-primary hover:bg-primary-dark text-white p-2.5 rounded-full shadow-lg hover:scale-110 active:scale-95 flex items-center justify-center cursor-pointer transition-all duration-300 ${
         activePanel === "chat"
           ? "opacity-0 pointer-events-none scale-90"
           : "opacity-100 scale-100"
@@ -19,7 +19,7 @@ export default function CartButton() {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="w-7 h-7"
+        className="w-5 h-5"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
