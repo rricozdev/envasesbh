@@ -203,6 +203,7 @@ export default async function ProductoDetalle({ params }) {
                     src={rel.imagen}
                     alt={rel.nombre}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-contain group-hover:scale-110 transition-transform"
                   />
                 </div>

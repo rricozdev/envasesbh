@@ -164,7 +164,7 @@ export default function CartDrawer() {
 
             <button
               onClick={handleWhatsApp}
-              className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bb5a] text-white font-black py-3.5 px-5 rounded-xl transition-colors duration-200 text-xs uppercase tracking-widest shadow-sm"
+              className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bb5a] text-white font-black py-3.5 px-5 rounded-xl transition-colors duration-200 text-xs uppercase tracking-widest shadow-sm cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +179,7 @@ export default function CartDrawer() {
 
             <button
               onClick={clearCart}
-              className="w-full text-xs text-neutral-400 hover:text-red-400 transition-colors py-1"
+              className="w-full text-xs text-neutral-400 hover:text-red-400 transition-colors py-1 cursor-pointer"
             >
               Vaciar cotización
             </button>
