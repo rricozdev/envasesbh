@@ -5,24 +5,32 @@ import { SectoinTestimonials } from "@/components/features/home/SectionTestimoni
 import { SectionHighlight } from "@/components/features/home/Sectionhighlight";
 import Button from "@/components/ui/Button";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
+import { baseMetadata } from "@/lib/metadata-config";
 
 export const metadata = {
-  title: "Envases PET de Calidad para Manufactura | Envases BH - México",
-
-  description:
-    "Fabricante y distribuidor de envases PET de calidad superior. Especificaciones exactas, entregas confiables, costos pskyecibles. Con opción de personalización según necesites.",
-
-  canonical: "https://envasesbh.mx",
-
-  keywords:
-    "envases PET México, fabricante envases plásticos, distribuidor PET, botellas plásticas personalizadas, envases a medida, etiquetado profesional, pigmentación PET, proveedor envases, empaque de calidad",
+  ...baseMetadata,
+  title: "Envases PET de Calidad para Manufactura mexicana | Envases BH",
 
   openGraph: {
-    title: "Envases PET - Fabricante y Distribuidor en México",
-    description:
-      "Fabricamos y distribuimos envases PET de calidad. Especificaciones exactas, producción confiable, personalización disponible.",
-    image: "/og-image.png",
+    ...baseMetadata.openGraph,
+    title: "Envases PET de Calidad para Manufactura | Envases BH",
     url: "https://envasesbh.mx",
+    images: [
+      {
+        url: "https://envasesbh.mx/logo-bh_11zon.webp",
+        width: 1200,
+        height: 630,
+        alt: "Envases BH - Fabricante de Envases PET",
+      },
+    ],
+  },
+
+  twitter: {
+    ...baseMetadata.twitter,
+    title: "Envases PET de Calidad | Envases BH México",
+    description:
+      "Fabricante y distribuidor de envases PET. Calidad garantizada, entregas confiables.",
+    image: "https://envasesbh.mx/logo-bh_11zon.webp",
   },
 };
 

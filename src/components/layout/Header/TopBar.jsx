@@ -20,7 +20,7 @@ export default function TopBar() {
             width={180}
             height={50}
             priority
-            className="h-auto w-auto max-h-[45px] md:max-h-[60px]"
+            className="w-auto max-h-[45px] md:max-h-[60px]"
           />
         </div>
 

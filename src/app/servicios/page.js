@@ -2,40 +2,58 @@ import EtiquetadoSection from "@/components/features/servicios/EtiquetadoSection
 import PigmentacionSection from "@/components/features/servicios/PigmentaciónSection";
 import SectionContent from "@/components/ui/SectionContent";
 import { servicios } from "@/data/servicios";
+import { baseMetadata } from "@/lib/metadata-config";
 import Image from "next/image";
 
 const [etiquetado, pigmentado] = servicios;
 
 export const metadata = {
-  title: "Servicios de Etiquetado y Pigmentación | Envases BH",
+  ...baseMetadata,
+
+  title: "Servicios de Etiquetado y Pigmentación para Envases PET",
   description:
     "Servicios profesionales de etiquetado BOPP y pigmentación PET para envases. Personalización de color, acabado profesional y diseño exacto para bebidas, alimentos y agroindustria.",
   keywords: [
     "etiquetado BOPP",
     "pigmentación PET",
-    "envases personalizados",
     "etiquetas industriales",
     "botellas etiquetadas",
-    "pigmentación de envases",
+    "personalización de color",
+    "acabado profesional",
   ],
+
   openGraph: {
+    ...baseMetadata.openGraph,
     title: "Servicios de Etiquetado y Pigmentación | Envases BH",
     description:
-      "Transforma tus envases con nuestros servicios de etiquetado y pigmentación de alta precisión.",
+      "Transforma tus envases con nuestros servicios de etiquetado y pigmentación de alta precisión. Personalización de color y acabado profesional.",
+    url: "https://envasesbh.mx/servicios",
+    type: "website",
     images: [
       {
-        url: "/img/servicios_etiquetado_pigmentacion.webp",
+        url: "https://envasesbh.mx/img/servicios_etiquetado_pigmentacion.webp",
         width: 1200,
         height: 630,
         alt: "Servicios de etiquetado y pigmentación para envases",
+        type: "image/webp",
       },
     ],
   },
+
   twitter: {
-    card: "summary_large_image",
+    ...baseMetadata.twitter,
     title: "Servicios de Etiquetado y Pigmentación | Envases BH",
     description:
-      "Personaliza tus envases con etiquetado BOPP y pigmentación PET profesional.",
+      "Personaliza tus envases con etiquetado BOPP y pigmentación PET profesional. Alta precisión y acabado de calidad.",
+    image: "https://envasesbh.mx/img/servicios_etiquetado_pigmentacion.webp",
+  },
+
+  alternates: {
+    canonical: "https://envasesbh.mx/servicios",
+    languages: {
+      "es-MX": "https://envasesbh.mx/servicios",
+      es: "https://envasesbh.mx/servicios",
+    },
   },
 };
 

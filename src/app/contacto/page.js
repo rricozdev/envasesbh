@@ -1,14 +1,16 @@
-import SectionContent from "@/components/ui/SectionContent";
 import FormContacto from "@/components/features/contacto/FormContacto";
+import SectionContent from "@/components/ui/SectionContent";
 import {
   EMAIL_VENTAS,
-  EMPRESA_DIRECCION,
   EMPRESA_CIUDAD,
+  EMPRESA_DIRECCION,
   WHATSAPP_NUMBER,
 } from "@/lib/constants";
+import { baseMetadata } from "@/lib/metadata-config";
 
 export const metadata = {
-  title: "Contacto | Envases BH",
+  ...baseMetadata,
+  title: "Contáctanos  ",
   description: "Contáctanos por WhatsApp, email o visítanos en nuestra sede.",
 };
 

@@ -1,54 +1,58 @@
 import ProcessSection from "@/components/features/proyecto_a_medida/ProcessSection";
 import Button from "@/components/ui/Button";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
+import { baseMetadata } from "@/lib/metadata-config";
 
 export const metadata = {
-  title:
-    "Proyectos a tu Medida | Envases BH - Diseño y Fabricación de Envases PET",
+  ...baseMetadata,
+
+  title: "Proyectos a tu Medida Diseño y Fabricación de Envases PET",
   description:
     "Descubre nuestro proceso de 5 etapas: desde diseño y concepto hasta tu botella física. Fabricación de prototipos y envases PET personalizados con tiempos cortos y precios accesibles.",
-  keywords:
-    "envases PET, diseño de botellas, fabricación de prototipos, envases personalizados, botellas plásticas, envases a medida, diseño 3D envases",
+  keywords: [
+    "envases PET",
+    "diseño de botellas",
+    "fabricación de prototipos",
+    "envases personalizados",
+    "botellas plásticas",
+    "envases a medida",
+    "diseño 3D envases",
+    "prototipo botella",
+    "proceso diseño envases",
+  ],
 
   openGraph: {
+    ...baseMetadata.openGraph,
     title: "Proyectos a tu Medida | Envases BH",
     description:
       "Proceso completo de diseño y fabricación de envases PET. 5 etapas desde tu concepto hasta el producto final.",
-    url: "https://envasesbh.com.mx/proyectos-a-tu-medida",
+    url: "https://envasesbh.mx/proyectos-a-tu-medida",
     type: "website",
-    siteName: "Envases BH",
-    locale: "es_MX",
     images: [
       {
-        url: "https://envasesbh.com.mx/og-proyectos.jpg",
+        url: "https://envasesbh.mx/exploracion_envases.webp",
         width: 1200,
         height: 630,
         alt: "Proceso de Proyectos a tu Medida - Envases BH",
+        type: "image/webp",
       },
     ],
   },
 
   twitter: {
-    card: "summary_large_image",
+    ...baseMetadata.twitter,
     title: "Proyectos a tu Medida | Envases BH",
     description:
       "Diseño y fabricación de envases PET personalizados en 5 etapas.",
-    image: "https://envasesbh.com.mx/og-proyectos.jpg",
-  },
-
-  canonical: "https://envasesbh.com.mx/proyectos-a-tu-medida",
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
+    image: "https://envasesbh.mx/exploracion_envases.webp",
   },
 
   alternates: {
-    canonical: "https://envasesbh.com.mx/proyectos-a-tu-medida",
+    canonical: "https://envasesbh.mx/proyectos-a-tu-medida",
+    languages: {
+      "es-MX": "https://envasesbh.mx/proyectos-a-tu-medida",
+      es: "https://envasesbh.mx/proyectos-a-tu-medida",
+    },
   },
 };
 
