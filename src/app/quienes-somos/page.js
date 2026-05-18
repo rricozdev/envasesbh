@@ -1,60 +1,41 @@
+import SectionContent from "@/components/ui/SectionContent";
+import SectionTitle from "@/components/ui/SectionTitle";
+import { baseMetadata } from "@/lib/metadata-config";
 import {
+  BadgeDollarSign,
   CalendarDays,
+  Eye,
   Factory,
+  Feather,
+  // los que ya tienes +
+  Glasses,
   MapPin,
   Package,
-  ShieldCheck,
-  Truck,
-  Star,
-  Eye,
-  Target,
   Recycle,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  Truck,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  // los que ya tienes +
-  Glasses,
-  Sparkles,
-  Feather,
-  BadgeDollarSign,
-} from "lucide-react";
-import SectionContent from "@/components/ui/SectionContent";
-import SectionTitle from "@/components/ui/SectionTitle";
 
 export const metadata = {
-  title: "Quiénes Somos | Envases BH",
+  ...baseMetadata,
+  title: "Quiénes Somos | Envases BH - Fabricante de Envases PET en México",
   description:
-    "Más de 25 años fabricando envases PET de calidad en México. Conoce nuestra historia, infraestructura y compromiso con la industria.",
+    "Empresa 100% mexicana con más de 25 años fabricando envases PET para la industria alimentaria, cosmética, química y hotelera.",
   alternates: {
     canonical: "https://envasesbh.mx/quienes-somos",
   },
   openGraph: {
-    title: "Quiénes Somos | Envases BH",
+    title: "Quiénes Somos | Envases BH - Fabricante de Envases PET en México",
     description:
       "Empresa 100% mexicana con más de 25 años fabricando envases PET para la industria alimentaria, cosmética, química y hotelera.",
     url: "https://envasesbh.mx/quienes-somos",
     siteName: "Envases BH",
     locale: "es_MX",
     type: "website",
-  },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Envases BH SA de CV",
-  url: "https://envasesbh.mx",
-  foundingDate: "2000",
-  foundingLocation: {
-    "@type": "Place",
-    name: "Estado de México, México",
-  },
-  description:
-    "Empresa 100% mexicana con más de 25 años de experiencia en la fabricación de envases PET para múltiples industrias.",
-  areaServed: {
-    "@type": "Country",
-    name: "México",
   },
 };
 
@@ -128,11 +109,6 @@ const misionVisionCalidad = [
 export default function QuienesSomosPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       {/* ── Hero ── */}
       <div className="bg-dark">
         <SectionContent>
@@ -301,7 +277,7 @@ export default function QuienesSomosPage() {
           <div className="mt-10 text-center">
             <blockquote className="inline-block px-8 py-4 rounded-2xl border border-primary/20 bg-white">
               <p className="text-primary font-semibold italic text-base">
-                "El cliente es la razón de ser de nuestro trabajo."
+                El cliente es la razón de ser de nuestro trabajo.
               </p>
             </blockquote>
           </div>

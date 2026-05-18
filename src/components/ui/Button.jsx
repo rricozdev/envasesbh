@@ -1,14 +1,21 @@
-export default function Button({ children, variant = "primary", className }) {
-  const styles = {
-    primary: "bg-primary text-white hover:brightness-110 active:scale-95",
-    outline:
-      "border-2 border-primary text-primary hover:bg-white/10 active:scale-95",
+"use client";
+
+import { sendMessgeWassap } from "@/lib/sendMenssageWassap";
+
+export default function Button({
+  children,
+  className,
+  sendMessageWassap,
+  number,
+}) {
+  const handleClick = () => {
+    if (sendMessageWassap && number) {
+      sendMessgeWassap(number, "Hola, me gustaría obtener más información.");
+    }
   };
 
   return (
-    <button
-      className={`w-full py-4 rounded-lg font-bold transition-all font-primary cursor-pointer ${styles[variant]} ${className}`}
-    >
+    <button onClick={handleClick} className={className}>
       {children}
     </button>
   );

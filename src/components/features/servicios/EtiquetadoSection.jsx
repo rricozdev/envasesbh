@@ -1,6 +1,7 @@
+import Button from "@/components/ui/Button";
 import SectionContent from "@/components/ui/SectionContent";
-import { ArrowRight, CheckCircle2, Package, BadgeCheck } from "lucide-react";
-import Link from "next/link";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
+import { ArrowRight, BadgeCheck, CheckCircle2, Package } from "lucide-react";
 import Image from "next/image";
 
 const benefits = [
@@ -134,13 +135,18 @@ export default function EtiquetadoSection({ etiquetado }) {
           </div>
 
           {/* CTA */}
-          <Link
-            href="/productos"
-            className="group inline-flex items-center justify-center gap-2 w-full border border-primary text-primary font-semibold py-3 rounded-xl hover:bg-primary hover:text-white transition-all duration-300"
+
+          <Button
+            label="Solicitar Cotización"
+            sendMessageWassap={
+              "Hola, me gustaría obtener más información sobre el servicio de etiquetado."
+            }
+            number={WHATSAPP_NUMBER}
+            className="group inline-flex items-center justify-center gap-2 w-full border border-primary text-primary font-semibold py-3 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer"
           >
-            Ver Catálogo
+            Quiero este servicio
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          </Button>
         </div>
       </div>
     </SectionContent>

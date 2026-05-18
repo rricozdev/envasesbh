@@ -1,9 +1,5 @@
-// src/lib/constants.js
-
-// ─── WhatsApp ─────────────────────────────────────────────────────────────────
-// Número de WhatsApp de ventas. Se usa en src/lib/whatsapp.js
-// para generar el link wa.me/ con el resumen de cotización del carrito.
-export const WHATSAPP_NUMBER = "573135344581";
+// Genera el link wa.me/ con el resumen formateado
+export const WHATSAPP_NUMBER = "525563182026";
 
 // ─── Contacto ─────────────────────────────────────────────────────────────────
 // Correo comercial de ventas. Usar en footer y página de contacto.

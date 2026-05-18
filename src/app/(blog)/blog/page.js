@@ -1,12 +1,34 @@
+import PostList from "@/components/features/blog/PostList";
 import SectionContent from "@/components/ui/SectionContent";
 import SectionTitle from "@/components/ui/SectionTitle";
-import PostList from "@/components/features/blog/PostList";
 import { posts } from "@/data/blog";
+import { baseMetadata } from "@/lib/metadata-config";
 
 export const metadata = {
-  title: "Blog | Envases BH",
+  ...baseMetadata,
+  title: "Blog sobre Envases PET, Sostenibilidad e Innovación ",
   description:
-    "Artículos sobre envases PET, sostenibilidad, innovación y soluciones de empaque.",
+    "Explora nuestro blog para descubrir artículos sobre innovación en envases PET, sostenibilidad y tendencias en la industria de empaques. Mantente informado con contenido relevante y actualizado.",
+  keywords: [
+    ...baseMetadata.keywords,
+    "blog envases PET",
+    "innovación en envases",
+    "sostenibilidad en empaques",
+    "tendencias en envases PET",
+    "artículos sobre envases",
+    "noticias de envases PET",
+    "diseño de envases",
+    "fabricación de envases",
+    "tecnología en envases PET",
+  ],
+  openGraph: {
+    ...baseMetadata.openGraph,
+    title: "Blog sobre Envases PET, Sostenibilidad e Innovación | Envases BH",
+    description:
+      "Explora nuestro blog para descubrir artículos sobre innovación en envases PET, sostenibilidad y tendencias en la industria de empaques. Mantente informado con contenido relevante y actualizado.",
+    url: "https://envasesbh.mx/blog",
+    type: "website",
+  },
 };
 
 export default function BlogPage() {
