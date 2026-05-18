@@ -1,10 +1,48 @@
+// app/productos/[slug]/page.js
+import AddToCartButton from "@/components/features/cart/AddToCartButton";
+import ProductGallery from "@/components/features/productos/ProductGallery";
 import { PRODUCTOS } from "@/data/productos";
 import { COLOR_MAP } from "@/lib/constants";
+import {
+  generateProductJsonLd,
+  generateProductMetadata,
+} from "@/lib/metadata-helper-productos";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import AddToCartButton from "../../../components/features/cart/AddToCartButton";
-import ProductGallery from "@/components/features/productos/ProductGallery";
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const producto = PRODUCTOS.find((p) => p.slug === slug);
+
+  if (!producto) {
+    return {
+      title: "Producto No Encontrado | Envases BH",
+      description: "El producto que buscas no existe en nuestro catálogo.",
+    };
+  }
+
+  return generateProductMetadata({
+    id: producto.id,
+    slug: producto.slug,
+    nombre: producto.nombre,
+    descripcion: producto.descripcion || "",
+    categoria: producto.categoria,
+    imagen: producto.imagen,
+    capacidad: producto.specs?.capacidad
+      ? `${producto.specs.capacidad}ml`
+      : undefined,
+    colores: producto.specs?.colores?.filter((c) => c),
+    especificaciones: producto.specs,
+  });
+}
+
+// Generar las rutas estáticas de productos
+export async function generateStaticParams() {
+  return PRODUCTOS.map((producto) => ({
+    slug: producto.slug,
+  }));
+}
 
 export default async function ProductoDetalle({ params }) {
   const { slug } = await params;
@@ -44,8 +82,25 @@ export default async function ProductoDetalle({ params }) {
     },
   ];
 
+  // JSON-LD para el producto
+  const jsonLd = generateProductJsonLd({
+    id: producto.id,
+    nombre: nombreCompleto,
+    descripcion: producto.descripcion || "",
+    categoria: producto.categoria,
+    imagen: producto.imagen,
+    capacidad: specs?.capacidad ? `${specs.capacidad}ml` : undefined,
+    especificaciones: specs,
+  });
+
   return (
     <div className="min-h-screen bg-white">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* BREADCRUMBS */}
       <nav className="bg-gray-50 border-b border-gray-100 py-4">
         <div className="flex py-5 max-w-6xl mx-auto px-4 md:px-6 items-center gap-2 text-[10px] md:text-xs font-medium uppercase tracking-widest text-secondary/40">

@@ -3,32 +3,34 @@ import { SectionProblemSolution } from "@/components/features/home/SectionProble
 import { SectionService } from "@/components/features/home/SectionServices";
 import { SectoinTestimonials } from "@/components/features/home/SectionTestimonials";
 import { SectionHighlight } from "@/components/features/home/Sectionhighlight";
-import Link from "next/link";
+import Button from "@/components/ui/Button";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
+import { baseMetadata } from "@/lib/metadata-config";
 
 export const metadata = {
-  title: "Envases PET de Calidad para Manufactura | Envases BH - México",
-
-  description:
-    "Fabricante y distribuidor de envases PET de calidad superior. Especificaciones exactas, entregas confiables, costos pskyecibles. Con opción de personalización según necesites.",
-
-  canonical: "https://envasesbh.mx",
-
-  keywords: [
-    "envases PET México",
-    "fabricante envases plásticos",
-    "distribuidor PET",
-    "envases de calidad",
-    "proveedores de empaque",
-    "envases a especificación",
-    "envases personalizados",
-  ],
+  ...baseMetadata,
+  title: "Envases PET de Calidad para Manufactura mexicana | Envases BH",
 
   openGraph: {
-    title: "Envases PET - Fabricante y Distribuidor en México",
-    description:
-      "Fabricamos y distribuimos envases PET de calidad. Especificaciones exactas, producción confiable, personalización disponible.",
-    image: "/og-image.png",
+    ...baseMetadata.openGraph,
+    title: "Envases PET de Calidad para Manufactura | Envases BH",
     url: "https://envasesbh.mx",
+    images: [
+      {
+        url: "https://envasesbh.mx/logo-bh_11zon.webp",
+        width: 1200,
+        height: 630,
+        alt: "Envases BH - Fabricante de Envases PET",
+      },
+    ],
+  },
+
+  twitter: {
+    ...baseMetadata.twitter,
+    title: "Envases PET de Calidad | Envases BH México",
+    description:
+      "Fabricante y distribuidor de envases PET. Calidad garantizada, entregas confiables.",
+    image: "https://envasesbh.mx/logo-bh_11zon.webp",
   },
 };
 
@@ -80,12 +82,16 @@ export default function Home() {
               Contáctanos hoy mismo para una consulta personalizada y descubre
               cómo podemos ayudarte a destacar en el mercado.
             </p>
-            <Link
-              href="/contacto"
-              className="inline-block bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors"
+            <Button
+              label="Solicitar Cotización"
+              sendMessageWassap={
+                "Hola, me gustaría solicitar una cotización sobre sus productos."
+              }
+              number={WHATSAPP_NUMBER}
+              className="inline-block bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 cursor-pointer transition scale-100 hover:scale-105 duration-300"
             >
               Solicitar Cotización
-            </Link>
+            </Button>
           </div>
         </div>
       </section>
