@@ -1,5 +1,5 @@
 // Genera el link wa.me/ con el resumen formateado
-export const WHATSAPP_NUMBER = "573135344581";
+export const WHATSAPP_NUMBER = "525563182026";
 
 export const EMAIL_VENTAS = "direccionventas@envasesbh.mx";
 
