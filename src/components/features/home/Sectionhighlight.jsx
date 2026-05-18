@@ -11,7 +11,7 @@ const highlights = [
   },
   {
     icon: Building2,
-    title: "+500 Empresas",
+    title: "+50 Empresas",
     description:
       "Confían en nosotros en industrias como alimentos, químicos y consumo masivo.",
   },

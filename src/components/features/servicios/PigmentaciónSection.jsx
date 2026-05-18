@@ -1,7 +1,8 @@
+import Button from "@/components/ui/Button";
 import SectionContent from "@/components/ui/SectionContent";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 import { ArrowRight, CheckCircle2, Palette } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 const benefits = [
   {
@@ -95,13 +96,29 @@ export default function PigmentacionSection({ pigmentado }) {
           </div>
 
           {/* CTA */}
-          <Link
-            href="/contacto"
+          <Button
+            label="Solicitar Cotización"
+            sendMessageWassap={
+              "Hola, me gustaría obtener más información sobre el servicio de pigmentación."
+            }
+            number={WHATSAPP_NUMBER}
+            className="group inline-flex items-center justify-center gap-2 w-full border border-primary text-primary font-semibold py-3 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer"
+          >
+            Quiero este servicio
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+          {/* <Link
+            onClick={() => {
+              sendMessgeWassap(
+                WHATSAPP_NUMBER,
+                "Hola, me gustaría obtener más información sobre el servicio de pigmentación.",
+              );
+            }}
             className="group inline-flex items-center justify-center gap-2 w-full border border-primary text-primary font-semibold py-3 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 mt-auto"
           >
             Solicitar Información
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </SectionContent>
