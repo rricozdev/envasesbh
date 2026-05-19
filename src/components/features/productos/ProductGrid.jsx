@@ -10,7 +10,7 @@ export default function ProductGrid({ productos }) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {productos.map((prod) => (
         <div key={prod.id} className="animate-in fade-in zoom-in duration-300">
           <ProductCard producto={prod} />
