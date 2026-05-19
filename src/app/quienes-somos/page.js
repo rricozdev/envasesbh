@@ -41,9 +41,14 @@ export const metadata = {
 
 const metricas = [
   { icono: CalendarDays, valor: "25+", label: "Años de experiencia" },
-  { icono: Factory, valor: "13", label: "Máquinas productivas" },
+  { icono: Factory, valor: "18", label: "Máquinas productivas" },
   { icono: Package, valor: "25 ml – 10 lt", label: "Rango de envases" },
-  { icono: MapPin, valor: "Edo. México", label: "Zona estratégica nacional" },
+  {
+    icono: MapPin,
+    valor: "Edomex y Guadalajara",
+    label: "Zona estratégica nacional",
+    valorClass: "text-base",
+  },
 ];
 
 const pilares = [
@@ -131,7 +136,7 @@ export default function QuienesSomosPage() {
       <div className="bg-primary/5 border-y border-primary/10 py-12">
         <SectionContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {metricas.map(({ icono: Icon, valor, label }) => (
+            {metricas.map(({ icono: Icon, valor, label, valorClass }) => (
               <div
                 key={label}
                 className="flex flex-col items-center text-center gap-2"
@@ -139,7 +144,9 @@ export default function QuienesSomosPage() {
                 <div className="p-3 rounded-xl bg-primary/10">
                   <Icon className="text-primary" size={22} strokeWidth={1.8} />
                 </div>
-                <span className="font-sans text-2xl font-bold text-dark">
+                <span
+                  className={`font-sans font-bold text-dark ${valorClass ?? "text-2xl"}`}
+                >
                   {valor}
                 </span>
                 <span className="text-secondary/70 text-xs uppercase tracking-wider">
@@ -184,7 +191,7 @@ export default function QuienesSomosPage() {
                 Envases BH SA de CV nació en el año 2000 con dos máquinas y un
                 propósito claro: fabricar envases de calidad para agua
                 purificada. Con esfuerzo y visión, crecimos hasta contar con{" "}
-                <strong className="text-dark">13 máquinas productivas</strong> y
+                <strong className="text-dark">18 máquinas productivas</strong> y
                 presencia en toda la República Mexicana.
               </p>
               <p>
