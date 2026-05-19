@@ -2,6 +2,7 @@ import Hero from "@/components/features/home/Hero";
 import { SectionProblemSolution } from "@/components/features/home/SectionProblemSolution";
 import { SectionService } from "@/components/features/home/SectionServices";
 import { SectoinTestimonials } from "@/components/features/home/SectionTestimonials";
+import { SectionVehiculos } from "@/components/features/home/SectionVehiculos";
 import { SectionHighlight } from "@/components/features/home/Sectionhighlight";
 import Button from "@/components/ui/Button";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
@@ -70,6 +71,7 @@ export default function Home() {
       />
       <SectionProblemSolution />
       <SectionService />
+      <SectionVehiculos />
       <SectoinTestimonials />
       <SectionHighlight />
       <section className="py-20 px-4 md:py-28 lg:px-0 bg-white">
