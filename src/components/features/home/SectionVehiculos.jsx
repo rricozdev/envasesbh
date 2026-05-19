@@ -8,7 +8,7 @@ const vehicles = [
     name: "Camión 48T",
     description:
       "Máxima capacidad y eficiencia para transportar grandes volúmenes en rutas locales y de larga distancia.",
-    image: "/img/flota/camion_48t.webp",
+    image: "/img/flota/camion_48T.webp",
     color: "bg-indigo-50",
     volume: "Volumen extra grande",
     routes: "Locales y largas distancias",
@@ -19,7 +19,7 @@ const vehicles = [
     name: "Camión 20T",
     description:
       "Excelente espacio y rendimiento para mover grandes volúmenes en entregas locales y foráneas.",
-    image: "/img/flota/camion_20_t.webp",
+    image: "/img/flota/camion_20_T.webp",
     color: "bg-blue-50",
     volume: "Volumen grande",
     routes: "Locales y foráneos",
@@ -30,7 +30,7 @@ const vehicles = [
     name: "Camión 9.5T",
     description:
       "Gran capacidad de carga, ideal para recorridos locales y envíos foráneos con total versatilidad.",
-    image: "/img/flota/camion_10t.webp",
+    image: "/img/flota/camion_10T.webp",
     color: "bg-teal-50",
     volume: "Volumen grande",
     routes: "Locales y foráneos",
@@ -41,7 +41,7 @@ const vehicles = [
     name: "Camioneta 3T",
     description:
       "Capacidad intermedia con gran maniobrabilidad, perfecta para entregas locales y accesos reducidos.",
-    image: "/img/flota/camioneta_3t.webp",
+    image: "/img/flota/camioneta_3T.webp",
     color: "bg-cyan-50",
     volume: "Volumen intermedio",
     routes: "Viajes locales",
