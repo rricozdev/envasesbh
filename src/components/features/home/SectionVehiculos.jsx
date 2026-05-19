@@ -8,7 +8,7 @@ const vehicles = [
     name: "Camión 48T",
     description:
       "Máxima capacidad y eficiencia para transportar grandes volúmenes en rutas locales y de larga distancia.",
-    image: "/img/flota/camion_48T.webp",
+    image: "/img/flota/camion_48Ton.webp",
     color: "bg-indigo-50",
     volume: "Volumen extra grande",
     routes: "Locales y largas distancias",
@@ -19,7 +19,7 @@ const vehicles = [
     name: "Camión 20T",
     description:
       "Excelente espacio y rendimiento para mover grandes volúmenes en entregas locales y foráneas.",
-    image: "/img/flota/camion_20_T.webp",
+    image: "/img/flota/camion_20Ton.webp",
     color: "bg-blue-50",
     volume: "Volumen grande",
     routes: "Locales y foráneos",
@@ -30,7 +30,7 @@ const vehicles = [
     name: "Camión 9.5T",
     description:
       "Gran capacidad de carga, ideal para recorridos locales y envíos foráneos con total versatilidad.",
-    image: "/img/flota/camion_10T.webp",
+    image: "/img/flota/camion_10Ton.webp",
     color: "bg-teal-50",
     volume: "Volumen grande",
     routes: "Locales y foráneos",
@@ -41,7 +41,7 @@ const vehicles = [
     name: "Camioneta 3T",
     description:
       "Capacidad intermedia con gran maniobrabilidad, perfecta para entregas locales y accesos reducidos.",
-    image: "/img/flota/camioneta_3T.webp",
+    image: "/img/flota/camioneta_3Tone.webp",
     color: "bg-cyan-50",
     volume: "Volumen intermedio",
     routes: "Viajes locales",
@@ -92,12 +92,21 @@ export function SectionVehiculos() {
             }`}
           >
             {/* IMAGE */}
-            <div className={`relative h-72 overflow-hidden ${vehicle.color}`}>
+            <div
+              className={`relative h-52 md:h-72 overflow-hidden ${vehicle.color}`}
+            >
+              {/* <Image
+                src={vehicle.image}
+                alt={vehicle.name}
+                fill
+                className="object-contain transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              /> */}
               <Image
                 src={vehicle.image}
                 alt={vehicle.name}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
 
@@ -120,7 +129,7 @@ export function SectionVehiculos() {
               </p>
 
               {/* SPECS */}
-              <div className="flex flex-row space-x-4 border-t border-gray-100 pt-5">
+              <div className="flex flex-wrap gap-4 border-t border-gray-100 pt-5">
                 {/* VOLUME */}
                 <div className="flex items-start gap-3">
                   <Package size={20} className="mt-0.5 shrink-0 text-primary" />
