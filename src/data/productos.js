@@ -42,10 +42,7 @@ export const PRODUCTOS = [
     nombre: "Envase 250 ml",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_1_250ml-sinfin.webp",
-    imagenes: [
-      "/img/productos/agua/imagen_1_250ml-sinfin.webp",
-      "/img/productos/agua/imagen_1_250ml-sinfin_azul.webp",
-    ],
+    imagenes: ["/img/productos/agua/imagen_1_250ml-sinfin.webp"],
     slug: "250-ml",
     specs: {
       peso: 14.5,
@@ -83,10 +80,7 @@ export const PRODUCTOS = [
     nombre: "Envase 500 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_3_500ml-sinfin-r-28.webp",
-    imagenes: [
-      "/img/productos/agua/imagen_3_500ml-sinfin-r-28.webp",
-      "/img/productos/agua/imagen_3_500ml-sinfin-r-28-azul.webp",
-    ],
+    imagenes: ["/img/productos/agua/imagen_3_500ml-sinfin-r-28.webp"],
     slug: "500-ml",
     specs: {
       peso: 17.2,
@@ -143,14 +137,7 @@ export const PRODUCTOS = [
     nombre: "Envase 1500 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_6_1500ml-sinfin-37gr.webp",
-    imagenes: [
-      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr.webp",
-      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-blue.webp",
-      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-pink.webp",
-      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-smoke.webp",
-      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-green.webp",
-      "/img/productos/agua/imagen_6_1500ml-sinfin-37gr-infografia.webp",
-    ],
+    imagenes: ["/img/productos/agua/imagen_6_1500ml-sinfin-37gr.webp"],
     slug: "1500-ml",
     specs: {
       peso: 37.0,
@@ -443,10 +430,7 @@ export const PRODUCTOS = [
     nombre: "Envase 1000 ml Agro",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_21_1000ml-agro.webp",
-    imagenes: [
-      "/img/productos/alimentos_y_bebidas/imagen_21_1000ml-agro.webp",
-      "/img/productos/alimentos_y_bebidas/imagen_21_1000ml-agro-ambar.webp",
-    ],
+    imagenes: ["/img/productos/alimentos_y_bebidas/imagen_21_1000ml-agro.webp"],
     slug: "1000-ml-agro",
     specs: {
       peso: 39.0,
@@ -562,10 +546,7 @@ export const PRODUCTOS = [
     nombre: "Envase 40 ml farma",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_27_40ml-farma.webp",
-    imagenes: [
-      "/img/productos/amenidades/imagen_27_40ml-farma.webp",
-      "/img/productos/amenidades/imagen_27_40ml-farma-negra.webp",
-    ],
+    imagenes: ["/img/productos/amenidades/imagen_27_40ml-farma.webp"],
     slug: "40-ml-farma",
     specs: {
       peso: 6.5,
@@ -660,10 +641,7 @@ export const PRODUCTOS = [
     nombre: "Envase 30 ml Cilíndrica",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_32_40ml-cilindrica.webp",
-    imagenes: [
-      "/img/productos/amenidades/imagen_32_40ml-cilindrica.webp",
-      "/img/productos/amenidades/imagen_32_40ml-cilindrica-negra.webp",
-    ],
+    imagenes: ["/img/productos/amenidades/imagen_32_40ml-cilindrica.webp"],
     slug: "30-ml-cilindrica",
     specs: {
       peso: 6.5,
@@ -682,10 +660,7 @@ export const PRODUCTOS = [
     nombre: "Envase 25 ml Lápiz",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_33_25ml-lapiz.webp",
-    imagenes: [
-      "/img/productos/amenidades/imagen_33_25ml-lapiz.webp",
-      "/img/productos/amenidades/imagen_33_25ml-lapiz-ambar.webp",
-    ],
+    imagenes: ["/img/productos/amenidades/imagen_33_25ml-lapiz.webp"],
     slug: "25-ml-lapiz",
     specs: {
       peso: 5.0,
@@ -1523,7 +1498,6 @@ export const PRODUCTOS = [
       "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml.webp",
     imagenes: [
       "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml.webp",
-      "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml-blue.webp",
     ],
     slug: "pet-cilindro-publicitario-750-ml",
     specs: {
