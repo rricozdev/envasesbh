@@ -5,40 +5,62 @@ import Image from "next/image";
 const vehicles = [
   {
     id: 1,
-    name: "Camión 48T",
+    name: "Trailer",
     description:
-      "Máxima capacidad y eficiencia para transportar grandes volúmenes en rutas locales y de larga distancia.",
-    image: "/img/flota/camion_48Toneladas.webp",
+      "Preparado para realizar entregas de larga distancia con gran capacidad de carga y máxima eficiencia en todo México.",
+    image: "/img/flota/camion_30Toneladas.webp",
     color: "bg-indigo-50",
     volume: "Volumen extra grande",
     routes: "Locales y largas distancias",
-    capacity: "48 toneladas",
+    capacity: "30 toneladas",
   },
   {
     id: 2,
-    name: "Camión 20T",
+    name: "Remolque Grande",
     description:
-      "Excelente espacio y rendimiento para mover grandes volúmenes en entregas locales y foráneas.",
-    image: "/img/flota/camion_20Toneladas.webp",
+      "Diseñado para transportar grandes volúmenes con eficiencia y seguridad en entregas locales y foráneas.",
+    image: "/img/flota/camion_20_Toneladas.webp",
     color: "bg-blue-50",
     volume: "Volumen grande",
     routes: "Locales y foráneos",
     capacity: "20 toneladas",
   },
   {
-    id: 3,
-    name: "Camión 9.5T",
+    id: 4,
+    name: "Camion Mediano",
     description:
-      "Gran capacidad de carga, ideal para recorridos locales y envíos foráneos con total versatilidad.",
-    image: "/img/flota/camion_10Ton.webp",
+      "Pensado para optimizar tiempos de entrega y transportar carga con seguridad en trayectos medianos y largos.",
+    image: "/img/flota/camion_mediano.webp",
+    color: "bg-cyan-50",
+    volume: "Volumen intermedio",
+    routes: "Viajes locales",
+    capacity: "10 toneladas",
+  },
+  {
+    id: 3,
+    name: "Camion Chico",
+    description:
+      "Ideal para rutas locales y entregas foráneas, combinando versatilidad y eficiencia en cada traslado.",
+    image: "/img/flota/camion_10_Toneladas.webp",
     color: "bg-teal-50",
     volume: "Volumen grande",
     routes: "Locales y foráneos",
     capacity: "9.5 toneladas",
   },
   {
-    id: 4,
-    name: "Camioneta 3T",
+    id: 5,
+    name: "Mini Van",
+    description:
+      "Ideal para entregas urbanas, asegurando que tus envases PET lleguen donde los necesites.",
+    image: "/img/flota/mini_van.webp",
+    color: "bg-cyan-50",
+    volume: "Volumen intermedio",
+    routes: "Viajes locales",
+    capacity: "2 toneladas",
+  },
+  {
+    id: 6,
+    name: "Camioneta Nissan",
     description:
       "Capacidad intermedia con gran maniobrabilidad, perfecta para entregas locales y accesos reducidos.",
     image: "/img/flota/camioneta_3Toneladas.webp",
@@ -77,7 +99,7 @@ export function SectionVehiculos() {
       subtitle="Nuestra flota especializada garantiza entregas seguras, rápidas y eficientes para que tus productos lleguen en perfectas condiciones a cualquier parte de México."
     >
       {/* VEHICLES GRID */}
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-3">
         {vehicles.map((vehicle, index) => (
           <article
             key={vehicle.id}
@@ -95,13 +117,6 @@ export function SectionVehiculos() {
             <div
               className={`relative h-52 md:h-72 overflow-hidden ${vehicle.color}`}
             >
-              {/* <Image
-                src={vehicle.image}
-                alt={vehicle.name}
-                fill
-                className="object-contain transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              /> */}
               <Image
                 src={vehicle.image}
                 alt={vehicle.name}
@@ -129,7 +144,7 @@ export function SectionVehiculos() {
               </p>
 
               {/* SPECS */}
-              <div className="flex flex-wrap gap-4 border-t border-gray-100 pt-5">
+              <div className="flex flex-col flex-wrap gap-4 border-t border-gray-100 pt-5">
                 {/* VOLUME */}
                 <div className="flex items-start gap-3">
                   <Package size={20} className="mt-0.5 shrink-0 text-primary" />
