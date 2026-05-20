@@ -93,7 +93,7 @@ export default function Footer() {
                   alt="Envases BH"
                   width={120}
                   height={40}
-                  className="h-10 w-auto"
+                  className="w-auto"
                 />
               </div>
 
