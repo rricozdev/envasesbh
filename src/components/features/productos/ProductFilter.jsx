@@ -44,7 +44,7 @@ function FiltroChip({ label, activo, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`text-left px-3 py-1.5 rounded-lg text-xs transition-all duration-200 cursor-pointer ${
+      className={`text-left px-3 py-1.5 rounded-lg text-xs transition-all duration-200 cursor-pointer whitespace-normal leading-snug ${
         activo
           ? "bg-primary text-white font-bold"
           : "text-secondary/70 hover:bg-gray-50 hover:text-primary"
