@@ -30,7 +30,7 @@ export const CATEGORIAS = [
 //     tipoEmpaque: "",        // "Bolsa" | "Caja"
 //     colores: [],            // ["Cristal", "Azul", ...] — capitalizado, sin strings vacíos
 //     produccionMinima: null, // piezas — null si no aplica
-//     sobrePedido: null,      // true | false | null (pendiente)
+//     sobrePedido: false,      // true | false | null (pendiente)
 //   },
 // },
 
@@ -53,7 +53,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal", "Azul"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -61,7 +61,7 @@ export const PRODUCTOS = [
     nombre: "Envase 355 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_2_355ml-sinfin-r-28.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "355-ml",
     specs: {
       peso: 17.2,
@@ -72,7 +72,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -91,7 +91,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal", "Azul"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -99,7 +99,7 @@ export const PRODUCTOS = [
     nombre: "Envase 600 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_4_600ml-sinfin.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "600-ml",
     specs: {
       peso: 19.0,
@@ -110,7 +110,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -118,7 +118,7 @@ export const PRODUCTOS = [
     nombre: "Envase 1000 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_5_1lt-sinfin-c.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "1000-ml",
     specs: {
       peso: 25.0,
@@ -129,7 +129,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -148,7 +148,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal", "Azul", "Rosa", "Humo", "Verde"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
 
@@ -160,7 +160,7 @@ export const PRODUCTOS = [
     categoria: "Alimentos y Bebidas",
     imagen:
       "/img/productos/alimentos_y_bebidas/imagen_7_45ml-oliva-cuadrada.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "45-ml-oliva-cuadrada",
     specs: {
       peso: 6.5,
@@ -171,7 +171,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -180,7 +180,7 @@ export const PRODUCTOS = [
     categoria: "Alimentos y Bebidas",
     imagen:
       "/img/productos/alimentos_y_bebidas/imagen_8_250ml-oliva-cuadrada.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "250-ml-oliva-cuadrada",
     specs: {
       peso: 18,
@@ -191,7 +191,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -200,7 +200,7 @@ export const PRODUCTOS = [
     categoria: "Alimentos y Bebidas",
     imagen:
       "/img/productos/alimentos_y_bebidas/imagen_9_750ml-oliva-cuadrada.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "750-ml-oliva-cuadrada", // corregido: estaba vacío
     specs: {
       peso: 37.5,
@@ -211,7 +211,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -219,7 +219,7 @@ export const PRODUCTOS = [
     nombre: "Envase 250 ml Twist",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_10_250ml-twist.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "250-ml-twist",
     specs: {
       peso: 17.0,
@@ -230,7 +230,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: 15000,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -238,7 +238,7 @@ export const PRODUCTOS = [
     nombre: "Envase 180 ml Salsera",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_11_180-salsera.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "180-ml-salsera",
     specs: {
       peso: 17.0,
@@ -249,7 +249,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"], // corregido: era [""]
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -257,7 +257,7 @@ export const PRODUCTOS = [
     nombre: "Envase Licorera 250 ml",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_12_licorera-250-ml.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "250-ml-licorera",
     specs: {
       peso: 23,
@@ -268,7 +268,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -277,7 +277,7 @@ export const PRODUCTOS = [
     categoria: "Alimentos y Bebidas",
     imagen:
       "/img/productos/alimentos_y_bebidas/imagen_13_micherveza-330-ml.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "355-ml-licorera",
     specs: {
       peso: 25,
@@ -288,7 +288,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -296,7 +296,7 @@ export const PRODUCTOS = [
     nombre: "Envase Licorera 500 ml",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_14_500ml-licorera.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "500-ml-licorera",
     specs: {
       peso: 23,
@@ -307,7 +307,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -315,7 +315,7 @@ export const PRODUCTOS = [
     nombre: "Envase Licorera 1000 ml",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_15_1000ml-licorera.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "1000-ml-licorera",
     specs: {
       peso: 39.5,
@@ -326,7 +326,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -334,7 +334,7 @@ export const PRODUCTOS = [
     nombre: "Envase Licorera 1 lt Piña",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_16_1-lt-pina.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "1-lt-pina",
     specs: {
       peso: 23,
@@ -345,7 +345,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"], // corregido: era [""]
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -353,7 +353,7 @@ export const PRODUCTOS = [
     nombre: "Envase 355 ml Bala",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_17_355ml-bala.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "355-ml-bala",
     specs: {
       peso: 17.2,
@@ -364,7 +364,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -373,7 +373,7 @@ export const PRODUCTOS = [
     categoria: "Alimentos y Bebidas",
     imagen:
       "/img/productos/alimentos_y_bebidas/imagen_18_355ml-toco-barrilito.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "355-ml-toco-barrilito",
     specs: {
       peso: 17.2,
@@ -384,7 +384,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -392,7 +392,7 @@ export const PRODUCTOS = [
     nombre: "Envase 355 ml Júbilo",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_19_355ml-jubilo.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "355-ml-jubilo",
     specs: {
       peso: 17.2,
@@ -403,7 +403,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -411,7 +411,7 @@ export const PRODUCTOS = [
     nombre: "Envase 500 ml Júbilo",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_20_500ml-jubilo.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "500-ml-jubilo",
     specs: {
       peso: 17.2,
@@ -422,7 +422,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -441,7 +441,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal", "Ambar"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -449,7 +449,7 @@ export const PRODUCTOS = [
     nombre: "Envase SQ 250 ml",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_22_sq-250-ml.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "sq-250-ml",
     specs: {
       peso: 23.0,
@@ -460,7 +460,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -468,7 +468,7 @@ export const PRODUCTOS = [
     nombre: "Envase SQ 500 ml",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_23_sq-500-ml.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "sq-500-ml",
     specs: {
       peso: 33.0,
@@ -479,7 +479,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -487,7 +487,7 @@ export const PRODUCTOS = [
     nombre: "Envase 355 ml rombo",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_24_355-ml-rombo.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "355-ml-rombo",
     specs: {
       peso: null,
@@ -496,9 +496,9 @@ export const PRODUCTOS = [
       capacidad: 355,
       pzsEmpaque: 238,
       tipoEmpaque: "Bolsa",
-      colores: null,
+      colores: [],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
 
@@ -508,18 +508,18 @@ export const PRODUCTOS = [
     nombre: "Envase 30 ml institucional",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_25_30ml-institucional.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "30-ml-institucional",
     specs: {
       peso: 5.0,
-      corona: 18,
+      corona: "18",
       altura: 63.0,
       capacidad: 30,
       pzsEmpaque: 1200,
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -527,18 +527,18 @@ export const PRODUCTOS = [
     nombre: "Envase 40 ml institucional",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_26_40ml-institucional.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "40-ml-institucional",
     specs: {
       peso: 6.5,
-      corona: 18,
+      corona: "18",
       altura: 64.25,
       capacidad: 40,
       pzsEmpaque: 1000,
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -550,14 +550,14 @@ export const PRODUCTOS = [
     slug: "40-ml-farma",
     specs: {
       peso: 6.5,
-      corona: 18,
+      corona: "18",
       altura: 78.5,
       capacidad: 40,
       pzsEmpaque: 900,
       tipoEmpaque: "Caja",
-      colores: ["Cristal", "negro"],
+      colores: ["Cristal", "Negro"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -565,18 +565,18 @@ export const PRODUCTOS = [
     nombre: "Envase 30 ml campana",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_28_30ml-campana.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "30-ml-campana",
     specs: {
       peso: 5.0,
-      corona: 18,
+      corona: "18",
       altura: 65.5,
       capacidad: 30,
       pzsEmpaque: 1200,
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -584,18 +584,18 @@ export const PRODUCTOS = [
     nombre: "Envase 50 ml campana",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_29_50ml-campana.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "50-ml-campana",
     specs: {
       peso: 6.5,
-      corona: 18,
+      corona: "18",
       altura: 70.6,
       capacidad: 50,
       pzsEmpaque: 900,
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -603,18 +603,18 @@ export const PRODUCTOS = [
     nombre: "Envase 45 ml Oliva Cuadrada",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_30_45ml-oliva-cuadrada.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "45-ml-oliva-cuadrada",
     specs: {
       peso: 6.5,
-      corona: 18,
+      corona: "18",
       altura: 105.6,
       capacidad: 45,
       pzsEmpaque: 900,
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -622,37 +622,37 @@ export const PRODUCTOS = [
     nombre: "Envase 30 ml Cilíndrica",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_31_30ml-cilindrica.webp",
-    imagenes: null,
-    slug: "45-ml-oliva-cuadrada",
+    imagenes: [],
+    slug: "30-ml-cilindrica",
     specs: {
       peso: 5.0,
-      corona: 18,
+      corona: "18",
       altura: 66.5,
       capacidad: 30,
       pzsEmpaque: 1300,
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
     id: 32,
-    nombre: "Envase 30 ml Cilíndrica",
+    nombre: "Envase 40 ml Cilíndrica",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_32_40ml-cilindrica.webp",
     imagenes: ["/img/productos/amenidades/imagen_32_40ml-cilindrica.webp"],
-    slug: "30-ml-cilindrica",
+    slug: "40-ml-cilindrica",
     specs: {
       peso: 6.5,
-      corona: 18,
+      corona: "18",
       altura: 83,
       capacidad: 40,
       pzsEmpaque: 900,
       tipoEmpaque: "Caja",
-      colores: ["Cristal", "negro"],
+      colores: ["Cristal", "Negro"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -664,14 +664,14 @@ export const PRODUCTOS = [
     slug: "25-ml-lapiz",
     specs: {
       peso: 5.0,
-      corona: 18,
+      corona: "18",
       altura: 76.5,
       capacidad: 25,
       pzsEmpaque: 1500,
       tipoEmpaque: "Caja",
       colores: ["Cristal", "Ambar"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -679,18 +679,18 @@ export const PRODUCTOS = [
     nombre: "Envase 30 ml Invertida",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_34_30ml-invertida.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "30-ml-invertida",
     specs: {
       peso: 5.0,
-      corona: 18,
+      corona: "18",
       altura: 68,
       capacidad: 30,
       pzsEmpaque: 1200,
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -698,7 +698,7 @@ export const PRODUCTOS = [
     nombre: "Tapa Ciega r18",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_35_tapa-ciega-r18.webp",
-    imagenes: null,
+    imagenes: [],
     slug: "tapa-ciega-r18",
     specs: {
       peso: null,
@@ -707,9 +707,9 @@ export const PRODUCTOS = [
       capacidad: null,
       pzsEmpaque: null,
       tipoEmpaque: "Bolsa",
-      colores: null,
+      colores: [],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
 
@@ -730,7 +730,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "",
       colores: [],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -749,7 +749,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: [],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -768,7 +768,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -777,7 +777,7 @@ export const PRODUCTOS = [
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_39_250ml-boston-r24-415.webp",
     imagenes: ["/img/productos/boston/imagen_39_250ml-boston-r24-415.webp"],
-    slug: "250-ml-boston",
+    slug: "250-ml-boston-r24",
     specs: {
       peso: 22.5,
       corona: "24-415",
@@ -787,7 +787,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -806,7 +806,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -825,7 +825,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Charola",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -844,7 +844,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa/Pallet",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -863,7 +863,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: 12000,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
 
@@ -885,7 +885,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -904,7 +904,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: [],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -923,7 +923,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Charola",
       colores: ["Cristal", "Colores"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -942,7 +942,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -961,7 +961,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Charola",
       colores: ["Blanco"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -980,7 +980,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Charola",
       colores: ["Blanco"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -999,7 +999,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Charola",
       colores: ["Cristal", "Colores"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1018,7 +1018,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Colores"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1039,7 +1039,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1058,7 +1058,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Charola",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1067,7 +1067,7 @@ export const PRODUCTOS = [
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_54_silueta-500-ml.webp",
     imagenes: ["/img/productos/cosmeticos/imagen_54_silueta-500-ml.webp"],
-    slug: "500-ml-campana-alta",
+    slug: "silueta-500-ml",
     specs: {
       peso: 28,
       corona: "r-28",
@@ -1077,7 +1077,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
 
@@ -1099,7 +1099,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: [],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1120,7 +1120,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: [],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1139,7 +1139,7 @@ export const PRODUCTOS = [
       tipoEmpaque: null,
       colores: ["Negro", "Rojo"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
 
@@ -1163,7 +1163,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Cristal", "Ambar", "Blanco", "Azul"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1184,7 +1184,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Cristal", "Ambar", "Blanco", "Azul"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1203,7 +1203,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: [],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1222,7 +1222,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Cristal", "Ambar", "Blanco"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1244,7 +1244,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Ambar", "Blanco", "Azul", "Natural"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1266,7 +1266,7 @@ export const PRODUCTOS = [
       tipoEmpaque: null,
       colores: ["Blanco"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
 
@@ -1309,7 +1309,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1330,7 +1330,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1342,14 +1342,14 @@ export const PRODUCTOS = [
     slug: "1000ml-generica",
     specs: {
       peso: 30,
-      corona: "28 sin fin",
+      corona: "28 Sinfín",
       altura: 268,
       capacidad: 1000,
       pzsEmpaque: 165,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal", "Verde"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1368,7 +1368,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal", "Verde"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1380,14 +1380,14 @@ export const PRODUCTOS = [
     slug: "1000ml-agro",
     specs: {
       peso: 39,
-      corona: "28 sinfin",
+      corona: "28 Sinfín",
       altura: 242,
       capacidad: 1000,
       pzsEmpaque: 145,
       tipoEmpaque: "Bolsa",
       colores: ["Humo"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1406,7 +1406,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1425,7 +1425,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Natural", "Colores sobre pedido"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1444,7 +1444,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: [],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1463,7 +1463,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Natural"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1474,7 +1474,7 @@ export const PRODUCTOS = [
     imagenes: [
       "/img/productos/limpieza/imagen_74_10litros-garrafa-cuadrada.webp",
     ],
-    slug: "garrafa-5lt",
+    slug: "garrafa-10lt",
     specs: {
       peso: 150,
       corona: "45",
@@ -1484,7 +1484,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
 
@@ -1503,7 +1503,7 @@ export const PRODUCTOS = [
     specs: {
       peso: 47,
       corona: null,
-      altura: 855,
+      altura: 8.55,
       capacidad: 750,
       pzsEmpaque: 130,
       tipoEmpaque: "Bolsa",
@@ -1525,13 +1525,13 @@ export const PRODUCTOS = [
     specs: {
       peso: 53,
       corona: "45",
-      altura: 855,
+      altura: 8.55,
       capacidad: 900,
       pzsEmpaque: 130,
       tipoEmpaque: "Bolsa o Caja",
       colores: [],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1553,7 +1553,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal", "Azul", "Rosa", "Morado", "Rojo", "Aqua", "Humo"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1573,9 +1573,9 @@ export const PRODUCTOS = [
       capacidad: null,
       pzsEmpaque: 112,
       tipoEmpaque: "Bolsa",
-      colores: ["Gran variedad de colores"],
+      colores: ["Colores"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1592,9 +1592,9 @@ export const PRODUCTOS = [
       capacidad: null,
       pzsEmpaque: null,
       tipoEmpaque: "Bolsa",
-      colores: ["Gran variedad de colores"],
+      colores: ["Colores"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1616,7 +1616,7 @@ export const PRODUCTOS = [
       tipoEmpaque: null,
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1638,7 +1638,7 @@ export const PRODUCTOS = [
       tipoEmpaque: null,
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1660,7 +1660,7 @@ export const PRODUCTOS = [
       tipoEmpaque: null,
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1682,7 +1682,7 @@ export const PRODUCTOS = [
       tipoEmpaque: null,
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
 
@@ -1704,7 +1704,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1723,7 +1723,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal", "Rosa", "Azul", "Morado", "Aqua"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1742,7 +1742,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1764,7 +1764,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1786,7 +1786,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1807,7 +1807,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1829,7 +1829,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1848,7 +1848,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1860,7 +1860,7 @@ export const PRODUCTOS = [
     imagenes: [
       "/img/productos/tarros_vitroleros/imagen_92_vitrolero-medio-galon-liso.webp",
     ],
-    slug: "tarro-vitrolero-medio-galon-redondo",
+    slug: "tarro-vitrolero-medio-galon-liso",
     specs: {
       peso: 64,
       corona: 110,
@@ -1870,7 +1870,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1892,7 +1892,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1914,7 +1914,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1926,7 +1926,7 @@ export const PRODUCTOS = [
     imagenes: [
       "/img/productos/tarros_vitroleros/imagen_95_vitrolero-medio-galon-cuadrado.webp",
     ],
-    slug: "tarro-vitrolero-medio-galon-pata-elefante",
+    slug: "tarro-vitrolero-medio-galon-cuadrado",
     specs: {
       peso: 68,
       corona: 110,
@@ -1936,7 +1936,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1958,7 +1958,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1979,7 +1979,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -1998,7 +1998,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Blanco", "Variedad de colores"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
 
@@ -2023,7 +2023,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Blanco"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -2045,7 +2045,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Azul", "Rojo", "Amarillo", "Verde"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -2067,7 +2067,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Azul"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -2089,7 +2089,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Blanco"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -2111,7 +2111,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Natural", "Rojo", "Morado", "Azul", "Rosa"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -2133,7 +2133,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Blanco"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -2155,7 +2155,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Blanco"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -2177,7 +2177,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Blanco"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -2199,7 +2199,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Blanco"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {
@@ -2221,7 +2221,7 @@ export const PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Azul"],
       produccionMinima: null,
-      sobrePedido: null,
+      sobrePedido: false,
     },
   },
   {

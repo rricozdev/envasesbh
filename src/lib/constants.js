@@ -71,3 +71,20 @@ export const CATEGORIA_BADGE = {
   "Tarros y Vitroleros": "Tarros",
   "Tapas, Bombas y Triggers": "Tapas & Triggers",
 };
+
+// colores para el filtrado de productos
+export const COLORES_FILTRO = [
+  "Cristal",
+  "Natural",
+  "Negro",
+  "Blanco",
+  "Ámbar",
+  "Azul",
+  "Rojo",
+  "Verde",
+  "Morado",
+  "Naranja",
+  "Rosa",
+  "Aqua",
+  "Humo",
+];

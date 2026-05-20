@@ -20,6 +20,13 @@ function Catalog() {
     productosVisibles,
     totalPaginas,
     paginasVisibles,
+    color,
+    setColor,
+    rosca,
+    setRosca,
+    capacidadRango,
+    setCapacidadRango,
+    opcionesBase,
   } = useProductCatalog(PRODUCTOS);
 
   return (
@@ -31,9 +38,21 @@ function Catalog() {
             <aside className="w-full lg:w-56 shrink-0 lg:sticky lg:top-32 self-start h-fit">
               <ProductFilter
                 activa={categoria}
-                onSelect={setCategoria}
+                onSelect={(cat) => {
+                  setCategoria(cat);
+                  setColor(null);
+                  setRosca(null);
+                  setCapacidadRango(null);
+                }}
                 search={search}
                 setSearch={setSearch}
+                color={color}
+                setColor={setColor}
+                rosca={rosca}
+                setRosca={setRosca}
+                capacidadRango={capacidadRango}
+                setCapacidadRango={setCapacidadRango}
+                opcionesBase={opcionesBase}
               />
             </aside>
             <div className="flex-1">
