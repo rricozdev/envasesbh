@@ -29,6 +29,10 @@ export default function useProductCatalog(productos) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [categoria]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [color, capacidadRango]);
+
   const itemsPorPagina = esMobile ? 6 : 12;
 
   const filtrados = useMemo(() => {
