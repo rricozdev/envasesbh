@@ -14,7 +14,7 @@ export default function MainLayout({ children }) {
       {/* Header global de navegación (visible en todas las rutas) */}
       <AnnouncementModal endDate="2026-06-6">
         <h2 className="text-xl md:text-2xl font-extrabold text-center font-primary leading-tight mb-3 text-primary">
-          ¡Ven a conocer nuestras soluciones de envasado!
+          ¡Ven a conocer nuestras soluciones en envases!
           <span className="block mt-2 text-secondary">
             Conócenos en el Stand 3626
           </span>
