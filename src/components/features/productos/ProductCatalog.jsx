@@ -34,8 +34,8 @@ function Catalog() {
       <ProductHeader total={filtrados.length} />
       <section className="bg-gray-50 min-h-screen py-8 md:py-12">
         <div className="mx-auto max-w-6xl px-4">
-          <div className="flex flex-col lg:flex-row gap-12">
-            <aside className="hidden lg:block w-56 shrink-0">
+          <div className="flex flex-col lg:flex-row gap-12 -ml-4">
+            <aside className="hidden lg:block w-64 shrink-0">
               <div className="sticky top-32 h-[calc(100vh-8rem)] overflow-y-auto pr-1">
                 <ProductFilter
                   activa={categoria}
