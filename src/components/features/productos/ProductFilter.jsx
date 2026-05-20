@@ -1,7 +1,7 @@
 "use client";
 
-import { Search, X, ChevronDown } from "lucide-react";
-import { useState, useRef } from "react";
+import { ChevronDown, Search, X } from "lucide-react";
+import { useRef, useState } from "react";
 
 const RANGOS_CAPACIDAD = [
   { label: "Menos de 100 ml", value: "micro" },
@@ -18,7 +18,7 @@ function Acordeon({ title, children, defaultOpen = false }) {
     <div className="border-t border-gray-100 pt-4 mt-4">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-between w-full text-xs font-bold uppercase tracking-wider text-secondary mb-3 cursor-pointer"
+        className="flex items-center justify-between w-full text-xs font-bold uppercase tracking-wider text-secondary mb-3 cursor-pointer font-primary"
       >
         {title}
         <ChevronDown
