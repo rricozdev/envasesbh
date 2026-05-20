@@ -42,7 +42,6 @@ function Catalog() {
                   onSelect={(cat) => {
                     setCategoria(cat);
                     setColor(null);
-                    setRosca(null);
                     setCapacidadRango(null);
                   }}
                   search={search}
