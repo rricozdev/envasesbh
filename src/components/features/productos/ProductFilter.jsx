@@ -81,7 +81,7 @@ export default function ProductFilter({
     "Tapas, Bombas y Triggers",
   ];
 
-  const hayFiltros = color || capacidadRango;
+  const hayFiltros = color || capacidadRango || activa !== "Todos";
 
   return (
     <div className="w-full">
@@ -116,6 +116,7 @@ export default function ProductFilter({
               onClick={() => {
                 setColor(null);
                 setCapacidadRango(null);
+                onSelect("Todos");
               }}
               className="text-[10px] text-primary hover:underline cursor-pointer font-semibold"
             >
@@ -145,7 +146,7 @@ export default function ProductFilter({
         </div>
 
         {/* Categorías */}
-        <Acordeon title="Categorías" defaultOpen={true}>
+        <Acordeon title="Categorías" defaultOpen={false}>
           {categorias.map((cat) => (
             <FiltroChip
               key={cat}
@@ -158,7 +159,7 @@ export default function ProductFilter({
 
         {/* Capacidad */}
         {opcionesBase.tieneCapacidad && (
-          <Acordeon title="Capacidad" defaultOpen>
+          <Acordeon title="Capacidad" defaultOpen={false}>
             {RANGOS_CAPACIDAD.map((r) => (
               <FiltroChip
                 key={r.value}
@@ -174,7 +175,7 @@ export default function ProductFilter({
 
         {/* Color */}
         {opcionesBase.colores.length > 0 && (
-          <Acordeon title="Color">
+          <Acordeon title="Color" defaultOpen={false}>
             {opcionesBase.colores.map((c) => (
               <FiltroChip
                 key={c}
