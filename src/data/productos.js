@@ -15,7 +15,7 @@ export const CATEGORIAS = [
 
 // SCHEMA de referencia — copiar para cada producto nuevo:
 // {
-//   id: null,
+//   id: se genera automáticamente con .map() al final del archivo — no agregar manualmente.
 //   nombre: "",
 //   categoria: "",
 //   imagen: "",         // imagen principal
@@ -34,15 +34,13 @@ export const CATEGORIAS = [
 //   },
 // },
 
-export const PRODUCTOS = [
+export const _PRODUCTOS = [
   // ─── AGUA ────────────────────────────────────────────────────────────────
 
   {
-    id: 1,
-    nombre: "Envase 250 ml",
+    nombre: "250 ml",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_1_250ml-sinfin.webp",
-    imagenes: ["/img/productos/agua/imagen_1_250ml-sinfin.webp"],
     slug: "250-ml",
     specs: {
       peso: 14.5,
@@ -57,11 +55,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 2,
-    nombre: "Envase 355 ml Sinfín",
+    nombre: " 355 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_2_355ml-sinfin-r-28.webp",
-    imagenes: [],
     slug: "355-ml",
     specs: {
       peso: 17.2,
@@ -76,11 +72,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 3,
-    nombre: "Envase 500 ml Sinfín",
+    nombre: " 500 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_3_500ml-sinfin-r-28.webp",
-    imagenes: ["/img/productos/agua/imagen_3_500ml-sinfin-r-28.webp"],
     slug: "500-ml",
     specs: {
       peso: 17.2,
@@ -95,11 +89,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 4,
-    nombre: "Envase 600 ml Sinfín",
+    nombre: " 600 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_4_600ml-sinfin.webp",
-    imagenes: [],
     slug: "600-ml",
     specs: {
       peso: 19.0,
@@ -114,11 +106,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 5,
-    nombre: "Envase 1000 ml Sinfín",
+    nombre: " 1000 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_5_1lt-sinfin-c.webp",
-    imagenes: [],
     slug: "1000-ml",
     specs: {
       peso: 25.0,
@@ -133,11 +123,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 6,
-    nombre: "Envase 1500 ml Sinfín",
+    nombre: "1500 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_6_1500ml-sinfin-37gr.webp",
-    imagenes: ["/img/productos/agua/imagen_6_1500ml-sinfin-37gr.webp"],
     slug: "1500-ml",
     specs: {
       peso: 37.0,
@@ -155,12 +143,10 @@ export const PRODUCTOS = [
   // ─── ALIMENTOS Y BEBIDAS ─────────────────────────────────────────────────
 
   {
-    id: 7,
-    nombre: "Envase 45 ml Oliva Cuadrada",
+    nombre: " 45 ml Oliva Cuadrada",
     categoria: "Alimentos y Bebidas",
     imagen:
       "/img/productos/alimentos_y_bebidas/imagen_7_45ml-oliva-cuadrada.webp",
-    imagenes: [],
     slug: "45-ml-oliva-cuadrada",
     specs: {
       peso: 6.5,
@@ -175,12 +161,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 8,
-    nombre: "Envase 250 ml Oliva Cuadrada",
+    nombre: " 250 ml Oliva Cuadrada",
     categoria: "Alimentos y Bebidas",
     imagen:
       "/img/productos/alimentos_y_bebidas/imagen_8_250ml-oliva-cuadrada.webp",
-    imagenes: [],
     slug: "250-ml-oliva-cuadrada",
     specs: {
       peso: 18,
@@ -195,12 +179,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 9,
-    nombre: "Envase 750 ml Oliva Cuadrada",
+    nombre: " 750 ml Oliva Cuadrada",
     categoria: "Alimentos y Bebidas",
     imagen:
       "/img/productos/alimentos_y_bebidas/imagen_9_750ml-oliva-cuadrada.webp",
-    imagenes: [],
     slug: "750-ml-oliva-cuadrada", // corregido: estaba vacío
     specs: {
       peso: 37.5,
@@ -215,11 +197,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 10,
-    nombre: "Envase 250 ml Twist",
+    nombre: " 250 ml Twist",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_10_250ml-twist.webp",
-    imagenes: [],
     slug: "250-ml-twist",
     specs: {
       peso: 17.0,
@@ -229,16 +209,14 @@ export const PRODUCTOS = [
       pzsEmpaque: 245,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: 15000,
+      produccionMinima: 20000,
       sobrePedido: false,
     },
   },
   {
-    id: 11,
-    nombre: "Envase 180 ml Salsera",
+    nombre: " 180 ml Salsera",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_11_180-salsera.webp",
-    imagenes: [],
     slug: "180-ml-salsera",
     specs: {
       peso: 17.0,
@@ -253,11 +231,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 12,
-    nombre: "Envase Licorera 250 ml",
+    nombre: "250 ml Licorera",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_12_licorera-250-ml.webp",
-    imagenes: [],
     slug: "250-ml-licorera",
     specs: {
       peso: 23,
@@ -272,12 +248,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 13,
-    nombre: "Envase Licorera 355 ml",
+    nombre: "355 ml Licorera",
     categoria: "Alimentos y Bebidas",
     imagen:
       "/img/productos/alimentos_y_bebidas/imagen_13_micherveza-330-ml.webp",
-    imagenes: [],
     slug: "355-ml-licorera",
     specs: {
       peso: 25,
@@ -292,11 +266,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 14,
-    nombre: "Envase Licorera 500 ml",
+    nombre: "500 ml Licorera",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_14_500ml-licorera.webp",
-    imagenes: [],
     slug: "500-ml-licorera",
     specs: {
       peso: 23,
@@ -311,11 +283,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 15,
-    nombre: "Envase Licorera 1000 ml",
+    nombre: "1000 ml Licorera",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_15_1000ml-licorera.webp",
-    imagenes: [],
     slug: "1000-ml-licorera",
     specs: {
       peso: 39.5,
@@ -330,11 +300,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 16,
-    nombre: "Envase Licorera 1 lt Piña",
+    nombre: "Licorera 1 lt Piña",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_16_1-lt-pina.webp",
-    imagenes: [],
     slug: "1-lt-pina",
     specs: {
       peso: 23,
@@ -349,11 +317,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 17,
-    nombre: "Envase 355 ml Bala",
+    nombre: " 355 ml Bala",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_17_355ml-bala.webp",
-    imagenes: [],
     slug: "355-ml-bala",
     specs: {
       peso: 17.2,
@@ -368,12 +334,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 18,
-    nombre: "Envase 355 ml Toco Barrilito",
+    nombre: " 355 ml Toco Barrilito",
     categoria: "Alimentos y Bebidas",
     imagen:
       "/img/productos/alimentos_y_bebidas/imagen_18_355ml-toco-barrilito.webp",
-    imagenes: [],
     slug: "355-ml-toco-barrilito",
     specs: {
       peso: 17.2,
@@ -388,11 +352,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 19,
-    nombre: "Envase 355 ml Júbilo",
+    nombre: " 355 ml Júbilo",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_19_355ml-jubilo.webp",
-    imagenes: [],
     slug: "355-ml-jubilo",
     specs: {
       peso: 17.2,
@@ -407,11 +369,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 20,
-    nombre: "Envase 500 ml Júbilo",
+    nombre: " 500 ml Júbilo",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_20_500ml-jubilo.webp",
-    imagenes: [],
     slug: "500-ml-jubilo",
     specs: {
       peso: 17.2,
@@ -426,11 +386,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 21,
-    nombre: "Envase 1000 ml Agro",
+    nombre: " 1000 ml Agro",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_21_1000ml-agro.webp",
-    imagenes: ["/img/productos/alimentos_y_bebidas/imagen_21_1000ml-agro.webp"],
     slug: "1000-ml-agro",
     specs: {
       peso: 39.0,
@@ -445,11 +403,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 22,
-    nombre: "Envase SQ 250 ml",
+    nombre: "250 ml SQ",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_22_sq-250-ml.webp",
-    imagenes: [],
     slug: "sq-250-ml",
     specs: {
       peso: 23.0,
@@ -464,11 +420,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 23,
-    nombre: "Envase SQ 500 ml",
+    nombre: "500 ml SQ",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_23_sq-500-ml.webp",
-    imagenes: [],
     slug: "sq-500-ml",
     specs: {
       peso: 33.0,
@@ -483,11 +437,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 24,
-    nombre: "Envase 355 ml rombo",
+    nombre: "355 ml rombo",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_24_355-ml-rombo.webp",
-    imagenes: [],
     slug: "355-ml-rombo",
     specs: {
       peso: null,
@@ -504,11 +456,9 @@ export const PRODUCTOS = [
 
   // ─── AMENIDADES HOTELERAS ────────────────────────────────────────────────
   {
-    id: 25,
-    nombre: "Envase 30 ml institucional",
+    nombre: "30 ml Institucional",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_25_30ml-institucional.webp",
-    imagenes: [],
     slug: "30-ml-institucional",
     specs: {
       peso: 5.0,
@@ -523,11 +473,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 26,
-    nombre: "Envase 40 ml institucional",
+    nombre: "40 ml Institucional",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_26_40ml-institucional.webp",
-    imagenes: [],
     slug: "40-ml-institucional",
     specs: {
       peso: 6.5,
@@ -542,11 +490,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 27,
-    nombre: "Envase 40 ml farma",
+    nombre: "40 ml Farma",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_27_40ml-farma.webp",
-    imagenes: ["/img/productos/amenidades/imagen_27_40ml-farma.webp"],
     slug: "40-ml-farma",
     specs: {
       peso: 6.5,
@@ -561,16 +507,14 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 28,
-    nombre: "Envase 30 ml campana",
+    nombre: "30 ml Campana",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_28_30ml-campana.webp",
-    imagenes: [],
     slug: "30-ml-campana",
     specs: {
-      peso: 5.0,
+      peso: 6.5,
       corona: "18",
-      altura: 65.5,
+      altura: 65.0,
       capacidad: 30,
       pzsEmpaque: 1200,
       tipoEmpaque: "Caja",
@@ -580,16 +524,14 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 29,
-    nombre: "Envase 50 ml campana",
+    nombre: "50 ml Campana",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_29_50ml-campana.webp",
-    imagenes: [],
     slug: "50-ml-campana",
     specs: {
       peso: 6.5,
       corona: "18",
-      altura: 70.6,
+      altura: 70.0,
       capacidad: 50,
       pzsEmpaque: 900,
       tipoEmpaque: "Caja",
@@ -599,11 +541,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 30,
-    nombre: "Envase 45 ml Oliva Cuadrada",
+    nombre: "45 ml Oliva Cuadrada",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_30_45ml-oliva-cuadrada.webp",
-    imagenes: [],
     slug: "45-ml-oliva-cuadrada",
     specs: {
       peso: 6.5,
@@ -618,16 +558,14 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 31,
-    nombre: "Envase 30 ml Cilíndrica",
+    nombre: "30 ml Cilíndrica",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_31_30ml-cilindrica.webp",
-    imagenes: [],
     slug: "30-ml-cilindrica",
     specs: {
-      peso: 5.0,
+      peso: 6.5,
       corona: "18",
-      altura: 66.5,
+      altura: 64.0,
       capacidad: 30,
       pzsEmpaque: 1300,
       tipoEmpaque: "Caja",
@@ -637,16 +575,14 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 32,
-    nombre: "Envase 40 ml Cilíndrica",
+    nombre: "40 ml Cilíndrica",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_32_40ml-cilindrica.webp",
-    imagenes: ["/img/productos/amenidades/imagen_32_40ml-cilindrica.webp"],
     slug: "40-ml-cilindrica",
     specs: {
       peso: 6.5,
       corona: "18",
-      altura: 83,
+      altura: 84.0,
       capacidad: 40,
       pzsEmpaque: 900,
       tipoEmpaque: "Caja",
@@ -656,11 +592,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 33,
-    nombre: "Envase 25 ml Lápiz",
+    nombre: "25 ml Lápiz",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_33_25ml-lapiz.webp",
-    imagenes: ["/img/productos/amenidades/imagen_33_25ml-lapiz.webp"],
     slug: "25-ml-lapiz",
     specs: {
       peso: 5.0,
@@ -675,11 +609,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 34,
-    nombre: "Envase 30 ml Invertida",
+    nombre: "30 ml Invertida",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_34_30ml-invertida.webp",
-    imagenes: [],
     slug: "30-ml-invertida",
     specs: {
       peso: 5.0,
@@ -694,11 +626,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 35,
     nombre: "Tapa Ciega r18",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_35_tapa-ciega-r18.webp",
-    imagenes: [],
     slug: "tapa-ciega-r18",
     specs: {
       peso: null,
@@ -715,30 +645,26 @@ export const PRODUCTOS = [
 
   // ─── BOSTON ──────────────────────────────────────────────────────────────
   {
-    id: 36,
-    nombre: "Envase 60 ml Boston",
+    nombre: "60 ml Boston",
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_36_60ml-boston-rosca20.webp",
-    imagenes: ["/img/productos/boston/imagen_36_60ml-boston-rosca20.webp"],
     slug: "60-ml-boston",
     specs: {
       peso: 10.0,
       corona: "R20",
-      altura: null,
+      altura: 10.3,
       capacidad: null,
-      pzsEmpaque: null,
-      tipoEmpaque: "",
+      pzsEmpaque: 600,
+      tipoEmpaque: "Caja",
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
     },
   },
   {
-    id: 37,
-    nombre: "Envase 125 ml Boston R20",
+    nombre: "125 ml Boston R20",
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_37_125-ml-boston.webp",
-    imagenes: ["/img/productos/boston/imagen_37_125-ml-boston.webp"],
     slug: "125-ml-boston",
     specs: {
       peso: null,
@@ -753,16 +679,14 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 38,
-    nombre: "Envase 250 ml Boston",
+    nombre: "250 ml Boston",
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_38_250ml-boston-r24-410.webp",
-    imagenes: ["/img/productos/boston/imagen_38_250ml-boston-r24-410.webp"],
     slug: "250-ml-boston",
     specs: {
-      peso: 22.5,
+      peso: 23.0,
       corona: "24-410",
-      altura: 180.0,
+      altura: 176.0,
       capacidad: 250,
       pzsEmpaque: 208,
       tipoEmpaque: "Caja",
@@ -772,16 +696,14 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 39,
-    nombre: "Envase 250 ml Boston r24/415",
+    nombre: "250 ml Boston r24/415",
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_39_250ml-boston-r24-415.webp",
-    imagenes: ["/img/productos/boston/imagen_39_250ml-boston-r24-415.webp"],
     slug: "250-ml-boston-r24",
     specs: {
-      peso: 22.5,
+      peso: 23.0,
       corona: "24-415",
-      altura: 183.5,
+      altura: 184.0,
       capacidad: 250,
       pzsEmpaque: 208,
       tipoEmpaque: "Caja",
@@ -791,18 +713,16 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 40,
-    nombre: "Envase 500 ml Boston",
+    nombre: "500 ml Boston",
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_40_500ml-boston.webp",
-    imagenes: ["/img/productos/boston/imagen_40_500ml-boston.webp"],
     slug: "500-ml-boston",
     specs: {
-      peso: 25.0,
+      peso: 23.0,
       corona: "28",
-      altura: 214.5,
+      altura: 216.0,
       capacidad: 500,
-      pzsEmpaque: 227,
+      pzsEmpaque: 200,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
@@ -810,49 +730,43 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 41,
-    nombre: "Envase 900 ml Boston",
+    nombre: "900 ml Boston",
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_41_900ml-boston-r28-410.webp",
-    imagenes: ["/img/productos/boston/imagen_41_900ml-boston-r28-410.webp"],
     slug: "900-ml-boston",
     specs: {
-      peso: 37.0,
+      peso: 30.0,
       corona: "28 PCO",
-      altura: 259.0,
+      altura: 260.0,
       capacidad: 900,
-      pzsEmpaque: 188,
-      tipoEmpaque: "Charola",
+      pzsEmpaque: 104,
+      tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
     },
   },
   {
-    id: 42,
-    nombre: "Envase 1Lt Boston",
+    nombre: "1Lt Boston",
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_42_1lt-boston.webp",
-    imagenes: ["/img/productos/boston/imagen_42_1lt-boston.webp"],
     slug: "1lt-boston",
     specs: {
       peso: 38.0,
       corona: "28-410",
       altura: 258.5,
       capacidad: 1000,
-      pzsEmpaque: 201,
-      tipoEmpaque: "Bolsa/Pallet",
+      pzsEmpaque: 180,
+      tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
     },
   },
   {
-    id: 43,
-    nombre: "Envase 1Lt Boston C",
+    nombre: "1Lt Boston C",
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_43_1lt-boston-c.webp",
-    imagenes: ["/img/productos/boston/imagen_43_1lt-boston-c.webp"],
     slug: "1lt-boston-C",
     specs: {
       peso: 40.0,
@@ -870,11 +784,9 @@ export const PRODUCTOS = [
   // ─── COSMÉTICOS ──────────────────────────────────────────────────────────
   // TODO: agregar productos
   {
-    id: 44,
-    nombre: "Envase 60ml Oval",
+    nombre: "60ml Oval",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_44_oval-60ml-c20-410.webp",
-    imagenes: ["/img/productos/cosmeticos/imagen_44_oval-60ml-c20-410.webp"],
     slug: "60-ml-oval",
     specs: {
       peso: 10.0,
@@ -889,11 +801,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 45,
-    nombre: "Envase 125ml Boston R20",
+    nombre: "125ml Boston R20",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_45_125-ml-boston.webp",
-    imagenes: ["/img/productos/cosmeticos/imagen_45_125-ml-boston.webp"],
     slug: "125-ml-boston",
     specs: {
       peso: null,
@@ -908,11 +818,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 46,
-    nombre: "Envase 125ml Oval",
+    nombre: "125ml Oval",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_46_125ml-oval.webp",
-    imagenes: ["/img/productos/cosmeticos/imagen_46_125ml-oval.webp"],
     slug: "125-ml-oval",
     specs: {
       peso: 16,
@@ -927,11 +835,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 47,
-    nombre: "Envase 250 ml Oval",
+    nombre: "250 ml Oval",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_47_250ml-oval.webp",
-    imagenes: ["/img/productos/cosmeticos/imagen_47_250ml-oval.webp"],
     slug: "250-ml-oval",
     specs: {
       peso: 22.5,
@@ -946,11 +852,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 48,
-    nombre: "Envase 280 ml Princesa",
+    nombre: "280 ml Princesa",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_48_280ml-princesa.webp",
-    imagenes: ["/img/productos/cosmeticos/imagen_48_280ml-princesa.webp"],
     slug: "280-ml-princesa",
     specs: {
       peso: 26,
@@ -965,11 +869,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 49,
-    nombre: "Envase 300 ml Ondulada",
+    nombre: "300 ml Ondulada",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_49_300ml-ondulada.webp",
-    imagenes: ["/img/productos/cosmeticos/imagen_49_300ml-ondulada.webp"],
     slug: "300-ml-ondulada",
     specs: {
       peso: 26,
@@ -984,11 +886,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 50,
-    nombre: "Envase 125 ml Silueta",
+    nombre: "125 ml Silueta",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_50_120ml-silueta.webp",
-    imagenes: ["/img/productos/cosmeticos/imagen_50_120ml-silueta.webp"],
     slug: "125-ml-silueta",
     specs: {
       peso: 16,
@@ -1003,16 +903,14 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 51,
-    nombre: "Envase 250 ml Campanita",
+    nombre: "250 ml Campana",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_51_250ml-campana.webp",
-    imagenes: ["/img/productos/cosmeticos/imagen_51_250ml-campana.webp"],
     slug: "250-ml-campana",
     specs: {
-      peso: 20,
+      peso: 20.0,
       corona: "24-410",
-      altura: 113,
+      altura: 113.0,
       capacidad: 250,
       pzsEmpaque: 180,
       tipoEmpaque: "Caja",
@@ -1022,20 +920,16 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 52,
-    nombre: "Envase 500 ml Campanita",
+    nombre: "500 ml Campanita",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_52_campana-500ml-original.webp",
-    imagenes: [
-      "/img/productos/cosmeticos/imagen_52_campana-500ml-original.webp",
-    ],
     slug: "500-ml-campanita",
     specs: {
-      peso: 30,
+      peso: 25,
       corona: "R28",
-      altura: 152,
+      altura: 151,
       capacidad: 500,
-      pzsEmpaque: null,
+      pzsEmpaque: 112,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
@@ -1043,30 +937,26 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 53,
-    nombre: "Envase 500 ml Campana Alta",
+    nombre: "500 ml Campana Alta",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_53_500ml-campana.webp",
-    imagenes: ["/img/productos/cosmeticos/imagen_53_500ml-campana.webp"],
     slug: "500-ml-campana-alta",
     specs: {
-      peso: 30,
+      peso: 25,
       corona: "R28",
       altura: 180,
       capacidad: 500,
-      pzsEmpaque: 216,
-      tipoEmpaque: "Charola",
+      pzsEmpaque: 117,
+      tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
     },
   },
   {
-    id: 54,
-    nombre: "Envase Silueta 500 ml",
+    nombre: "Silueta 500 ml",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_54_silueta-500-ml.webp",
-    imagenes: ["/img/productos/cosmeticos/imagen_54_silueta-500-ml.webp"],
     slug: "silueta-500-ml",
     specs: {
       peso: 28,
@@ -1084,18 +974,16 @@ export const PRODUCTOS = [
   // ─── ESPECIEROS ──────────────────────────────────────────────────────────
   // TODO: agregar productos
   {
-    id: 55,
-    nombre: "Envase Especiero 120 ml",
+    nombre: "120 ml Especiero",
     categoria: "Especieros",
     imagen: "/img/productos/especieros/imagen_55_especiero-120-ml.webp",
-    imagenes: ["/img/productos/especieros/imagen_55_especiero-120-ml.webp"],
     slug: "especiero-120-ml",
     specs: {
-      peso: 15,
+      peso: 16,
       corona: "36",
-      altura: 118,
+      altura: 117,
       capacidad: 120,
-      pzsEmpaque: null,
+      pzsEmpaque: 216,
       tipoEmpaque: "Bolsa",
       colores: [],
       produccionMinima: null,
@@ -1103,20 +991,16 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 56,
-    nombre: "Envase Especiero 120 ml corto",
+    nombre: "120 ml Especiero corto",
     categoria: "Especieros",
     imagen: "/img/productos/especieros/imagen_56_especiero-120-ml-corto.webp",
-    imagenes: [
-      "/img/productos/especieros/imagen_56_especiero-120-ml-corto.webp",
-    ],
     slug: "especiero-120-ml-corto",
     specs: {
-      peso: 15,
+      peso: 16,
       corona: "36",
       altura: 106,
       capacidad: 120,
-      pzsEmpaque: null,
+      pzsEmpaque: 315,
       tipoEmpaque: "Bolsa",
       colores: [],
       produccionMinima: null,
@@ -1124,11 +1008,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 57,
     nombre: "Tapa Especiero",
     categoria: "Especieros",
     imagen: "/img/productos/especieros/imagen_57_tapa-especiero.webp",
-    imagenes: ["/img/productos/especieros/imagen_57_tapa-especiero.webp"],
     slug: "tapa-especiero",
     specs: {
       peso: null,
@@ -1146,20 +1028,16 @@ export const PRODUCTOS = [
   // ─── FARMACÉUTICOS ───────────────────────────────────────────────────────
   // TODO: agregar productos
   {
-    id: 58,
-    nombre: "Envase Farmaceutico Pastillero 110 ml",
+    nombre: "110 ml Farmacéutico Pastillero",
     categoria: "Farmacéuticos",
     imagen: "/img/productos/farmaceuticos/imagen_58_pastillero-110ml-r38.webp",
-    imagenes: [
-      "/img/productos/farmaceuticos/imagen_58_pastillero-110ml-r38.webp",
-    ],
     slug: "pastillero-110ml-r38",
     specs: {
-      peso: null,
+      peso: 15.0,
       corona: "R38",
-      altura: null,
+      altura: 91.0,
       capacidad: 110,
-      pzsEmpaque: null,
+      pzsEmpaque: 468,
       tipoEmpaque: "Caja",
       colores: ["Cristal", "Ambar", "Blanco", "Azul"],
       produccionMinima: null,
@@ -1167,18 +1045,14 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 59,
-    nombre: "Envase Farmaceutico Pastillero 150 ml R38",
+    nombre: "150 ml Farmacéutico Pastillero",
     categoria: "Farmacéuticos",
     imagen: "/img/productos/farmaceuticos/imagen_59_pastillero-150ml-r38.webp",
-    imagenes: [
-      "/img/productos/farmaceuticos/imagen_59_pastillero-150ml-r38.webp",
-    ],
     slug: "pastillero-150ml-r38",
     specs: {
-      peso: null,
+      peso: 18.0,
       corona: "R38",
-      altura: null,
+      altura: 93,
       capacidad: 150,
       pzsEmpaque: 352,
       tipoEmpaque: "Caja",
@@ -1188,11 +1062,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 60,
-    nombre: "Envase Farmaceutico 125 ml Farma",
+    nombre: "125 ml Farmacéutico Farma",
     categoria: "Farmacéuticos",
-    imagen: "/img/productos/farmaceuticos/imagen_60_125ml-farma.webp",
-    imagenes: ["/img/productos/farmaceuticos/imagen_60_125ml-farma.webp"],
+    imagen: "/img/productos/farmaceuticos/imagen_60_125ml-Farma.webp",
     slug: "125ml-farma",
     specs: {
       peso: 16,
@@ -1207,11 +1079,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 61,
-    nombre: "Envase Farmaceutico 240 ml Farma",
+    nombre: "Farmacéutico 240 ml Farma",
     categoria: "Farmacéuticos",
     imagen: "/img/productos/farmaceuticos/imagen_61_240ml-farma.webp",
-    imagenes: ["/img/productos/farmaceuticos/imagen_61_240ml-farma.webp"],
     slug: "240ml-farma",
     specs: {
       peso: 23,
@@ -1226,14 +1096,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 62,
-    nombre: "Envase Farmaceutico Tapa a Prueba de Niños",
+    nombre: "Farmacéutico Tapa a Prueba de Niños",
     categoria: "Farmacéuticos",
     imagen:
-      "/img/productos/farmaceuticos/imagen_62_tapa-a-prueba-de-ninos-r38.webp",
-    imagenes: [
-      "/img/productos/farmaceuticos/imagen_62_tapa-a-prueba-de-ninos-r38.webp",
-    ],
+      "/img/productos/farmaceuticos/imagen_62_tapa-a-prueba-de-children-r38.webp",
     slug: "tapa-a-prueba-de-ninos-r38",
     specs: {
       peso: 23,
@@ -1248,14 +1114,11 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 63,
-    nombre: "Envase Farmaceutico Tapa ciega inviolable",
+    nombre: "Farmacéutico Tapa ciega inviolable",
     categoria: "Farmacéuticos",
     imagen:
       "/img/productos/farmaceuticos/imagen_63_tapa-ciega-inviolable-r-24.webp",
-    imagenes: [
-      "/img/productos/farmaceuticos/imagen_63_tapa-ciega-inviolable-r-24.webp",
-    ],
+
     slug: "tapa-ciega-inviolable-r-24",
     specs: {
       peso: null,
@@ -1273,11 +1136,9 @@ export const PRODUCTOS = [
   // ─── LIMPIEZA ────────────────────────────────────────────────────────────
   // TODO: agregar productos
   {
-    id: 64,
-    nombre: "Envase de Limpieza 250 ml Gatillera",
+    nombre: "250 ml de Limpieza Gatillera",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_64_250ml-gatillera.webp",
-    imagenes: ["/img/productos/limpieza/imagen_64_250ml-gatillera.webp"],
     slug: "250ml-gatillera",
     specs: {
       peso: 20,
@@ -1287,44 +1148,38 @@ export const PRODUCTOS = [
       pzsEmpaque: null,
       tipoEmpaque: "Charola",
       colores: ["Disponible en 6 colores de linea"],
-      produccionMinima: 8000,
+      produccionMinima: 20000,
       sobrePedido: true,
     },
   },
   {
-    id: 65,
-    nombre: "Envase de Limpieza 400 ml Genérica Lavatraste",
+    nombre: "400 ml de Limpieza Genérica Lavatraste",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_65_400ml-generica-lavatraste.webp",
-    imagenes: [
-      "/img/productos/limpieza/imagen_65_400ml-generica-lavatraste.webp",
-    ],
+
     slug: "400ml-generica-lavatraste",
     specs: {
-      peso: 27,
+      peso: 25,
       corona: "28 PCO",
-      altura: 196,
+      altura: 195,
       capacidad: 400,
-      pzsEmpaque: 240,
+      pzsEmpaque: 185,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
+      produccionMinima: 24000,
+      sobrePedido: true,
     },
   },
   {
-    id: 66,
-    nombre: "Envase de Limpieza 900 ml Genérica Lavatraste",
+    nombre: "900 ml de Limpieza Genérica Lavatraste",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_66-900ml-generica-lavatrastes.webp",
-    imagenes: [
-      "/img/productos/limpieza/imagen_66-900ml-generica-lavatrastes.webp",
-    ],
+
     slug: "900ml-generica-lavatraste",
     specs: {
-      peso: 37,
+      peso: 39,
       corona: "28 PCO",
-      altura: 263,
+      altura: 260.0,
       capacidad: 900,
       pzsEmpaque: 180,
       tipoEmpaque: "Bolsa",
@@ -1334,11 +1189,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 67,
-    nombre: "Envase de Limpieza 1000 ml",
+    nombre: "1000 ml de Limpieza",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_67_1000ml.webp",
-    imagenes: ["/img/productos/limpieza/imagen_67_1000ml.webp"],
     slug: "1000ml-generica",
     specs: {
       peso: 30,
@@ -1353,11 +1206,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 68,
-    nombre: "Envase de Limpieza 1000 ml Sinfín Lig",
+    nombre: "1000 ml de Limpieza Sinfín Lig",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_68_1000ml-sinfin-lig.webp",
-    imagenes: ["/img/productos/limpieza/imagen_68_1000ml-sinfin-lig.webp"],
     slug: "1000ml-sinfin-lig",
     specs: {
       peso: 25,
@@ -1372,11 +1223,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 69,
-    nombre: "Envase de Limpieza 1000 ml Agro",
+    nombre: "1000 ml de Limpieza Agro",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_69_1000ml-agro.webp",
-    imagenes: ["/img/productos/limpieza/imagen_69_1000ml-agro.webp"],
     slug: "1000ml-agro",
     specs: {
       peso: 39,
@@ -1391,11 +1240,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 70,
-    nombre: "Envase de Limpieza Trigger 1lt",
+    nombre: "de Limpieza Trigger 1lt",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_70_trigger-1lt.webp",
-    imagenes: ["/img/productos/limpieza/imagen_70_trigger-1lt.webp"],
     slug: "trigger-1lt",
     specs: {
       peso: 30,
@@ -1410,11 +1257,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 71,
-    nombre: "Envase de Limpieza 2lt",
+    nombre: "de Limpieza 2lt",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_71_envase-2lt.webp",
-    imagenes: ["/img/productos/limpieza/imagen_71_envase-2lt.webp"],
     slug: "2lt",
     specs: {
       peso: 46,
@@ -1429,11 +1274,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 72,
-    nombre: "Envase de Limpieza Garrafa Galón",
+    nombre: "de Limpieza Garrafa Galón",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_72_garrafa-galon.webp",
-    imagenes: ["/img/productos/limpieza/imagen_72_garrafa-galon.webp"],
     slug: "garrafa-galon",
     specs: {
       peso: 100,
@@ -1448,11 +1291,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 73,
-    nombre: "Envase de Limpieza Garrafa 5lt",
+    nombre: "de Limpieza Garrafa 5lt",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_73_garrafa-5lt.webp",
-    imagenes: ["/img/productos/limpieza/imagen_73_garrafa-5lt.webp"],
     slug: "garrafa-5lt",
     specs: {
       peso: 100,
@@ -1467,13 +1308,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 74,
-    nombre: "Envase de Limpieza 10 lt Garrafa Cuadrada",
+    nombre: "de Limpieza 10 lt Garrafa Cuadrada",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_74_10litros-garrafa-cuadrada.webp",
-    imagenes: [
-      "/img/productos/limpieza/imagen_74_10litros-garrafa-cuadrada.webp",
-    ],
+
     slug: "garrafa-10lt",
     specs: {
       peso: 150,
@@ -1491,14 +1329,11 @@ export const PRODUCTOS = [
   // ─── PUBLICITARIOS ───────────────────────────────────────────────────────
   // TODO: agregar productos
   {
-    id: 75,
-    nombre: "Envase PET Cilindro 750 ml Recto",
+    nombre: "750 ml Cilindro Recto",
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml.webp",
-    imagenes: [
-      "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml.webp",
-    ],
+
     slug: "pet-cilindro-publicitario-750-ml",
     specs: {
       peso: 47,
@@ -1508,19 +1343,16 @@ export const PRODUCTOS = [
       pzsEmpaque: 130,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal", "Azul", "Rosa", "Morado", "Rojo", "Aqua", "Humo"],
-      produccionMinima: 7000,
+      produccionMinima: 20000,
       sobrePedido: true,
     },
   },
   {
-    id: 76,
-    nombre: "Envase PET Cilindro 900 ml Recto",
+    nombre: "900 ml Cilindro Recto",
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_76_pet-cilindro-900-ml-recto.webp",
-    imagenes: [
-      "/img/productos/publicitarios/imagen_76_pet-cilindro-900-ml-recto.webp",
-    ],
+
     slug: "pet-cilindro-900-ml-recto",
     specs: {
       peso: 53,
@@ -1535,14 +1367,11 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 77,
-    nombre: "Envase PET Cilindro 1lt Bala",
+    nombre: "1lt Cilindro Bala",
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_77_pet-cilindro-publicitario.webp",
-    imagenes: [
-      "/img/productos/publicitarios/imagen_77_pet-cilindro-publicitario.webp",
-    ],
+
     slug: "pet-cilindro-1lt-bala",
     specs: {
       peso: 66,
@@ -1557,14 +1386,11 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 78,
-    nombre: "Envase Tarro 500 ml con tapa r63 sport",
+    nombre: "Tarro 500 ml con tapa r63 sport",
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_78_tarro-500-ml-con-tapa-r63-sport.webp",
-    imagenes: [
-      "/img/productos/publicitarios/imagen_78_tarro-500-ml-con-tapa-r63-sport.webp",
-    ],
+
     slug: "tarro-500-ml-con-tapa-r63-sport",
     specs: {
       peso: 25,
@@ -1579,11 +1405,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 79,
-    nombre: "Envase Tapa sport r63",
+    nombre: "Tapa sport r63",
     categoria: "Publicitarios",
     imagen: "/img/productos/publicitarios/imagen_79_tapa-sport-r63.webp",
-    imagenes: ["/img/productos/publicitarios/imagen_79_tapa-sport-r63.webp"],
     slug: "tapa-sport-r63",
     specs: {
       peso: null,
@@ -1598,14 +1422,11 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 80,
-    nombre: "Envase Cilindro 750 ml Recto con Flip",
+    nombre: "750 ml Cilindro Recto con Flip",
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_80_pet-cilindro-750-ml-recto-flip.webp",
-    imagenes: [
-      "/img/productos/publicitarios/imagen_80_pet-cilindro-750-ml-recto-flip.webp",
-    ],
+
     slug: "cilindro-750-ml-recto-flip",
     specs: {
       peso: null,
@@ -1620,14 +1441,11 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 81,
-    nombre: "Envase Cilindro 750 ml Recto Ciega",
+    nombre: "750 ml Cilindro Recto Ciega",
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_81_pet-cilindro-750-ml-recto-ciega.webp",
-    imagenes: [
-      "/img/productos/publicitarios/imagen_81_pet-cilindro-750-ml-recto-ciega.webp",
-    ],
+
     slug: "cilindro-750-ml-recto-ciega",
     specs: {
       peso: null,
@@ -1642,14 +1460,11 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 82,
-    nombre: "Envase Cilindro 900 ml Recto Ciega",
+    nombre: "900 ml Cilindro Recto Ciega",
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_82_pet-cilindro-900-ml-recto-ciega.webp",
-    imagenes: [
-      "/img/productos/publicitarios/imagen_82_pet-cilindro-900-ml-recto-ciega.webp",
-    ],
+
     slug: "cilindro-900-ml-recto-ciega",
     specs: {
       peso: null,
@@ -1664,14 +1479,11 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 83,
-    nombre: "Envase Cilindro 1lt Bala",
+    nombre: "Cilindro 1lt Bala",
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_83_pet-cilindro-1-lt-bala.webp",
-    imagenes: [
-      "/img/productos/publicitarios/imagen_83_pet-cilindro-1-lt-bala.webp",
-    ],
+
     slug: "cilindro-1-lt-bala",
     specs: {
       peso: null,
@@ -1689,11 +1501,9 @@ export const PRODUCTOS = [
   // ─── TARROS Y VITROLEROS ─────────────────────────────────────────────────
   // TODO: agregar productos
   {
-    id: 84,
     nombre: "Tarro 250 Liso",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/tarros_vitroleros/imagen_84_tarro-250-ml.webp",
-    imagenes: ["/img/productos/tarros_vitroleros/imagen_84_tarro-250-ml.webp"],
     slug: "tarro-250-ml-liso",
     specs: {
       peso: 17.5,
@@ -1708,11 +1518,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 85,
     nombre: "Tarro 500 ml",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/tarros_vitroleros/imagen_85_tarro-500-ml.webp",
-    imagenes: ["/img/productos/tarros_vitroleros/imagen_85_tarro-500-ml.webp"],
     slug: "tarro-500-ml",
     specs: {
       peso: 25,
@@ -1727,11 +1535,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 86,
     nombre: "Tarro 1000 ml",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/tarros_vitroleros/imagen_86_tarro-1000-ml.webp",
-    imagenes: ["/img/productos/tarros_vitroleros/imagen_86_tarro-1000-ml.webp"],
     slug: "tarro-1000-l",
     specs: {
       peso: 55,
@@ -1746,14 +1552,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 87,
     nombre: "Tarro 250 Octogonal",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/tarros_vitroleros/imagen_87_tarro-250-octagonal.webp",
-    imagenes: [
-      "/img/productos/tarros_vitroleros/imagen_87_tarro-250-octagonal.webp",
-    ],
     slug: "tarro-250-octogonal",
     specs: {
       peso: 18,
@@ -1768,14 +1570,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 88,
     nombre: "Tarro Anillado 500 ml",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/tarros_vitroleros/imagen_88_tarro-anillado-500-ml.webp",
-    imagenes: [
-      "/img/productos/tarros_vitroleros/imagen_88_tarro-anillado-500-ml.webp",
-    ],
     slug: "tarro-500-anillado",
     specs: {
       peso: 25,
@@ -1790,13 +1588,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 89,
     nombre: "Tarro Vitrolero 1 kg",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/tarros_vitroleros/imagen_89_vitrolero-1-kg.webp",
-    imagenes: [
-      "/img/productos/tarros_vitroleros/imagen_89_vitrolero-1-kg.webp",
-    ],
     slug: "tarro-vitrolero-1kg",
     specs: {
       peso: 49,
@@ -1811,14 +1605,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 90,
     nombre: "Tarro Vitrolero Medio Galón Redondo",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/tarros_vitroleros/imagen_90_vitrolero-medio-galon-liso.webp",
-    imagenes: [
-      "/img/productos/tarros_vitroleros/imagen_90_vitrolero-medio-galon-liso.webp",
-    ],
     slug: "tarro-vitrolero-medio-galon-redondo",
     specs: {
       peso: 69,
@@ -1833,11 +1623,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 91,
     nombre: "Tarro Vitrolero Galón Redondo ML",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/tarros_vitroleros/imagen_91_galon-liso.webp",
-    imagenes: ["/img/productos/tarros_vitroleros/imagen_91_galon-liso.webp"],
     slug: "vitrolero-galon-redondo-ml",
     specs: {
       peso: 105,
@@ -1852,14 +1640,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 92,
     nombre: "Tarro Vitrolero Medio Galón Liso Corto",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/tarros_vitroleros/imagen_92_vitrolero-medio-galon-liso.webp",
-    imagenes: [
-      "/img/productos/tarros_vitroleros/imagen_92_vitrolero-medio-galon-liso.webp",
-    ],
     slug: "tarro-vitrolero-medio-galon-liso",
     specs: {
       peso: 64,
@@ -1874,14 +1658,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 93,
     nombre: "Tarro Vitrolero Medio Galón Anillado",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/tarros_vitroleros/imagen_93_vitrolero-medio-galon-anillado.webp",
-    imagenes: [
-      "/img/productos/tarros_vitroleros/imagen_93_vitrolero-medio-galon-anillado.webp",
-    ],
     slug: "tarro-vitrolero-medio-galon-anillado",
     specs: {
       peso: 65,
@@ -1896,14 +1676,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 94,
     nombre: "Tarro Vitrolero Medio Galón Pata de elefante",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/tarros_vitroleros/imagen_94_vitrolero-medio-galon-pata-de-elefante.webp",
-    imagenes: [
-      "/img/productos/tarros_vitroleros/imagen_94_vitrolero-medio-galon-pata-de-elefante.webp",
-    ],
     slug: "tarro-vitrolero-medio-galon-pata-elefante",
     specs: {
       peso: 65,
@@ -1918,14 +1694,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 95,
     nombre: "Tarro Vitrolero Medio Galón Cuadrado",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/tarros_vitroleros/imagen_95_vitrolero-medio-galon-cuadrado.webp",
-    imagenes: [
-      "/img/productos/tarros_vitroleros/imagen_95_vitrolero-medio-galon-cuadrado.webp",
-    ],
     slug: "tarro-vitrolero-medio-galon-cuadrado",
     specs: {
       peso: 68,
@@ -1940,14 +1712,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 96,
     nombre: "Tarro Vitrolero 1 Galón Cuadrado",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/tarros_vitroleros/imagen_96_vitrolero-1-galon-cuadrado.webp",
-    imagenes: [
-      "/img/productos/tarros_vitroleros/imagen_96_vitrolero-1-galon-cuadrado.webp",
-    ],
     slug: "tarro-vitrolero-1-galon-cuadrado",
     specs: {
       peso: 106,
@@ -1962,13 +1730,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 97,
-    nombre: "Tarro Vitrolero Especiero 1 lt",
+    nombre: "Tarro 1000 ml Vitrolero Especiero",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/tarros_vitroleros/imagen_97_especiero-1-lt.webp",
-    imagenes: [
-      "/img/productos/tarros_vitroleros/imagen_97_especiero-1-lt.webp",
-    ],
     slug: "tarro-vitrolero-especiero-1lt",
     specs: {
       peso: 63,
@@ -1983,11 +1747,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 98,
     nombre: "Tapa vitrolero r110",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/tarros_vitroleros/imagen_98_tapa-r110.webp",
-    imagenes: ["/img/productos/tarros_vitroleros/imagen_98_tapa-r110.webp"],
     slug: "tapa-vitrolero-r110",
     specs: {
       peso: null,
@@ -2005,14 +1767,10 @@ export const PRODUCTOS = [
   // ─── TAPAS, BOMBAS Y TRIGGERS ────────────────────────────────────────────
   // TODO: agregar productos
   {
-    id: 99,
     nombre: "Trigger sprayer Rosca 28-410",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_99_trigger-sprayer.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_99_trigger-sprayer.webp",
-    ],
     slug: "trigger-sprayer-rosca-28410",
     specs: {
       peso: null,
@@ -2027,14 +1785,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 100,
     nombre: "Trigger uso industrial Rosca 28",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_100_triger-uso-industrial-rosca28.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_100_triger-uso-industrial-rosca28.webp",
-    ],
     slug: "trigger-industrial-rosca-28",
     specs: {
       peso: null,
@@ -2049,14 +1803,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 101,
     nombre: "Trigger cola de pato Rosca 28",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_101_triger-cola-de-pato-rosca28.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_101_triger-cola-de-pato-rosca28.webp",
-    ],
     slug: "trigger-cola-de-pato-rosca-28",
     specs: {
       peso: null,
@@ -2071,14 +1821,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 102,
     nombre: "Mini trigger Rosca 28-410 Blanco popote largo",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_102_mini-trigger-sprayer.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_102_mini-trigger-sprayer.webp",
-    ],
     slug: "trigger-cola-de-pato-rosca-28",
     specs: {
       peso: null,
@@ -2093,14 +1839,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 103,
     nombre: "Mini trigger Rosca 24",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_103_mini-triger-rosca24.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_103_mini-triger-rosca24.webp",
-    ],
     slug: "mini-trigger-rosca-24",
     specs: {
       peso: null,
@@ -2115,14 +1857,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 104,
     nombre: "Atomizador Botón Rosca 24-410",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_104_atomizador-boton-rosca-24-410-blanco.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_104_atomizador-boton-rosca-24-410-blanco.webp",
-    ],
     slug: "atomizador-boton-rosca-24410",
     specs: {
       peso: null,
@@ -2137,14 +1875,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 105,
     nombre: "Atomizador Botón Rosca 20-410",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_105_atomizado-botonrosca-20-410-blanco.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_105_atomizado-botonrosca-20-410-blanco.webp",
-    ],
     slug: "atomizador-boton-rosca-20410",
     specs: {
       peso: null,
@@ -2159,14 +1893,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 106,
     nombre: "Atomizador Botón Rosca 18-410",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_106_atomizador-boton-rosca-18-410-blanco.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_106_atomizador-boton-rosca-18-410-blanco.webp",
-    ],
     slug: "atomizador-boton-rosca-18410",
     specs: {
       peso: null,
@@ -2181,14 +1911,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 107,
     nombre: "Bomba dosificadora Rosca 28",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_107_bomba-dosificadora.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_107_bomba-dosificadora.webp",
-    ],
     slug: "bomba-dosificadora-rosca-28",
     specs: {
       peso: null,
@@ -2203,14 +1929,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 108,
     nombre: "Bomba dosificadora Reforzada Azul Rosca 28",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_108_bomba-dosificadora-reforzada-azul.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_108_bomba-dosificadora-reforzada-azul.webp",
-    ],
     slug: "bomba-dosificadora-reforzada-azul",
     specs: {
       peso: null,
@@ -2225,14 +1947,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 109,
     nombre: "Tapa Disk Top 24-415",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_109_tapa-disk-top-r24-415.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_109_tapa-disk-top-r24-415.webp",
-    ],
     slug: "tapa-disk-top-24415",
     specs: {
       peso: null,
@@ -2242,19 +1960,15 @@ export const PRODUCTOS = [
       pzsEmpaque: null,
       tipoEmpaque: null,
       colores: ["Natural", "Blanca"],
-      produccionMinima: null,
+      produccionMinima: 20000,
       sobrePedido: true,
     },
   },
   {
-    id: 110,
     nombre: "Tapa Disk Top R24-410",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_110_tapa-disk-top-r24-410.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_110_tapa-disk-top-r24-410.webp",
-    ],
     slug: "tapa-disk-top-r24410",
     specs: {
       peso: null,
@@ -2264,19 +1978,15 @@ export const PRODUCTOS = [
       pzsEmpaque: null,
       tipoEmpaque: null,
       colores: ["Natural", "Blanca"],
-      produccionMinima: null,
+      produccionMinima: 20000,
       sobrePedido: true,
     },
   },
   {
-    id: 111,
     nombre: "Tapa Vitrolero 110 mm",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_111_tapa-vitrolero-110mm.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_111_tapa-vitrolero-110mm.webp",
-    ],
     slug: "tapa-vitrolero-110",
     specs: {
       peso: null,
@@ -2291,13 +2001,9 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 112,
     nombre: "Tapa Cintillo 28 mm refresquera",
     categoria: "Tapas, Bombas y Triggers",
     imagen: "/img/productos/tapas_bombas_triggers/imagen_112_tapa-28mm.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_112_tapa-28mm.webp",
-    ],
     slug: "tapa-cintillo-28",
     specs: {
       peso: null,
@@ -2312,14 +2018,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 113,
     nombre: "Flip Top 24-410",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_113_flip-top-24-410.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_113_flip-top-24-410.webp",
-    ],
     slug: "flip-top-24410",
     specs: {
       peso: null,
@@ -2334,14 +2036,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 114,
     nombre: "Flip Top 24-415",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_114_flip-top-24-415.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_114_flip-top-24-415.webp",
-    ],
     slug: "flip-top-24415",
     specs: {
       peso: null,
@@ -2356,14 +2054,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 115,
     nombre: "Flip Top 28-410",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_115_flip-top-28-410.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_115_flip-top-28-410.webp",
-    ],
     slug: "flip-top-28410",
     specs: {
       peso: null,
@@ -2378,14 +2072,10 @@ export const PRODUCTOS = [
     },
   },
   {
-    id: 116,
     nombre: "Tapa Sport 28mm",
     categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_116_tapa-sport-r28.webp",
-    imagenes: [
-      "/img/productos/tapas_bombas_triggers/imagen_116_tapa-sport-r28.webp",
-    ],
     slug: "tapa-sport-28",
     specs: {
       peso: null,
@@ -2400,3 +2090,5 @@ export const PRODUCTOS = [
     },
   },
 ];
+
+export const PRODUCTOS = _PRODUCTOS.map((p, i) => ({ id: i + 1, ...p }));
