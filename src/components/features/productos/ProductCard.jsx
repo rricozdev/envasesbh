@@ -62,8 +62,19 @@ export default function ProductCard({ producto }) {
       <div className="flex flex-col flex-1 px-5 pb-5 border-t border-gray-100">
         {/* NOMBRE */}
         <Link href={`/productos/${producto.slug}`}>
-          <h3 className="mt-4 mb-1 text-lg font-bold text-primary leading-tight group-hover:text-primary/80 transition-colors line-clamp-2">
-            {nombreCompleto}
+          <h3 className="mt-4 mb-1 text-lg font-bold leading-tight group-hover:text-primary/80 transition-colors line-clamp-2">
+            {(() => {
+              const match = nombreCompleto.match(/^(.*?\d+\s*ml)(.*)/i);
+              if (match) {
+                return (
+                  <>
+                    <span className="text-primary">{match[1]}</span>
+                    <span className="text-secondary">{match[2]}</span>
+                  </>
+                );
+              }
+              return <span className="text-primary">{nombreCompleto}</span>;
+            })()}
           </h3>
         </Link>
 
