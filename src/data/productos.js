@@ -1064,7 +1064,7 @@ export const _PRODUCTOS = [
   {
     nombre: "125 ml Farmacéutico Farma",
     categoria: "Farmacéuticos",
-    imagen: "/img/productos/farmaceuticos/imagen_60_125ml-Farma.webp",
+    imagen: "/img/productos/farmaceuticos/imagen_60_125ml-farma.webp",
     slug: "125ml-farma",
     specs: {
       peso: 16,
