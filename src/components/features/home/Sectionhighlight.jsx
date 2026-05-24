@@ -1,31 +1,31 @@
 import { HighlightCard } from "@/components/ui/HighlightCard";
 import SectionContent from "@/components/ui/SectionContent";
-import { BadgeCheck, Building2, Calendar, Headphones } from "lucide-react";
+import { BadgeCheck, Building2, Calendar, ToolCase } from "lucide-react";
 
 const highlights = [
   {
     icon: Calendar,
-    title: "10+ Años de Experiencia",
+    title: "25+ Años de Experiencia",
     description:
-      "Más de una década resolviendo desafíos reales en manufactura.",
+      "Más de dos décadas brindando soluciones confiables para la industria y el comercio.",
   },
   {
     icon: Building2,
-    title: "+50 Empresas",
+    title: "Soluciones para Todo Tipo de Negocio",
     description:
-      "Confían en nosotros en industrias como alimentos, químicos y consumo masivo.",
+      "Atendemos ventas al mayoreo y menudeo, adaptándonos a las necesidades de cada cliente.",
   },
   {
     icon: BadgeCheck,
     title: "Calidad Garantizada",
     description:
-      "Cumplimos especificaciones técnicas y estándares en cada lote.",
+      "Cada producto cumple con altos estándares de calidad y especificaciones técnicas.",
   },
   {
-    icon: Headphones,
-    title: "Soporte Ágil",
+    icon: ToolCase,
+    title: "Entrega Segura y Puntual",
     description:
-      "Respuesta rápida cuando lo necesitas, sin fricción ni intermediarios.",
+      "Contamos con convenios logísticos para llevar tus pedidos hasta donde los necesites.",
   },
 ];
 
