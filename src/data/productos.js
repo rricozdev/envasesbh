@@ -128,7 +128,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_6_1500ml-sinfin-37gr.webp",
     slug: "1500-ml",
     specs: {
-      peso: 37.0,
+      peso: 38.0,
       corona: "28 PCO",
       altura: 311.0,
       capacidad: 1500,
@@ -1086,9 +1086,9 @@ export const _PRODUCTOS = [
     specs: {
       peso: 23,
       corona: "R24 inviolable",
-      altura: 113.6,
+      altura: 138.0,
       capacidad: 240,
-      pzsEmpaque: 160,
+      pzsEmpaque: 180,
       tipoEmpaque: "Caja",
       colores: ["Cristal", "Ambar", "Blanco"],
       produccionMinima: null,
