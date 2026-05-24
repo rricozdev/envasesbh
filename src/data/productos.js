@@ -30,7 +30,8 @@ export const CATEGORIAS = [
 //     tipoEmpaque: "",        // "Bolsa" | "Caja"
 //     colores: [],            // ["Cristal", "Azul", ...] — capitalizado, sin strings vacíos
 //     produccionMinima: null, // piezas — null si no aplica
-//     sobrePedido: false,      // true | false | null (pendiente)
+//     sobrePedido: false,
+//     stockDisponible: false,      // true | false | null
 //   },
 // },
 
@@ -52,6 +53,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -69,6 +71,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -86,6 +89,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -103,10 +107,11 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
-    nombre: " 1000 ml Sinfín",
+    nombre: "1000 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_5_1lt-sinfin-c.webp",
     slug: "1000-ml",
@@ -120,6 +125,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -137,6 +143,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Rosa", "Humo", "Verde"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
 
@@ -158,6 +165,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -176,6 +184,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -185,15 +194,16 @@ export const _PRODUCTOS = [
       "/img/productos/alimentos_y_bebidas/imagen_9_750ml-oliva-cuadrada.webp",
     slug: "750-ml-oliva-cuadrada", // corregido: estaba vacío
     specs: {
-      peso: 37.5,
+      peso: 37.0,
       corona: "28 PCO",
-      altura: 227.5,
+      altura: 228.0,
       capacidad: 750,
       pzsEmpaque: 165,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
+      produccionMinima: 20000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -211,6 +221,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: 20000,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -228,6 +239,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"], // corregido: era [""]
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -238,13 +250,14 @@ export const _PRODUCTOS = [
     specs: {
       peso: 23,
       corona: "28",
-      altura: 193.04,
-      capacidad: 328,
-      pzsEmpaque: 350,
+      altura: 200.0,
+      capacidad: 250,
+      pzsEmpaque: 238,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: false,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -263,6 +276,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -280,6 +294,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -297,6 +312,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -314,6 +330,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"], // corregido: era [""]
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -331,6 +348,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -349,6 +367,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -366,27 +385,29 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
-    nombre: " 500 ml Júbilo",
+    nombre: " 500 ml Jubileo",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_20_500ml-jubilo.webp",
     slug: "500-ml-jubilo",
     specs: {
-      peso: 17.2,
+      peso: 17.0,
       corona: "28 PCO",
-      altura: 205.0,
+      altura: 203.0,
       capacidad: 500,
-      pzsEmpaque: 208,
+      pzsEmpaque: 130,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
+      produccionMinima: 30000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
-    nombre: " 1000 ml Agro",
+    nombre: "1000 ml Agro",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_21_1000ml-agro.webp",
     slug: "1000-ml-agro",
@@ -400,6 +421,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Ambar"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -417,6 +439,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -434,6 +457,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -442,15 +466,16 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_24_355-ml-rombo.webp",
     slug: "355-ml-rombo",
     specs: {
-      peso: null,
+      peso: 16,
       corona: null,
-      altura: null,
+      altura: 164,
       capacidad: 355,
-      pzsEmpaque: 238,
+      pzsEmpaque: 165,
       tipoEmpaque: "Bolsa",
       colores: [],
-      produccionMinima: null,
-      sobrePedido: false,
+      produccionMinima: 26000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
 
@@ -461,7 +486,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_25_30ml-institucional.webp",
     slug: "30-ml-institucional",
     specs: {
-      peso: 5.0,
+      peso: 6.5,
       corona: "18",
       altura: 63.0,
       capacidad: 30,
@@ -469,7 +494,8 @@ export const _PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: false,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -480,13 +506,14 @@ export const _PRODUCTOS = [
     specs: {
       peso: 6.5,
       corona: "18",
-      altura: 64.25,
+      altura: 64.0,
       capacidad: 40,
       pzsEmpaque: 1000,
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: false,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -504,6 +531,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Negro"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -521,6 +549,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -538,6 +567,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -555,6 +585,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -572,6 +603,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -589,6 +621,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Negro"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -606,6 +639,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Ambar"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -623,6 +657,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -640,6 +675,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
 
@@ -659,6 +695,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -676,6 +713,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -693,6 +731,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -710,6 +749,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -727,6 +767,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -744,6 +785,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -761,6 +803,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -778,6 +821,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: 12000,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
 
@@ -798,6 +842,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -815,6 +860,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -832,6 +878,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -849,6 +896,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -866,6 +914,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -883,6 +932,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -900,6 +950,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -917,6 +968,7 @@ export const _PRODUCTOS = [
       colores: ["Colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -934,6 +986,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -951,23 +1004,25 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
-    nombre: "Silueta 500 ml",
+    nombre: "500 ml Silueta",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_54_silueta-500-ml.webp",
     slug: "silueta-500-ml",
     specs: {
       peso: 28,
       corona: "r-28",
-      altura: 170,
+      altura: 185.0,
       capacidad: 500,
-      pzsEmpaque: 180,
+      pzsEmpaque: 120,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
+      produccionMinima: 15000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
 
@@ -988,6 +1043,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1005,6 +1061,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1022,6 +1079,7 @@ export const _PRODUCTOS = [
       colores: ["Negro", "Rojo"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
 
@@ -1042,6 +1100,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Ambar", "Blanco", "Azul"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1059,6 +1118,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Ambar", "Blanco", "Azul"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1076,6 +1136,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1093,6 +1154,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Ambar", "Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1111,6 +1173,7 @@ export const _PRODUCTOS = [
       colores: ["Ambar", "Blanco", "Azul", "Natural"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1130,6 +1193,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
 
@@ -1150,6 +1214,7 @@ export const _PRODUCTOS = [
       colores: ["Disponible en 6 colores de linea"],
       produccionMinima: 20000,
       sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1168,6 +1233,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: 24000,
       sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1186,6 +1252,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1203,6 +1270,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Verde"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1220,6 +1288,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Verde"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1237,6 +1306,7 @@ export const _PRODUCTOS = [
       colores: ["Humo"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1254,23 +1324,25 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
-    nombre: "de Limpieza 2lt",
+    nombre: "de Limpieza 2 lt",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_71_envase-2lt.webp",
     slug: "2lt",
     specs: {
-      peso: 46,
+      peso: 45,
       corona: "R28",
-      altura: 285,
+      altura: 314,
       capacidad: 2000,
       pzsEmpaque: 110,
       tipoEmpaque: "Bolsa",
       colores: ["Natural", "Colores sobre pedido"],
-      produccionMinima: null,
-      sobrePedido: false,
+      produccionMinima: 20000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1288,6 +1360,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1305,6 +1378,7 @@ export const _PRODUCTOS = [
       colores: ["Natural"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1323,6 +1397,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
 
@@ -1345,6 +1420,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Rosa", "Morado", "Rojo", "Aqua", "Humo"],
       produccionMinima: 20000,
       sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1364,6 +1440,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1383,6 +1460,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Rosa", "Morado", "Rojo", "Aqua", "Humo"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1402,6 +1480,7 @@ export const _PRODUCTOS = [
       colores: ["Colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1419,6 +1498,7 @@ export const _PRODUCTOS = [
       colores: ["Colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1438,6 +1518,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1457,6 +1538,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1476,6 +1558,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1495,6 +1578,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
 
@@ -1515,6 +1599,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1532,6 +1617,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Rosa", "Azul", "Morado", "Aqua"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1549,6 +1635,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1567,6 +1654,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1585,6 +1673,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1602,6 +1691,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1620,6 +1710,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1637,6 +1728,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1655,6 +1747,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1673,6 +1766,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1691,6 +1785,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1709,6 +1804,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1727,6 +1823,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1744,6 +1841,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1761,6 +1859,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco", "Variedad de colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
 
@@ -1782,6 +1881,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1800,6 +1900,7 @@ export const _PRODUCTOS = [
       colores: ["Azul", "Rojo", "Amarillo", "Verde"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1818,6 +1919,7 @@ export const _PRODUCTOS = [
       colores: ["Azul"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1836,6 +1938,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1854,6 +1957,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Rojo", "Morado", "Azul", "Rosa"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1872,6 +1976,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1890,6 +1995,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1908,6 +2014,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1926,6 +2033,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1944,6 +2052,7 @@ export const _PRODUCTOS = [
       colores: ["Azul"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -1962,6 +2071,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Blanca"],
       produccionMinima: 20000,
       sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1980,6 +2090,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Blanca"],
       produccionMinima: 20000,
       sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1998,6 +2109,7 @@ export const _PRODUCTOS = [
       colores: ["Más de 10 opciones de colores disponibles"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -2015,6 +2127,7 @@ export const _PRODUCTOS = [
       colores: ["Variedad de colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -2033,6 +2146,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -2051,6 +2165,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -2069,6 +2184,7 @@ export const _PRODUCTOS = [
       colores: ["Natural"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
   {
@@ -2087,6 +2203,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: false,
     },
   },
 ];

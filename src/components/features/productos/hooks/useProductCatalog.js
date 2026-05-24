@@ -29,6 +29,11 @@ export default function useProductCatalog(productos) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [categoria]);
 
+  // resetea la página cuando cambia el search
+  useEffect(() => {
+    setPagina(1);
+  }, [search]);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [color, capacidadRango]);

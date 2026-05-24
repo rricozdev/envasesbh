@@ -78,9 +78,20 @@ export default function ProductCard({ producto }) {
           </h3>
         </Link>
 
-        {/* CAPACIDAD */}
+        {/* CAPACIDAD + BADGE */}
         {specs?.capacidad && (
-          <p className="text-xs text-gray-400 mb-4">{specs.capacidad} ml</p>
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-xs text-gray-400">{specs.capacidad} ml</p>
+            {specs?.stockDisponible === true ? (
+              <span className="text-[10px] font-bold uppercase tracking-wider text-green-600">
+                ● En stock
+              </span>
+            ) : specs?.sobrePedido === true ? (
+              <span className="text-[10px] font-bold uppercase tracking-wider text-yellow-600">
+                ● Bajo pedido
+              </span>
+            ) : null}
+          </div>
         )}
 
         {/* SPECS con líneas punteadas */}
