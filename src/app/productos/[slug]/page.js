@@ -1,4 +1,3 @@
-// app/productos/[slug]/page.js
 import AddToCartButton from "@/components/features/cart/AddToCartButton";
 import ProductGallery from "@/components/features/productos/ProductGallery";
 import { PRODUCTOS } from "@/data/productos";
@@ -10,6 +9,22 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+const PREFIJOS_PROPIOS = [
+  "tapa",
+  "trigger",
+  "tarro",
+  "vitrolero",
+  "bomba",
+  "atomizador",
+  "flip",
+  "mini",
+];
+
+const getNombreCompleto = (nombre) =>
+  PREFIJOS_PROPIOS.some((p) => nombre.toLowerCase().startsWith(p))
+    ? nombre
+    : `Envase ${nombre}`;
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -37,7 +52,6 @@ export async function generateMetadata({ params }) {
   });
 }
 
-// Generar las rutas estáticas de productos
 export async function generateStaticParams() {
   return PRODUCTOS.map((producto) => ({
     slug: producto.slug,
@@ -50,9 +64,7 @@ export default async function ProductoDetalle({ params }) {
 
   if (!producto) notFound();
 
-  const nombreCompleto = producto.nombre.toLowerCase().includes("envase")
-    ? producto.nombre
-    : `Envase ${producto.nombre}`;
+  const nombreCompleto = getNombreCompleto(producto.nombre);
 
   const relacionados = PRODUCTOS.filter(
     (p) => p.categoria === producto.categoria && p.id !== producto.id,
@@ -66,12 +78,12 @@ export default async function ProductoDetalle({ params }) {
       value: specs?.capacidad ? `${specs.capacidad} ml` : null,
     },
     { label: "Peso", value: specs?.peso ? `${specs.peso} g` : null },
-    { label: "Corona", value: specs?.corona ?? null },
+    { label: "Rosca", value: specs?.corona ?? null },
     { label: "Altura", value: specs?.altura ? `${specs.altura} mm` : null },
-    { label: "Pzs x Empaque", value: specs?.pzsEmpaque ?? null },
+    { label: "Pzs / Empaque", value: specs?.pzsEmpaque ?? null },
     { label: "Tipo de Empaque", value: specs?.tipoEmpaque ?? null },
     {
-      label: "Producción Mínima",
+      label: "Venta Mínima",
       value: specs?.produccionMinima
         ? `${specs.produccionMinima.toLocaleString()} pzs`
         : null,
@@ -82,7 +94,6 @@ export default async function ProductoDetalle({ params }) {
     },
   ];
 
-  // JSON-LD para el producto
   const jsonLd = generateProductJsonLd({
     id: producto.id,
     nombre: nombreCompleto,
@@ -95,7 +106,6 @@ export default async function ProductoDetalle({ params }) {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -122,16 +132,11 @@ export default async function ProductoDetalle({ params }) {
       <div className="py-8 md:pt-10 max-w-6xl mx-auto px-4 md:px-6 flex flex-col lg:flex-row gap-10 xl:gap-20">
         {/* IMAGEN */}
         <div className="w-full lg:w-1/2">
-          <ProductGallery
-            imagen={producto.imagen}
-            imagenes={producto.imagenes}
-            alt={nombreCompleto}
-          />
+          <ProductGallery imagen={producto.imagen} alt={nombreCompleto} />
         </div>
 
         {/* INFO */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
-          {/* VOLVER */}
           <Link
             href={`/productos?categoria=${encodeURIComponent(producto.categoria)}`}
             className="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-6 group"
@@ -256,14 +261,14 @@ export default async function ProductoDetalle({ params }) {
                 <div className="aspect-square relative mb-4 bg-gray-50 rounded-xl overflow-hidden p-4">
                   <Image
                     src={rel.imagen}
-                    alt={rel.nombre}
+                    alt={getNombreCompleto(rel.nombre)}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-contain group-hover:scale-110 transition-transform"
                   />
                 </div>
                 <h4 className="text-secondary font-bold text-sm mb-3 group-hover:text-primary transition-colors truncate">
-                  {rel.nombre}
+                  {getNombreCompleto(rel.nombre)}
                 </h4>
                 <div className="text-[10px] font-black uppercase text-primary tracking-widest">
                   Ver detalle
