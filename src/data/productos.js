@@ -30,7 +30,8 @@ export const CATEGORIAS = [
 //     tipoEmpaque: "",        // "Bolsa" | "Caja"
 //     colores: [],            // ["Cristal", "Azul", ...] — capitalizado, sin strings vacíos
 //     produccionMinima: null, // piezas — null si no aplica
-//     sobrePedido: false,      // true | false | null (pendiente)
+//     sobrePedido: false,
+//     stockDisponible: false,      // true | false | null
 //   },
 // },
 
@@ -52,6 +53,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -69,6 +71,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -77,15 +80,16 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_3_500ml-sinfin-r-28.webp",
     slug: "500-ml",
     specs: {
-      peso: 17.2,
+      peso: 16.0,
       corona: "28 PCO",
-      altura: 218.0,
+      altura: 216.0,
       capacidad: 500,
-      pzsEmpaque: 225,
+      pzsEmpaque: 200,
       tipoEmpaque: "Bolsa",
-      colores: ["Cristal", "Azul"],
+      colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -103,23 +107,25 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
-    nombre: " 1000 ml Sinfín",
+    nombre: "1000 ml Sinfín",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_5_1lt-sinfin-c.webp",
     slug: "1000-ml",
     specs: {
-      peso: 25.0,
+      peso: 30.0,
       corona: "28 PCO",
-      altura: 259.0,
+      altura: 260.0,
       capacidad: 1000,
       pzsEmpaque: 165,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -128,7 +134,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_6_1500ml-sinfin-37gr.webp",
     slug: "1500-ml",
     specs: {
-      peso: 37.0,
+      peso: 38.0,
       corona: "28 PCO",
       altura: 311.0,
       capacidad: 1500,
@@ -137,6 +143,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Rosa", "Humo", "Verde"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
 
@@ -158,6 +165,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -176,6 +184,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -185,15 +194,16 @@ export const _PRODUCTOS = [
       "/img/productos/alimentos_y_bebidas/imagen_9_750ml-oliva-cuadrada.webp",
     slug: "750-ml-oliva-cuadrada", // corregido: estaba vacío
     specs: {
-      peso: 37.5,
+      peso: 37.0,
       corona: "28 PCO",
-      altura: 227.5,
+      altura: 228.0,
       capacidad: 750,
       pzsEmpaque: 165,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
+      produccionMinima: 20000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -211,6 +221,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: 20000,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -228,6 +239,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"], // corregido: era [""]
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -238,13 +250,14 @@ export const _PRODUCTOS = [
     specs: {
       peso: 23,
       corona: "28",
-      altura: 193.04,
-      capacidad: 328,
-      pzsEmpaque: 350,
+      altura: 200.0,
+      capacidad: 250,
+      pzsEmpaque: 238,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: false,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -263,6 +276,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -273,13 +287,14 @@ export const _PRODUCTOS = [
     specs: {
       peso: 23,
       corona: "28",
-      altura: 250.07,
+      altura: 252.0,
       capacidad: 520,
       pzsEmpaque: 198,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -288,15 +303,16 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_15_1000ml-licorera.webp",
     slug: "1000-ml-licorera",
     specs: {
-      peso: 39.5,
+      peso: 39.0,
       corona: "28",
-      altura: 304,
+      altura: 305,
       capacidad: 1075,
       pzsEmpaque: 149,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -314,6 +330,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"], // corregido: era [""]
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -331,6 +348,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -349,6 +367,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -366,27 +385,29 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
-    nombre: " 500 ml Júbilo",
+    nombre: " 500 ml Jubileo",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_20_500ml-jubilo.webp",
     slug: "500-ml-jubilo",
     specs: {
-      peso: 17.2,
+      peso: 17.0,
       corona: "28 PCO",
-      altura: 205.0,
+      altura: 203.0,
       capacidad: 500,
-      pzsEmpaque: 208,
+      pzsEmpaque: 130,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
+      produccionMinima: 30000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
-    nombre: " 1000 ml Agro",
+    nombre: "1000 ml Agro",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_21_1000ml-agro.webp",
     slug: "1000-ml-agro",
@@ -400,6 +421,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Ambar"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -410,13 +432,14 @@ export const _PRODUCTOS = [
     specs: {
       peso: 23.0,
       corona: "33",
-      altura: 199.8,
-      capacidad: 270,
+      altura: 160.0,
+      capacidad: 250,
       pzsEmpaque: 210,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -427,13 +450,14 @@ export const _PRODUCTOS = [
     specs: {
       peso: 33.0,
       corona: "33",
-      altura: 108.25,
-      capacidad: 504,
-      pzsEmpaque: 121,
+      altura: 180.0,
+      capacidad: 500,
+      pzsEmpaque: 132,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -442,15 +466,16 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_24_355-ml-rombo.webp",
     slug: "355-ml-rombo",
     specs: {
-      peso: null,
+      peso: 16,
       corona: null,
-      altura: null,
+      altura: 164,
       capacidad: 355,
-      pzsEmpaque: 238,
+      pzsEmpaque: 165,
       tipoEmpaque: "Bolsa",
-      colores: [],
-      produccionMinima: null,
-      sobrePedido: false,
+      colores: ["Cristal"],
+      produccionMinima: 26000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
 
@@ -461,7 +486,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_25_30ml-institucional.webp",
     slug: "30-ml-institucional",
     specs: {
-      peso: 5.0,
+      peso: 6.5,
       corona: "18",
       altura: 63.0,
       capacidad: 30,
@@ -469,7 +494,8 @@ export const _PRODUCTOS = [
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: false,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -480,13 +506,14 @@ export const _PRODUCTOS = [
     specs: {
       peso: 6.5,
       corona: "18",
-      altura: 64.25,
+      altura: 64.0,
       capacidad: 40,
       pzsEmpaque: 1000,
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: false,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -504,6 +531,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Negro"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -521,6 +549,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -538,6 +567,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -555,6 +585,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -572,6 +603,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -589,6 +621,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Negro"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -606,6 +639,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Ambar"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -623,6 +657,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -640,6 +675,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
 
@@ -659,6 +695,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -676,6 +713,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -693,6 +731,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -710,6 +749,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -727,6 +767,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -744,6 +785,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -761,6 +803,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -778,26 +821,28 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: 12000,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
 
   // ─── COSMÉTICOS ──────────────────────────────────────────────────────────
   // TODO: agregar productos
   {
-    nombre: "60ml Oval",
+    nombre: "60 ml Oval",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_44_oval-60ml-c20-410.webp",
     slug: "60-ml-oval",
     specs: {
       peso: 10.0,
       corona: "R20",
-      altura: 103.0,
+      altura: 104.0,
       capacidad: 60,
-      pzsEmpaque: 1000,
+      pzsEmpaque: 650,
       tipoEmpaque: "Caja",
-      colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
+      colores: ["Cristal", "Colores bajo pedido"],
+      produccionMinima: 20000,
+      sobrePedido: true,
+      stockDisponible: true,
     },
   },
   {
@@ -815,6 +860,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -823,15 +869,16 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_46_125ml-oval.webp",
     slug: "125-ml-oval",
     specs: {
-      peso: 16,
+      peso: 15.5,
       corona: "R24-415",
       altura: 139,
       capacidad: 125,
-      pzsEmpaque: 306,
-      tipoEmpaque: "Charola",
-      colores: ["Cristal", "Colores"],
+      pzsEmpaque: 1530,
+      tipoEmpaque: "Modulo",
+      colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -840,15 +887,16 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_47_250ml-oval.webp",
     slug: "250-ml-oval",
     specs: {
-      peso: 22.5,
+      peso: 23.0,
       corona: "R24-415",
-      altura: 164.5,
+      altura: 164.0,
       capacidad: 250,
       pzsEmpaque: 180,
       tipoEmpaque: "Caja",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -866,6 +914,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -883,6 +932,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -900,6 +950,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -917,6 +968,7 @@ export const _PRODUCTOS = [
       colores: ["Colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -934,6 +986,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -951,23 +1004,25 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
-    nombre: "Silueta 500 ml",
+    nombre: "500 ml Silueta",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_54_silueta-500-ml.webp",
     slug: "silueta-500-ml",
     specs: {
       peso: 28,
       corona: "r-28",
-      altura: 170,
+      altura: 185.0,
       capacidad: 500,
-      pzsEmpaque: 180,
+      pzsEmpaque: 120,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
+      produccionMinima: 15000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
 
@@ -988,6 +1043,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1005,6 +1061,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1022,6 +1079,7 @@ export const _PRODUCTOS = [
       colores: ["Negro", "Rojo"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
 
@@ -1042,6 +1100,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Ambar", "Blanco", "Azul"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1059,6 +1118,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Ambar", "Blanco", "Azul"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1076,6 +1136,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1086,13 +1147,14 @@ export const _PRODUCTOS = [
     specs: {
       peso: 23,
       corona: "R24 inviolable",
-      altura: 113.6,
+      altura: 138.0,
       capacidad: 240,
-      pzsEmpaque: 160,
+      pzsEmpaque: 180,
       tipoEmpaque: "Caja",
       colores: ["Cristal", "Ambar", "Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1111,6 +1173,7 @@ export const _PRODUCTOS = [
       colores: ["Ambar", "Blanco", "Azul", "Natural"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1130,6 +1193,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
 
@@ -1143,13 +1207,14 @@ export const _PRODUCTOS = [
     specs: {
       peso: 20,
       corona: "R24-410",
-      altura: 146,
+      altura: 152,
       capacidad: 249,
-      pzsEmpaque: null,
-      tipoEmpaque: "Charola",
+      pzsEmpaque: 180,
+      tipoEmpaque: "Caja",
       colores: ["Disponible en 6 colores de linea"],
       produccionMinima: 20000,
       sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1168,6 +1233,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: 24000,
       sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1186,6 +1252,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1203,6 +1270,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Verde"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1220,6 +1288,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Verde"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1237,6 +1306,7 @@ export const _PRODUCTOS = [
       colores: ["Humo"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1254,23 +1324,25 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
-    nombre: "de Limpieza 2lt",
+    nombre: "2000 ml de Limpieza",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_71_envase-2lt.webp",
     slug: "2lt",
     specs: {
-      peso: 46,
+      peso: 45,
       corona: "R28",
-      altura: 285,
+      altura: 314,
       capacidad: 2000,
       pzsEmpaque: 110,
       tipoEmpaque: "Bolsa",
-      colores: ["Natural", "Colores sobre pedido"],
-      produccionMinima: null,
-      sobrePedido: false,
+      colores: ["Natural", "Colores bajo pedido"],
+      produccionMinima: 20000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1288,6 +1360,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1296,15 +1369,16 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/limpieza/imagen_73_garrafa-5lt.webp",
     slug: "garrafa-5lt",
     specs: {
-      peso: 100,
+      peso: 74,
       corona: "R45",
-      altura: null,
+      altura: 380,
       capacidad: 5000,
-      pzsEmpaque: 110,
+      pzsEmpaque: 30,
       tipoEmpaque: "Bolsa",
       colores: ["Natural"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1314,7 +1388,7 @@ export const _PRODUCTOS = [
 
     slug: "garrafa-10lt",
     specs: {
-      peso: 150,
+      peso: 148,
       corona: "45",
       altura: 427,
       capacidad: 10000,
@@ -1323,6 +1397,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
 
@@ -1345,6 +1420,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Rosa", "Morado", "Rojo", "Aqua", "Humo"],
       produccionMinima: 20000,
       sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1364,6 +1440,7 @@ export const _PRODUCTOS = [
       colores: [],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1383,6 +1460,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Rosa", "Morado", "Rojo", "Aqua", "Humo"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1402,6 +1480,7 @@ export const _PRODUCTOS = [
       colores: ["Colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1410,7 +1489,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/publicitarios/imagen_79_tapa-sport-r63.webp",
     slug: "tapa-sport-r63",
     specs: {
-      peso: null,
+      peso: 12,
       corona: "R63",
       altura: 25,
       capacidad: null,
@@ -1419,6 +1498,7 @@ export const _PRODUCTOS = [
       colores: ["Colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1438,6 +1518,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1457,6 +1538,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1476,6 +1558,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1495,6 +1578,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Azul", "Naranja", "Rojo", "Verde", "Morado"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
 
@@ -1515,6 +1599,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1532,6 +1617,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal", "Rosa", "Azul", "Morado", "Aqua"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1544,11 +1630,12 @@ export const _PRODUCTOS = [
       corona: 63,
       altura: 207,
       capacidad: 1000,
-      pzsEmpaque: 105,
+      pzsEmpaque: 106,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1567,6 +1654,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1578,13 +1666,14 @@ export const _PRODUCTOS = [
     specs: {
       peso: 25,
       corona: 63,
-      altura: 135.25,
+      altura: 136.0,
       capacidad: 487,
       pzsEmpaque: 112,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1602,6 +1691,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1620,6 +1710,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1637,6 +1728,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1655,6 +1747,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1673,6 +1766,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1691,6 +1785,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1700,15 +1795,16 @@ export const _PRODUCTOS = [
       "/img/productos/tarros_vitroleros/imagen_95_vitrolero-medio-galon-cuadrado.webp",
     slug: "tarro-vitrolero-medio-galon-cuadrado",
     specs: {
-      peso: 68,
+      peso: 69,
       corona: 110,
-      altura: 169.03,
+      altura: 170.0,
       capacidad: 1673,
-      pzsEmpaque: 24,
+      pzsEmpaque: 40,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1718,15 +1814,16 @@ export const _PRODUCTOS = [
       "/img/productos/tarros_vitroleros/imagen_96_vitrolero-1-galon-cuadrado.webp",
     slug: "tarro-vitrolero-1-galon-cuadrado",
     specs: {
-      peso: 106,
+      peso: 105,
       corona: 110,
-      altura: 251.59,
+      altura: 251.0,
       capacidad: 3125,
       pzsEmpaque: 35,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1744,6 +1841,7 @@ export const _PRODUCTOS = [
       colores: ["Cristal"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1761,6 +1859,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco", "Variedad de colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
 
@@ -1782,6 +1881,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1800,6 +1900,7 @@ export const _PRODUCTOS = [
       colores: ["Azul", "Rojo", "Amarillo", "Verde"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1818,6 +1919,7 @@ export const _PRODUCTOS = [
       colores: ["Azul"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1836,6 +1938,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1854,6 +1957,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Rojo", "Morado", "Azul", "Rosa"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1872,6 +1976,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1890,6 +1995,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1908,6 +2014,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1926,6 +2033,7 @@ export const _PRODUCTOS = [
       colores: ["Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1944,6 +2052,7 @@ export const _PRODUCTOS = [
       colores: ["Azul"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1962,6 +2071,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Blanca"],
       produccionMinima: 20000,
       sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1980,6 +2090,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Blanca"],
       produccionMinima: 20000,
       sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1998,6 +2109,7 @@ export const _PRODUCTOS = [
       colores: ["Más de 10 opciones de colores disponibles"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -2015,6 +2127,7 @@ export const _PRODUCTOS = [
       colores: ["Variedad de colores"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -2033,6 +2146,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -2051,6 +2165,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -2069,6 +2184,7 @@ export const _PRODUCTOS = [
       colores: ["Natural"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -2087,6 +2203,7 @@ export const _PRODUCTOS = [
       colores: ["Natural", "Blanco"],
       produccionMinima: null,
       sobrePedido: false,
+      stockDisponible: true,
     },
   },
 ];
