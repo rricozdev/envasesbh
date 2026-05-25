@@ -84,13 +84,27 @@ export default async function ProductoDetalle({ params }) {
     { label: "Tipo de Empaque", value: specs?.tipoEmpaque ?? null },
     {
       label: "Venta Mínima",
-      value: specs?.produccionMinima
-        ? `${specs.produccionMinima.toLocaleString()} pzs`
-        : null,
+      value: specs?.stockDisponible
+        ? `1 ${specs.tipoEmpaque ?? "unidad"}`
+        : specs?.produccionMinima
+          ? `${specs.produccionMinima.toLocaleString()} pzs`
+          : null,
     },
     {
       label: "Disponibilidad",
-      value: specs?.sobrePedido === true ? "Sobre Pedido" : null,
+      value: specs?.sobrePedido === true ? "Bajo Pedido" : null,
+    },
+    {
+      label: "Stock",
+      value: specs?.stockDisponible === true ? "Disponible" : null,
+    },
+    {
+      label: "Colores bajo pedido",
+      value:
+        specs?.colores?.some((c) => c.toLowerCase().includes("bajo pedido")) &&
+        specs?.produccionMinima
+          ? `Mín. ${specs.produccionMinima.toLocaleString()} pzs`
+          : null,
     },
   ];
 
@@ -159,14 +173,14 @@ export default async function ProductoDetalle({ params }) {
               {producto.categoria}
             </span>
           </div>
-
-          <h1 className="text-3xl md:text-5xl font-bold text-secondary uppercase italic tracking-tighter mb-6 leading-[0.9]">
+          {/* Nombre del producto */}
+          <h1 className="text-xl md:text-3xl font-bold text-secondary uppercase tracking-tighter mb-6 leading-[0.9]">
             {nombreCompleto}
           </h1>
 
           {/* COLORES */}
           {specs?.colores?.filter((c) => c).length > 0 && (
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-6 flex-wrap">
               <span className="text-[10px] text-secondary/40 font-bold uppercase tracking-widest">
                 Colores:
               </span>
@@ -176,10 +190,9 @@ export default async function ProductoDetalle({ params }) {
                   .map((color) => (
                     <div key={color} className="flex items-center gap-1.5">
                       <span
-                        className="w-3.5 h-3.5 rounded-full border border-gray-200 shadow-sm flex-shrink-0"
+                        className="w-6 h-4 rounded border border-gray-200 shadow-sm flex-shrink-0"
                         style={{
-                          backgroundColor:
-                            COLOR_MAP[color.toLowerCase()] ?? "#ccc",
+                          background: COLOR_MAP[color.toLowerCase()] ?? "#ccc",
                         }}
                       />
                       <span className="text-[10px] font-semibold uppercase tracking-wide text-secondary">
@@ -236,7 +249,7 @@ export default async function ProductoDetalle({ params }) {
         <section className="bg-gray-50 border-t border-gray-100 py-16">
           <div className="mx-auto max-w-6xl px-4 md:px-6 flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-secondary uppercase italic tracking-tighter">
+              <h2 className="text-2xl md:text-3xl font-bold text-secondary uppercase tracking-tighter">
                 También te puede <span className="text-primary">interesar</span>
               </h2>
               <p className="text-gray-500 text-xs md:text-sm mt-1 uppercase tracking-wider font-medium">
