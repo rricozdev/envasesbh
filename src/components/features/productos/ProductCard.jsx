@@ -79,20 +79,23 @@ export default function ProductCard({ producto }) {
         </Link>
 
         {/* CAPACIDAD + BADGE */}
-        {specs?.capacidad && (
-          <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-4">
+          {specs?.capacidad ? (
             <p className="text-xs text-gray-400">{specs.capacidad} ml</p>
-            {specs?.stockDisponible === true ? (
-              <span className="text-[10px] font-bold uppercase tracking-wider text-green-600">
-                ● En stock
-              </span>
-            ) : specs?.sobrePedido === true ? (
-              <span className="text-[10px] font-bold uppercase tracking-wider text-yellow-600">
-                ● Bajo pedido
-              </span>
-            ) : null}
-          </div>
-        )}
+          ) : (
+            <span />
+          )}
+
+          {specs?.stockDisponible === true ? (
+            <span className="text-[10px] font-bold uppercase tracking-wider text-green-600">
+              ● En stock
+            </span>
+          ) : specs?.sobrePedido === true ? (
+            <span className="text-[10px] font-bold uppercase tracking-wider text-yellow-600">
+              ● Bajo pedido
+            </span>
+          ) : null}
+        </div>
 
         {/* SPECS con líneas punteadas */}
         {specs_list.length > 0 && (

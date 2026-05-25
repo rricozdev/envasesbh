@@ -22,41 +22,51 @@ function Catalog() {
     paginasVisibles,
     color,
     setColor,
-    rosca,
-    setRosca,
     capacidadRango,
     setCapacidadRango,
     opcionesBase,
+    disponibilidad,
+    setDisponibilidad,
   } = useProductCatalog(PRODUCTOS);
+
+  const filterProps = {
+    activa: categoria,
+    onSelect: (cat) => {
+      setCategoria(cat);
+      setColor(null);
+      setCapacidadRango(null);
+      setDisponibilidad(null);
+    },
+    search,
+    setSearch,
+    color,
+    setColor,
+    capacidadRango,
+    setCapacidadRango,
+    opcionesBase,
+    disponibilidad,
+    setDisponibilidad,
+  };
 
   return (
     <>
       <ProductHeader total={filtrados.length} />
       <section className="bg-gray-50 min-h-screen py-8 md:py-12">
         <div className="mx-auto max-w-6xl px-4">
-          <div className="flex flex-col lg:flex-row gap-12 -ml-4">
+          {/* FILTROS MOBILE */}
+          <div className="lg:hidden mb-4">
+            <ProductFilter {...filterProps} />
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* SIDEBAR DESKTOP */}
             <aside className="hidden lg:block w-64 shrink-0">
               <div className="sticky top-32 h-[calc(100vh-8rem)] overflow-y-auto pr-1">
-                <ProductFilter
-                  activa={categoria}
-                  onSelect={(cat) => {
-                    setCategoria(cat);
-                    setColor(null);
-                    setCapacidadRango(null);
-                  }}
-                  search={search}
-                  setSearch={setSearch}
-                  color={color}
-                  setColor={setColor}
-                  rosca={rosca}
-                  setRosca={setRosca}
-                  capacidadRango={capacidadRango}
-                  setCapacidadRango={setCapacidadRango}
-                  opcionesBase={opcionesBase}
-                />
+                <ProductFilter {...filterProps} />
               </div>
             </aside>
-            <div className="flex-1 overflow-y-auto">
+
+            <div className="flex-1">
               <div className="mb-6 pb-4 border-b border-gray-200 flex items-center justify-between">
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
                   Página {pagina} de {totalPaginas}

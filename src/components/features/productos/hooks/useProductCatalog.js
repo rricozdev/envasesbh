@@ -15,6 +15,7 @@ export default function useProductCatalog(productos) {
   const [search, setSearch] = useState("");
   const [color, setColor] = useState(null);
   const [capacidadRango, setCapacidadRango] = useState(null);
+  const [disponibilidad, setDisponibilidad] = useState(null);
 
   const [esMobile, setEsMobile] = useState(false);
 
@@ -70,8 +71,15 @@ export default function useProductCatalog(productos) {
       });
     }
 
+    if (disponibilidad === "stock") {
+      base = base.filter((p) => p.specs?.stockDisponible === true);
+    }
+    if (disponibilidad === "pedido") {
+      base = base.filter((p) => p.specs?.sobrePedido === true);
+    }
+
     return base;
-  }, [categoria, productos, search, color, capacidadRango]);
+  }, [categoria, productos, search, color, capacidadRango, disponibilidad]);
 
   const opcionesBase = useMemo(() => {
     const base =
@@ -96,6 +104,7 @@ export default function useProductCatalog(productos) {
 
   useEffect(() => {
     setPagina(1);
+    setDisponibilidad(null);
   }, [categoria]);
 
   const totalPaginas = Math.ceil(filtrados.length / itemsPorPagina);
@@ -142,5 +151,7 @@ export default function useProductCatalog(productos) {
     capacidadRango,
     setCapacidadRango,
     opcionesBase,
+    disponibilidad,
+    setDisponibilidad,
   };
 }

@@ -98,6 +98,14 @@ export default async function ProductoDetalle({ params }) {
       label: "Stock",
       value: specs?.stockDisponible === true ? "Disponible" : null,
     },
+    {
+      label: "Colores bajo pedido",
+      value:
+        specs?.colores?.some((c) => c.toLowerCase().includes("bajo pedido")) &&
+        specs?.produccionMinima
+          ? `Mín. ${specs.produccionMinima.toLocaleString()} pzs`
+          : null,
+    },
   ];
 
   const jsonLd = generateProductJsonLd({
@@ -172,7 +180,7 @@ export default async function ProductoDetalle({ params }) {
 
           {/* COLORES */}
           {specs?.colores?.filter((c) => c).length > 0 && (
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-6 flex-wrap">
               <span className="text-[10px] text-secondary/40 font-bold uppercase tracking-widest">
                 Colores:
               </span>
@@ -182,10 +190,9 @@ export default async function ProductoDetalle({ params }) {
                   .map((color) => (
                     <div key={color} className="flex items-center gap-1.5">
                       <span
-                        className="w-3.5 h-3.5 rounded-full border border-gray-200 shadow-sm flex-shrink-0"
+                        className="w-6 h-4 rounded border border-gray-200 shadow-sm flex-shrink-0"
                         style={{
-                          backgroundColor:
-                            COLOR_MAP[color.toLowerCase()] ?? "#ccc",
+                          background: COLOR_MAP[color.toLowerCase()] ?? "#ccc",
                         }}
                       />
                       <span className="text-[10px] font-semibold uppercase tracking-wide text-secondary">
