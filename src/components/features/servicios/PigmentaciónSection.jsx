@@ -49,7 +49,7 @@ export default function PigmentacionSection({ pigmentado }) {
               fill
               priority
               className="object-cover object-center"
-              src="/img/servicio_pingmentacion.webp"
+              src="/img/img_etiquetado.webp"
             />
           </div>
         </div>
@@ -107,18 +107,6 @@ export default function PigmentacionSection({ pigmentado }) {
             Quiero este servicio
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Button>
-          {/* <Link
-            onClick={() => {
-              sendMessgeWassap(
-                WHATSAPP_NUMBER,
-                "Hola, me gustaría obtener más información sobre el servicio de pigmentación.",
-              );
-            }}
-            className="group inline-flex items-center justify-center gap-2 w-full border border-primary text-primary font-semibold py-3 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 mt-auto"
-          >
-            Solicitar Información
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link> */}
         </div>
       </div>
     </SectionContent>
