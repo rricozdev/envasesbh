@@ -50,13 +50,13 @@ export default function SectionContent({
             }`}
           >
             {title && (
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-secondary/90 font-primary leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-secondary/90 font-primary leading-tight">
                 {title}
               </h2>
             )}
 
             {subtitle && (
-              <p className="mt-4 text-sm sm:text-¨gbase lg:text-lg text-gray-600 font-secondary">
+              <p className="mt-4 text-base lg:text-lg text-gray-600 font-secondary">
                 {subtitle}
               </p>
             )}
