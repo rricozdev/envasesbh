@@ -1,8 +1,8 @@
 import Hero from "@/components/features/home/Hero";
-import { SectionProblemSolution } from "@/components/features/home/SectionProblemSolution";
 import { SectionService } from "@/components/features/home/SectionServices";
 import { SectoinTestimonials } from "@/components/features/home/SectionTestimonials";
 import { SectionVehiculos } from "@/components/features/home/SectionVehiculos";
+import { SectionWhyUs } from "@/components/features/home/SectionWhyUs";
 import { SectionHighlight } from "@/components/features/home/Sectionhighlight";
 import Button from "@/components/ui/Button";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
@@ -55,7 +55,7 @@ export default function Home() {
             Producimos{" "}
             <span className="font-medium">envases PET de alta calidad</span>,
             fabricados con los estándares más exigentes de la industria. Cuando
-            tu operación lo requiere, también los personalizamos según tus
+            tu operación lo requiere, también los per sonalizamos según tus
             especificaciones exactas.
           </>
         }
@@ -69,7 +69,7 @@ export default function Home() {
         primaryAction={{ label: "Agendar Consultoría" }}
         secondaryAction={{ label: "Ver Catálogo" }}
       />
-      <SectionProblemSolution />
+      <SectionWhyUs />
       <SectionService />
       <SectionVehiculos />
       <SectoinTestimonials />

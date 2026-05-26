@@ -1,18 +1,19 @@
 import SectionContent from "@/components/ui/SectionContent";
-import { Gauge, MapPinned, Package, Truck } from "lucide-react";
+import { MapPinned, Package, Receipt, Truck } from "lucide-react";
 import Image from "next/image";
 
 const vehicles = [
   {
     id: 1,
-    name: "Trailer",
+    name: "Tráiler",
     description:
-      "Preparado para realizar entregas de larga distancia con gran capacidad de carga y máxima eficiencia en todo México.",
+      "Preparado para realizar entregas de larga distancia con máxima eficiencia y seguridad en todo México.",
     image: "/img/flota/camion_30Toneladas.webp",
     color: "bg-indigo-50",
-    volume: "Volumen extra grande",
-    routes: "Locales y largas distancias",
-    capacity: "30 toneladas",
+    volume: "Grandes volúmenes",
+    routes: "Cobertura nacional",
+    ideal: "Entregas de larga distancia",
+    badge: "Cobertura nacional",
   },
   {
     id: 2,
@@ -21,136 +22,131 @@ const vehicles = [
       "Diseñado para transportar grandes volúmenes con eficiencia y seguridad en entregas locales y foráneas.",
     image: "/img/flota/camion_20_Toneladas.webp",
     color: "bg-blue-50",
-    volume: "Volumen grande",
+    volume: "Alta capacidad de carga",
     routes: "Locales y foráneos",
-    capacity: "20 toneladas",
-  },
-  {
-    id: 4,
-    name: "Camion Mediano",
-    description:
-      "Pensado para optimizar tiempos de entrega y transportar carga con seguridad en trayectos medianos y largos.",
-    image: "/img/flota/camion_mediano.webp",
-    color: "bg-cyan-50",
-    volume: "Volumen intermedio",
-    routes: "Viajes locales",
-    capacity: "10 toneladas",
+    ideal: "Distribución eficiente",
+    badge: "Entregas eficientes",
   },
   {
     id: 3,
-    name: "Camion Chico",
+    name: "Camión Caja Grande",
     description:
-      "Ideal para rutas locales y entregas foráneas, combinando versatilidad y eficiencia en cada traslado.",
-    image: "/img/flota/camion_10_Toneladas.webp",
-    color: "bg-teal-50",
+      "Pensado para optimizar tiempos de entrega y transportar productos de forma segura en trayectos medianos.",
+    image: "/img/flota/camion_mediano.webp",
+    color: "bg-cyan-50",
     volume: "Volumen grande",
     routes: "Locales y foráneos",
-    capacity: "9.5 toneladas",
+    ideal: "Entregas ágiles",
+    badge: "Cobertura flexible",
   },
   {
-    id: 5,
-    name: "Mini Van",
+    id: 4,
+    name: "Camión Caja Mediana",
     description:
-      "Ideal para entregas urbanas, asegurando que tus envases PET lleguen donde los necesites.",
-    image: "/img/flota/mini_van.webp",
-    color: "bg-cyan-50",
-    volume: "Volumen intermedio",
-    routes: "Viajes locales",
-    capacity: "2 toneladas",
+      "Ideal para rutas locales y entregas rápidas, combinando versatilidad y eficiencia en cada traslado.",
+    image: "/img/flota/camion_10_Toneladas.webp",
+    color: "bg-teal-50",
+    volume: "Volumen mediano",
+    routes: "Locales y foráneos",
+    ideal: "Entregas rápidas",
+    badge: "Entrega segura",
   },
   {
     id: 6,
     name: "Camioneta Nissan",
     description:
-      "Capacidad intermedia con gran maniobrabilidad, perfecta para entregas locales y accesos reducidos.",
+      "Gran maniobrabilidad para entregas locales y acceso a zonas de difícil circulación.",
     image: "/img/flota/camioneta_3Toneladas.webp",
+    color: "bg-sky-50",
+    volume: "Volumen mediano",
+    routes: "Cobertura local",
+    ideal: "Accesos reducidos",
+    badge: "Máxima versatilidad",
+  },
+  {
+    id: 5,
+    name: "Mini Van",
+    description:
+      "Perfecta para entregas urbanas y recorridos rápidos, asegurando atención eficiente y puntual.",
+    image: "/img/flota/mini_van.webp",
     color: "bg-cyan-50",
-    volume: "Volumen intermedio",
-    routes: "Viajes locales",
-    capacity: "3 toneladas",
+    volume: "Entregas ligeras",
+    routes: "Zonas urbanas",
+    ideal: "Distribución local",
+    badge: "Atención inmediata",
   },
 ];
 
-const hilights_vehicles = [
+const hilightsVehicles = [
   {
-    icon: <Truck size={24} className="text-white" />,
+    icon: <Truck size={22} className="text-white" />,
     title: "Flota Especializada",
     description:
-      "Contamos con diferentes unidades para adaptarnos a cada volumen y tipo de entrega.",
+      "Diferentes unidades para adaptarnos a cada tipo de entrega y operación.",
   },
   {
-    icon: <Gauge size={24} className="text-white" />,
-    title: "Cobertura Flexible",
+    icon: <Receipt size={22} className="text-white" />,
+    title: "Costos Logísticos Competitivos",
     description:
-      "Realizamos entregas locales y foráneas con eficiencia y seguridad.",
+      "Ofrecemos entrega con tarifas preferenciales y envíos sin costo en rutas y volúmenes seleccionados.",
   },
   {
-    icon: <Package size={24} className="text-white" />,
+    icon: <Package size={22} className="text-white" />,
     title: "Transporte Seguro",
     description:
-      "Nuestras unidades están acondicionadas para proteger tus envases PET durante todo el trayecto.",
+      "Nuestras unidades cuentan con GPS y monitoreo para proteger tus envases PET durante todo el trayecto.",
   },
 ];
 
 export function SectionVehiculos() {
   return (
     <SectionContent
-      title="Tus envases PET directo a la puerta de tu negocio"
-      subtitle="Nuestra flota especializada garantiza entregas seguras, rápidas y eficientes para que tus productos lleguen en perfectas condiciones a cualquier parte de México."
+      title="Logística propia para cada volumen y ubicación"
+      subtitle="Nuestra flotilla propia nos permite adaptarnos a distintos volúmenes de entrega, desde pedidos pequeños hasta embarques completos, locales y foráneos, optimizando tiempos, cobertura y costos logísticos."
     >
       {/* VEHICLES GRID */}
-      <div className="grid gap-8 md:grid-cols-3">
-        {vehicles.map((vehicle, index) => (
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {vehicles.map((vehicle) => (
           <article
             key={vehicle.id}
-            className={`group animate-fade-in overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl ${
-              index === 0
-                ? "delay-100"
-                : index === 1
-                  ? "delay-200"
-                  : index === 2
-                    ? "delay-300"
-                    : "delay-400"
-            }`}
+            className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
           >
             {/* IMAGE */}
-            <div
-              className={`relative h-52 md:h-72 overflow-hidden ${vehicle.color}`}
-            >
+            <div className={`relative h-52 overflow-hidden ${vehicle.color}`}>
               <Image
                 src={vehicle.image}
                 alt={vehicle.name}
                 fill
                 className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
 
-              {/* CAPACITY BADGE */}
-              <div className="absolute left-5 top-5 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-white shadow-md">
-                {vehicle.capacity}
+              {/* BADGE */}
+              <div className="absolute left-4 top-4 rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-secondary shadow-md">
+                {vehicle.badge}
               </div>
             </div>
 
             {/* CONTENT */}
-            <div className="p-7">
+            <div className="p-5">
               {/* TITLE */}
-              <h3 className="mb-4 font-heading text-2xl font-semibold text-secondary">
+              <h3 className="mb-3 text-xl font-semibold text-secondary">
                 {vehicle.name}
               </h3>
 
               {/* DESCRIPTION */}
-              <p className="mb-6 text-base leading-relaxed text-gray-600">
+              <p className="mb-5 text-sm leading-relaxed text-gray-600">
                 {vehicle.description}
               </p>
 
               {/* SPECS */}
-              <div className="flex flex-col flex-wrap gap-4 border-t border-gray-100 pt-5">
+              <div className="space-y-4 border-t border-gray-100 pt-4">
                 {/* VOLUME */}
                 <div className="flex items-start gap-3">
-                  <Package size={20} className="mt-0.5 shrink-0 text-primary" />
+                  <Package size={18} className="mt-0.5 shrink-0 text-primary" />
 
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-gray-400">
+                    <p className="text-[11px] font-medium uppercase tracking-wide text-gray-400">
                       Volumen
                     </p>
 
@@ -163,32 +159,17 @@ export function SectionVehiculos() {
                 {/* ROUTES */}
                 <div className="flex items-start gap-3">
                   <MapPinned
-                    size={20}
+                    size={18}
                     className="mt-0.5 shrink-0 text-primary"
                   />
 
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-gray-400">
+                    <p className="text-[11px] font-medium uppercase tracking-wide text-gray-400">
                       Cobertura
                     </p>
 
                     <p className="text-sm font-semibold text-secondary">
                       {vehicle.routes}
-                    </p>
-                  </div>
-                </div>
-
-                {/* CAPACITY */}
-                <div className="flex items-start gap-3">
-                  <Gauge size={20} className="mt-0.5 shrink-0 text-primary" />
-
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-gray-400">
-                      Capacidad
-                    </p>
-
-                    <p className="text-sm font-semibold text-secondary">
-                      {vehicle.capacity}
                     </p>
                   </div>
                 </div>
@@ -202,17 +183,17 @@ export function SectionVehiculos() {
       <div className="mt-20 border-t border-gray-200" />
 
       {/* HIGHLIGHTS */}
-      <div className="mt-16 grid gap-8 md:grid-cols-3 animate-fade-in delay-500">
-        {hilights_vehicles.map((item, i) => (
+      <div className="mt-14 grid gap-6 md:grid-cols-3">
+        {hilightsVehicles.map((item, i) => (
           <div
             key={i}
             className="rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
           >
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-md">
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary shadow-md">
               {item.icon}
             </div>
 
-            <h3 className="mb-2 font-heading text-lg font-semibold text-secondary">
+            <h3 className="mb-2 text-lg font-semibold text-secondary">
               {item.title}
             </h3>
 
