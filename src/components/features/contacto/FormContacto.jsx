@@ -175,7 +175,13 @@ ${form.mensaje}`;
 
       {/* MENSAJE */}
       <div>
-        <label className={labelClass}>Mensaje</label>
+        <label className={labelClass}>
+          Mensaje{" "}
+          <span className="text-gray-400 italic font-normal">
+            (indique tipo de envases y volumen requerido)
+          </span>
+        </label>
+
         <textarea
           name="mensaje"
           required
