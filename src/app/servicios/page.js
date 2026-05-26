@@ -1,4 +1,3 @@
-import EtiquetadoSection from "@/components/features/servicios/EtiquetadoSection";
 import PigmentacionSection from "@/components/features/servicios/PigmentaciónSection";
 import SectionContent from "@/components/ui/SectionContent";
 import { servicios } from "@/data/servicios";
@@ -100,7 +99,6 @@ export default function ServiciosPage() {
           </div>
         </div>
       </SectionContent>
-      <EtiquetadoSection etiquetado={etiquetado} key={etiquetado.id} />
       <PigmentacionSection pigmentado={pigmentado} key={pigmentado.id} />
     </>
   );

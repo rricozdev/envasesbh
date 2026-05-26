@@ -16,6 +16,11 @@ export const EMPRESA_CIUDAD = "Ciudad de México, México";
 export const EMPRESA_HORARIO =
   "Lun – Jue: 8:00am – 5:00pm - Vier: 8:00 am - 4:00 pm";
 
+// Data para sucursal de Guadalajara
+export const SUCURSAL_GDL_WHATSAPP = WHATSAPP_NUMBER; // temporal hasta tener el número real
+export const SUCURSAL_GDL_FACEBOOK =
+  "https://www.facebook.com/share/17Thf495Be/";
+
 // ─── Colores del catálogo ─────────────────────────────────────────────────────
 // Mapea los nombres de colores del catálogo (productos.js) a valores hex o
 // gradientes CSS. Se usa en src/app/productos/[slug]/page.js para renderizar
@@ -35,7 +40,7 @@ export const COLOR_MAP = {
   morado: "#7B1FA2",
   aqua: "#00BCD4",
   // Valor especial para productos con "gran variedad de colores"
-  colores:
+  "colores bajo pedido":
     "linear-gradient(135deg, #E8F4F8, #1565C0, #F48FB1, #FFB300, #66BB6A, #EF5350, #2B2B2B)",
 };
 
