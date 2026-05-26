@@ -15,7 +15,7 @@ const services = [
     ],
     description:
       "Desarrollamos pigmentaciones personalizadas para que tus envases mantengan una identidad visual uniforme, profesional y alineada con tu marca.",
-    image: "/img/pigmentado.png",
+    image: "/img/img_etiquetado.webp",
     cta: "Conocer servicio",
     ctaHref: "/servicios#pigmentado",
     badge: "Personalización",
