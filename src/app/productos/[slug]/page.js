@@ -53,9 +53,7 @@ export async function generateMetadata({ params }) {
 }
 
 export async function generateStaticParams() {
-  return PRODUCTOS.map((producto) => ({
-    slug: producto.slug,
-  }));
+  return PRODUCTOS.map((producto) => ({ slug: producto.slug }));
 }
 
 export default async function ProductoDetalle({ params }) {
@@ -65,7 +63,6 @@ export default async function ProductoDetalle({ params }) {
   if (!producto) notFound();
 
   const nombreCompleto = getNombreCompleto(producto.nombre);
-
   const relacionados = PRODUCTOS.filter(
     (p) => p.categoria === producto.categoria && p.id !== producto.id,
   ).slice(0, 4);
@@ -133,7 +130,7 @@ export default async function ProductoDetalle({ params }) {
           </Link>
           <span>/</span>
           <Link
-            href={`/productos?categoria=${encodeURIComponent(producto.categoria)}`}
+            href="/productos"
             className="hover:text-primary transition-colors"
           >
             Productos
@@ -151,8 +148,9 @@ export default async function ProductoDetalle({ params }) {
 
         {/* INFO */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
+          {/* VOLVER */}
           <Link
-            href={`/productos?categoria=${encodeURIComponent(producto.categoria)}`}
+            href="/productos"
             className="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-6 group"
           >
             <svg
@@ -173,7 +171,7 @@ export default async function ProductoDetalle({ params }) {
               {producto.categoria}
             </span>
           </div>
-          {/* Nombre del producto */}
+
           <h1 className="text-xl md:text-3xl font-bold text-secondary uppercase tracking-tighter mb-6 leading-[0.9]">
             {nombreCompleto}
           </h1>
@@ -187,19 +185,29 @@ export default async function ProductoDetalle({ params }) {
               <div className="flex gap-2 flex-wrap">
                 {specs.colores
                   .filter((c) => c)
-                  .map((color) => (
-                    <div key={color} className="flex items-center gap-1.5">
-                      <span
-                        className="w-6 h-4 rounded border border-gray-200 shadow-sm flex-shrink-0"
-                        style={{
-                          background: COLOR_MAP[color.toLowerCase()] ?? "#ccc",
-                        }}
-                      />
-                      <span className="text-[10px] font-semibold uppercase tracking-wide text-secondary">
-                        {color}
-                      </span>
-                    </div>
-                  ))}
+                  .map((color) => {
+                    const esBajoPedido = color
+                      .toLowerCase()
+                      .includes("bajo pedido");
+                    return (
+                      <div key={color} className="flex items-center gap-1.5">
+                        {!esBajoPedido && (
+                          <span
+                            className="w-6 h-4 rounded border border-gray-200 shadow-sm flex-shrink-0"
+                            style={{
+                              background:
+                                COLOR_MAP[color.toLowerCase()] ?? "#ccc",
+                            }}
+                          />
+                        )}
+                        <span
+                          className={`text-[10px] font-semibold uppercase tracking-wide ${esBajoPedido ? "text-yellow-600" : "text-secondary"}`}
+                        >
+                          {color}
+                        </span>
+                      </div>
+                    );
+                  })}
               </div>
             </div>
           )}
