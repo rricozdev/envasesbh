@@ -6,7 +6,7 @@ const strengths = [
     id: 1,
     title: "Disponibilidad y Capacidad",
     description:
-      "Contamos con la capacidad operativa y disponibilidad necesaria para responder de manera eficiente a las necesidades de tu negocio.",
+      "Contamos con la capacidad operativa y disponibilidad necesarias para responder de manera eficiente a las necesidades de tu negocio en todo momento.",
     highlights: [
       "Producción constante",
       "Capacidad de alta demanda",
@@ -18,13 +18,13 @@ const strengths = [
   },
   {
     id: 2,
-    title: "Cobertura y Distribución",
+    title: "Cobertura y Disponibilidad",
     description:
-      "Nuestra logística y flota de transporte nos permite llevar tus envases de forma segura y puntual a diferentes destinos.",
+      "Contamos con distribución en distintos estados de la república y un punto de venta en Guadalajara para entregas locales, foráneas y nacionales.",
     highlights: [
-      "Cobertura nacional",
-      "Entregas locales y foráneas",
-      "Flota especializada",
+      "Mayor disponibilidad",
+      "Entregas ágiles",
+      "Atención integral",
     ],
     benefit:
       "Llegamos hasta donde tu negocio lo necesita con entregas eficientes y confiables.",
@@ -34,7 +34,7 @@ const strengths = [
     id: 3,
     title: "Soluciones Competitivas",
     description:
-      "Brindamos soluciones adaptadas a cada cliente, vendiendo productos al por mayor y al detal combinando calidad, atención cercana y precios competitivos.",
+      "Brindamos soluciones adaptadas a cada cliente mediante productos al mayoreo y menudeo, combinando calidad, atención cercana y precios competitivos.",
     highlights: [
       "Atención personalizada",
       "Asesoría especializada",
@@ -50,7 +50,7 @@ export function SectionWhyUs() {
   return (
     <SectionContent
       title="¿Por Qué Trabajar Con Envases BH?"
-      subtitle="Más que un proveedor, somos un aliado estratégico comprometido con el crecimiento y continuidad de tu negocio."
+      subtitle="Somos un aliado estratégico comprometido con el crecimiento y la continuidad de tu negocio, ofreciendo soluciones de envasado PET de calidad que impulsan la eficiencia y fortalecen tu marca."
       containerClassName="bg-white"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

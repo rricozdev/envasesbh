@@ -20,8 +20,7 @@ export default function Footer() {
       href: "/productos?categoria=Tarros+y+Vitroleros",
     },
     { name: "Tarros Especiales", href: "/productos?categoria=Boston" },
-    { name: "Etiquetado", href: "/servicios#etiquetado" },
-    { name: "Pigmentación", href: "/servicios#pigmentacion" },
+    { name: "Pigmentación", href: "/servicios#pigmentado" },
   ];
 
   const contactInfo = [
