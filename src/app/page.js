@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <>
       <Hero
-        imgsrc="/img/bg.webp"
+        imgsrc="/img/bg-bh-11.webp"
         variant="left"
         title={
           <>
@@ -52,11 +52,17 @@ export default function Home() {
         }
         description={
           <>
-            Producimos{" "}
-            <span className="font-medium">envases PET de alta calidad</span>,
-            fabricados con los estándares más exigentes de la industria. Cuando
-            tu operación lo requiere, también los per sonalizamos según tus
-            especificaciones exactas.
+            Gran variedad de{" "}
+            <strong className="font-medium">envases PET de alta calidad</strong>
+            , con entregas confiables y precios competitivos.
+            <br />
+            Soluciones practicas en{" "}
+            <strong className="font-medium">envases PET </strong>
+            para negocios en crecimiento que buscan calidad, disponibilidad y
+            atención agil.
+            <br />
+            Aguas, Bebidas, Cosmeticos, Limpieza, Alimentos, Promocionales y
+            muchos más.
           </>
         }
         highlights={[
@@ -65,7 +71,7 @@ export default function Home() {
           "Envases Personalizables",
         ]}
         imageDesktop="/og-envasesbh.webp"
-        imageMobile="/mobile.jpeg"
+        imageMobile="/og-envasesbh.webp"
         primaryAction={{ label: "Agendar Consultoría" }}
         secondaryAction={{ label: "Ver Catálogo" }}
       />

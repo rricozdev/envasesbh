@@ -1,40 +1,8 @@
 "use client";
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Check } from "lucide-react";
-import { motion } from "framer-motion";
-
-// Este componente define un Hero (sección principal) reutilizable para una landing page.
-// Su propósito es mostrar un mensaje principal (title + description),
-// acompañado de elementos de apoyo como highlights (beneficios),
-// acciones (botones CTA) y una imagen de fondo.
-
-// Utiliza Next.js:
-// - Image → optimización automática de imágenes (performance)
-// - Link → navegación interna eficiente (SPA)
-
-// Usa framer-motion para animaciones:
-// - 'stagger' permite animar los elementos hijos de forma secuencial
-// - 'item' define la animación individual de cada elemento (fade + slide)
-
-// Integra diseño visual moderno:
-// - Fondo con imagen + overlay degradado para mejorar contraste
-// - Tipografía jerárquica (título fuerte, descripción secundaria)
-// - Badge superior para contexto comercial
-// - Lista de highlights con íconos (refuerzo visual)
-
-// Incluye CTAs (Call To Action):
-// - primaryAction → acción principal (más destacada)
-// - secondaryAction → acción secundaria (menos prominente)
-
-// Es un componente flexible:
-// - Recibe contenido dinámico por props
-// - Permite reutilización en distintas páginas cambiando textos y acciones
-
-// Además, incluye detalles UX:
-// - Animaciones suaves de entrada
-// - Diseño responsive
-// - Separación clara de responsabilidades (componente presentacional)
 
 const stagger = {
   hidden: {},
@@ -61,12 +29,13 @@ export default function Hero({
         alt="Hero background"
         fill
         priority
+        quality={100}
         className="object-cover object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-linear-to-r from-secondary/90 via-secondary/60 to-secondary/10" />
+      <div className="absolute inset-0 bg-linear-to-r from-secondary/90 via-secondary/80 to-secondary/10" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 py-24 w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 py-20 w-full">
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -93,7 +62,7 @@ export default function Hero({
           {/* DESCRIPCIÓN */}
           <motion.p
             variants={item}
-            className="text-base sm:text-lg text-white/80 leading-relaxed"
+            className="text-base sm:text-lg text-white/90 leading-relaxed"
           >
             {description}
           </motion.p>
