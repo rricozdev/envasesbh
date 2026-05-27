@@ -1,5 +1,4 @@
 import Hero from "@/components/features/home/Hero";
-import { SectionService } from "@/components/features/home/SectionServices";
 import { SectoinTestimonials } from "@/components/features/home/SectionTestimonials";
 import { SectionVehiculos } from "@/components/features/home/SectionVehiculos";
 import { SectionWhyUs } from "@/components/features/home/SectionWhyUs";
@@ -43,19 +42,15 @@ export default function Home() {
         variant="left"
         title={
           <>
-            Fabricante de{" "}
+            Gran variedad de{" "}
             <span className="bg-primary text-white px-2 py-0.5 rounded-md">
               Envases PET
             </span>
-            , para la industria mexicana
+            , con entregas confiables y precios competitivos.
           </>
         }
         description={
           <>
-            Gran variedad de{" "}
-            <strong className="font-medium">envases PET de alta calidad</strong>
-            , con entregas confiables y precios competitivos.
-            <br />
             Soluciones practicas en{" "}
             <strong className="font-medium">envases PET </strong>
             para negocios en crecimiento que buscan calidad, disponibilidad y
@@ -76,7 +71,6 @@ export default function Home() {
         secondaryAction={{ label: "Ver Catálogo" }}
       />
       <SectionWhyUs />
-      <SectionService />
       <SectionVehiculos />
       <SectoinTestimonials />
       <SectionHighlight />

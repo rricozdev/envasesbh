@@ -33,7 +33,7 @@ export default function Hero({
         className="object-cover object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-linear-to-r from-secondary/90 via-secondary/80 to-secondary/10" />
+      <div className="absolute inset-0 bg-linear-to-r from-secondary/90 via-secondary/80 md:to-secondary/10 to-secondary/60 " />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 py-20 w-full">
         <motion.div
