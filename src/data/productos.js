@@ -517,7 +517,7 @@ export const _PRODUCTOS = [
     },
   },
   {
-    nombre: "40 ml",
+    nombre: "40 ml Farma",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_27_40ml-farma.webp",
     slug: "40-ml-farma",
@@ -570,24 +570,7 @@ export const _PRODUCTOS = [
       stockDisponible: true,
     },
   },
-  {
-    nombre: "45 ml Oliva Cuadrada",
-    categoria: "Amenidades Hoteleras",
-    imagen: "/img/productos/amenidades/imagen_30_45ml-oliva-cuadrada.webp",
-    slug: "45-ml-oliva-cuadrada",
-    specs: {
-      peso: 6.5,
-      corona: "18",
-      altura: 105.6,
-      capacidad: 45,
-      pzsEmpaque: 900,
-      tipoEmpaque: "Caja",
-      colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
-    },
-  },
+
   {
     nombre: "30 ml Cilíndrica",
     categoria: "Amenidades Hoteleras",
@@ -699,14 +682,14 @@ export const _PRODUCTOS = [
     },
   },
   {
-    nombre: "125 ml Boston R20",
+    nombre: "125 ml Boston",
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_37_125-ml-boston.webp",
     slug: "125-ml-boston",
     specs: {
       peso: null,
-      corona: null,
-      altura: null,
+      corona: "R20-415",
+      altura: 143.0,
       capacidad: 125,
       pzsEmpaque: 100,
       tipoEmpaque: "Bolsa",
@@ -847,7 +830,7 @@ export const _PRODUCTOS = [
   },
 
   {
-    nombre: "125ml Oval",
+    nombre: "125 ml Oval",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_46_125ml-oval.webp",
     slug: "125-ml-oval",
@@ -1105,7 +1088,7 @@ export const _PRODUCTOS = [
     },
   },
   {
-    nombre: "125 ml",
+    nombre: "125 ml Farma",
     categoria: "Farmacéuticos",
     imagen: "/img/productos/farmaceuticos/imagen_60_125ml-farma.webp",
     slug: "125ml-farma",
@@ -1123,7 +1106,7 @@ export const _PRODUCTOS = [
     },
   },
   {
-    nombre: "240 ml",
+    nombre: "240 ml Farma",
     categoria: "Farmacéuticos",
     imagen: "/img/productos/farmaceuticos/imagen_61_240ml-farma.webp",
     slug: "240ml-farma",
@@ -1149,11 +1132,11 @@ export const _PRODUCTOS = [
     specs: {
       peso: 23,
       corona: "R38",
-      altura: 113.6,
-      capacidad: 240,
-      pzsEmpaque: 160,
+      altura: null,
+      capacidad: null,
+      pzsEmpaque: 1000,
       tipoEmpaque: "Caja",
-      colores: ["Ambar", "Blanco", "Azul", "Natural"],
+      colores: ["Amarillo", "Blanco"],
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,

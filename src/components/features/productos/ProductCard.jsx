@@ -7,8 +7,24 @@ import Link from "next/link";
 
 export default function ProductCard({ producto }) {
   const { addItem } = useCart();
+  const PREFIJOS_PROPIOS = [
+    "tapa",
+    "trigger",
+    "tarro",
+    "vitrolero",
+    "bomba",
+    "atomizador",
+    "flip",
+    "mini",
+  ];
 
-  const nombreCompleto = producto.nombre;
+  const nombreCompleto = PREFIJOS_PROPIOS.some((p) =>
+    producto.nombre.toLowerCase().startsWith(p),
+  )
+    ? producto.nombre
+    : `Envase ${producto.nombre}`;
+
+  // const nombreCompleto = producto.nombre;
 
   const { specs } = producto;
   const specs_list = [
