@@ -104,13 +104,13 @@ export const baseMetadata = {
   // Información de contacto
   referrer: "strict-origin-when-cross-origin",
 
-  // Viewport
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    viewportFit: "cover",
-  },
+  // Viewport, movido a app/layout.js para evitar warning en browser console
+  // viewport: {
+  //   width: "device-width",
+  //   initialScale: 1,
+  //   maximumScale: 5,
+  //   viewportFit: "cover",
+  // },
 };
 
 // JSON-LD Schema global

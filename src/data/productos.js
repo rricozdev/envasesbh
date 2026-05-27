@@ -70,8 +70,8 @@ export const _PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -106,8 +106,8 @@ export const _PRODUCTOS = [
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -182,9 +182,9 @@ export const _PRODUCTOS = [
       pzsEmpaque: 247,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
+      produccionMinima: 25000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -219,9 +219,9 @@ export const _PRODUCTOS = [
       pzsEmpaque: 245,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: 20000,
-      sobrePedido: false,
-      stockDisponible: true,
+      produccionMinima: 30000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -236,10 +236,10 @@ export const _PRODUCTOS = [
       capacidad: 180,
       pzsEmpaque: 200,
       tipoEmpaque: "Bolsa",
-      colores: ["Cristal"], // corregido: era [""]
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
+      colores: ["Cristal"],
+      produccionMinima: 5000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -346,9 +346,9 @@ export const _PRODUCTOS = [
       pzsEmpaque: 270,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
+      produccionMinima: 30000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -365,9 +365,9 @@ export const _PRODUCTOS = [
       pzsEmpaque: 213,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
+      produccionMinima: 30000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -409,7 +409,7 @@ export const _PRODUCTOS = [
   {
     nombre: "1000 ml Agro",
     categoria: "Alimentos y Bebidas",
-    imagen: "/img/productos/alimentos_y_bebidas/imagen_21_1000ml-agro.webp",
+    imagen: "/img/productos/alimentos_y_bebidas/imagen_21_1000ml_agro.webp",
     slug: "1000-ml-agro",
     specs: {
       peso: 39.0,
@@ -467,15 +467,15 @@ export const _PRODUCTOS = [
     slug: "355-ml-rombo",
     specs: {
       peso: 16,
-      corona: null,
+      corona: 28,
       altura: 164,
       capacidad: 355,
       pzsEmpaque: 165,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: 26000,
-      sobrePedido: true,
-      stockDisponible: false,
+      produccionMinima: null,
+      sobrePedido: false,
+      stockDisponible: true,
     },
   },
 
@@ -517,7 +517,7 @@ export const _PRODUCTOS = [
     },
   },
   {
-    nombre: "40 ml Farma",
+    nombre: "40 ml",
     categoria: "Amenidades Hoteleras",
     imagen: "/img/productos/amenidades/imagen_27_40ml-farma.webp",
     slug: "40-ml-farma",
@@ -819,9 +819,9 @@ export const _PRODUCTOS = [
       pzsEmpaque: 201,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
-      produccionMinima: 12000,
-      sobrePedido: false,
-      stockDisponible: true,
+      produccionMinima: 15000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
 
@@ -845,24 +845,7 @@ export const _PRODUCTOS = [
       stockDisponible: true,
     },
   },
-  {
-    nombre: "125ml Boston R20",
-    categoria: "Cosméticos",
-    imagen: "/img/productos/cosmeticos/imagen_45_125-ml-boston.webp",
-    slug: "125-ml-boston",
-    specs: {
-      peso: null,
-      corona: null,
-      altura: null,
-      capacidad: 125,
-      pzsEmpaque: 100,
-      tipoEmpaque: "Bolsa",
-      colores: [],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
-    },
-  },
+
   {
     nombre: "125ml Oval",
     categoria: "Cosméticos",
@@ -912,9 +895,9 @@ export const _PRODUCTOS = [
       pzsEmpaque: 378,
       tipoEmpaque: "Charola",
       colores: ["Blanco"],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
+      produccionMinima: 20000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -930,9 +913,9 @@ export const _PRODUCTOS = [
       pzsEmpaque: 336,
       tipoEmpaque: "Charola",
       colores: ["Blanco"],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
+      produccionMinima: 30000,
+      sobrePedido: true,
+      stockDisponible: false,
     },
   },
   {
@@ -1035,7 +1018,7 @@ export const _PRODUCTOS = [
     slug: "especiero-120-ml",
     specs: {
       peso: 16,
-      corona: "36",
+      corona: "38",
       altura: 117,
       capacidad: 120,
       pzsEmpaque: 216,
@@ -1053,7 +1036,7 @@ export const _PRODUCTOS = [
     slug: "especiero-120-ml-corto",
     specs: {
       peso: 16,
-      corona: "36",
+      corona: "38",
       altura: 106,
       capacidad: 120,
       pzsEmpaque: 315,
@@ -1071,12 +1054,12 @@ export const _PRODUCTOS = [
     slug: "tapa-especiero",
     specs: {
       peso: null,
-      corona: null,
+      corona: 38,
       altura: null,
       capacidad: null,
       pzsEmpaque: null,
       tipoEmpaque: null,
-      colores: ["Negro", "Rojo"],
+      colores: ["Negro", "Rojo", "Azul"],
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
@@ -1086,7 +1069,7 @@ export const _PRODUCTOS = [
   // ─── FARMACÉUTICOS ───────────────────────────────────────────────────────
   // TODO: agregar productos
   {
-    nombre: "110 ml Farmacéutico Pastillero",
+    nombre: "110 ml Pastillero",
     categoria: "Farmacéuticos",
     imagen: "/img/productos/farmaceuticos/imagen_58_pastillero-110ml-r38.webp",
     slug: "pastillero-110ml-r38",
@@ -1104,7 +1087,7 @@ export const _PRODUCTOS = [
     },
   },
   {
-    nombre: "150 ml Farmacéutico Pastillero",
+    nombre: "150 ml Pastillero",
     categoria: "Farmacéuticos",
     imagen: "/img/productos/farmaceuticos/imagen_59_pastillero-150ml-r38.webp",
     slug: "pastillero-150ml-r38",
@@ -1122,7 +1105,7 @@ export const _PRODUCTOS = [
     },
   },
   {
-    nombre: "125 ml Farmacéutico Farma",
+    nombre: "125 ml",
     categoria: "Farmacéuticos",
     imagen: "/img/productos/farmaceuticos/imagen_60_125ml-farma.webp",
     slug: "125ml-farma",
@@ -1140,7 +1123,7 @@ export const _PRODUCTOS = [
     },
   },
   {
-    nombre: "Farmacéutico 240 ml Farma",
+    nombre: "240 ml",
     categoria: "Farmacéuticos",
     imagen: "/img/productos/farmaceuticos/imagen_61_240ml-farma.webp",
     slug: "240ml-farma",
@@ -1158,7 +1141,7 @@ export const _PRODUCTOS = [
     },
   },
   {
-    nombre: "Farmacéutico Tapa a Prueba de Niños",
+    nombre: "Tapa a Prueba de Niños",
     categoria: "Farmacéuticos",
     imagen:
       "/img/productos/farmaceuticos/imagen_62_tapa-a-prueba-de-children-r38.webp",
@@ -1177,7 +1160,7 @@ export const _PRODUCTOS = [
     },
   },
   {
-    nombre: "Farmacéutico Tapa ciega inviolable",
+    nombre: "Tapa ciega inviolable",
     categoria: "Farmacéuticos",
     imagen:
       "/img/productos/farmaceuticos/imagen_63_tapa-ciega-inviolable-r-24.webp",
@@ -1212,9 +1195,9 @@ export const _PRODUCTOS = [
       pzsEmpaque: 180,
       tipoEmpaque: "Caja",
       colores: ["Disponible en 6 colores de linea"],
-      produccionMinima: 20000,
-      sobrePedido: true,
-      stockDisponible: false,
+      produccionMinima: null,
+      sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1418,9 +1401,9 @@ export const _PRODUCTOS = [
       pzsEmpaque: 130,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal", "Azul", "Rosa", "Morado", "Rojo", "Aqua", "Humo"],
-      produccionMinima: 20000,
-      sobrePedido: true,
-      stockDisponible: false,
+      produccionMinima: null,
+      sobrePedido: false,
+      stockDisponible: true,
     },
   },
   {
@@ -1587,7 +1570,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro 250 Liso",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_84_tarro-250-ml.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_84_tarro-250-ml.webp",
     slug: "tarro-250-ml-liso",
     specs: {
       peso: 17.5,
@@ -1605,7 +1588,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro 500 ml",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_85_tarro-500-ml.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_85_tarro-500-ml.webp",
     slug: "tarro-500-ml",
     specs: {
       peso: 25,
@@ -1623,7 +1606,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro 1000 ml",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_86_tarro-1000-ml.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_86_tarro-1000-ml.webp",
     slug: "tarro-1000-l",
     specs: {
       peso: 55,
@@ -1642,7 +1625,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro 250 Octogonal",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_87_tarro-250-octagonal.webp",
+      "/img/productos/Tarros_vitroleros/imagen_87_tarro-250-octagonal.webp",
     slug: "tarro-250-octogonal",
     specs: {
       peso: 18,
@@ -1661,7 +1644,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Anillado 500 ml",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_88_tarro-anillado-500-ml.webp",
+      "/img/productos/Tarros_vitroleros/imagen_88_tarro-anillado-500-ml.webp",
     slug: "tarro-500-anillado",
     specs: {
       peso: 25,
@@ -1679,7 +1662,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro Vitrolero 1 kg",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_89_vitrolero-1-kg.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_89_vitrolero-1-kg.webp",
     slug: "tarro-vitrolero-1kg",
     specs: {
       peso: 49,
@@ -1698,7 +1681,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero Medio Galón Redondo",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_90_vitrolero-medio-galon-liso.webp",
+      "/img/productos/Tarros_vitroleros/imagen_90_vitrolero-medio-galon-liso.webp",
     slug: "tarro-vitrolero-medio-galon-redondo",
     specs: {
       peso: 69,
@@ -1716,7 +1699,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro Vitrolero Galón Redondo ML",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_91_galon-liso.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_91_galon-liso.webp",
     slug: "vitrolero-galon-redondo-ml",
     specs: {
       peso: 105,
@@ -1735,7 +1718,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero Medio Galón Liso Corto",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_92_vitrolero-medio-galon-liso.webp",
+      "/img/productos/Tarros_vitroleros/imagen_92_vitrolero-medio-galon-liso.webp",
     slug: "tarro-vitrolero-medio-galon-liso",
     specs: {
       peso: 64,
@@ -1754,7 +1737,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero Medio Galón Anillado",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_93_vitrolero-medio-galon-anillado.webp",
+      "/img/productos/Tarros_vitroleros/imagen_93_vitrolero-medio-galon-anillado.webp",
     slug: "tarro-vitrolero-medio-galon-anillado",
     specs: {
       peso: 65,
@@ -1773,7 +1756,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero Medio Galón Pata de elefante",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_94_vitrolero-medio-galon-pata-de-elefante.webp",
+      "/img/productos/Tarros_vitroleros/imagen_94_vitrolero-medio-galon-pata-de-elefante.webp",
     slug: "tarro-vitrolero-medio-galon-pata-elefante",
     specs: {
       peso: 65,
@@ -1792,7 +1775,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero Medio Galón Cuadrado",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_95_vitrolero-medio-galon-cuadrado.webp",
+      "/img/productos/Tarros_vitroleros/imagen_95_vitrolero-medio-galon-cuadrado.webp",
     slug: "tarro-vitrolero-medio-galon-cuadrado",
     specs: {
       peso: 69,
@@ -1811,7 +1794,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero 1 Galón Cuadrado",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_96_vitrolero-1-galon-cuadrado.webp",
+      "/img/productos/Tarros_vitroleros/imagen_96_vitrolero-1-galon-cuadrado.webp",
     slug: "tarro-vitrolero-1-galon-cuadrado",
     specs: {
       peso: 105,
@@ -1829,7 +1812,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro 1000 ml Vitrolero Especiero",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_97_especiero-1-lt.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_97_especiero-1-lt.webp",
     slug: "tarro-vitrolero-especiero-1lt",
     specs: {
       peso: 63,
@@ -1847,7 +1830,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tapa vitrolero r110",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_98_tapa-r110.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_98_tapa-r110.webp",
     slug: "tapa-vitrolero-r110",
     specs: {
       peso: null,
