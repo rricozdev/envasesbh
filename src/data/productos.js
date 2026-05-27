@@ -1570,7 +1570,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro 250 Liso",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_84_tarro-250-ml.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_84_tarro-250-ml.webp",
     slug: "tarro-250-ml-liso",
     specs: {
       peso: 17.5,
@@ -1588,7 +1588,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro 500 ml",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_85_tarro-500-ml.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_85_tarro-500-ml.webp",
     slug: "tarro-500-ml",
     specs: {
       peso: 25,
@@ -1606,7 +1606,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro 1000 ml",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_86_tarro-1000-ml.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_86_tarro-1000-ml.webp",
     slug: "tarro-1000-l",
     specs: {
       peso: 55,
@@ -1625,7 +1625,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro 250 Octogonal",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_87_tarro-250-octagonal.webp",
+      "/img/productos/Tarros_vitroleros/imagen_87_tarro-250-octagonal.webp",
     slug: "tarro-250-octogonal",
     specs: {
       peso: 18,
@@ -1644,7 +1644,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Anillado 500 ml",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_88_tarro-anillado-500-ml.webp",
+      "/img/productos/Tarros_vitroleros/imagen_88_tarro-anillado-500-ml.webp",
     slug: "tarro-500-anillado",
     specs: {
       peso: 25,
@@ -1662,7 +1662,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro Vitrolero 1 kg",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_89_vitrolero-1-kg.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_89_vitrolero-1-kg.webp",
     slug: "tarro-vitrolero-1kg",
     specs: {
       peso: 49,
@@ -1681,7 +1681,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero Medio Galón Redondo",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_90_vitrolero-medio-galon-liso.webp",
+      "/img/productos/Tarros_vitroleros/imagen_90_vitrolero-medio-galon-liso.webp",
     slug: "tarro-vitrolero-medio-galon-redondo",
     specs: {
       peso: 69,
@@ -1699,7 +1699,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro Vitrolero Galón Redondo ML",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_91_galon-liso.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_91_galon-liso.webp",
     slug: "vitrolero-galon-redondo-ml",
     specs: {
       peso: 105,
@@ -1718,7 +1718,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero Medio Galón Liso Corto",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_92_vitrolero-medio-galon-liso.webp",
+      "/img/productos/Tarros_vitroleros/imagen_92_vitrolero-medio-galon-liso.webp",
     slug: "tarro-vitrolero-medio-galon-liso",
     specs: {
       peso: 64,
@@ -1737,7 +1737,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero Medio Galón Anillado",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_93_vitrolero-medio-galon-anillado.webp",
+      "/img/productos/Tarros_vitroleros/imagen_93_vitrolero-medio-galon-anillado.webp",
     slug: "tarro-vitrolero-medio-galon-anillado",
     specs: {
       peso: 65,
@@ -1756,7 +1756,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero Medio Galón Pata de elefante",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_94_vitrolero-medio-galon-pata-de-elefante.webp",
+      "/img/productos/Tarros_vitroleros/imagen_94_vitrolero-medio-galon-pata-de-elefante.webp",
     slug: "tarro-vitrolero-medio-galon-pata-elefante",
     specs: {
       peso: 65,
@@ -1775,7 +1775,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero Medio Galón Cuadrado",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_95_vitrolero-medio-galon-cuadrado.webp",
+      "/img/productos/Tarros_vitroleros/imagen_95_vitrolero-medio-galon-cuadrado.webp",
     slug: "tarro-vitrolero-medio-galon-cuadrado",
     specs: {
       peso: 69,
@@ -1794,7 +1794,7 @@ export const _PRODUCTOS = [
     nombre: "Tarro Vitrolero 1 Galón Cuadrado",
     categoria: "Tarros y Vitroleros",
     imagen:
-      "/img/productos/tarros_vitroleros/imagen_96_vitrolero-1-galon-cuadrado.webp",
+      "/img/productos/Tarros_vitroleros/imagen_96_vitrolero-1-galon-cuadrado.webp",
     slug: "tarro-vitrolero-1-galon-cuadrado",
     specs: {
       peso: 105,
@@ -1812,7 +1812,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tarro 1000 ml Vitrolero Especiero",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_97_especiero-1-lt.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_97_especiero-1-lt.webp",
     slug: "tarro-vitrolero-especiero-1lt",
     specs: {
       peso: 63,
@@ -1830,7 +1830,7 @@ export const _PRODUCTOS = [
   {
     nombre: "Tapa vitrolero r110",
     categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/tarros_vitroleros/imagen_98_tapa-r110.webp",
+    imagen: "/img/productos/Tarros_vitroleros/imagen_98_tapa-r110.webp",
     slug: "tapa-vitrolero-r110",
     specs: {
       peso: null,
