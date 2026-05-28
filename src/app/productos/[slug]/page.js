@@ -80,6 +80,10 @@ export default async function ProductoDetalle({ params }) {
     { label: "Pzs / Empaque", value: specs?.pzsEmpaque ?? null },
     { label: "Tipo de Empaque", value: specs?.tipoEmpaque ?? null },
     {
+      label: "Opciones de Liner",
+      value: specs?.liner?.length > 0 ? specs.liner.join(", ") : null,
+    },
+    {
       label: "Venta Mínima",
       value: specs?.stockDisponible
         ? `1 ${specs.tipoEmpaque ?? "unidad"}`
