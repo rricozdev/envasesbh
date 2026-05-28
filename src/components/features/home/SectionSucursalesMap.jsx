@@ -37,7 +37,7 @@ const sucursales = {
   },
 
   "MX-MEX": {
-    ciudad: "Nezahualcóyotl",
+    ciudad: "Neza",
     estado: "MEX",
     direccion: "Vicente Villada #744, Nezahualcóyotl, México, 57000",
   },
@@ -459,90 +459,6 @@ export default function SectionSucursalesMap() {
 
                       <p className="text-sm leading-relaxed text-gray-700">
                         {sucursalActiva.direccion}
-                      </p>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={() => handleCopy(sucursalActiva.telefono)}
-                    className="
-                      flex
-                      w-full
-                      items-center
-                      gap-3
-                      rounded-2xl
-                      border
-                      border-cyan-100
-                      bg-cyan-50/50
-                      px-4
-                      py-3
-                      transition-all
-                      hover:border-cyan-200
-                    "
-                  >
-                    <div
-                      className="
-                        flex
-                        h-10
-                        w-10
-                        items-center
-                        justify-center
-                        rounded-xl
-                        bg-white
-                        text-cyan-600
-                      "
-                    >
-                      <Phone size={18} />
-                    </div>
-
-                    <div className="flex-1 text-left">
-                      <p className="text-xs text-gray-400">Teléfono</p>
-
-                      <p className="text-sm font-semibold text-gray-700">
-                        {sucursalActiva.telefono}
-                      </p>
-                    </div>
-
-                    {copied ? (
-                      <Check size={18} className="text-emerald-600" />
-                    ) : (
-                      <Copy size={16} className="text-gray-400" />
-                    )}
-                  </button>
-
-                  <div
-                    className="
-                      flex
-                      items-center
-                      gap-3
-                      rounded-2xl
-                      border
-                      border-gray-100
-                      bg-gray-50
-                      px-4
-                      py-3
-                    "
-                  >
-                    <div
-                      className="
-                        flex
-                        h-10
-                        w-10
-                        items-center
-                        justify-center
-                        rounded-xl
-                        bg-white
-                        text-cyan-600
-                      "
-                    >
-                      <Clock3 size={18} />
-                    </div>
-
-                    <div>
-                      <p className="text-xs text-gray-400">Horario</p>
-
-                      <p className="text-sm font-medium text-gray-700">
-                        {sucursalActiva.horario}
                       </p>
                     </div>
                   </div>
