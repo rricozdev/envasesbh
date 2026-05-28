@@ -99,12 +99,18 @@ export default async function ProductoDetalle({ params }) {
       label: "Stock",
       value: specs?.stockDisponible === true ? "Disponible" : null,
     },
+    // Lógica corregida para "Colores bajo pedido"
     {
       label: "Colores bajo pedido",
       value:
-        specs?.colores?.some((c) => c.toLowerCase().includes("bajo pedido")) &&
-        specs?.produccionMinima
-          ? `Mín. ${specs.produccionMinima.toLocaleString()} pzs`
+        specs?.coloresBajoPedido?.length > 0 &&
+        specs?.produccionMinimaColores !== null &&
+        specs?.produccionMinimaColores !== undefined
+          ? `${
+              Array.isArray(specs.coloresBajoPedido)
+                ? specs.coloresBajoPedido.length + " colores disponibles"
+                : "Disponibles"
+            } — Mín. ${specs.produccionMinimaColores.toLocaleString()} pzs`
           : null,
     },
   ];

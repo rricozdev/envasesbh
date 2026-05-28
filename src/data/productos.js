@@ -10,7 +10,7 @@ export const CATEGORIAS = [
   "Limpieza",
   "Publicitarios",
   "Tarros y Vitroleros",
-  "Tapas, Bombas y Triggers",
+  "Tapas , Bombas y Triggers",
 ];
 
 // SCHEMA de referencia — copiar para cada producto nuevo:
@@ -33,12 +33,12 @@ export const CATEGORIAS = [
 //     produccionMinima: null, // piezas — null si no aplica
 //     sobrePedido: false,
 //     stockDisponible: false,      // true | false | null
+//     coloresBajoPedido: ["Rojo", "Azul", "Verde", "Amarillo", "Naranja", "Morado"], // o simplemente true si no tienes la lista
+//     produccionMinimaColores:null // number
 //   },
 // },
 
 export const _PRODUCTOS = [
-  // ─── AGUA ────────────────────────────────────────────────────────────────
-
   {
     nombre: "250 ml",
     categoria: "Agua",
@@ -56,6 +56,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -66,7 +68,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 17.2,
       corona: "28 PCO",
-      altura: 180.0,
+      altura: 180,
       capacidad: 355,
       pzsEmpaque: 245,
       tipoEmpaque: "Bolsa",
@@ -75,6 +77,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -83,9 +87,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_3_500ml-sinfin-r-28.webp",
     slug: "500-ml",
     specs: {
-      peso: 16.0,
+      peso: 16,
       corona: "28 PCO",
-      altura: 216.0,
+      altura: 216,
       capacidad: 500,
       pzsEmpaque: 200,
       tipoEmpaque: "Bolsa",
@@ -94,6 +98,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -102,9 +108,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_4_600ml-sinfin.webp",
     slug: "600-ml",
     specs: {
-      peso: 19.0,
+      peso: 19,
       corona: "28 PCO",
-      altura: 228.0,
+      altura: 228,
       capacidad: 600,
       pzsEmpaque: 217,
       tipoEmpaque: "Bolsa",
@@ -113,6 +119,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -121,9 +129,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_5_1lt-sinfin-c.webp",
     slug: "1000-ml",
     specs: {
-      peso: 30.0,
+      peso: 30,
       corona: "28 PCO",
-      altura: 260.0,
+      altura: 260,
       capacidad: 1000,
       pzsEmpaque: 165,
       tipoEmpaque: "Bolsa",
@@ -132,6 +140,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -140,22 +150,21 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_6_1500ml-sinfin-37gr.webp",
     slug: "1500-ml",
     specs: {
-      peso: 38.0,
+      peso: 38,
       corona: "28 PCO",
-      altura: 311.0,
+      altura: 311,
       capacidad: 1500,
       pzsEmpaque: 130,
       tipoEmpaque: "Bolsa",
-      colores: ["Cristal", "Azul", "Rosa", "Humo", "Verde"],
+      colores: [],
       liner: [],
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
-  // ─── ALIMENTOS Y BEBIDAS ─────────────────────────────────────────────────
-
   {
     nombre: " 45 ml Oliva Cuadrada",
     categoria: "Alimentos y Bebidas",
@@ -174,6 +183,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -194,6 +205,8 @@ export const _PRODUCTOS = [
       produccionMinima: 25000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -201,11 +214,11 @@ export const _PRODUCTOS = [
     categoria: "Alimentos y Bebidas",
     imagen:
       "/img/productos/alimentos_y_bebidas/imagen_9_750ml-oliva-cuadrada.webp",
-    slug: "750-ml-oliva-cuadrada", // corregido: estaba vacío
+    slug: "750-ml-oliva-cuadrada",
     specs: {
-      peso: 37.0,
+      peso: 37,
       corona: "28 PCO",
-      altura: 228.0,
+      altura: 228,
       capacidad: 750,
       pzsEmpaque: 165,
       tipoEmpaque: "Bolsa",
@@ -214,6 +227,8 @@ export const _PRODUCTOS = [
       produccionMinima: 20000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -222,7 +237,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_10_250ml-twist.webp",
     slug: "250-ml-twist",
     specs: {
-      peso: 17.0,
+      peso: 17,
       corona: "28",
       altura: 161,
       capacidad: 250,
@@ -233,6 +248,8 @@ export const _PRODUCTOS = [
       produccionMinima: 30000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -241,7 +258,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_11_180-salsera.webp",
     slug: "180-ml-salsera",
     specs: {
-      peso: 17.0,
+      peso: 17,
       corona: "28",
       altura: null,
       capacidad: 180,
@@ -252,6 +269,8 @@ export const _PRODUCTOS = [
       produccionMinima: 5000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -262,7 +281,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 23,
       corona: "28",
-      altura: 200.0,
+      altura: 200,
       capacidad: 250,
       pzsEmpaque: 238,
       tipoEmpaque: "Bolsa",
@@ -271,6 +290,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -291,6 +312,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -301,7 +324,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 23,
       corona: "28",
-      altura: 252.0,
+      altura: 252,
       capacidad: 520,
       pzsEmpaque: 198,
       tipoEmpaque: "Bolsa",
@@ -310,6 +333,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -318,7 +343,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_15_1000ml-licorera.webp",
     slug: "1000-ml-licorera",
     specs: {
-      peso: 39.0,
+      peso: 39,
       corona: "28",
       altura: 305,
       capacidad: 1075,
@@ -329,25 +354,29 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Licorera 1 lt Piña",
+    nombre: "900 ml Piña",
     categoria: "Alimentos y Bebidas",
     imagen: "/img/productos/alimentos_y_bebidas/imagen_16_1-lt-pina.webp",
     slug: "1-lt-pina",
     specs: {
       peso: 23,
       corona: "28",
-      altura: null,
+      altura: 195,
       capacidad: 900,
-      pzsEmpaque: 91,
+      pzsEmpaque: 92,
       tipoEmpaque: "Bolsa",
-      colores: ["Cristal"], // corregido: era [""]
+      colores: ["Cristal"],
       liner: [],
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -358,7 +387,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 17.2,
       corona: "28 PCO",
-      altura: 198.0,
+      altura: 198,
       capacidad: 355,
       pzsEmpaque: 270,
       tipoEmpaque: "Bolsa",
@@ -367,6 +396,8 @@ export const _PRODUCTOS = [
       produccionMinima: 30000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -378,7 +409,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 17.2,
       corona: "28 PCO",
-      altura: 167.0,
+      altura: 167,
       capacidad: 345,
       pzsEmpaque: 213,
       tipoEmpaque: "Bolsa",
@@ -387,6 +418,8 @@ export const _PRODUCTOS = [
       produccionMinima: 30000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -397,7 +430,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 17.2,
       corona: "28 PCO",
-      altura: 166.0,
+      altura: 166,
       capacidad: 355,
       pzsEmpaque: 238,
       tipoEmpaque: "Bolsa",
@@ -406,6 +439,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -414,9 +449,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_20_500ml-jubilo.webp",
     slug: "500-ml-jubilo",
     specs: {
-      peso: 17.0,
+      peso: 17,
       corona: "28 PCO",
-      altura: 203.0,
+      altura: 203,
       capacidad: 500,
       pzsEmpaque: 130,
       tipoEmpaque: "Bolsa",
@@ -425,6 +460,8 @@ export const _PRODUCTOS = [
       produccionMinima: 30000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -433,9 +470,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_21_1000ml_agro.webp",
     slug: "1000-ml-agro",
     specs: {
-      peso: 39.0,
+      peso: 39,
       corona: "28 PCO",
-      altura: 242.0,
+      altura: 242,
       capacidad: 1000,
       pzsEmpaque: 148,
       tipoEmpaque: "Bolsa",
@@ -444,6 +481,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -452,9 +491,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_22_sq-250-ml.webp",
     slug: "sq-250-ml",
     specs: {
-      peso: 23.0,
+      peso: 23,
       corona: "33",
-      altura: 160.0,
+      altura: 160,
       capacidad: 250,
       pzsEmpaque: 210,
       tipoEmpaque: "Bolsa",
@@ -463,6 +502,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -471,9 +512,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_23_sq-500-ml.webp",
     slug: "sq-500-ml",
     specs: {
-      peso: 33.0,
+      peso: 33,
       corona: "33",
-      altura: 180.0,
+      altura: 180,
       capacidad: 500,
       pzsEmpaque: 132,
       tipoEmpaque: "Bolsa",
@@ -482,6 +523,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -501,10 +544,10 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
-  // ─── AMENIDADES HOTELERAS ────────────────────────────────────────────────
   {
     nombre: "30 ml Institucional",
     categoria: "Amenidades Hoteleras",
@@ -513,7 +556,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 6.5,
       corona: "18",
-      altura: 63.0,
+      altura: 63,
       capacidad: 30,
       pzsEmpaque: 1200,
       tipoEmpaque: "Caja",
@@ -522,6 +565,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -532,7 +577,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 6.5,
       corona: "18",
-      altura: 64.0,
+      altura: 64,
       capacidad: 40,
       pzsEmpaque: 1000,
       tipoEmpaque: "Caja",
@@ -541,6 +586,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -560,6 +607,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -570,7 +619,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 6.5,
       corona: "18",
-      altura: 65.0,
+      altura: 65,
       capacidad: 30,
       pzsEmpaque: 1200,
       tipoEmpaque: "Caja",
@@ -579,6 +628,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -589,7 +640,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 6.5,
       corona: "18",
-      altura: 70.0,
+      altura: 70,
       capacidad: 50,
       pzsEmpaque: 900,
       tipoEmpaque: "Caja",
@@ -598,9 +649,10 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
   {
     nombre: "30 ml Cilíndrica",
     categoria: "Amenidades Hoteleras",
@@ -609,7 +661,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 6.5,
       corona: "18",
-      altura: 64.0,
+      altura: 64,
       capacidad: 30,
       pzsEmpaque: 1300,
       tipoEmpaque: "Caja",
@@ -618,6 +670,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -628,7 +682,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 6.5,
       corona: "18",
-      altura: 84.0,
+      altura: 84,
       capacidad: 40,
       pzsEmpaque: 900,
       tipoEmpaque: "Caja",
@@ -637,6 +691,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -645,7 +701,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_33_25ml-lapiz.webp",
     slug: "25-ml-lapiz",
     specs: {
-      peso: 5.0,
+      peso: 5,
       corona: "18",
       altura: 76.5,
       capacidad: 25,
@@ -656,6 +712,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -664,7 +722,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_34_30ml-invertida.webp",
     slug: "30-ml-invertida",
     specs: {
-      peso: 5.0,
+      peso: 5,
       corona: "18",
       altura: 68,
       capacidad: 30,
@@ -675,6 +733,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -694,17 +754,17 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
-  // ─── BOSTON ──────────────────────────────────────────────────────────────
   {
     nombre: "60 ml Boston",
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_36_60ml-boston-rosca20.webp",
     slug: "60-ml-boston",
     specs: {
-      peso: 10.0,
+      peso: 10,
       corona: "R20",
       altura: 10.3,
       capacidad: null,
@@ -715,6 +775,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -725,7 +787,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: null,
       corona: "R20-415",
-      altura: 143.0,
+      altura: 143,
       capacidad: 125,
       pzsEmpaque: 100,
       tipoEmpaque: "Bolsa",
@@ -734,6 +796,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -742,9 +806,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_38_250ml-boston-r24-410.webp",
     slug: "250-ml-boston",
     specs: {
-      peso: 23.0,
+      peso: 23,
       corona: "24-410",
-      altura: 176.0,
+      altura: 176,
       capacidad: 250,
       pzsEmpaque: 208,
       tipoEmpaque: "Caja",
@@ -753,6 +817,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -761,9 +827,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_39_250ml-boston-r24-415.webp",
     slug: "250-ml-boston-r24",
     specs: {
-      peso: 23.0,
+      peso: 23,
       corona: "24-415",
-      altura: 184.0,
+      altura: 184,
       capacidad: 250,
       pzsEmpaque: 208,
       tipoEmpaque: "Caja",
@@ -772,6 +838,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -780,9 +848,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_40_500ml-boston.webp",
     slug: "500-ml-boston",
     specs: {
-      peso: 23.0,
+      peso: 23,
       corona: "28",
-      altura: 216.0,
+      altura: 216,
       capacidad: 500,
       pzsEmpaque: 200,
       tipoEmpaque: "Bolsa",
@@ -791,6 +859,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -799,9 +869,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_41_900ml-boston-r28-410.webp",
     slug: "900-ml-boston",
     specs: {
-      peso: 30.0,
+      peso: 30,
       corona: "28 PCO",
-      altura: 260.0,
+      altura: 260,
       capacidad: 900,
       pzsEmpaque: 104,
       tipoEmpaque: "Bolsa",
@@ -810,6 +880,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -818,7 +890,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_42_1lt-boston.webp",
     slug: "1lt-boston",
     specs: {
-      peso: 38.0,
+      peso: 38,
       corona: "28-410",
       altura: 258.5,
       capacidad: 1000,
@@ -829,6 +901,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -837,9 +911,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_43_1lt-boston-c.webp",
     slug: "1lt-boston-C",
     specs: {
-      peso: 40.0,
+      peso: 40,
       corona: "28-410",
-      altura: 251.0,
+      altura: 251,
       capacidad: 1000,
       pzsEmpaque: 201,
       tipoEmpaque: "Bolsa",
@@ -848,20 +922,19 @@ export const _PRODUCTOS = [
       produccionMinima: 15000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
-  // ─── COSMÉTICOS ──────────────────────────────────────────────────────────
-  // TODO: agregar productos
   {
     nombre: "60 ml Oval",
     categoria: "Cosméticos",
     imagen: "/img/productos/cosmeticos/imagen_44_oval-60ml-c20-410.webp",
     slug: "60-ml-oval",
     specs: {
-      peso: 10.0,
+      peso: 10,
       corona: "R20",
-      altura: 104.0,
+      altura: 104,
       capacidad: 60,
       pzsEmpaque: 650,
       tipoEmpaque: "Caja",
@@ -870,9 +943,10 @@ export const _PRODUCTOS = [
       produccionMinima: 20000,
       sobrePedido: true,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
   {
     nombre: "125 ml Oval",
     categoria: "Cosméticos",
@@ -890,6 +964,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -898,9 +974,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_47_250ml-oval.webp",
     slug: "250-ml-oval",
     specs: {
-      peso: 23.0,
+      peso: 23,
       corona: "R24-415",
-      altura: 164.0,
+      altura: 164,
       capacidad: 250,
       pzsEmpaque: 180,
       tipoEmpaque: "Caja",
@@ -909,6 +985,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -928,6 +1006,8 @@ export const _PRODUCTOS = [
       produccionMinima: 20000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -947,6 +1027,8 @@ export const _PRODUCTOS = [
       produccionMinima: 30000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -966,6 +1048,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -974,9 +1058,9 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_51_250ml-campana.webp",
     slug: "250-ml-campana",
     specs: {
-      peso: 20.0,
+      peso: 20,
       corona: "24-410",
-      altura: 113.0,
+      altura: 113,
       capacidad: 250,
       pzsEmpaque: 180,
       tipoEmpaque: "Caja",
@@ -985,6 +1069,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1004,6 +1090,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1023,6 +1111,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1033,7 +1123,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 28,
       corona: "r-28",
-      altura: 185.0,
+      altura: 185,
       capacidad: 500,
       pzsEmpaque: 120,
       tipoEmpaque: "Bolsa",
@@ -1042,11 +1132,10 @@ export const _PRODUCTOS = [
       produccionMinima: 15000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
-  // ─── ESPECIEROS ──────────────────────────────────────────────────────────
-  // TODO: agregar productos
   {
     nombre: "120 ml Especiero",
     categoria: "Especieros",
@@ -1064,6 +1153,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1083,6 +1174,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1102,20 +1195,19 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
-  // ─── FARMACÉUTICOS ───────────────────────────────────────────────────────
-  // TODO: agregar productos
   {
     nombre: "110 ml Pastillero",
     categoria: "Farmacéuticos",
     imagen: "/img/productos/farmaceuticos/imagen_58_pastillero-110ml-r38.webp",
     slug: "pastillero-110ml-r38",
     specs: {
-      peso: 15.0,
+      peso: 15,
       corona: "R38",
-      altura: 91.0,
+      altura: 91,
       capacidad: 110,
       pzsEmpaque: 468,
       tipoEmpaque: "Caja",
@@ -1124,6 +1216,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1132,7 +1226,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/farmaceuticos/imagen_59_pastillero-150ml-r38.webp",
     slug: "pastillero-150ml-r38",
     specs: {
-      peso: 18.0,
+      peso: 18,
       corona: "R38",
       altura: 93,
       capacidad: 150,
@@ -1143,6 +1237,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1162,6 +1258,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1172,7 +1270,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 23,
       corona: "R24 inviolable",
-      altura: 138.0,
+      altura: 138,
       capacidad: 240,
       pzsEmpaque: 180,
       tipoEmpaque: "Caja",
@@ -1181,6 +1279,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1201,6 +1301,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1208,7 +1310,6 @@ export const _PRODUCTOS = [
     categoria: "Farmacéuticos",
     imagen:
       "/img/productos/farmaceuticos/imagen_63_tapa-ciega-inviolable-r-24.webp",
-
     slug: "tapa-ciega-inviolable-r-24",
     specs: {
       peso: null,
@@ -1222,13 +1323,12 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
-  // ─── LIMPIEZA ────────────────────────────────────────────────────────────
-  // TODO: agregar productos
   {
-    nombre: "250 ml de Limpieza Gatillera",
+    nombre: "250 ml Gatillera",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_64_250ml-gatillera.webp",
     slug: "250ml-gatillera",
@@ -1239,18 +1339,19 @@ export const _PRODUCTOS = [
       capacidad: 249,
       pzsEmpaque: 180,
       tipoEmpaque: "Caja",
-      colores: ["Disponible en 6 colores de linea"],
+      colores: ["Morado"],
       liner: [],
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [1, 2, 3, 4, 5, 6],
+      produccionMinimaColores: 10000,
     },
   },
   {
-    nombre: "400 ml de Limpieza Genérica Lavatraste",
+    nombre: "400 ml Genérica Lavatraste",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_65_400ml-generica-lavatraste.webp",
-
     slug: "400ml-generica-lavatraste",
     specs: {
       peso: 25,
@@ -1264,18 +1365,19 @@ export const _PRODUCTOS = [
       produccionMinima: 24000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "900 ml de Limpieza Genérica Lavatraste",
+    nombre: "900 ml Genérica Lavatraste",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_66-900ml-generica-lavatrastes.webp",
-
     slug: "900ml-generica-lavatraste",
     specs: {
       peso: 39,
       corona: "28 PCO",
-      altura: 260.0,
+      altura: 260,
       capacidad: 900,
       pzsEmpaque: 180,
       tipoEmpaque: "Bolsa",
@@ -1284,10 +1386,12 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "1000 ml de Limpieza",
+    nombre: "1000 ml Multiusos",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_67_1000ml.webp",
     slug: "1000ml-generica",
@@ -1303,29 +1407,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
+
   {
-    nombre: "1000 ml de Limpieza Sinfín Lig",
-    categoria: "Limpieza",
-    imagen: "/img/productos/limpieza/imagen_68_1000ml-sinfin-lig.webp",
-    slug: "1000ml-sinfin-lig",
-    specs: {
-      peso: 25,
-      corona: "28 PCO",
-      altura: 259,
-      capacidad: 1000,
-      pzsEmpaque: 165,
-      tipoEmpaque: "Bolsa",
-      colores: ["Cristal", "Verde"],
-      liner: [],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
-    },
-  },
-  {
-    nombre: "1000 ml de Limpieza Agro",
+    nombre: "1000 ml  Agro",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_69_1000ml-agro.webp",
     slug: "1000ml-agro",
@@ -1341,29 +1429,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
+
   {
-    nombre: "de Limpieza Trigger 1lt",
-    categoria: "Limpieza",
-    imagen: "/img/productos/limpieza/imagen_70_trigger-1lt.webp",
-    slug: "trigger-1lt",
-    specs: {
-      peso: 30,
-      corona: "28 PCO",
-      altura: 259,
-      capacidad: 1000,
-      pzsEmpaque: 165,
-      tipoEmpaque: "Bolsa",
-      colores: ["Cristal"],
-      liner: [],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
-    },
-  },
-  {
-    nombre: "2000 ml de Limpieza",
+    nombre: "2000 ml ",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_71_envase-2lt.webp",
     slug: "2lt",
@@ -1379,10 +1451,12 @@ export const _PRODUCTOS = [
       produccionMinima: 20000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "de Limpieza Garrafa Galón",
+    nombre: " Garrafa Galón",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_72_garrafa-galon.webp",
     slug: "garrafa-galon",
@@ -1398,10 +1472,12 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "de Limpieza Garrafa 5lt",
+    nombre: " Garrafa 5lt",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_73_garrafa-5lt.webp",
     slug: "garrafa-5lt",
@@ -1417,13 +1493,14 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "de Limpieza 10 lt Garrafa Cuadrada",
+    nombre: " 10 lt Garrafa Cuadrada",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_74_10litros-garrafa-cuadrada.webp",
-
     slug: "garrafa-10lt",
     specs: {
       peso: 148,
@@ -1437,17 +1514,16 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
-  // ─── PUBLICITARIOS ───────────────────────────────────────────────────────
-  // TODO: agregar productos
+  // PUBLICITARIOS
   {
     nombre: "750 ml Cilindro Recto",
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml.webp",
-
     slug: "pet-cilindro-publicitario-750-ml",
     specs: {
       peso: 47,
@@ -1461,6 +1537,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1468,7 +1546,6 @@ export const _PRODUCTOS = [
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_76_pet-cilindro-900-ml-recto.webp",
-
     slug: "pet-cilindro-900-ml-recto",
     specs: {
       peso: 53,
@@ -1482,6 +1559,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1489,7 +1568,6 @@ export const _PRODUCTOS = [
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_77_pet-cilindro-publicitario.webp",
-
     slug: "pet-cilindro-1lt-bala",
     specs: {
       peso: 66,
@@ -1503,15 +1581,16 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Tarro 500 ml con tapa r63 sport",
+    nombre: "500 ml con tapa r63 sport",
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_78_tarro-500-ml-con-tapa-r63-sport.webp",
-
-    slug: "tarro-500-ml-con-tapa-r63-sport",
+    slug: "500-ml-con-tapa-r63-sport",
     specs: {
       peso: 25,
       corona: "R63",
@@ -1524,6 +1603,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1543,6 +1624,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1550,7 +1633,6 @@ export const _PRODUCTOS = [
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_80_pet-cilindro-750-ml-recto-flip.webp",
-
     slug: "cilindro-750-ml-recto-flip",
     specs: {
       peso: null,
@@ -1564,6 +1646,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1571,7 +1655,6 @@ export const _PRODUCTOS = [
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_81_pet-cilindro-750-ml-recto-ciega.webp",
-
     slug: "cilindro-750-ml-recto-ciega",
     specs: {
       peso: null,
@@ -1585,6 +1668,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1592,7 +1677,6 @@ export const _PRODUCTOS = [
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_82_pet-cilindro-900-ml-recto-ciega.webp",
-
     slug: "cilindro-900-ml-recto-ciega",
     specs: {
       peso: null,
@@ -1606,6 +1690,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1613,7 +1699,6 @@ export const _PRODUCTOS = [
     categoria: "Publicitarios",
     imagen:
       "/img/productos/publicitarios/imagen_83_pet-cilindro-1-lt-bala.webp",
-
     slug: "cilindro-1-lt-bala",
     specs: {
       peso: null,
@@ -1627,13 +1712,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
-  // ─── TARROS Y VITROLEROS ─────────────────────────────────────────────────
-  // TODO: agregar productos
+  // TARROS Y VITROLEROS
   {
-    nombre: "Tarro 250 Liso",
+    nombre: "250 ml Tarro Liso",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/Tarros_vitroleros/imagen_84_tarro-250-ml.webp",
     slug: "tarro-250-ml-liso",
@@ -1642,17 +1727,19 @@ export const _PRODUCTOS = [
       corona: 63,
       altura: 85,
       capacidad: 250,
-      pzsEmpaque: null,
+      pzsEmpaque: 136,
       tipoEmpaque: "Bolsa",
       colores: ["Cristal"],
       liner: [],
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Tarro 500 ml",
+    nombre: "500 ml Tarro Liso",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/Tarros_vitroleros/imagen_85_tarro-500-ml.webp",
     slug: "tarro-500-ml",
@@ -1668,10 +1755,34 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Tarro 1000 ml",
+    nombre: "500 ml Tarro Anillado",
+    categoria: "Tarros y Vitroleros",
+    imagen:
+      "/img/productos/Tarros_vitroleros/imagen_88_tarro-anillado-500-ml.webp",
+    slug: "tarro-500-anillado",
+    specs: {
+      peso: 25,
+      corona: 63,
+      altura: 136,
+      capacidad: 500,
+      pzsEmpaque: 112,
+      tipoEmpaque: "Bolsa",
+      colores: ["Cristal"],
+      liner: [],
+      produccionMinima: null,
+      sobrePedido: false,
+      stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
+    },
+  },
+  {
+    nombre: "1000 ml Tarro",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/Tarros_vitroleros/imagen_86_tarro-1000-ml.webp",
     slug: "tarro-1000-l",
@@ -1687,17 +1798,19 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Tarro 250 Octogonal",
+    nombre: "250 ml Tarro Octogonal",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/Tarros_vitroleros/imagen_87_tarro-250-octagonal.webp",
     slug: "tarro-250-octogonal",
     specs: {
       peso: 18,
-      corona: null,
+      corona: 63,
       altura: 85,
       capacidad: 250,
       pzsEmpaque: 136,
@@ -1707,49 +1820,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
+
   {
-    nombre: "Tarro Anillado 500 ml",
-    categoria: "Tarros y Vitroleros",
-    imagen:
-      "/img/productos/Tarros_vitroleros/imagen_88_tarro-anillado-500-ml.webp",
-    slug: "tarro-500-anillado",
-    specs: {
-      peso: 25,
-      corona: 63,
-      altura: 136.0,
-      capacidad: 487,
-      pzsEmpaque: 112,
-      tipoEmpaque: "Bolsa",
-      colores: ["Cristal"],
-      liner: [],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
-    },
-  },
-  {
-    nombre: "Tarro Vitrolero 1 kg",
-    categoria: "Tarros y Vitroleros",
-    imagen: "/img/productos/Tarros_vitroleros/imagen_89_vitrolero-1-kg.webp",
-    slug: "tarro-vitrolero-1kg",
-    specs: {
-      peso: 49,
-      corona: 110,
-      altura: 117,
-      capacidad: 1000,
-      pzsEmpaque: 60,
-      tipoEmpaque: "Bolsa",
-      colores: ["Cristal"],
-      liner: [],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
-    },
-  },
-  {
-    nombre: "Tarro Vitrolero Medio Galón Redondo",
+    nombre: "Medio Galón Tarro Vitrolero Redondo",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/Tarros_vitroleros/imagen_90_vitrolero-medio-galon-liso.webp",
@@ -1766,10 +1843,12 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Tarro Vitrolero Galón Redondo ML",
+    nombre: "Galón Tarro Vitrolero Redondo ML",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/Tarros_vitroleros/imagen_91_galon-liso.webp",
     slug: "vitrolero-galon-redondo-ml",
@@ -1785,10 +1864,12 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Tarro Vitrolero Medio Galón Liso Corto",
+    nombre: "Medio Galón Tarro Vitrolero Liso Corto",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/Tarros_vitroleros/imagen_92_vitrolero-medio-galon-liso.webp",
@@ -1805,10 +1886,12 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Tarro Vitrolero Medio Galón Anillado",
+    nombre: "Medio Galón Tarro Vitrolero Anillado",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/Tarros_vitroleros/imagen_93_vitrolero-medio-galon-anillado.webp",
@@ -1825,10 +1908,12 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Tarro Vitrolero Medio Galón Pata de elefante",
+    nombre: "Medio Galón Tarro Vitrolero Pata de elefante",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/Tarros_vitroleros/imagen_94_vitrolero-medio-galon-pata-de-elefante.webp",
@@ -1845,10 +1930,12 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Tarro Vitrolero Medio Galón Cuadrado",
+    nombre: "Medio Galón Tarro Vitrolero Cuadrado",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/Tarros_vitroleros/imagen_95_vitrolero-medio-galon-cuadrado.webp",
@@ -1856,7 +1943,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 69,
       corona: 110,
-      altura: 170.0,
+      altura: 170,
       capacidad: 1673,
       pzsEmpaque: 40,
       tipoEmpaque: "Bolsa",
@@ -1865,10 +1952,12 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Tarro Vitrolero 1 Galón Cuadrado",
+    nombre: "1 Galón Tarro Vitrolero Cuadrado",
     categoria: "Tarros y Vitroleros",
     imagen:
       "/img/productos/Tarros_vitroleros/imagen_96_vitrolero-1-galon-cuadrado.webp",
@@ -1876,7 +1965,7 @@ export const _PRODUCTOS = [
     specs: {
       peso: 105,
       corona: 110,
-      altura: 251.0,
+      altura: 251,
       capacidad: 3125,
       pzsEmpaque: 35,
       tipoEmpaque: "Bolsa",
@@ -1885,10 +1974,12 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
-    nombre: "Tarro 1000 ml Vitrolero Especiero",
+    nombre: "1000 ml Especiero",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/Tarros_vitroleros/imagen_97_especiero-1-lt.webp",
     slug: "tarro-vitrolero-especiero-1lt",
@@ -1904,6 +1995,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
@@ -1923,14 +2016,14 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
-
-  // ─── TAPAS, BOMBAS Y TRIGGERS ────────────────────────────────────────────
-  // TODO: agregar productos
+  //Tapas , Bombas, Triggers
   {
     nombre: "Trigger sprayer Rosca 28-410",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_99_trigger-sprayer.webp",
     slug: "trigger-sprayer-rosca-28410",
@@ -1946,11 +2039,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Trigger uso industrial Rosca 28",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_100_triger-uso-industrial-rosca28.webp",
     slug: "trigger-industrial-rosca-28",
@@ -1966,11 +2061,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Trigger cola de pato Rosca 28",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_101_triger-cola-de-pato-rosca28.webp",
     slug: "trigger-cola-de-pato-rosca-28",
@@ -1986,11 +2083,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Mini trigger Rosca 28-410 Blanco popote largo",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_102_mini-trigger-sprayer.webp",
     slug: "trigger-cola-de-pato-rosca-28",
@@ -2006,11 +2105,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Mini trigger Rosca 24",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_103_mini-triger-rosca24.webp",
     slug: "mini-trigger-rosca-24",
@@ -2026,11 +2127,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Atomizador Botón Rosca 24-410",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_104_atomizador-boton-rosca-24-410-blanco.webp",
     slug: "atomizador-boton-rosca-24410",
@@ -2046,11 +2149,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Atomizador Botón Rosca 20-410",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_105_atomizado-botonrosca-20-410-blanco.webp",
     slug: "atomizador-boton-rosca-20410",
@@ -2066,11 +2171,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Atomizador Botón Rosca 18-410",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_106_atomizador-boton-rosca-18-410-blanco.webp",
     slug: "atomizador-boton-rosca-18410",
@@ -2086,11 +2193,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Bomba dosificadora Rosca 28",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_107_bomba-dosificadora.webp",
     slug: "bomba-dosificadora-rosca-28",
@@ -2106,11 +2215,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Bomba dosificadora Reforzada Azul Rosca 28",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_108_bomba-dosificadora-reforzada-azul.webp",
     slug: "bomba-dosificadora-reforzada-azul",
@@ -2126,11 +2237,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Tapa Disk Top 24-415",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_109_tapa-disk-top-r24-415.webp",
     slug: "tapa-disk-top-24415",
@@ -2146,11 +2259,13 @@ export const _PRODUCTOS = [
       produccionMinima: 20000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Tapa Disk Top R24-410",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_110_tapa-disk-top-r24-410.webp",
     slug: "tapa-disk-top-r24410",
@@ -2166,11 +2281,13 @@ export const _PRODUCTOS = [
       produccionMinima: 20000,
       sobrePedido: true,
       stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Tapa Vitrolero 110 mm",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_111_tapa-vitrolero-110mm.webp",
     slug: "tapa-vitrolero-110",
@@ -2186,11 +2303,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Tapa Cintillo 28 mm refresquera",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen: "/img/productos/tapas_bombas_triggers/imagen_112_tapa-28mm.webp",
     slug: "tapa-cintillo-28",
     specs: {
@@ -2205,11 +2324,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Flip Top 24-410",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_113_flip-top-24-410.webp",
     slug: "flip-top-24410",
@@ -2225,11 +2346,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Flip Top 24-415",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_114_flip-top-24-415.webp",
     slug: "flip-top-24415",
@@ -2245,11 +2368,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Flip Top 28-410",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_115_flip-top-28-410.webp",
     slug: "flip-top-28410",
@@ -2265,11 +2390,13 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
   {
     nombre: "Tapa Sport 28mm",
-    categoria: "Tapas, Bombas y Triggers",
+    categoria: "Tapas , Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_116_tapa-sport-r28.webp",
     slug: "tapa-sport-28",
@@ -2285,6 +2412,8 @@ export const _PRODUCTOS = [
       produccionMinima: null,
       sobrePedido: false,
       stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
     },
   },
 ];
