@@ -1,4 +1,5 @@
 import Hero from "@/components/features/home/Hero";
+import SectionSucursalesMap from "@/components/features/home/SectionSucursalesMap";
 import { SectoinTestimonials } from "@/components/features/home/SectionTestimonials";
 import { SectionVehiculos } from "@/components/features/home/SectionVehiculos";
 import { SectionWhyUs } from "@/components/features/home/SectionWhyUs";
@@ -72,6 +73,7 @@ export default function Home() {
       />
       <SectionWhyUs />
       <SectionVehiculos />
+      <SectionSucursalesMap />
       <SectoinTestimonials />
       <SectionHighlight />
       <section className="py-20 px-4 md:py-28 lg:px-0 bg-white">
