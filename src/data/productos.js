@@ -45,7 +45,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_1_250ml-sinfin.webp",
     slug: "250-ml",
     specs: {
-      peso: 14.5,
+      peso: [14.5],
       corona: "28 PCO",
       altura: 121.2,
       capacidad: 250,
@@ -66,7 +66,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_2_355ml-sinfin-r-28.webp",
     slug: "355-ml",
     specs: {
-      peso: 17.2,
+      peso: [17.2],
       corona: "28 PCO",
       altura: 180,
       capacidad: 355,
@@ -87,7 +87,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_3_500ml-sinfin-r-28.webp",
     slug: "500-ml",
     specs: {
-      peso: 16,
+      peso: [16],
       corona: "28 PCO",
       altura: 216,
       capacidad: 500,
@@ -108,7 +108,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_4_600ml-sinfin.webp",
     slug: "600-ml",
     specs: {
-      peso: 19,
+      peso: [19],
       corona: "28 PCO",
       altura: 228,
       capacidad: 600,
@@ -129,7 +129,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_5_1lt-sinfin-c.webp",
     slug: "1000-ml",
     specs: {
-      peso: 30,
+      peso: [30],
       corona: "28 PCO",
       altura: 260,
       capacidad: 1000,
@@ -150,7 +150,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_6_1500ml-sinfin-37gr.webp",
     slug: "1500-ml",
     specs: {
-      peso: 38,
+      peso: [30, 37],
       corona: "28 PCO",
       altura: 311,
       capacidad: 1500,
@@ -172,7 +172,7 @@ export const _PRODUCTOS = [
       "/img/productos/alimentos_y_bebidas/imagen_7_45ml-oliva-cuadrada.webp",
     slug: "45-ml-oliva-cuadrada",
     specs: {
-      peso: 6.5,
+      peso: [6.5],
       corona: "18",
       altura: 105.6,
       capacidad: 45,
@@ -194,7 +194,7 @@ export const _PRODUCTOS = [
       "/img/productos/alimentos_y_bebidas/imagen_8_250ml-oliva-cuadrada.webp",
     slug: "250-ml-oliva-cuadrada",
     specs: {
-      peso: 18,
+      peso: [18],
       corona: "28 PCO",
       altura: 153.5,
       capacidad: 250,
@@ -216,7 +216,7 @@ export const _PRODUCTOS = [
       "/img/productos/alimentos_y_bebidas/imagen_9_750ml-oliva-cuadrada.webp",
     slug: "750-ml-oliva-cuadrada",
     specs: {
-      peso: 37,
+      peso: [37],
       corona: "28 PCO",
       altura: 228,
       capacidad: 750,
@@ -237,7 +237,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_10_250ml-twist.webp",
     slug: "250-ml-twist",
     specs: {
-      peso: 17,
+      peso: [17],
       corona: "28",
       altura: 161,
       capacidad: 250,
@@ -258,7 +258,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_11_180-salsera.webp",
     slug: "180-ml-salsera",
     specs: {
-      peso: 17,
+      peso: [17],
       corona: "28",
       altura: null,
       capacidad: 180,
@@ -279,7 +279,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_12_licorera-250-ml.webp",
     slug: "250-ml-licorera",
     specs: {
-      peso: 23,
+      peso: [23],
       corona: "28",
       altura: 200,
       capacidad: 250,
@@ -301,7 +301,7 @@ export const _PRODUCTOS = [
       "/img/productos/alimentos_y_bebidas/imagen_13_micherveza-330-ml.webp",
     slug: "355-ml-licorera",
     specs: {
-      peso: 25,
+      peso: [25],
       corona: "28",
       altura: 193.5,
       capacidad: 355,
@@ -322,7 +322,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_14_500ml-licorera.webp",
     slug: "500-ml-licorera",
     specs: {
-      peso: 23,
+      peso: [23],
       corona: "28",
       altura: 252,
       capacidad: 520,
@@ -343,7 +343,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_15_1000ml-licorera.webp",
     slug: "1000-ml-licorera",
     specs: {
-      peso: 39,
+      peso: [39],
       corona: "28",
       altura: 305,
       capacidad: 1075,
@@ -364,7 +364,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_16_1-lt-pina.webp",
     slug: "1-lt-pina",
     specs: {
-      peso: 23,
+      peso: [23],
       corona: "28",
       altura: 195,
       capacidad: 900,
@@ -385,7 +385,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_17_355ml-bala.webp",
     slug: "355-ml-bala",
     specs: {
-      peso: 17.2,
+      peso: [17.2],
       corona: "28 PCO",
       altura: 198,
       capacidad: 355,
@@ -407,7 +407,7 @@ export const _PRODUCTOS = [
       "/img/productos/alimentos_y_bebidas/imagen_18_355ml-toco-barrilito.webp",
     slug: "355-ml-toco-barrilito",
     specs: {
-      peso: 17.2,
+      peso: [17.2],
       corona: "28 PCO",
       altura: 167,
       capacidad: 345,
@@ -428,7 +428,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_19_355ml-jubilo.webp",
     slug: "355-ml-jubilo",
     specs: {
-      peso: 17.2,
+      peso: [17.2],
       corona: "28 PCO",
       altura: 166,
       capacidad: 355,
@@ -449,7 +449,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_20_500ml-jubilo.webp",
     slug: "500-ml-jubilo",
     specs: {
-      peso: 17,
+      peso: [17],
       corona: "28 PCO",
       altura: 203,
       capacidad: 500,
@@ -470,7 +470,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_21_1000ml_agro.webp",
     slug: "1000-ml-agro",
     specs: {
-      peso: 39,
+      peso: [39],
       corona: "28 PCO",
       altura: 242,
       capacidad: 1000,
@@ -491,7 +491,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_22_sq-250-ml.webp",
     slug: "sq-250-ml",
     specs: {
-      peso: 23,
+      peso: [23],
       corona: "33",
       altura: 160,
       capacidad: 250,
@@ -512,7 +512,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_23_sq-500-ml.webp",
     slug: "sq-500-ml",
     specs: {
-      peso: 33,
+      peso: [33],
       corona: "33",
       altura: 180,
       capacidad: 500,
@@ -533,7 +533,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/alimentos_y_bebidas/imagen_24_355-ml-rombo.webp",
     slug: "355-ml-rombo",
     specs: {
-      peso: 16,
+      peso: [16],
       corona: 28,
       altura: 164,
       capacidad: 355,
@@ -554,7 +554,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_25_30ml-institucional.webp",
     slug: "30-ml-institucional",
     specs: {
-      peso: 6.5,
+      peso: [6.5],
       corona: "18",
       altura: 63,
       capacidad: 30,
@@ -575,7 +575,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_26_40ml-institucional.webp",
     slug: "40-ml-institucional",
     specs: {
-      peso: 6.5,
+      peso: [6.5],
       corona: "18",
       altura: 64,
       capacidad: 40,
@@ -596,7 +596,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_27_40ml-farma.webp",
     slug: "40-ml-farma",
     specs: {
-      peso: 6.5,
+      peso: [6.5],
       corona: "18",
       altura: 78.5,
       capacidad: 40,
@@ -617,7 +617,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_28_30ml-campana.webp",
     slug: "30-ml-campana",
     specs: {
-      peso: 6.5,
+      peso: [6.5],
       corona: "18",
       altura: 65,
       capacidad: 30,
@@ -638,7 +638,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_29_50ml-campana.webp",
     slug: "50-ml-campana",
     specs: {
-      peso: 6.5,
+      peso: [6.5],
       corona: "18",
       altura: 70,
       capacidad: 50,
@@ -659,7 +659,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_31_30ml-cilindrica.webp",
     slug: "30-ml-cilindrica",
     specs: {
-      peso: 6.5,
+      peso: [6.5],
       corona: "18",
       altura: 64,
       capacidad: 30,
@@ -680,7 +680,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_32_40ml-cilindrica.webp",
     slug: "40-ml-cilindrica",
     specs: {
-      peso: 6.5,
+      peso: [6.5],
       corona: "18",
       altura: 84,
       capacidad: 40,
@@ -701,7 +701,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_33_25ml-lapiz.webp",
     slug: "25-ml-lapiz",
     specs: {
-      peso: 5,
+      peso: [5],
       corona: "18",
       altura: 76.5,
       capacidad: 25,
@@ -722,7 +722,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/amenidades/imagen_34_30ml-invertida.webp",
     slug: "30-ml-invertida",
     specs: {
-      peso: 5,
+      peso: [5],
       corona: "18",
       altura: 68,
       capacidad: 30,
@@ -764,7 +764,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_36_60ml-boston-rosca20.webp",
     slug: "60-ml-boston",
     specs: {
-      peso: 10,
+      peso: [10],
       corona: "R20",
       altura: 10.3,
       capacidad: null,
@@ -806,7 +806,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_38_250ml-boston-r24-410.webp",
     slug: "250-ml-boston",
     specs: {
-      peso: 23,
+      peso: [23],
       corona: "24-410",
       altura: 176,
       capacidad: 250,
@@ -827,7 +827,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_39_250ml-boston-r24-415.webp",
     slug: "250-ml-boston-r24",
     specs: {
-      peso: 23,
+      peso: [23],
       corona: "24-415",
       altura: 184,
       capacidad: 250,
@@ -848,7 +848,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_40_500ml-boston.webp",
     slug: "500-ml-boston",
     specs: {
-      peso: 23,
+      peso: [23, 28],
       corona: "28",
       altura: 216,
       capacidad: 500,
@@ -869,7 +869,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_41_900ml-boston-r28-410.webp",
     slug: "900-ml-boston",
     specs: {
-      peso: 30,
+      peso: [30],
       corona: "28 PCO",
       altura: 260,
       capacidad: 900,
@@ -890,7 +890,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_42_1lt-boston.webp",
     slug: "1lt-boston",
     specs: {
-      peso: 38,
+      peso: [38],
       corona: "28-410",
       altura: 258.5,
       capacidad: 1000,
@@ -911,7 +911,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/boston/imagen_43_1lt-boston-c.webp",
     slug: "1lt-boston-C",
     specs: {
-      peso: 40,
+      peso: [40],
       corona: "28-410",
       altura: 251,
       capacidad: 1000,
@@ -932,7 +932,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_44_oval-60ml-c20-410.webp",
     slug: "60-ml-oval",
     specs: {
-      peso: 10,
+      peso: [10],
       corona: "R20",
       altura: 104,
       capacidad: 60,
@@ -953,7 +953,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_46_125ml-oval.webp",
     slug: "125-ml-oval",
     specs: {
-      peso: 15.5,
+      peso: [15.5],
       corona: "R24-415",
       altura: 139,
       capacidad: 125,
@@ -974,7 +974,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_47_250ml-oval.webp",
     slug: "250-ml-oval",
     specs: {
-      peso: 23,
+      peso: [23],
       corona: "R24-415",
       altura: 164,
       capacidad: 250,
@@ -995,7 +995,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_48_280ml-princesa.webp",
     slug: "280-ml-princesa",
     specs: {
-      peso: 26,
+      peso: [26],
       corona: "24-410",
       altura: 170,
       capacidad: 280,
@@ -1016,7 +1016,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_49_300ml-ondulada.webp",
     slug: "300-ml-ondulada",
     specs: {
-      peso: 26,
+      peso: [26],
       corona: "24-410",
       altura: 169,
       capacidad: 300,
@@ -1037,7 +1037,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_50_120ml-silueta.webp",
     slug: "125-ml-silueta",
     specs: {
-      peso: 16,
+      peso: [16],
       corona: "24-415",
       altura: 142,
       capacidad: 125,
@@ -1058,7 +1058,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_51_250ml-campana.webp",
     slug: "250-ml-campana",
     specs: {
-      peso: 20,
+      peso: [20],
       corona: "24-410",
       altura: 113,
       capacidad: 250,
@@ -1079,7 +1079,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_52_campana-500ml-original.webp",
     slug: "500-ml-campanita",
     specs: {
-      peso: 25,
+      peso: [25],
       corona: "R28",
       altura: 151,
       capacidad: 500,
@@ -1100,7 +1100,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_53_500ml-campana.webp",
     slug: "500-ml-campana-alta",
     specs: {
-      peso: 25,
+      peso: [25],
       corona: "R28",
       altura: 180,
       capacidad: 500,
@@ -1121,7 +1121,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/cosmeticos/imagen_54_silueta-500-ml.webp",
     slug: "silueta-500-ml",
     specs: {
-      peso: 28,
+      peso: [28],
       corona: "r-28",
       altura: 185,
       capacidad: 500,
@@ -1142,7 +1142,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/especieros/imagen_55_especiero-120-ml.webp",
     slug: "especiero-120-ml",
     specs: {
-      peso: 16,
+      peso: [16],
       corona: "38",
       altura: 117,
       capacidad: 120,
@@ -1163,7 +1163,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/especieros/imagen_56_especiero-120-ml-corto.webp",
     slug: "especiero-120-ml-corto",
     specs: {
-      peso: 16,
+      peso: [16],
       corona: "38",
       altura: 106,
       capacidad: 120,
@@ -1205,7 +1205,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/farmaceuticos/imagen_58_pastillero-110ml-r38.webp",
     slug: "pastillero-110ml-r38",
     specs: {
-      peso: 15,
+      peso: [15],
       corona: "R38",
       altura: 91,
       capacidad: 110,
@@ -1226,7 +1226,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/farmaceuticos/imagen_59_pastillero-150ml-r38.webp",
     slug: "pastillero-150ml-r38",
     specs: {
-      peso: 18,
+      peso: [18],
       corona: "R38",
       altura: 93,
       capacidad: 150,
@@ -1247,7 +1247,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/farmaceuticos/imagen_60_125ml-farma.webp",
     slug: "125ml-farma",
     specs: {
-      peso: 16,
+      peso: [16],
       corona: "R24 inviolable",
       altura: 113.6,
       capacidad: 125,
@@ -1268,7 +1268,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/farmaceuticos/imagen_61_240ml-farma.webp",
     slug: "240ml-farma",
     specs: {
-      peso: 23,
+      peso: [23],
       corona: "R24 inviolable",
       altura: 138,
       capacidad: 240,
@@ -1290,7 +1290,7 @@ export const _PRODUCTOS = [
       "/img/productos/farmaceuticos/imagen_62_tapa-a-prueba-de-children-r38.webp",
     slug: "tapa-a-prueba-de-ninos-r38",
     specs: {
-      peso: 23,
+      peso: [23],
       corona: "R38",
       altura: null,
       capacidad: null,
@@ -1333,7 +1333,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/limpieza/imagen_64_250ml-gatillera.webp",
     slug: "250ml-gatillera",
     specs: {
-      peso: 20,
+      peso: [20],
       corona: "R24-410",
       altura: 152,
       capacidad: 249,
@@ -1354,7 +1354,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/limpieza/imagen_65_400ml-generica-lavatraste.webp",
     slug: "400ml-generica-lavatraste",
     specs: {
-      peso: 25,
+      peso: [25],
       corona: "28 PCO",
       altura: 195,
       capacidad: 400,
@@ -1375,7 +1375,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/limpieza/imagen_66-900ml-generica-lavatrastes.webp",
     slug: "900ml-generica-lavatraste",
     specs: {
-      peso: 39,
+      peso: [39],
       corona: "28 PCO",
       altura: 260,
       capacidad: 900,
@@ -1396,7 +1396,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/limpieza/imagen_67_1000ml.webp",
     slug: "1000ml-generica",
     specs: {
-      peso: 30,
+      peso: [30],
       corona: "28 Sinfín",
       altura: 268,
       capacidad: 1000,
@@ -1411,14 +1411,13 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
-
   {
     nombre: "1000 ml  Agro",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_69_1000ml-agro.webp",
     slug: "1000ml-agro",
     specs: {
-      peso: 39,
+      peso: [39],
       corona: "28 Sinfín",
       altura: 242,
       capacidad: 1000,
@@ -1433,14 +1432,13 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
-
   {
     nombre: "2000 ml ",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_71_envase-2lt.webp",
     slug: "2lt",
     specs: {
-      peso: 45,
+      peso: [45],
       corona: "R28",
       altura: 314,
       capacidad: 2000,
@@ -1461,7 +1459,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/limpieza/imagen_72_garrafa-galon.webp",
     slug: "garrafa-galon",
     specs: {
-      peso: 100,
+      peso: [100],
       corona: "R45",
       altura: null,
       capacidad: 3785,
@@ -1482,7 +1480,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/limpieza/imagen_73_garrafa-5lt.webp",
     slug: "garrafa-5lt",
     specs: {
-      peso: 74,
+      peso: [74],
       corona: "R45",
       altura: 380,
       capacidad: 5000,
@@ -1503,7 +1501,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/limpieza/imagen_74_10litros-garrafa-cuadrada.webp",
     slug: "garrafa-10lt",
     specs: {
-      peso: 148,
+      peso: [148],
       corona: "45",
       altura: 427,
       capacidad: 10000,
@@ -1518,7 +1516,6 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
-  // PUBLICITARIOS
   {
     nombre: "750 ml Cilindro Recto",
     categoria: "Publicitarios",
@@ -1526,7 +1523,7 @@ export const _PRODUCTOS = [
       "/img/productos/publicitarios/imagen_75_pet-cilindro-publicitario-750-ml.webp",
     slug: "pet-cilindro-publicitario-750-ml",
     specs: {
-      peso: 47,
+      peso: [47],
       corona: null,
       altura: 8.55,
       capacidad: 750,
@@ -1548,7 +1545,7 @@ export const _PRODUCTOS = [
       "/img/productos/publicitarios/imagen_76_pet-cilindro-900-ml-recto.webp",
     slug: "pet-cilindro-900-ml-recto",
     specs: {
-      peso: 53,
+      peso: [53],
       corona: "45",
       altura: 8.55,
       capacidad: 900,
@@ -1570,7 +1567,7 @@ export const _PRODUCTOS = [
       "/img/productos/publicitarios/imagen_77_pet-cilindro-publicitario.webp",
     slug: "pet-cilindro-1lt-bala",
     specs: {
-      peso: 66,
+      peso: [66],
       corona: "45",
       altura: 258.5,
       capacidad: 1000,
@@ -1592,7 +1589,7 @@ export const _PRODUCTOS = [
       "/img/productos/publicitarios/imagen_78_tarro-500-ml-con-tapa-r63-sport.webp",
     slug: "500-ml-con-tapa-r63-sport",
     specs: {
-      peso: 25,
+      peso: [25],
       corona: "R63",
       altura: 136,
       capacidad: null,
@@ -1613,7 +1610,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/publicitarios/imagen_79_tapa-sport-r63.webp",
     slug: "tapa-sport-r63",
     specs: {
-      peso: 12,
+      peso: [12],
       corona: "R63",
       altura: 25,
       capacidad: null,
@@ -1716,14 +1713,13 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
-  // TARROS Y VITROLEROS
   {
     nombre: "250 ml Tarro Liso",
     categoria: "Tarros y Vitroleros",
     imagen: "/img/productos/Tarros_vitroleros/imagen_84_tarro-250-ml.webp",
     slug: "tarro-250-ml-liso",
     specs: {
-      peso: 17.5,
+      peso: [17.5],
       corona: 63,
       altura: 85,
       capacidad: 250,
@@ -1744,7 +1740,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/Tarros_vitroleros/imagen_85_tarro-500-ml.webp",
     slug: "tarro-500-ml",
     specs: {
-      peso: 25,
+      peso: [25],
       corona: 63,
       altura: 136,
       capacidad: 500,
@@ -1766,7 +1762,7 @@ export const _PRODUCTOS = [
       "/img/productos/Tarros_vitroleros/imagen_88_tarro-anillado-500-ml.webp",
     slug: "tarro-500-anillado",
     specs: {
-      peso: 25,
+      peso: [25],
       corona: 63,
       altura: 136,
       capacidad: 500,
@@ -1787,7 +1783,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/Tarros_vitroleros/imagen_86_tarro-1000-ml.webp",
     slug: "tarro-1000-l",
     specs: {
-      peso: 55,
+      peso: [55],
       corona: 63,
       altura: 207,
       capacidad: 1000,
@@ -1809,7 +1805,7 @@ export const _PRODUCTOS = [
       "/img/productos/Tarros_vitroleros/imagen_87_tarro-250-octagonal.webp",
     slug: "tarro-250-octogonal",
     specs: {
-      peso: 18,
+      peso: [18],
       corona: 63,
       altura: 85,
       capacidad: 250,
@@ -1824,7 +1820,6 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
-
   {
     nombre: "Medio Galón Tarro Vitrolero Redondo",
     categoria: "Tarros y Vitroleros",
@@ -1832,7 +1827,7 @@ export const _PRODUCTOS = [
       "/img/productos/Tarros_vitroleros/imagen_90_vitrolero-medio-galon-liso.webp",
     slug: "tarro-vitrolero-medio-galon-redondo",
     specs: {
-      peso: 69,
+      peso: [69],
       corona: 110,
       altura: 163,
       capacidad: 1697,
@@ -1853,7 +1848,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/Tarros_vitroleros/imagen_91_galon-liso.webp",
     slug: "vitrolero-galon-redondo-ml",
     specs: {
-      peso: 105,
+      peso: [105],
       corona: 110,
       altura: 251,
       capacidad: 3733,
@@ -1875,7 +1870,7 @@ export const _PRODUCTOS = [
       "/img/productos/Tarros_vitroleros/imagen_92_vitrolero-medio-galon-liso.webp",
     slug: "tarro-vitrolero-medio-galon-liso",
     specs: {
-      peso: 64,
+      peso: [64],
       corona: 110,
       altura: 145.01,
       capacidad: 1468,
@@ -1897,7 +1892,7 @@ export const _PRODUCTOS = [
       "/img/productos/Tarros_vitroleros/imagen_93_vitrolero-medio-galon-anillado.webp",
     slug: "tarro-vitrolero-medio-galon-anillado",
     specs: {
-      peso: 65,
+      peso: [65],
       corona: 110,
       altura: 175,
       capacidad: 1280,
@@ -1919,7 +1914,7 @@ export const _PRODUCTOS = [
       "/img/productos/Tarros_vitroleros/imagen_94_vitrolero-medio-galon-pata-de-elefante.webp",
     slug: "tarro-vitrolero-medio-galon-pata-elefante",
     specs: {
-      peso: 65,
+      peso: [65],
       corona: 110,
       altura: 167.17,
       capacidad: 1711,
@@ -1941,7 +1936,7 @@ export const _PRODUCTOS = [
       "/img/productos/Tarros_vitroleros/imagen_95_vitrolero-medio-galon-cuadrado.webp",
     slug: "tarro-vitrolero-medio-galon-cuadrado",
     specs: {
-      peso: 69,
+      peso: [69],
       corona: 110,
       altura: 170,
       capacidad: 1673,
@@ -1963,7 +1958,7 @@ export const _PRODUCTOS = [
       "/img/productos/Tarros_vitroleros/imagen_96_vitrolero-1-galon-cuadrado.webp",
     slug: "tarro-vitrolero-1-galon-cuadrado",
     specs: {
-      peso: 105,
+      peso: [105],
       corona: 110,
       altura: 251,
       capacidad: 3125,
@@ -1984,7 +1979,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/Tarros_vitroleros/imagen_97_especiero-1-lt.webp",
     slug: "tarro-vitrolero-especiero-1lt",
     specs: {
-      peso: 63,
+      peso: [63],
       corona: 63,
       altura: 225,
       capacidad: 1100,
@@ -2020,7 +2015,6 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
-  //Tapas , Bombas, Triggers
   {
     nombre: "Trigger sprayer Rosca 28-410",
     categoria: "Tapas , Bombas y Triggers",

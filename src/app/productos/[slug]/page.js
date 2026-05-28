@@ -74,7 +74,31 @@ export default async function ProductoDetalle({ params }) {
       label: "Capacidad",
       value: specs?.capacidad ? `${specs.capacidad} ml` : null,
     },
-    { label: "Peso", value: specs?.peso ? `${specs.peso} g` : null },
+    // { label: "Peso", value: specs?.peso ? `${specs.peso} g` : null },
+    {
+      label: "Peso",
+      value: (() => {
+        const pesos = specs?.peso;
+        if (!pesos) return null;
+
+        if (Array.isArray(pesos)) {
+          if (pesos.length === 0) return null;
+
+          // Creamos una lista de strings con la unidad incluida: ["23 g", "28 g"]
+          const pesosConUnidad = pesos.map((p) => `${p} g`);
+
+          if (pesosConUnidad.length === 1) return pesosConUnidad[0];
+
+          // Formateo: "23 g y 28 g" o "23 g, 28 g y 30 g"
+          const ultimo = pesosConUnidad.pop();
+          const resto = pesosConUnidad.join(", ");
+          return `${resto} y ${ultimo}`;
+        }
+
+        return `${pesos} g`;
+      })(),
+    },
+
     { label: "Rosca", value: specs?.corona ?? null },
     { label: "Altura", value: specs?.altura ? `${specs.altura} mm` : null },
     { label: "Pzs / Empaque", value: specs?.pzsEmpaque ?? null },
