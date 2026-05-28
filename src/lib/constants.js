@@ -37,7 +37,7 @@ export const COLOR_MAP = {
   negro: "#2B2B2B",
   blanco: "#FFFFFF",
   natural: "#F5F0E8",
-  morado: "#7B1FA2",
+  morado: "#876C95",
   aqua: "#00BCD4",
   // Valor especial para productos con "gran variedad de colores"
   "colores bajo pedido":

@@ -22,7 +22,7 @@ const categorias = [
   "Limpieza",
   "Publicitarios",
   "Tarros y Vitroleros",
-  "Tapas, Bombas y Triggers",
+  "Tapas , Bombas y Triggers",
 ];
 
 function Acordeon({ title, children, defaultOpen = false }) {
