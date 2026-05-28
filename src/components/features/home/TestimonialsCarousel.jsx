@@ -7,31 +7,31 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Carlos Ramírez",
-    company: "D******",
+    company: "Amenidades S.A.",
     comment:
       "El servicio fue impecable desde el primer contacto. Cumplieron con cada entrega en el tiempo acordado y siempre mantuvieron una comunicación clara y profesional. Gracias a su equipo logramos optimizar nuestros procesos logísticos y reducir retrasos que antes eran constantes. Sin duda, se han convertido en un aliado estratégico para nuestro crecimiento.",
   },
   {
     name: "Laura Gómez",
-    company: "L******",
+    company: "Aliados Logísticos",
     comment:
       "Trabajar con ellos ha sido una excelente decisión para nuestra empresa. No solo nos ayudaron a optimizar costos, sino que también mejoraron significativamente nuestros tiempos de entrega. Su enfoque en los detalles y la calidad del servicio realmente marca la diferencia. Hoy en día confiamos plenamente en su gestión para operaciones críticas.",
   },
   {
     name: "Andrés Torres",
-    company: "R******",
+    company: "Natura Bloom",
     comment:
       "Destaco su profesionalismo y compromiso en cada etapa del proceso. Desde la planificación hasta la ejecución, todo fue manejado con un alto nivel de responsabilidad. Nos brindaron soluciones adaptadas a nuestras necesidades reales y eso se tradujo en mejores resultados para nuestro negocio. Totalmente recomendados para empresas que buscan eficiencia y confianza.",
   },
   {
     name: "María López",
-    company: "C******",
+    company: "Farma R ",
     comment:
       "La experiencia ha sido excelente. Nos ofrecieron una atención personalizada, entendiendo perfectamente lo que necesitábamos y proponiendo soluciones prácticas y efectivas. La calidad del servicio es sobresaliente y el equipo siempre está dispuesto a apoyar. Hemos notado una mejora significativa en nuestra operación desde que trabajamos con ellos.",
   },
   {
-    name: "Juan Pérez",
-    company: "J******",
+    name: "Hector Suarez",
+    company: "Agua Sierra Azul",
     comment:
       "Lo que más valoramos es su cumplimiento y transparencia. Cada proceso está bien estructurado y siempre cumplen lo que prometen. Nos dieron tranquilidad al saber que nuestras operaciones estaban en buenas manos. Además, su capacidad de respuesta ante cualquier imprevisto es rápida y eficiente. Sin duda, una empresa confiable y altamente recomendada.",
   },
