@@ -33,8 +33,7 @@ const strengths = [
   {
     id: 3,
     title: "Soluciones Competitivas",
-    description:
-      "Brindamos soluciones adaptadas a cada cliente mediante productos al mayoreo y menudeo, combinando calidad, atención cercana y precios competitivos.",
+    description: `Combinamos fabricación, logística y atención cercana para ofrecer una propuesta eficiente en costos y suministro.\n Buscamos ayudarte a reducir costos operativos mediante disponibilidad, logística y soluciones funcionales.`,
     highlights: [
       "Atención personalizada",
       "Asesoría especializada",
