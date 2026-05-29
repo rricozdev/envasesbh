@@ -98,14 +98,15 @@ export default function Footer() {
 
               {/* Eslogan */}
               <h3 className="mb-3 font-heading text-lg font-semibold text-primary">
-                Tu Distribuidor & Fabricante de Envases PET
+                Fabricante de Envases PET
               </h3>
 
               {/* Propuesta de valor */}
               <p className="mb-6 text-sm font-body leading-relaxed text-gray-300">
-                25+ años de experiencia en distribución y manufactura de envases
-                PET de calidad. Acceso inmediato a catálogo amplio + opciones de
-                personalización sin cambiar de proveedor.
+                Más de 25 años de experiencia en la fabricación de envases PET
+                de calidad, respaldados por una red de distribución propia.
+                Acceso inmediato a un catálogo amplio y opciones de
+                personalización sin necesidad de cambiar de proveedor.
               </p>
 
               {/* Social Media */}
