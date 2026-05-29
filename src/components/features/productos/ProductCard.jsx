@@ -98,7 +98,6 @@ export default function ProductCard({ producto }) {
           ) : (
             <span />
           )}
-
           {specs?.stockDisponible === true ? (
             <span className="text-[10px] font-bold uppercase tracking-wider text-green-600">
               ● En stock
@@ -107,7 +106,11 @@ export default function ProductCard({ producto }) {
             <span className="text-[10px] font-bold uppercase tracking-wider text-yellow-600">
               ● Bajo pedido
             </span>
-          ) : null}
+          ) : (
+            <span className="text-[10px] font-bold uppercase tracking-wider text-red">
+              ● No disponible
+            </span>
+          )}
         </div>
 
         {/* SPECS con líneas punteadas */}
