@@ -48,7 +48,7 @@ export default function Hero({
             className="inline-flex w-fit items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Fabricante y Distribuidor en México
+            Fabricante de envases PET en México
           </motion.span>
 
           {/* TÍTULO */}

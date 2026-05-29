@@ -30,7 +30,7 @@ export const metadata = {
     ...baseMetadata.twitter,
     title: "Envases PET de Calidad | Envases BH México",
     description:
-      "Fabricante y distribuidor de envases PET. Calidad garantizada, entregas confiables.",
+      "Fabricante de envases PET. Calidad garantizada, entregas confiables.",
     image: "https://envasesbh.mx/logo-bh_11zon.webp",
   },
 };

@@ -101,7 +101,7 @@ const misionVisionCalidad = [
     icono: Eye,
     titulo: "Visión",
     texto:
-      "Ser una empresa nacional responsable, eficiente, competitiva y sobresaliente en la fabricación y distribución de productos PET grado alimenticio.",
+      "Ser una empresa nacional responsable, eficiente, competitiva y sobresaliente en la fabricación de productos PET grado alimenticio.",
   },
   {
     icono: ShieldCheck,

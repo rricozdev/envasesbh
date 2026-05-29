@@ -6,14 +6,13 @@ export const baseMetadata = {
   applicationName: "Envases BH",
   title: {
     template: "%s | Envases BH",
-    default: "Envases BH - Fabricante y Distribuidor de Envases PET en México",
+    default: "Envases BH - Fabricante  de Envases PET en México",
   },
   description:
-    "Fabricante y distribuidor de envases PET de alta calidad en México, ofrecemos soluciones personalizadas para tu industria PET",
+    "Fabricante  de envases PET de alta calidad en México, ofrecemos soluciones personalizadas para tu industria PET",
   keywords: [
     "envases PET",
     "fabricante envases",
-    "distribuidor PET",
     "botellas plásticas",
     "envases personalizados",
     "empaques México",
@@ -130,7 +129,7 @@ export const baseJsonLd = {
       },
       image: "https://envasesbh.mx/logo-bh-3.png",
       description:
-        "Fabricante y distribuidor de envases PET de alta calidad. 10+ años de experiencia sirviendo a +50 empresas en México.",
+        "Fabricante  de envases PET de alta calidad. 10+ años de experiencia sirviendo a +50 empresas en México.",
       foundingDate: "2014",
       foundingLocation: {
         "@type": "Place",
@@ -180,7 +179,7 @@ export const baseJsonLd = {
       "@id": "https://envasesbh.mx/#website",
       url: "https://envasesbh.mx",
       name: "Envases BH",
-      description: "Fabricante y distribuidor de envases PET en México",
+      description: "Fabricante de envases PET en México",
       potentialAction: {
         "@type": "SearchAction",
       },
