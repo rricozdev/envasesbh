@@ -1433,7 +1433,7 @@ export const _PRODUCTOS = [
     },
   },
   {
-    nombre: "2000 ml ",
+    nombre: "2000 ml Multiusos",
     categoria: "Limpieza",
     imagen: "/img/productos/limpieza/imagen_71_envase-2lt.webp",
     slug: "2lt",
@@ -1713,6 +1713,7 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
+  // Tarros y Vitroleros
   {
     nombre: "250 ml Tarro Liso",
     categoria: "Tarros y Vitroleros",
@@ -1837,7 +1838,7 @@ export const _PRODUCTOS = [
       liner: [],
       produccionMinima: null,
       sobrePedido: false,
-      stockDisponible: true,
+      stockDisponible: false,
       coloresBajoPedido: [],
       produccionMinimaColores: null,
     },
@@ -1902,7 +1903,7 @@ export const _PRODUCTOS = [
       liner: [],
       produccionMinima: null,
       sobrePedido: false,
-      stockDisponible: true,
+      stockDisponible: false,
       coloresBajoPedido: [],
       produccionMinimaColores: null,
     },
@@ -1924,7 +1925,7 @@ export const _PRODUCTOS = [
       liner: [],
       produccionMinima: null,
       sobrePedido: false,
-      stockDisponible: true,
+      stockDisponible: false,
       coloresBajoPedido: [],
       produccionMinimaColores: null,
     },
@@ -1989,7 +1990,7 @@ export const _PRODUCTOS = [
       liner: [],
       produccionMinima: null,
       sobrePedido: false,
-      stockDisponible: true,
+      stockDisponible: false,
       coloresBajoPedido: [],
       produccionMinimaColores: null,
     },
@@ -2015,6 +2016,7 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
+  // Tapas , Bombas y Triggers
   {
     nombre: "Trigger sprayer Rosca 28-410",
     categoria: "Tapas , Bombas y Triggers",

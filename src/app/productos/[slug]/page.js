@@ -74,7 +74,6 @@ export default async function ProductoDetalle({ params }) {
       label: "Capacidad",
       value: specs?.capacidad ? `${specs.capacidad} ml` : null,
     },
-    // { label: "Peso", value: specs?.peso ? `${specs.peso} g` : null },
     {
       label: "Peso",
       value: (() => {
@@ -119,10 +118,17 @@ export default async function ProductoDetalle({ params }) {
       label: "Disponibilidad",
       value: specs?.sobrePedido === true ? "Bajo Pedido" : null,
     },
+
     {
       label: "Stock",
-      value: specs?.stockDisponible === true ? "Disponible" : null,
+      value:
+        specs?.stockDisponible === true
+          ? "Disponible"
+          : specs?.sobrePedido === true
+            ? "Bajo pedido"
+            : "No disponible", // Si ambos son false o null
     },
+
     // Lógica corregida para "Colores bajo pedido"
     {
       label: "Colores bajo pedido",
@@ -258,8 +264,17 @@ export default async function ProductoDetalle({ params }) {
                     <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-0.5">
                       {label}
                     </span>
+
                     <span
-                      className={`font-semibold text-sm ${label === "Disponibilidad" ? "text-primary italic underline decoration-2 underline-offset-4" : "text-secondary"}`}
+                      className={`font-semibold text-sm ${
+                        label === "Stock"
+                          ? value === "Disponible"
+                            ? "text-green-600"
+                            : value === "Bajo pedido"
+                              ? "text-yellow-600"
+                              : "text-rose-600"
+                          : "text-secondary"
+                      }`}
                     >
                       {value}
                     </span>
