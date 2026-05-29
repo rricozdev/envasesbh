@@ -74,11 +74,38 @@ export default async function ProductoDetalle({ params }) {
       label: "Capacidad",
       value: specs?.capacidad ? `${specs.capacidad} ml` : null,
     },
-    { label: "Peso", value: specs?.peso ? `${specs.peso} g` : null },
+    {
+      label: "Peso",
+      value: (() => {
+        const pesos = specs?.peso;
+        if (!pesos) return null;
+
+        if (Array.isArray(pesos)) {
+          if (pesos.length === 0) return null;
+
+          // Creamos una lista de strings con la unidad incluida: ["23 g", "28 g"]
+          const pesosConUnidad = pesos.map((p) => `${p} g`);
+
+          if (pesosConUnidad.length === 1) return pesosConUnidad[0];
+
+          // Formateo: "23 g y 28 g" o "23 g, 28 g y 30 g"
+          const ultimo = pesosConUnidad.pop();
+          const resto = pesosConUnidad.join(", ");
+          return `${resto} y ${ultimo}`;
+        }
+
+        return `${pesos} g`;
+      })(),
+    },
+
     { label: "Rosca", value: specs?.corona ?? null },
     { label: "Altura", value: specs?.altura ? `${specs.altura} mm` : null },
     { label: "Pzs / Empaque", value: specs?.pzsEmpaque ?? null },
     { label: "Tipo de Empaque", value: specs?.tipoEmpaque ?? null },
+    {
+      label: "Opciones de Liner",
+      value: specs?.liner?.length > 0 ? specs.liner.join(", ") : null,
+    },
     {
       label: "Venta Mínima",
       value: specs?.stockDisponible
@@ -91,16 +118,29 @@ export default async function ProductoDetalle({ params }) {
       label: "Disponibilidad",
       value: specs?.sobrePedido === true ? "Bajo Pedido" : null,
     },
+
     {
       label: "Stock",
-      value: specs?.stockDisponible === true ? "Disponible" : null,
+      value:
+        specs?.stockDisponible === true
+          ? "Disponible"
+          : specs?.sobrePedido === true
+            ? "Bajo pedido"
+            : "No disponible", // Si ambos son false o null
     },
+
+    // Lógica corregida para "Colores bajo pedido"
     {
       label: "Colores bajo pedido",
       value:
-        specs?.colores?.some((c) => c.toLowerCase().includes("bajo pedido")) &&
-        specs?.produccionMinima
-          ? `Mín. ${specs.produccionMinima.toLocaleString()} pzs`
+        specs?.coloresBajoPedido?.length > 0 &&
+        specs?.produccionMinimaColores !== null &&
+        specs?.produccionMinimaColores !== undefined
+          ? `${
+              Array.isArray(specs.coloresBajoPedido)
+                ? specs.coloresBajoPedido.length + " colores disponibles"
+                : "Disponibles"
+            } — Mín. ${specs.produccionMinimaColores.toLocaleString()} pzs`
           : null,
     },
   ];
@@ -224,8 +264,17 @@ export default async function ProductoDetalle({ params }) {
                     <span className="block text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-0.5">
                       {label}
                     </span>
+
                     <span
-                      className={`font-semibold text-sm ${label === "Disponibilidad" ? "text-primary italic underline decoration-2 underline-offset-4" : "text-secondary"}`}
+                      className={`font-semibold text-sm ${
+                        label === "Stock"
+                          ? value === "Disponible"
+                            ? "text-green-600"
+                            : value === "Bajo pedido"
+                              ? "text-yellow-600"
+                              : "text-rose-600"
+                          : "text-secondary"
+                      }`}
                     >
                       {value}
                     </span>

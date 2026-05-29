@@ -7,8 +7,24 @@ import Link from "next/link";
 
 export default function ProductCard({ producto }) {
   const { addItem } = useCart();
+  const PREFIJOS_PROPIOS = [
+    "tapa",
+    "trigger",
+    "tarro",
+    "vitrolero",
+    "bomba",
+    "atomizador",
+    "flip",
+    "mini",
+  ];
 
-  const nombreCompleto = producto.nombre;
+  const nombreCompleto = PREFIJOS_PROPIOS.some((p) =>
+    producto.nombre.toLowerCase().startsWith(p),
+  )
+    ? producto.nombre
+    : `Envase ${producto.nombre}`;
+
+  // const nombreCompleto = producto.nombre;
 
   const { specs } = producto;
   const specs_list = [
@@ -62,13 +78,26 @@ export default function ProductCard({ producto }) {
         </Link>
 
         {/* CAPACIDAD + BADGE */}
+
         <div className="flex items-center justify-between mb-4">
-          {specs?.capacidad ? (
-            <p className="text-xs text-gray-400">{specs.capacidad} ml</p>
+          {producto.categoria ? (
+            <p className="text-xs font-medium text-gray-400 tracking-wide">
+              {(() => {
+                // Tomamos la primera palabra, pasamos todo a minúsculas
+                // y ponemos la primera letra en mayúscula
+                const primeraPalabra = producto.categoria
+                  .trim()
+                  .split(/\s+/)[0]
+                  .toLowerCase();
+                return (
+                  primeraPalabra.charAt(0).toUpperCase() +
+                  primeraPalabra.slice(1)
+                );
+              })()}
+            </p>
           ) : (
             <span />
           )}
-
           {specs?.stockDisponible === true ? (
             <span className="text-[10px] font-bold uppercase tracking-wider text-green-600">
               ● En stock
@@ -77,7 +106,11 @@ export default function ProductCard({ producto }) {
             <span className="text-[10px] font-bold uppercase tracking-wider text-yellow-600">
               ● Bajo pedido
             </span>
-          ) : null}
+          ) : (
+            <span className="text-[10px] font-bold uppercase tracking-wider text-red">
+              ● No disponible
+            </span>
+          )}
         </div>
 
         {/* SPECS con líneas punteadas */}
