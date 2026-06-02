@@ -135,7 +135,7 @@ export const _PRODUCTOS = [
     imagen: "/img/productos/agua/imagen_5_1lt-sinfin-c.webp",
     slug: "1000-ml",
     specs: {
-      peso: [30],
+      peso: [23, 29],
       corona: "28 PCO",
       altura: 260,
       capacidad: 1,
@@ -2094,7 +2094,7 @@ export const _PRODUCTOS = [
       liner: [],
       produccionMinima: null,
       sobrePedido: false,
-      stockDisponible: false,
+      stockDisponible: true,
       coloresBajoPedido: [],
       produccionMinimaColores: null,
     },
