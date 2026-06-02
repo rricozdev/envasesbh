@@ -12,11 +12,7 @@ import { buildProductName } from "@/components/features/productos/ui/product/pro
 
 export default function ProductCard({ producto }) {
   const { addItem } = useCart();
-  console.log({
-    nombre: producto.nombre,
-    capacidad: producto.specs?.capacidad,
-    unidad: producto.specs?.unidad,
-  });
+
   const parsed = parseProductName(producto);
 
   console.log(parsed);
@@ -61,9 +57,19 @@ export default function ProductCard({ producto }) {
       {/* CONTENIDO */}
       <div className="flex flex-col flex-1 px-5 pb-5 border-t border-gray-100">
         {/* NOMBRE */}
-        <Link href={`/productos/${producto.slug}`}>
-          <h3 className="mt-4 mb-1 text-lg font-bold leading-tight group-hover:text-primary/80 transition-colors line-clamp-2">
-            <span className="text-primary">{nombreCompleto}</span>
+        <Link href={`/productos/${producto.slug}`} className="block">
+          <h3 className="mt-4 mb-1 text-lg font-bold leading-tight line-clamp-2">
+            <span className="inline-flex flex-wrap">
+              {nombreCompleto.split("").map((letra, idx) => (
+                <span
+                  key={idx}
+                  className="inline-block transition-all duration-200 text-secondary group-hover:text-primary group-hover:-translate-y-0.5"
+                  style={{ transitionDelay: `${idx * 0.02}s` }}
+                >
+                  {letra === " " ? "\u00A0" : letra}
+                </span>
+              ))}
+            </span>
           </h3>
         </Link>
 
@@ -119,7 +125,7 @@ export default function ProductCard({ producto }) {
                 specs: producto.specs,
               })
             }
-            className="text-primary hover:text-primary/70 transition-colors cursor-pointer"
+            className="text-primary hover:text-primary/70 transition-all duration-200 cursor-pointer hover:scale-110 hover:rotate-6 active:scale-90"
             aria-label="Agregar al carrito"
           >
             <ShoppingCart size={20} />
@@ -127,9 +133,19 @@ export default function ProductCard({ producto }) {
 
           <Link
             href={`/productos/${producto.slug}`}
-            className="text-sm font-semibold text-secondary hover:text-primary transition-colors cursor-pointer"
+            className="group/link text-sm font-semibold text-secondary hover:text-primary transition-colors cursor-pointer inline-block"
           >
-            Ver detalle
+            <span className="inline-flex">
+              {"Ver detalle".split("").map((letra, idx) => (
+                <span
+                  key={idx}
+                  className="inline-block transition-all duration-200 group-hover/link:animate-[wave_0.4s_ease-in-out_forwards]"
+                  style={{ animationDelay: `${idx * 0.03}s` }}
+                >
+                  {letra === " " ? "\u00A0" : letra}
+                </span>
+              ))}
+            </span>
           </Link>
         </div>
       </div>
