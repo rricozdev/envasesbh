@@ -58,6 +58,9 @@ export default function useProductCatalog(productos) {
 
   const isFirstRenderCategoria = useRef(true);
   const isFirstRenderSearch = useRef(true);
+  const isFirstRenderColor = useRef(true);
+  const isFirstRenderCapacidad = useRef(true);
+  const isFirstRenderDisponibilidad = useRef(true);
 
   useEffect(() => {
     const checkMobile = () => setEsMobile(window.innerWidth < 768);
@@ -103,6 +106,30 @@ export default function useProductCatalog(productos) {
     setDisponibilidad(null);
   }, [categoria]);
 
+  useEffect(() => {
+    if (isFirstRenderColor.current) {
+      isFirstRenderColor.current = false;
+      return;
+    }
+    setPagina(1);
+  }, [color]);
+
+  useEffect(() => {
+    if (isFirstRenderCapacidad.current) {
+      isFirstRenderCapacidad.current = false;
+      return;
+    }
+    setPagina(1);
+  }, [capacidadRango]);
+
+  useEffect(() => {
+    if (isFirstRenderDisponibilidad.current) {
+      isFirstRenderDisponibilidad.current = false;
+      return;
+    }
+    setPagina(1);
+  }, [disponibilidad]);
+
   const itemsPorPagina = esMobile ? 6 : 12;
 
   const filtrados = useMemo(() => {
@@ -133,9 +160,18 @@ export default function useProductCatalog(productos) {
 
     if (capacidadRango) {
       base = base.filter((p) => {
-        const cap = normalizarCapacidad(p);
+        const capObj = normalizarCapacidad(p);
+        if (!capObj?.value) return false;
+
+        let cap = capObj.value;
+        const unit = capObj.unit;
+
+        // 🔥 conversión completa a ml
+        if (unit === "l") cap *= 1000;
+        if (unit === "gal") cap *= 3785;
+
         const rango = obtenerRangoCapacidad(cap);
-        if (!rango) return true;
+
         return rango === capacidadRango;
       });
     }
