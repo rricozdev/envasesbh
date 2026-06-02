@@ -9,26 +9,33 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { parseProductName } from "@/components/features/productos/ui/product/productNameParser";
+import { buildProductName } from "@/components/features/productos/ui/product/productNameFormatter";
 
-const PREFIJOS_PROPIOS = [
-  "tapa",
-  "trigger",
-  "tarro",
-  "vitrolero",
-  "bomba",
-  "atomizador",
-  "flip",
-  "mini",
-];
+const getProductoBySlug = (slug) => PRODUCTOS.find((p) => p.slug === slug);
 
-const getNombreCompleto = (nombre) =>
-  PREFIJOS_PROPIOS.some((p) => nombre.toLowerCase().startsWith(p))
-    ? nombre
-    : `Envase ${nombre}`;
+const normalizeCategory = (cat = "") => cat.trim().toLowerCase();
+
+const formatPeso = (pesos) => {
+  if (!pesos) return null;
+
+  if (Array.isArray(pesos)) {
+    if (pesos.length === 0) return null;
+
+    const arr = pesos.map((p) => `${p} g`);
+
+    if (arr.length === 1) return arr[0];
+
+    const last = arr.pop();
+    return `${arr.join(", ")} y ${last}`;
+  }
+
+  return `${pesos} g`;
+};
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const producto = PRODUCTOS.find((p) => p.slug === slug);
+  const producto = getProductoBySlug(slug);
 
   if (!producto) {
     return {
@@ -40,13 +47,14 @@ export async function generateMetadata({ params }) {
   return generateProductMetadata({
     id: producto.id,
     slug: producto.slug,
-    nombre: producto.nombre,
+    nombre: buildProductName(parseProductName(producto)),
     descripcion: producto.descripcion || "",
     categoria: producto.categoria,
     imagen: producto.imagen,
-    capacidad: producto.specs?.capacidad
-      ? `${producto.specs.capacidad}ml`
-      : undefined,
+    capacidad:
+      producto.specs?.capacidad && producto.specs?.unidad
+        ? `${producto.specs.capacidad} ${producto.specs.unidad}`
+        : undefined,
     colores: producto.specs?.colores?.filter((c) => c),
     especificaciones: producto.specs,
   });
@@ -58,13 +66,17 @@ export async function generateStaticParams() {
 
 export default async function ProductoDetalle({ params }) {
   const { slug } = await params;
-  const producto = PRODUCTOS.find((p) => p.slug === slug);
+  const producto = getProductoBySlug(slug);
 
   if (!producto) notFound();
 
-  const nombreCompleto = getNombreCompleto(producto.nombre);
+  const parsed = parseProductName(producto);
+  const nombreCompleto = buildProductName(parsed);
+
   const relacionados = PRODUCTOS.filter(
-    (p) => p.categoria === producto.categoria && p.id !== producto.id,
+    (p) =>
+      normalizeCategory(p.categoria) ===
+        normalizeCategory(producto.categoria) && p.id !== producto.id,
   ).slice(0, 4);
 
   const { specs } = producto;
@@ -72,32 +84,15 @@ export default async function ProductoDetalle({ params }) {
   const SPECS_PRINCIPALES = [
     {
       label: "Capacidad",
-      value: specs?.capacidad ? `${specs.capacidad} ml` : null,
+      value:
+        specs?.capacidad && specs?.unidad
+          ? `${specs.capacidad} ${specs.unidad}`
+          : null,
     },
     {
       label: "Peso",
-      value: (() => {
-        const pesos = specs?.peso;
-        if (!pesos) return null;
-
-        if (Array.isArray(pesos)) {
-          if (pesos.length === 0) return null;
-
-          // Creamos una lista de strings con la unidad incluida: ["23 g", "28 g"]
-          const pesosConUnidad = pesos.map((p) => `${p} g`);
-
-          if (pesosConUnidad.length === 1) return pesosConUnidad[0];
-
-          // Formateo: "23 g y 28 g" o "23 g, 28 g y 30 g"
-          const ultimo = pesosConUnidad.pop();
-          const resto = pesosConUnidad.join(", ");
-          return `${resto} y ${ultimo}`;
-        }
-
-        return `${pesos} g`;
-      })(),
+      value: formatPeso(specs?.peso),
     },
-
     { label: "Rosca", value: specs?.corona ?? null },
     { label: "Altura", value: specs?.altura ? `${specs.altura} mm` : null },
     { label: "Pzs / Empaque", value: specs?.pzsEmpaque ?? null },
@@ -118,7 +113,6 @@ export default async function ProductoDetalle({ params }) {
       label: "Disponibilidad",
       value: specs?.sobrePedido === true ? "Bajo Pedido" : null,
     },
-
     {
       label: "Stock",
       value:
@@ -126,10 +120,8 @@ export default async function ProductoDetalle({ params }) {
           ? "Disponible"
           : specs?.sobrePedido === true
             ? "Bajo pedido"
-            : "No disponible", // Si ambos son false o null
+            : "No disponible",
     },
-
-    // Lógica corregida para "Colores bajo pedido"
     {
       label: "Colores bajo pedido",
       value:
@@ -151,7 +143,10 @@ export default async function ProductoDetalle({ params }) {
     descripcion: producto.descripcion || "",
     categoria: producto.categoria,
     imagen: producto.imagen,
-    capacidad: specs?.capacidad ? `${specs.capacidad}ml` : undefined,
+    capacidad:
+      specs?.capacidad && specs?.unidad
+        ? `${specs.capacidad} ${specs.unidad}`
+        : undefined,
     especificaciones: specs,
   });
 
@@ -188,7 +183,6 @@ export default async function ProductoDetalle({ params }) {
 
         {/* INFO */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
-          {/* VOLVER */}
           <Link
             href="/productos"
             className="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-6 group"
@@ -229,6 +223,7 @@ export default async function ProductoDetalle({ params }) {
                     const esBajoPedido = color
                       .toLowerCase()
                       .includes("bajo pedido");
+
                     return (
                       <div key={color} className="flex items-center gap-1.5">
                         {!esBajoPedido && (
@@ -241,7 +236,9 @@ export default async function ProductoDetalle({ params }) {
                           />
                         )}
                         <span
-                          className={`text-[10px] font-semibold uppercase tracking-wide ${esBajoPedido ? "text-yellow-600" : "text-secondary"}`}
+                          className={`text-[10px] font-semibold uppercase tracking-wide ${
+                            esBajoPedido ? "text-yellow-600" : "text-secondary"
+                          }`}
                         >
                           {color}
                         </span>
@@ -257,6 +254,7 @@ export default async function ProductoDetalle({ params }) {
             <p className="text-[10px] text-secondary/40 font-bold uppercase tracking-widest mb-4">
               Especificaciones Técnicas
             </p>
+
             <div className="grid grid-cols-2 gap-y-4 gap-x-6">
               {SPECS_PRINCIPALES.filter((s) => s.value !== null).map(
                 ({ label, value }) => (
@@ -285,16 +283,15 @@ export default async function ProductoDetalle({ params }) {
           </div>
 
           {/* CTA */}
-          <div>
-            <AddToCartButton
-              product={{
-                id: producto.id,
-                nombre: nombreCompleto,
-                imagen: producto.imagen,
-                specs: producto.specs,
-              }}
-            />
-          </div>
+          <AddToCartButton
+            product={{
+              id: producto.id,
+              nombre: nombreCompleto,
+              imagen: producto.imagen,
+              specs: producto.specs,
+            }}
+          />
+
           <p className="text-center mt-4 text-[9px] text-gray-400 uppercase font-black tracking-[0.2em]">
             Precios preferenciales por mayoreo
           </p>
@@ -331,15 +328,16 @@ export default async function ProductoDetalle({ params }) {
                 <div className="aspect-square relative mb-4 bg-gray-50 rounded-xl overflow-hidden p-4">
                   <Image
                     src={rel.imagen}
-                    alt={getNombreCompleto(rel.nombre)}
+                    alt={buildProductName(parseProductName(rel))}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-contain group-hover:scale-110 transition-transform"
                   />
                 </div>
+
                 <h4 className="text-secondary font-bold text-sm mb-3 group-hover:text-primary transition-colors truncate">
-                  {getNombreCompleto(rel.nombre)}
+                  {buildProductName(parseProductName(rel))}
                 </h4>
+
                 <div className="text-[10px] font-black uppercase text-primary tracking-widest">
                   Ver detalle
                 </div>
