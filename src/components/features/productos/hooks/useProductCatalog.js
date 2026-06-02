@@ -4,31 +4,20 @@ import { useEffect, useMemo, useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import { COLORES_FILTRO } from "@/lib/constants";
 
-/**
- * Función de utilidad para obtener una categoría limpia y simplificada.
- */
-const obtenerCategoriaLimpia = (producto) => {
-  const cat = producto.categoria || "";
-  const nombre = producto.nombre.toLowerCase();
+import { buildProductName } from "@/components/features/productos/ui/product/productNameFormatter";
 
-  if (cat.includes(",") || cat.toLowerCase().includes(" y ")) {
-    if (nombre.includes("tapa")) return "Tapas";
-    if (nombre.includes("bomba")) return "Bombas";
-    if (nombre.includes("trigger") || nombre.includes("atomizador"))
-      return "Triggers";
-  }
-
-  const primera = cat
-    .trim()
-    .split(/[\s,]+/)[0]
-    .toLowerCase();
-  return primera.charAt(0).toUpperCase() + primera.slice(1);
-};
+import { searchProducts } from "@/lib/productSearchEngine";
+import { parseProductName } from "@/components/features/productos/ui/product/productNameParser";
+import {
+  normalizarCategoria,
+  obtenerRangoCapacidad,
+  normalizarCapacidad,
+  obtenerCapacidadOrdenable,
+} from "@/components/features/productos/ui/product/productDomainModel";
 
 export default function useProductCatalog(productos) {
   const searchParams = useSearchParams();
 
-  // ESTADOS
   const [categoria, setCategoria] = useState(() => {
     if (typeof window !== "undefined") {
       const saved = sessionStorage.getItem("catalogo_categoria");
@@ -66,22 +55,10 @@ export default function useProductCatalog(productos) {
   });
 
   const [esMobile, setEsMobile] = useState(false);
+
   const isFirstRenderCategoria = useRef(true);
   const isFirstRenderSearch = useRef(true);
 
-  // PREFIJOS QUE NO LLEVAN "Envase"
-  const PREFIJOS_PROPIOS = [
-    "tapa",
-    "trigger",
-    "tarro",
-    "vitrolero",
-    "bomba",
-    "atomizador",
-    "flip",
-    "mini",
-  ];
-
-  // EFECTOS
   useEffect(() => {
     const checkMobile = () => setEsMobile(window.innerWidth < 768);
     checkMobile();
@@ -92,11 +69,14 @@ export default function useProductCatalog(productos) {
   useEffect(() => {
     sessionStorage.setItem("catalogo_categoria", categoria);
     sessionStorage.setItem("catalogo_pagina", String(pagina));
+
     if (color) sessionStorage.setItem("catalogo_color", color);
     else sessionStorage.removeItem("catalogo_color");
+
     if (capacidadRango)
       sessionStorage.setItem("catalogo_capacidad", capacidadRango);
     else sessionStorage.removeItem("catalogo_capacidad");
+
     if (disponibilidad)
       sessionStorage.setItem("catalogo_disponibilidad", disponibilidad);
     else sessionStorage.removeItem("catalogo_disponibilidad");
@@ -125,7 +105,6 @@ export default function useProductCatalog(productos) {
 
   const itemsPorPagina = esMobile ? 6 : 12;
 
-  // LÓGICA DE FILTRADO Y BÚSQUEDA ULTRA-PRECISA
   const filtrados = useMemo(() => {
     if (!Array.isArray(productos)) return [];
 
@@ -135,38 +114,9 @@ export default function useProductCatalog(productos) {
         : productos.filter((p) => p.categoria === categoria);
 
     if (search) {
-      const query = search.toLowerCase().trim();
-      const searchTerms = query.split(/\s+/);
-
-      base = base.filter((p) => {
-        const esAccesorio = PREFIJOS_PROPIOS.some((prefijo) =>
-          p.nombre.toLowerCase().startsWith(prefijo),
-        );
-        const nombreVirtual = esAccesorio ? p.nombre : `Envase ${p.nombre}`;
-
-        const stringParaBuscar = `
-          ${nombreVirtual} 
-          ${p.categoria} 
-          ${p.slug} 
-          ${p.specs?.corona || ""}
-        `.toLowerCase();
-
-        // BÚSQUEDA INTELIGENTE POR TÉRMINOS
-        return searchTerms.every((term) => {
-          // Si el término es puramente numérico (ej. "25"), usamos Regex para buscarlo como palabra exacta
-          // Esto evita que "25" coincida con "125" o "250"
-          if (/^\d+$/.test(term)) {
-            const regex = new RegExp(`\\b${term}\\b`);
-            return regex.test(stringParaBuscar);
-          }
-
-          // Para términos de texto (ej. "Envase", "ml"), usamos el include normal
-          return stringParaBuscar.includes(term);
-        });
-      });
+      base = searchProducts(base, search);
     }
 
-    // Filtros adicionales (Color, Capacidad, Disponibilidad)
     if (color) {
       base = base.filter(
         (p) =>
@@ -183,30 +133,39 @@ export default function useProductCatalog(productos) {
 
     if (capacidadRango) {
       base = base.filter((p) => {
-        const cap = p.specs?.capacidad;
-        if (!cap) return false;
-        if (capacidadRango === "micro") return cap < 100;
-        if (capacidadRango === "pequeno") return cap >= 100 && cap <= 500;
-        if (capacidadRango === "mediano") return cap > 500 && cap <= 1000;
-        if (capacidadRango === "grande") return cap > 1000;
-        return true;
+        const cap = normalizarCapacidad(p);
+        const rango = obtenerRangoCapacidad(cap);
+        if (!rango) return true;
+        return rango === capacidadRango;
       });
     }
 
     if (disponibilidad === "stock")
       base = base.filter((p) => p.specs?.stockDisponible === true);
+
     if (disponibilidad === "pedido")
       base = base.filter((p) => p.specs?.sobrePedido === true);
 
-    // ORDENAMIENTO (Categoría A-Z -> Capacidad Menor a Mayor)
     return [...base].sort((a, b) => {
-      const catA = obtenerCategoriaLimpia(a);
-      const catB = obtenerCategoriaLimpia(b);
-      if (catA < catB) return -1;
-      if (catA > catB) return 1;
-      const capA = a.specs?.capacidad ?? Infinity;
-      const capB = b.specs?.capacidad ?? Infinity;
-      if (capA !== capB) return capA - capB;
+      const categoriaA = normalizarCategoria(a);
+      const categoriaB = normalizarCategoria(b);
+
+      if (categoriaA < categoriaB) return -1;
+      if (categoriaA > categoriaB) return 1;
+
+      const modeloA = parseProductName(a).modelo.toLowerCase();
+      const modeloB = parseProductName(b).modelo.toLowerCase();
+
+      if (modeloA < modeloB) return -1;
+      if (modeloA > modeloB) return 1;
+
+      const capacidadA = obtenerCapacidadOrdenable(a);
+      const capacidadB = obtenerCapacidadOrdenable(b);
+
+      if (capacidadA !== capacidadB) {
+        return capacidadA - capacidadB;
+      }
+
       return a.nombre.localeCompare(b.nombre);
     });
   }, [categoria, productos, search, color, capacidadRango, disponibilidad]);
@@ -225,10 +184,12 @@ export default function useProductCatalog(productos) {
   const paginasVisibles = useMemo(() => {
     let inicio = Math.max(1, pagina - Math.floor(maxPaginas / 2));
     let fin = inicio + maxPaginas - 1;
+
     if (fin > totalPaginas) {
       fin = totalPaginas;
       inicio = Math.max(1, fin - maxPaginas + 1);
     }
+
     return Array.from({ length: fin - inicio + 1 }, (_, i) => inicio + i);
   }, [pagina, totalPaginas, maxPaginas]);
 
@@ -251,6 +212,7 @@ export default function useProductCatalog(productos) {
     const colores = COLORES_FILTRO.filter((c) =>
       coloresEnBase.has(c.toLowerCase()),
     );
+
     const tieneCapacidad = base.some((p) => p.specs?.capacidad);
 
     return { colores, tieneCapacidad };

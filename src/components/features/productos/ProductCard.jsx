@@ -5,28 +5,29 @@ import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { normalizarCategoria } from "@/components/features/productos/ui/product/productDomainModel";
+
+import { parseProductName } from "@/components/features/productos/ui/product/productNameParser";
+import { buildProductName } from "@/components/features/productos/ui/product/productNameFormatter";
+
 export default function ProductCard({ producto }) {
   const { addItem } = useCart();
-  const PREFIJOS_PROPIOS = [
-    "tapa",
-    "trigger",
-    "tarro",
-    "vitrolero",
-    "bomba",
-    "atomizador",
-    "flip",
-    "mini",
-  ];
+  console.log({
+    nombre: producto.nombre,
+    capacidad: producto.specs?.capacidad,
+    unidad: producto.specs?.unidad,
+  });
+  const parsed = parseProductName(producto);
 
-  const nombreCompleto = PREFIJOS_PROPIOS.some((p) =>
-    producto.nombre.toLowerCase().startsWith(p),
-  )
-    ? producto.nombre
-    : `Envase ${producto.nombre}`;
+  console.log(parsed);
 
-  // const nombreCompleto = producto.nombre;
+  // FUENTE ÚNICA DE VERDAD PARA UI
+  const nombreCompleto = buildProductName(parseProductName(producto));
+
+  const categoria = normalizarCategoria(producto);
 
   const { specs } = producto;
+
   const specs_list = [
     specs?.corona && { label: "Rosca", value: specs.corona },
     specs?.altura && { label: "Altura", value: `${specs.altura} mm` },
@@ -62,42 +63,20 @@ export default function ProductCard({ producto }) {
         {/* NOMBRE */}
         <Link href={`/productos/${producto.slug}`}>
           <h3 className="mt-4 mb-1 text-lg font-bold leading-tight group-hover:text-primary/80 transition-colors line-clamp-2">
-            {(() => {
-              const match = nombreCompleto.match(/^(.*?\d+\s*ml)(.*)/i);
-              if (match) {
-                return (
-                  <>
-                    <span className="text-primary">{match[1]}</span>
-                    <span className="text-secondary">{match[2]}</span>
-                  </>
-                );
-              }
-              return <span className="text-primary">{nombreCompleto}</span>;
-            })()}
+            <span className="text-primary">{nombreCompleto}</span>
           </h3>
         </Link>
 
-        {/* CAPACIDAD + BADGE */}
-
+        {/* CATEGORÍA + STOCK */}
         <div className="flex items-center justify-between mb-4">
-          {producto.categoria ? (
+          {categoria ? (
             <p className="text-xs font-medium text-gray-400 tracking-wide">
-              {(() => {
-                // Tomamos la primera palabra, pasamos todo a minúsculas
-                // y ponemos la primera letra en mayúscula
-                const primeraPalabra = producto.categoria
-                  .trim()
-                  .split(/\s+/)[0]
-                  .toLowerCase();
-                return (
-                  primeraPalabra.charAt(0).toUpperCase() +
-                  primeraPalabra.slice(1)
-                );
-              })()}
+              {categoria}
             </p>
           ) : (
             <span />
           )}
+
           {specs?.stockDisponible === true ? (
             <span className="text-[10px] font-bold uppercase tracking-wider text-green-600">
               ● En stock
@@ -113,7 +92,7 @@ export default function ProductCard({ producto }) {
           )}
         </div>
 
-        {/* SPECS con líneas punteadas */}
+        {/* SPECS */}
         {specs_list.length > 0 && (
           <ul className="space-y-2 mb-5">
             {specs_list.map(({ label, value }) => (
