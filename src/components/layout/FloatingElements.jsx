@@ -1,11 +1,9 @@
-// FloatingElements.jsx
 "use client";
 
 import { useCart } from "@/context/CartContext";
 
 function CartButtonSimple() {
   const { toggleCart, totalItems } = useCart();
-  console.log("CartButtonSimple montado ✓");
 
   return (
     <button
@@ -29,6 +27,5 @@ function CartButtonSimple() {
 }
 
 export default function FloatingElements() {
-  console.log("FloatingElements montado ✓");
   return <CartButtonSimple />;
 }
