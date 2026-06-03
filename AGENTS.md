@@ -8,6 +8,7 @@ Este proyecto es un **monolito frontend** construido con:
 - **JSX** - Sintaxis de React
 - **TailwindCSS** - Framework de estilos utilitario
 - **Single Responsibility Principle (SRP)** - Cada componente tiene una única responsabilidad
+- 
 
 ⚠️ **IMPORTANTE**: No hay backend. Todo es cliente-side:
 

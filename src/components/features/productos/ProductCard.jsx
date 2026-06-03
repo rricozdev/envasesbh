@@ -15,7 +15,6 @@ export default function ProductCard({ producto }) {
 
   const parsed = parseProductName(producto);
 
-  console.log(parsed);
 
   // FUENTE ÚNICA DE VERDAD PARA UI
   const nombreCompleto = buildProductName(parseProductName(producto));
