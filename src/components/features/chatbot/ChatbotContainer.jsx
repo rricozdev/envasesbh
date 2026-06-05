@@ -63,7 +63,7 @@ export const ChatbotContainer = () => {
       <button
         onClick={handleToggle}
         aria-label={isOpen ? "Cerrar asistente" : "Abrir asistente"}
-        className="relative bg-primary hover:bg-primary-dark text-white p-2.5 rounded-full shadow-lg hover:shadow-xl active:scale-95 cursor-pointer ..."
+        className="relative bg-primary hover:bg-primary-dark text-white p-2.5 rounded-full shadow-lg hover:shadow-xl active:scale-95 cursor-pointer"
         style={{
           transition:
             "transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 400ms ease, background 400ms ease",
@@ -89,7 +89,7 @@ export const ChatbotContainer = () => {
           }}
         >
           {isOpen ? (
-            <X size={26} strokeWidth={2.5} />
+            <X size={20} strokeWidth={2.5} />
           ) : (
             // <MessageCircle size={20} strokeWidth={2} />
             <BotMessageSquare size={20} strokeWidth={2} />
