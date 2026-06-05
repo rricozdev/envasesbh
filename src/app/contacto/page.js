@@ -138,7 +138,8 @@ export default function ContactoPage() {
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allow="geolocation"
                 />
               </div>
             </div>
