@@ -3,6 +3,7 @@ export const flowCotizacion = {
     message:
       "Para pedidos de volumen o proyectos especiales, nuestro equipo comercial te da atención personalizada. ¿Cómo prefieres que te contactemos?",
     options: [
+      { label: "Hablar con un asesor", next: "contacto" },
       { label: "Ir al formulario de contacto", next: "cta_contacto_form" },
       { label: "Ver el catálogo primero", next: "explorar_categorias" },
       { label: "Volver al inicio", next: "start" },
