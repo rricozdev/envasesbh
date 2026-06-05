@@ -31,7 +31,7 @@ const nextConfig = {
           {
             key: "Permissions-Policy",
             value:
-              "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+              "camera=(), microphone=(), interest-cohort=()",
           },
           {
             key: "Cross-Origin-Opener-Policy",
@@ -49,7 +49,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https://www.envasesbh.mx https://envasesbh.mx",
               "font-src 'self'",
-              "frame-src https://www.google.com/maps",
+              "frame-src https://www.google.com",
               "connect-src 'self' https://wa.me",
               "object-src 'none'",
               "base-uri 'self'",
