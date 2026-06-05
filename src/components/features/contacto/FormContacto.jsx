@@ -23,6 +23,7 @@ const MEDIOS_CONTACTO = [
   "Instagram",
   "YouTube",
   "Recomendación",
+  "Expo",
 ];
 
 export default function FormContacto() {

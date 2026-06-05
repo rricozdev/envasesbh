@@ -13,7 +13,16 @@ import {
 } from "./conversationEngine";
 
 const STORAGE_KEY = "bh_chat_history";
-const TYPING_DELAY = 1000;
+const TYPING_CHAR_RATE = 30;
+const TYPING_MIN = 500;
+const TYPING_MAX = 2000;
+
+const getTypingDelay = (text) => {
+  let delay = (text?.length || 0) * TYPING_CHAR_RATE;
+  if (delay < TYPING_MIN) delay = TYPING_MIN;
+  if (delay > TYPING_MAX) delay = TYPING_MAX;
+  return delay;
+};
 
 const saveHistory = (messages) => {
   try {
@@ -51,12 +60,13 @@ export const useChatbot = () => {
       playTypingSound();
       setIsTyping(true);
 
+      const delay = getTypingDelay(node?.text);
       timeoutRef.current = setTimeout(() => {
         const next = [...currentMessages, createBotMessage(node)];
         setMessages(next);
         setIsTyping(false);
         saveHistory(next);
-      }, TYPING_DELAY);
+      }, delay);
     },
     [],
   );

@@ -73,7 +73,7 @@ const sucursales = [
   {
     id: 6,
     ciudad: "Guadalajara",
-    direccion: "ge",
+    direccion: "ALMER Avenida 18 de marzo 704 bodega 38, La Nogalera, Guadalajara, Jal.",
     horario: [
       "Lunes a Jueves: 8:00 AM - 5:00 PM",
       "Viernes: 8:00 AM - 3:30 PM",
