@@ -1,105 +1,110 @@
 # AGENTS.md
 
-## Tecnología y Arquitectura
+## Proyecto: Envases BH — Sitio Web Corporativo
 
-Este proyecto es un **monolito frontend** construido con:
+### Stack Tecnológico
 
-- **Next.js (App Router)** - Framework de React con enrutamiento basado en archivos
-- **JSX** - Sintaxis de React
-- **TailwindCSS** - Framework de estilos utilitario
-- **Single Responsibility Principle (SRP)** - Cada componente tiene una única responsabilidad
-- 
+| Tecnología | Versión | Rol |
+|---|---|---|
+| **Next.js** | 15+ (App Router) | Framework React, enrutamiento basado en archivos, SSG estático |
+| **React** | 19+ | UI declarativa con JSX |
+| **TailwindCSS** | v4 | Framework de estilos utilitario — **no hay CSS hardcodeado** |
+| **Framer Motion** | 11+ | Animaciones declarativas por componentes |
+| **Lucide React** | — | Iconos SVG consistentes, bajo peso |
+| **next/font** | — | Fuentes Inter + Source Sans 3, auto-optimizadas |
 
-⚠️ **IMPORTANTE**: No hay backend. Todo es cliente-side:
+### Arquitectura — Monolito Frontend 100% Estático
 
-- Los datos vienen de archivos locales (`/data/*.js`)
-- No hay API propia, base de datos, ni autenticación
-- El carrito (`CartContext`) es solo estado local del navegador
-- El chatbot es simulado con flujos predefinidos en `/data/chatbot/`
+No existe backend, base de datos, API propia, ni autenticación. Todo es cliente-side compilado a HTML estático:
 
-## Estructura del Proyecto
+- **Datos**: archivos planos en `/data/*.js` (productos, blog, servicios, chatbot, etc.)
+- **Estado global**: solo `React Context` en `/context/` — carrito (`CartContext`) y paneles UI (`UIContext`)
+- **Persistencia**: carrito y chat history se guardan en `localStorage` del navegador
+- **Conversión real**: exclusivamente por WhatsApp — el carrito es UI demostrativa sin checkout real
+- **Contacto**: formulario que abre un link wa.me con los datos formateados — no envía emails ni POST a servidor
+
+### Single Responsibility Principle (SRP)
+
+Cada component tiene una única responsabilidad y vive en su propio archivo:
 
 ```
-src/
-├── app/                    # Rutas y páginas (Next.js App Router)
-│   ├── (blog)/blog/        # Blog con slugs dinámicos
-│   ├── contacto/           # Página de contacto
-│   ├── legal/privacidad/   # Página legal
-│   ├── productos/          # Catálogo y detalle de productos
-│   ├── proyectos-a-tu-medida/
-│   ├── quienes-somos/
-│   └── servicios/
-│
-├── components/             # Componentes reutilizables
-│   ├── features/           # Componentes por feature (SRP)
-│   │   ├── blog/          # Blog: PostCard, PostList
-│   │   ├── cart/          # Carrito: Botones, Drawer
-│   │   ├── chatbot/       # Chatbot simulado
-│   │   ├── contacto/      # Formularios, sucursales
-│   │   ├── home/          # Secciones del homepage
-│   │   ├── productos/     # Cards, filtros, galerías, hooks, UI
-│   │   ├── proyectos/     # Cotizaciones
-│   │   ├── proyecto_a_medida/ # Proceso paso a paso
-│   │   └── servicios/      # Cards de servicios
-│   ├── layout/            # Layout global
-│   │   └── Header/        # Header, navbar, mobile menu
-│   └── ui/                # UI puros y reutilizables
-│
-├── config/                # Configuración del sitio y navegación
-├── context/               # React Contexts (Cart, UI)
-├── data/                  # Datos estáticos (productos, blog, servicios, chatbot)
-├── lib/                   # Utilidades y helpers
-└── ...
+src/components/
+├── features/        # Componentes específicos de una feature
+│   ├── blog/        # PostCard, PostList
+│   ├── cart/        # CartButton, CartDrawer, CartItem, AddToCartButton
+│   ├── chatbot/     # ChatbotContainer, ChatWindow, useChatbot, conversationEngine, chatUtils
+│   ├── contacto/    # FormContacto, SectionSucursales
+│   ├── home/        # Hero, SectionVehiculos, etc.
+│   ├── productos/   # ProductCard, ProductGallery, filtros, hooks, UI
+│   ├── proyectos/   # Cotizaciones
+│   ├── proyecto_a_medida/  # ProccesCard, flujo paso a paso
+│   └── servicios/   # ServicioCard, PigmentaciónSection
+├── layout/          # MainLayout, Header/Navbar, Footer, PanelController
+└── ui/              # Componentes genéricos reutilizables (SectionContent, WhatsAppButton, etc.)
 ```
 
-## Reglas para Desarrollo
+### Estilos
 
-### 1. Nuevos Componentes
+- **100% TailwindCSS v4** — clases utilitarias en JSX, sin CSS hardcodeado
+- No existen archivos `.css` adicionales excepto `globals.css` (resets, variables, animaciones clave)
+- Tema definido con variables CSS en `globals.css` (`--color-primary`, `--color-secondary`, etc.)
+- Colores, espaciados y tipografía se usan exclusivamente via clases Tailwind
 
-- Crear en `components/features/[nombre-feature]/` si es específico
-- Crear en `components/ui/` si es genérico y reusable
-- Un archivo por componente (SRP)
+### Rutas (App Router)
 
-### 2. Nuevas Rutas
+```
+/                           → Home
+/productos                  → Catálogo
+/productos/[slug]           → Detalle producto (SSG con generateStaticParams)
+/servicios                  → Servicios
+/quienes-somos              → Quiénes somos
+/blog                       → Listado blog
+/blog/[slug]                → Artículo blog (SSG)
+/contacto                   → Contacto + sucursales + mapa
+/proyectos-a-tu-medida      → Proyectos personalizados
+/legal/privacidad           → Aviso de privacidad
+```
 
-- Crear carpeta en `app/` con `page.js`
-- Usar `(carpeta)` para rutas agrupadas sin afectar URL
+### Chatbot — Simulado (NO IA Real)
 
-### 3. Datos
+El chatbot es un **sistema conversacional basado en nodos predefinidos**, no integra IA generativa ni LLM.
 
-- Modificar archivos en `/data/` para cambiar contenido
-- No crear APIs ni llamadas externas (no hay backend)
+**Arquitectura:**
+- Datos: 12 archivos de flujo en `/data/chatbot/` + `index.js` que los agrupa
+- Engine: `conversationEngine.js` — resuelve nodos, actualiza contexto (categoría, capacidad, intención)
+- Estado: `useChatbot.js` hook que maneja mensajes, typing, persistencia en localStorage
+- UI: `ChatbotContainer.jsx` + `ChatWindow.jsx` con burbujas, opciones, productos sugeridos
 
-### 4. Estilos
+**¿Por qué no IA real?**
+1. **Seguridad**: integrar un LLM requeriría un agente adversario para fortalecer ciberseguridad, prevención de inyecciones, y moderación de contenido.
+2. **Costo**: infraestructura de LLM + monitoreo + adversarial training incrementa significativamente el costo de desarrollo y operación.
+3. **Propósito**: el sitio es un catálogo demostrativo con WhatsApp como único canal de conversión — un chatbot simulado cumple el objetivo sin agregar complejidad ni riesgo.
 
-- Usar TailwindCSS exclusivamente
-- No crear archivos .css adicionales (excepto `globals.css`)
+### Reglas para Desarrollo
 
-### 5. Estado Global
+1. **Nuevos componentes**: crear en `components/features/[feature]/` si es específico, o en `components/ui/` si es genérico. Un archivo por componente (SRP).
+2. **Nuevas rutas**: crear carpeta en `app/` con `page.js`. Usar `(grupo)` para agrupar sin afectar URL.
+3. **Datos**: modificar archivos en `/data/` para cambiar contenido. No crear APIs ni llamadas externas.
+4. **Estilos**: TailwindCSS v4 exclusivamente. No agregar archivos CSS (excepto `globals.css`).
+5. **Estado global**: Context API en `/context/`. Evitar prop drilling. Estado persiste solo en localStorage.
+6. **Animaciones**: Framer Motion para animaciones declarativas complejas. Transiciones CSS para hovers simples.
+7. **Iconos**: Lucide React (`lucide-react`) iconos SVG inline, no imágenes ni sprite sheets.
 
-- Usar Context API (`/context/`) para estado compartido
-- El carrito persiste solo en memoria/localStorage
+### Archivos a Ignorar
 
-## Archivos a Ignorar
+`node_modules/`, `package-lock.json`, `yarn.lock`, `.next/`, `*.log`, `.env*`
 
-- `node_modules/`
-- `package-lock.json`
-- `yarn.lock`
-- `.next/`
-- `*.log`
-- `.env*`
-
-## Comandos Útiles
+### Comandos
 
 ```bash
-npm run dev      # Desarrollo local
-npm run build    # Build de producción (solo estático)
-npm run start    # Servir build
+npm run dev    # Desarrollo local
+npm run build  # Build de producción (100% estático, SSG)
+npm run start  # Servir build localmente
 ```
 
-## Notas Adicionales
+### Notas Clave
 
-- El sitio es **estático** - no hay SSR complejo (excepto metadata)
-- El chatbot es **simulado** - no integra IA real
-- El carrito no tiene checkout real - solo UI demostrativa
-- WhatsApp es el único canal de conversión real (ver `/lib/whatsapp.js`)
+- El sitio es **estático** — `next build` genera HTML plano, no requiere servidor Node
+- `generateStaticParams` para rutas dinámicas (`/blog/[slug]`, `/productos/[slug]`)
+- Metadata SEO se define por página en `export const metadata`
+- El único canal de conversión real es WhatsApp (ver `src/lib/whatsapp.js` y `src/lib/constants.js`)

@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Fragment } from "react";
 
 export default function PostCard({ post, featured = false }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
       className={`group bg-surface border border-border rounded-2xl overflow-hidden
-        flex flex-col transition-all duration-200
-        hover:border-primary hover:ring-4 hover:ring-primary/10
+        flex flex-col transition-shadow duration-500
+        hover:border-primary hover:shadow-xl hover:ring-4 hover:ring-primary/10
         ${featured ? "md:flex-row md:col-span-full" : ""}
       `}
     >
@@ -17,11 +18,13 @@ export default function PostCard({ post, featured = false }) {
           ${featured ? "md:w-1/2 aspect-[16/10] md:aspect-auto" : "aspect-[16/10]"}
         `}
       >
+        <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/10 z-10 transition-colors duration-700" />
         <Image
           src={post.cover}
           alt={post.title}
           fill
-          className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+          className="object-cover group-hover:scale-105 transition-transform duration-[800ms]"
+          style={{ transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}
         />
       </div>
 
@@ -45,11 +48,23 @@ export default function PostCard({ post, featured = false }) {
         </div>
 
         <h2
-          className={`font-black text-dark leading-snug mb-2.5 group-hover:text-primary transition-colors duration-200
+          className={`font-black text-dark leading-snug mb-2.5
             ${featured ? "text-2xl" : "text-lg"}
           `}
         >
-          {post.title}
+          <span>
+            {post.title.split(" ").map((palabra, idx) => (
+              <Fragment key={idx}>
+                <span
+                  className="inline-block transition-all duration-200 group-hover:text-primary group-hover:-translate-y-0.5"
+                  style={{ transitionDelay: `${idx * 0.04}s` }}
+                >
+                  {palabra}
+                </span>
+                {idx < post.title.split(" ").length - 1 && " "}
+              </Fragment>
+            ))}
+          </span>
         </h2>
 
         <p className="text-muted text-sm leading-relaxed line-clamp-3 grow">
