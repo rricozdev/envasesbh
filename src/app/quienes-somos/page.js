@@ -115,7 +115,7 @@ export default function QuienesSomosPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <div className="bg-dark">
+      <div className="bg-secondary">
         <SectionContent>
           <div className="max-w-2xl">
             <span className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold uppercase tracking-widest">
@@ -171,7 +171,7 @@ export default function QuienesSomosPage() {
               priority
             />
             <div className="absolute inset-0 bg-primary/10" />
-            <div className="absolute bottom-4 left-4 bg-dark/80 backdrop-blur-sm text-white px-4 py-2 rounded-xl">
+            <div className="absolute bottom-4 left-4 bg-secondary/80 backdrop-blur-sm text-white px-4 py-2 rounded-xl">
               <span className="text-primary font-bold text-lg">2000</span>
               <span className="text-white/70 text-xs block">
                 Año de fundación
@@ -341,7 +341,7 @@ export default function QuienesSomosPage() {
 
         {/* ── CTA cierre ── */}
         <section className="pb-20 border-t border-gray-100 pt-16">
-          <div className="bg-dark rounded-2xl p-10 md:p-14 text-center">
+          <div className="bg-secondary rounded-2xl p-10 md:p-14 text-center">
             <span className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold uppercase tracking-widest">
               Tu mejor opción
             </span>
