@@ -1,3 +1,4 @@
+import ImageProtector from "@/components/ui/ImageProtector";
 import MainLayout from "@/components/layout/MainLayout";
 import { CartProvider } from "@/context/CartContext";
 import { UIProvider } from "@/context/UIContext";
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.variable} ${sourceSans3.variable}`}>
+        <ImageProtector />
         <UIProvider>
           <CartProvider>
             <MainLayout>{children}</MainLayout>
