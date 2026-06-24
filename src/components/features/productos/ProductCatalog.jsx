@@ -72,7 +72,7 @@ function Catalog() {
                   Página {pagina} de {totalPaginas}
                 </p>
               </div>
-              <ProductGrid productos={productosVisibles} />
+              <ProductGrid productos={productosVisibles} search={search} />
               {totalPaginas > 1 && (
                 <ProductPagination
                   pagina={pagina}
