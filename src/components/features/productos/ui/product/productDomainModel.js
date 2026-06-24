@@ -94,6 +94,18 @@ export function normalizarUnidad(raw = "") {
  */
 export function inferirTipo(producto) {
   const categoria = (producto?.categoria || "").toLowerCase();
+  const nombre = (producto?.nombre || "").toLowerCase();
+
+  const PREFIJOS_EN_NOMBRE = [
+    { prefix: "tapa ", tipo: "" },
+    { prefix: "bomba ", tipo: "" },
+    { prefix: "trigger ", tipo: "" },
+    { prefix: "vitrolero ", tipo: "" },
+  ];
+
+  for (const { prefix, tipo } of PREFIJOS_EN_NOMBRE) {
+    if (nombre.startsWith(prefix)) return tipo;
+  }
 
   if (categoria.includes("tapas")) return "Tapa";
   if (categoria.includes("bombas")) return "Bomba";
