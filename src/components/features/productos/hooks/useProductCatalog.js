@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useRef } from "react";
+import { useEffect, useMemo, useState, useRef, useDeferredValue } from "react";
 import { useSearchParams } from "next/navigation";
 import { COLORES_FILTRO } from "@/lib/constants";
 
@@ -34,7 +34,14 @@ export default function useProductCatalog(productos) {
     return 1;
   });
 
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(() => {
+    if (typeof window !== "undefined") {
+      return sessionStorage.getItem("catalogo_search") ?? "";
+    }
+    return "";
+  });
+
+  const deferredSearch = useDeferredValue(search);
 
   const [color, setColor] = useState(() => {
     if (typeof window !== "undefined")
@@ -83,7 +90,10 @@ export default function useProductCatalog(productos) {
     if (disponibilidad)
       sessionStorage.setItem("catalogo_disponibilidad", disponibilidad);
     else sessionStorage.removeItem("catalogo_disponibilidad");
-  }, [categoria, pagina, color, capacidadRango, disponibilidad]);
+
+    if (search) sessionStorage.setItem("catalogo_search", search);
+    else sessionStorage.removeItem("catalogo_search");
+  }, [categoria, pagina, color, capacidadRango, disponibilidad, search]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -140,8 +150,8 @@ export default function useProductCatalog(productos) {
         ? productos
         : productos.filter((p) => p.categoria === categoria);
 
-    if (search) {
-      base = searchProducts(base, search);
+    if (deferredSearch) {
+      base = searchProducts(base, deferredSearch);
     }
 
     if (color) {
@@ -204,7 +214,7 @@ export default function useProductCatalog(productos) {
 
       return a.nombre.localeCompare(b.nombre);
     });
-  }, [categoria, productos, search, color, capacidadRango, disponibilidad]);
+  }, [categoria, productos, deferredSearch, color, capacidadRango, disponibilidad]);
 
   const totalPaginas = Math.ceil(filtrados.length / itemsPorPagina);
 

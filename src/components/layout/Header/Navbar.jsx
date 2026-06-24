@@ -5,24 +5,18 @@ import { usePathname } from "next/navigation";
 import { navLinks } from "@/config/nav.config";
 import MobileMenu from "./MobileMenu";
 import CartButton from "../../features/cart/CartButton";
+import GlobalSearchBar from "../../ui/GlobalSearchBar";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   return (
-    /* PROPIEDADES CRÍTICAS:
-       - sticky top-0: Mantiene el componente fijo al llegar al borde superior.
-       - z-[9999]: Asegura que esté por encima de cualquier otro elemento (Hero, Cards, etc).
-       - shadow-lg: Añade profundidad para separar visualmente el nav del contenido que pasa por debajo.
-    */
-    <nav className="bg-primary w-full shadow-lg ">
-      <div className="max-w-6xl mx-auto flex justify-center items-center">
-        {/* --- NAVEGACIÓN DESKTOP --- */}
-        <div className="hidden md:flex justify-center w-full font-medium text-white text-[13px] uppercase tracking-wide">
+    <nav className="bg-primary w-full shadow-lg">
+      {/* --- DESKTOP: NAV + SEARCHBAR INLINE --- */}
+      <div className="hidden md:flex max-w-6xl mx-auto items-stretch">
+        <div className="flex justify-center flex-1 font-medium text-white text-[13px] uppercase tracking-wide">
           {navLinks.map((link) => {
-            // Detecta si la ruta actual coincide con el link para aplicar estilo activo
-            // const isActive = pathname === link.href;
             const isActive =
               link.href === "/"
                 ? pathname === "/"
@@ -42,27 +36,32 @@ export default function Navbar() {
               </Link>
             );
           })}
-          {/* Botón de carrito para escritorio */}
           <CartButton className="!fixed !bottom-auto !right-auto relative p-2 ml-4 text-white hover:bg-cyan-600/30 rounded-full transition-colors duration-200" />
         </div>
-
-        {/* --- NAVEGACIÓN MÓVIL --- */}
-        <div className="md:hidden flex justify-between items-center w-full px-5 py-3 text-white">
-          {/* Botón de carrito para móvil */}
-          <CartButton className="!fixed !bottom-auto !right-auto relative p-2 text-white hover:bg-cyan-600/30 rounded-full transition-colors duration-200" />
-          <div className="font-bold text-sm tracking-widest uppercase">
-            MENÚ
-          </div>
-
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-2xl focus:outline-none transition-transform duration-300"
-            style={{ transform: isOpen ? "rotate(90deg)" : "rotate(0deg)" }}
-            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-          >
-            {isOpen ? "✕" : "☰"}
-          </button>
+        <div className="flex items-center pr-3 pl-2 border-l border-cyan-600/40">
+          <GlobalSearchBar compact />
         </div>
+      </div>
+
+      {/* --- MÓVIL: NAV --- */}
+      <div className="md:hidden flex justify-between items-center w-full px-5 py-3 text-white">
+        <CartButton className="!fixed !bottom-auto !right-auto relative p-2 text-white hover:bg-cyan-600/30 rounded-full transition-colors duration-200" />
+        <div className="font-bold text-sm tracking-widest uppercase">
+          MENÚ
+        </div>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="p-2 text-2xl focus:outline-none transition-transform duration-300"
+          style={{ transform: isOpen ? "rotate(90deg)" : "rotate(0deg)" }}
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+        >
+          {isOpen ? "✕" : "☰"}
+        </button>
+      </div>
+
+      {/* --- MÓVIL: SEARCHBAR --- */}
+      <div className="md:hidden border-t border-cyan-600/40 px-4 py-2">
+        <GlobalSearchBar compact />
       </div>
 
       {/* MENÚ DESPLEGABLE (LÓGICA APARTE) */}

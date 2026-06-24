@@ -17,8 +17,11 @@ function normalize(text = "") {
  * SINÓNIMOS DOMINIO
  */
 const SYNONYMS = {
-  envase: ["envase", "embase", "contenedor"],
+  envase: ["envase", "embase", "contenedor", "botella", "frasco", "recipiente"],
   sinfin: ["sinfin", "sin fin", "sin-fin", "sinfín", "sin fín"],
+  pco: ["pco", "corona", "rosca"],
+  trigger: ["trigger", "gatillera"],
+  tapa: ["tapa", "tapón"],
 };
 
 /**
@@ -42,7 +45,7 @@ function expandQuery(query) {
     if (!replaced) expanded.push(word);
   }
 
-  return expanded.join(" ");
+  return [...new Set(expanded)].join(" ");
 }
 
 /**
@@ -113,6 +116,8 @@ function productSearchText(producto) {
       producto?.specs?.capacidad,
       producto?.specs?.unidad,
       inferirTipo(producto),
+      ...(producto?.specs?.colores ?? []),
+      ...(producto?.specs?.coloresBajoPedido ?? []),
     ]
       .filter(Boolean)
       .join(" "),
@@ -130,6 +135,35 @@ function toMl(value, unit) {
     default:
       return value;
   }
+}
+
+/**
+ * DISTANCIA LEVENSHTEIN
+ */
+function levenshtein(a, b) {
+  const m = a.length;
+  const n = b.length;
+  const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+  for (let i = 0; i <= m; i++) dp[i][0] = i;
+  for (let j = 0; j <= n; j++) dp[0][j] = j;
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      dp[i][j] =
+        a[i - 1] === b[j - 1]
+          ? dp[i - 1][j - 1]
+          : 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+    }
+  }
+  return dp[m][n];
+}
+
+function fuzzyMatch(word, productWords) {
+  const maxDist = word.length <= 5 ? 1 : 2;
+  for (const pw of productWords) {
+    if (Math.abs(pw.length - word.length) > maxDist) continue;
+    if (levenshtein(word, pw) <= maxDist) return true;
+  }
+  return false;
 }
 
 /**
@@ -157,15 +191,18 @@ function scoreMatch(productText, queryText, producto) {
 
   const queryWords = query.split(" ").filter(Boolean);
 
-  const matchedWords = queryWords.filter((word) => product.includes(word));
+  if (queryWords.length === 0) return 0;
 
-  if (queryWords.length > 1) {
-    return matchedWords.length === queryWords.length
-      ? 200 + matchedWords.length * 10
-      : 0;
-  }
+  const productWords = product.split(" ").filter(Boolean);
 
-  return matchedWords.length > 0 ? 10 : 0;
+  const matchedWords = queryWords.filter(
+    (word) => product.includes(word) || fuzzyMatch(word, productWords),
+  );
+
+  if (matchedWords.length === 0) return 0;
+
+  const ratio = matchedWords.length / queryWords.length;
+  return Math.round(200 * ratio) + matchedWords.length * 10;
 }
 
 /**
