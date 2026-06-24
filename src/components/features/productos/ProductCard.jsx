@@ -58,16 +58,30 @@ export default function ProductCard({ producto }) {
         {/* NOMBRE */}
         <Link href={`/productos/${producto.slug}`} className="block">
           <h3 className="mt-4 mb-1 text-lg font-bold leading-tight line-clamp-2">
-            <span className="inline-flex flex-wrap">
-              {nombreCompleto.split("").map((letra, idx) => (
-                <span
-                  key={idx}
-                  className="inline-block transition-all duration-200 text-secondary group-hover:text-primary group-hover:-translate-y-0.5"
-                  style={{ transitionDelay: `${idx * 0.02}s` }}
-                >
-                  {letra === " " ? "\u00A0" : letra}
-                </span>
-              ))}
+            <span className="inline-flex flex-wrap items-baseline">
+              {(() => {
+                const palabras = nombreCompleto.split(" ");
+                let globalIdx = 0;
+                return palabras.map((palabra, i) => (
+                  <span key={i} className="inline-flex" style={{ whiteSpace: "nowrap" }}>
+                    {i > 0 && (
+                      <span className="inline-block">&nbsp;</span>
+                    )}
+                    {palabra.split("").map((letra, j) => {
+                      const idx = globalIdx++;
+                      return (
+                        <span
+                          key={j}
+                          className="inline-block transition-all duration-200 text-secondary group-hover:text-primary group-hover:-translate-y-0.5"
+                          style={{ transitionDelay: `${idx * 0.02}s` }}
+                        >
+                          {letra}
+                        </span>
+                      );
+                    })}
+                  </span>
+                ));
+              })()}
             </span>
           </h3>
         </Link>
