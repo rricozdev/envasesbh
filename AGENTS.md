@@ -94,6 +94,27 @@ El chatbot es un **sistema conversacional basado en nodos predefinidos**, no int
 
 `node_modules/`, `package-lock.json`, `yarn.lock`, `.next/`, `*.log`, `.env*`
 
+### Cambios Realizados (2026-06-24)
+
+#### Searchbar — Correcciones (ver `docs/searchbar.md`)
+| # | Cambio | Archivo |
+|---|---|---|
+| **C1** | Colores (`specs.colores`, `specs.coloresBajoPedido`) añadidos al search text | `productSearchEngine.js` |
+| **C2** | Empty state diferenciado: muestra `"No hay resultados para \"{search}\""` | `ProductGrid.jsx` |
+| **M1** | Sinónimos expandidos: `botella/frasco/recipiente → envase`, `pco/corona/rosca`, `gatillera → trigger`, `tapón → tapa`. Dedup en `expandQuery()` | `productSearchEngine.js` |
+| **M2** | Multi-word: AND estricto → OR con scoring parcial | `productSearchEngine.js` |
+| **M3** | Search persiste en sessionStorage (`catalogo_search`) | `useProductCatalog.js` |
+| **B1** | Debounce con `useDeferredValue` | `useProductCatalog.js` |
+| **B3** | Fuzzy matching (Levenshtein) para typos | `productSearchEngine.js` |
+| **B2** | Nuevo motor de búsqueda para blog | `blogSearchEngine.js` |
+| **G1** | Searchbar global en Header (busca productos + blog + servicios). Dropdown con resultados agrupados. Versión compacta a la derecha en desktop, fila separada en móvil. | `GlobalSearchBar.jsx`, `Navbar.jsx` |
+| **G2** | Nuevo motor de búsqueda para servicios | `serviciosSearchEngine.js` |
+
+#### Vitrolero — Display Fix (solo visual, sin afectar SEO/datos)
+- **Problema:** `inferirTipo()` devuelve `"Vitrolero"` para todos los productos en categoría "Tarros y Vitroleros", causando nombres duplicados en UI (ej: "Vitrolero Tarro Vitrolero Redondo..." o "Vitrolero Tarro Octogonal...")
+- **Solución:** En `ProductCard.jsx`, si `parsed.tipo === "Vitrolero"`, se elimina la palabra del `nombreDisplay` (solo para render del h3). `nombreCompleto` se mantiene intacto para alt text, carrito y search text.
+- **No se tocaron:** datos, slugs, SEO metadata, search engine.
+
 ### Comandos
 
 ```bash

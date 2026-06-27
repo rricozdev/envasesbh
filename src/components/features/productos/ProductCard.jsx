@@ -14,10 +14,12 @@ export default function ProductCard({ producto }) {
   const { addItem } = useCart();
 
   const parsed = parseProductName(producto);
+  const nombreCompleto = buildProductName(parsed);
 
-
-  // FUENTE ÚNICA DE VERDAD PARA UI
-  const nombreCompleto = buildProductName(parseProductName(producto));
+  // Solo visual: quita "Vitrolero" redundante en tarros sin afectar SEO ni datos
+  const nombreDisplay = parsed.tipo === "Vitrolero"
+    ? nombreCompleto.replace(/\s*Vitrolero\s*/g, " ").replace(/\s+/g, " ").trim()
+    : nombreCompleto;
 
   const categoria = normalizarCategoria(producto);
 
@@ -60,7 +62,7 @@ export default function ProductCard({ producto }) {
           <h3 className="mt-4 mb-1 text-lg font-bold leading-tight line-clamp-2">
             <span className="inline-flex flex-wrap items-baseline">
               {(() => {
-                const palabras = nombreCompleto.split(" ");
+                const palabras = nombreDisplay.split(" ");
                 let globalIdx = 0;
                 return palabras.map((palabra, i) => (
                   <span key={i} className="inline-flex" style={{ whiteSpace: "nowrap" }}>
