@@ -73,6 +73,13 @@ export default async function ProductoDetalle({ params }) {
   const parsed = parseProductName(producto);
   const nombreCompleto = buildProductName(parsed);
 
+  const displayName = (name, tipo) =>
+    tipo === "Vitrolero"
+      ? name.replace(/\s*Vitrolero\s*/g, " ").replace(/\s+/g, " ").trim()
+      : name;
+
+  const nombreDisplay = displayName(nombreCompleto, parsed.tipo);
+
   const relacionados = PRODUCTOS.filter(
     (p) =>
       normalizeCategory(p.categoria) ===
@@ -207,7 +214,7 @@ export default async function ProductoDetalle({ params }) {
           </div>
 
           <h1 className="text-xl md:text-3xl font-bold text-secondary uppercase tracking-tighter mb-6 leading-[0.9]">
-            {nombreCompleto}
+            {nombreDisplay}
           </h1>
 
           {/* COLORES */}
@@ -335,7 +342,10 @@ export default async function ProductoDetalle({ params }) {
                 </div>
 
                 <h4 className="text-secondary font-bold text-sm mb-3 group-hover:text-primary transition-colors truncate">
-                  {buildProductName(parseProductName(rel))}
+                  {(() => {
+                    const r = parseProductName(rel);
+                    return displayName(buildProductName(r), r.tipo);
+                  })()}
                 </h4>
 
                 <div className="text-[10px] font-black uppercase text-primary tracking-widest">
