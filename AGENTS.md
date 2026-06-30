@@ -110,10 +110,9 @@ El chatbot es un **sistema conversacional basado en nodos predefinidos**, no int
 | **G1** | Searchbar global en Header (busca productos + blog + servicios). Dropdown con resultados agrupados. Versión compacta a la derecha en desktop, fila separada en móvil. | `GlobalSearchBar.jsx`, `Navbar.jsx` |
 | **G2** | Nuevo motor de búsqueda para servicios | `serviciosSearchEngine.js` |
 
-#### Vitrolero — Display Fix (solo visual, sin afectar SEO/datos)
-- **Problema:** `inferirTipo()` devuelve `"Vitrolero"` para todos los productos en categoría "Tarros y Vitroleros", causando nombres duplicados en UI (ej: "Vitrolero Tarro Vitrolero Redondo..." o "Vitrolero Tarro Octogonal...")
-- **Solución:** En `ProductCard.jsx`, si `parsed.tipo === "Vitrolero"`, se elimina la palabra del `nombreDisplay` (solo para render del h3). `nombreCompleto` se mantiene intacto para alt text, carrito y search text.
-- **No se tocaron:** datos, slugs, SEO metadata, search engine.
+#### Tarro/Vitrolero — Corrección de Nombres (2026-06-30)
+- **Problema:** 7 productos con `corona: 110` (Rosca 110 = Vitrolero) tenían `nombre` empezando con "Tarro" en lugar de "Vitrolero".
+- **Solución:** Se cambió `nombre` y `slug` de esos 7 productos en `productos.js` y `productos.with-specs.json`. Se añadió `"tarro "` a `PREFIJOS_EN_NOMBRE` en `productDomainModel.js` para evitar doble prefijo. Se eliminó el band-aid de `ProductCard.jsx` (ya no necesario).
 
 ### Comandos
 

@@ -2218,10 +2218,10 @@
     }
   },
   {
-    "nombre": "Tarro Vitrolero Redondo Medio Galón ",
+    "nombre": "Vitrolero Redondo Medio Galón",
     "categoria": "Tarros y Vitroleros",
     "imagen": "/img/productos/Tarros_vitroleros/imagen_90_vitrolero-medio-galon-liso.webp",
-    "slug": "tarro-vitrolero-medio-galon-redondo",
+    "slug": "vitrolero-medio-galon-redondo",
     "specs": {
       "peso": [
         69
@@ -2244,10 +2244,10 @@
     }
   },
   {
-    "nombre": "Tarro Vitrolero Redondo 1 Galón",
+    "nombre": "Vitrolero Redondo 1 Galón",
     "categoria": "Tarros y Vitroleros",
     "imagen": "/img/productos/Tarros_vitroleros/imagen_91_galon-liso.webp",
-    "slug": "vitrolero-galon-redondo-ml",
+    "slug": "vitrolero-redondo-1-galon",
     "specs": {
       "peso": [
         105
@@ -2270,10 +2270,10 @@
     }
   },
   {
-    "nombre": "Tarro Vitrolero Liso Corto Medio Galón",
+    "nombre": "Vitrolero Liso Corto Medio Galón",
     "categoria": "Tarros y Vitroleros",
     "imagen": "/img/productos/Tarros_vitroleros/imagen_92_vitrolero-medio-galon-liso.webp",
-    "slug": "tarro-vitrolero-medio-galon-liso",
+    "slug": "vitrolero-liso-corto-medio-galon",
     "specs": {
       "peso": [
         64
@@ -2296,10 +2296,10 @@
     }
   },
   {
-    "nombre": "Tarro Vitrolero Anillado Medio Galón",
+    "nombre": "Vitrolero Anillado Medio Galón",
     "categoria": "Tarros y Vitroleros",
     "imagen": "/img/productos/Tarros_vitroleros/imagen_93_vitrolero-medio-galon-anillado.webp",
-    "slug": "tarro-vitrolero-medio-galon-anillado",
+    "slug": "vitrolero-anillado-medio-galon",
     "specs": {
       "peso": [
         65
@@ -2322,10 +2322,10 @@
     }
   },
   {
-    "nombre": "Tarro Vitrolero Pata de elefante Medio Galón",
+    "nombre": "Vitrolero Pata de elefante Medio Galón",
     "categoria": "Tarros y Vitroleros",
     "imagen": "/img/productos/Tarros_vitroleros/imagen_94_vitrolero-medio-galon-pata-de-elefante.webp",
-    "slug": "tarro-vitrolero-medio-galon-pata-elefante",
+    "slug": "vitrolero-pata-de-elefante-medio-galon",
     "specs": {
       "peso": [
         65
@@ -2348,10 +2348,10 @@
     }
   },
   {
-    "nombre": "Tarro Vitrolero Cuadrado Medio Galón",
+    "nombre": "Vitrolero Cuadrado Medio Galón",
     "categoria": "Tarros y Vitroleros",
     "imagen": "/img/productos/Tarros_vitroleros/imagen_95_vitrolero-medio-galon-cuadrado.webp",
-    "slug": "tarro-vitrolero-medio-galon-cuadrado",
+    "slug": "vitrolero-cuadrado-medio-galon",
     "specs": {
       "peso": [
         69
@@ -2374,10 +2374,10 @@
     }
   },
   {
-    "nombre": "Tarro Vitrolero Cuadrado 1 Galón ",
+    "nombre": "Vitrolero Cuadrado 1 Galón",
     "categoria": "Tarros y Vitroleros",
     "imagen": "/img/productos/Tarros_vitroleros/imagen_96_vitrolero-1-galon-cuadrado.webp",
-    "slug": "tarro-vitrolero-1-galon-cuadrado",
+    "slug": "vitrolero-cuadrado-1-galon",
     "specs": {
       "peso": [
         105
@@ -2403,7 +2403,7 @@
     "nombre": "Tarro Especiero 1 L",
     "categoria": "Tarros y Vitroleros",
     "imagen": "/img/productos/Tarros_vitroleros/imagen_97_especiero-1-lt.webp",
-    "slug": "tarro-vitrolero-especiero-1lt",
+    "slug": "tarro-especiero-1-lt",
     "specs": {
       "peso": [
         63
