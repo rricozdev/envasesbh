@@ -15,12 +15,7 @@ export default function ProductCard({ producto }) {
 
   const parsed = parseProductName(producto);
   const nombreCompleto = buildProductName(parsed);
-
-  // Solo visual: quita "Vitrolero" redundante en tarros sin afectar SEO ni datos
-  const nombreDisplay = parsed.tipo === "Vitrolero"
-    ? nombreCompleto.replace(/\s*Vitrolero\s*/g, " ").replace(/\s+/g, " ").trim()
-    : nombreCompleto;
-
+  const nombreDisplay = nombreCompleto;
   const categoria = normalizarCategoria(producto);
 
   const { specs } = producto;

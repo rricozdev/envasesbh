@@ -101,6 +101,7 @@ export function inferirTipo(producto) {
     { prefix: "bomba ", tipo: "" },
     { prefix: "trigger ", tipo: "" },
     { prefix: "vitrolero ", tipo: "" },
+    { prefix: "tarro ", tipo: "" },
   ];
 
   for (const { prefix, tipo } of PREFIJOS_EN_NOMBRE) {
