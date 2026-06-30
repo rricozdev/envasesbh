@@ -1,4 +1,7 @@
-import { inferirTipo } from "../components/features/productos/ui/product/productDomainModel";
+import {
+  inferirTipo,
+  normalizarCategoria,
+} from "../components/features/productos/ui/product/productDomainModel";
 
 /**
  * NORMALIZACIÓN BASE
@@ -110,7 +113,7 @@ function productSearchText(producto) {
   return normalize(
     [
       producto?.nombre,
-      producto?.categoria,
+      normalizarCategoria(producto),
       producto?.slug,
       producto?.specs?.corona,
       producto?.specs?.capacidad,
