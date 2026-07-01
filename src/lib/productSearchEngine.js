@@ -190,7 +190,9 @@ function scoreMatch(productText, queryText, producto) {
     return productMl === queryMl ? 1000 : 0;
   }
 
-  if (product.includes(query)) return 100;
+  if (/^\d+$/.test(query)) {
+    if (new RegExp(`\\b${query}\\b`).test(product)) return 100;
+  } else if (product.includes(query)) return 100;
 
   const queryWords = query.split(" ").filter(Boolean);
 
@@ -198,9 +200,14 @@ function scoreMatch(productText, queryText, producto) {
 
   const productWords = product.split(" ").filter(Boolean);
 
-  const matchedWords = queryWords.filter(
-    (word) => product.includes(word) || fuzzyMatch(word, productWords),
-  );
+  const matchedWords = queryWords.filter((word) => {
+    if (/^\d+$/.test(word)) {
+      if (new RegExp(`\\b${word}\\b`).test(product)) return true;
+      return false;
+    }
+    if (product.includes(word)) return true;
+    return fuzzyMatch(word, productWords);
+  });
 
   if (matchedWords.length === 0) return 0;
 

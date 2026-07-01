@@ -1,9 +1,9 @@
 [
   {
-    "nombre": "Clásica 250 ml",
+    "nombre": "Sinfín 250 ml",
     "categoria": "Agua",
     "imagen": "/img/productos/agua/imagen_1_250ml-sinfin.webp",
-    "slug": "250-ml",
+    "slug": "envase-sinfin-250-ml",
     "specs": {
       "peso": [
         14.5
@@ -153,6 +153,28 @@
       "coloresBajoPedido": [],
       "produccionMinimaColores": null,
       "unidad": ""
+    }
+  },
+  {
+    "nombre": "Clásica 250 ml",
+    "categoria": "Agua",
+    "imagen": "/img/productos/agua/imagen_102_Clasica_250_ml.webp",
+    "slug": "clasica-250-ml",
+    "specs": {
+      "peso": [16],
+      "corona": "R28",
+      "altura": 128,
+      "capacidad": 250,
+      "unidad": "ml",
+      "pzsEmpaque": 176,
+      "tipoEmpaque": "Bolsa",
+      "colores": ["Cristal"],
+      "liner": [],
+      "produccionMinima": null,
+      "sobrePedido": false,
+      "stockDisponible": true,
+      "coloresBajoPedido": [],
+      "produccionMinimaColores": null
     }
   },
   {
@@ -982,6 +1004,30 @@
     }
   },
   {
+    "nombre": "Boston R28 250 ml",
+    "categoria": "Boston",
+    "imagen": "/img/productos/boston/imagen_99_250-ml-boston.webp",
+    "slug": "250-ml-boston-r28",
+    "specs": {
+      "peso": [
+        20
+      ],
+      "corona": "R28",
+      "altura": 185,
+      "capacidad": 250,
+      "pzsEmpaque": null,
+      "tipoEmpaque": "Bolsa",
+      "colores": [],
+      "liner": [],
+      "produccionMinima": 10000,
+      "sobrePedido": true,
+      "stockDisponible": false,
+      "coloresBajoPedido": [],
+      "produccionMinimaColores": null,
+      "unidad": ""
+    }
+  },
+  {
     "nombre": "Boston 500 ml",
     "categoria": "Boston",
     "imagen": "/img/productos/boston/imagen_40_500ml-boston.webp",
@@ -1349,6 +1395,50 @@
     }
   },
   {
+    "nombre": "Cilíndrica 200 ml",
+    "categoria": "Cosméticos",
+    "imagen": "/img/productos/cosmeticos/imagen_100_200-ml.webp",
+    "slug": "200-ml-cilindrica",
+    "specs": {
+      "peso": [23],
+      "corona": "24-410",
+      "altura": 141,
+      "capacidad": 200,
+      "unidad": "ml",
+      "pzsEmpaque": 250,
+      "tipoEmpaque": "Caja",
+      "colores": ["Cristal"],
+      "liner": [],
+      "produccionMinima": null,
+      "sobrePedido": false,
+      "stockDisponible": true,
+      "coloresBajoPedido": [],
+      "produccionMinimaColores": null
+    }
+  },
+  {
+    "nombre": "Diamante 250 ml",
+    "categoria": "Cosméticos",
+    "imagen": "/img/productos/cosmeticos/imagen_101_diamante_250_ml.webp",
+    "slug": "250-ml-diamante",
+    "specs": {
+      "peso": [23],
+      "corona": "24-410",
+      "altura": 181,
+      "capacidad": 250,
+      "unidad": "ml",
+      "pzsEmpaque": 208,
+      "tipoEmpaque": "Caja",
+      "colores": ["Cristal"],
+      "liner": [],
+      "produccionMinima": 20000,
+      "sobrePedido": true,
+      "stockDisponible": false,
+      "coloresBajoPedido": [],
+      "produccionMinimaColores": null
+    }
+  },
+  {
     "nombre": "Especiero 120 ml",
     "categoria": "Especieros",
     "imagen": "/img/productos/especieros/imagen_55_especiero-120-ml.webp",
@@ -1646,6 +1736,28 @@
     }
   },
   {
+    "nombre": "Espuma 750 ml",
+    "categoria": "Limpieza",
+    "imagen": "/img/productos/limpieza/imagen_77-750ml-generica-lavatrastes.webp",
+    "slug": "espuma-750",
+    "specs": {
+      "peso": [39],
+      "corona": "28 PCO",
+      "altura": 248,
+      "capacidad": 750,
+      "unidad": "ml",
+      "pzsEmpaque": 132,
+      "tipoEmpaque": "Bolsa",
+      "colores": ["Cristal"],
+      "liner": [],
+      "produccionMinima": null,
+      "sobrePedido": false,
+      "stockDisponible": true,
+      "coloresBajoPedido": [],
+      "produccionMinimaColores": null
+    }
+  },
+  {
     "nombre": "Genérica Lavatraste 900 ml",
     "categoria": "Limpieza",
     "imagen": "/img/productos/limpieza/imagen_66-900ml-generica-lavatrastes.webp",
@@ -1669,6 +1781,28 @@
       "coloresBajoPedido": [],
       "produccionMinimaColores": null,
       "unidad": ""
+    }
+  },
+  {
+    "nombre": "Espuma",
+    "categoria": "Limpieza",
+    "imagen": "/img/productos/limpieza/imagen_76-1300ml-generica-lavatrastes.webp",
+    "slug": "espuma",
+    "specs": {
+      "peso": [39],
+      "corona": "28 PCO",
+      "altura": 298.5,
+      "capacidad": 1500,
+      "unidad": "ml",
+      "pzsEmpaque": 128,
+      "tipoEmpaque": "Bolsa",
+      "colores": ["Cristal"],
+      "liner": [],
+      "produccionMinima": null,
+      "sobrePedido": false,
+      "stockDisponible": true,
+      "coloresBajoPedido": [],
+      "produccionMinimaColores": null
     }
   },
   {
@@ -1749,6 +1883,28 @@
       "coloresBajoPedido": [],
       "produccionMinimaColores": null,
       "unidad": ""
+    }
+  },
+  {
+    "nombre": "Garrafa 2 L",
+    "categoria": "Limpieza",
+    "imagen": "/img/productos/limpieza/imagen_103_garrafa_2lt.webp",
+    "slug": "garrafa-2lt",
+    "specs": {
+      "peso": [74],
+      "corona": "45 mm",
+      "altura": 238,
+      "capacidad": 2,
+      "unidad": "L",
+      "pzsEmpaque": 255,
+      "tipoEmpaque": "Bolsa",
+      "colores": ["Natural"],
+      "liner": [],
+      "produccionMinima": null,
+      "sobrePedido": false,
+      "stockDisponible": true,
+      "coloresBajoPedido": [],
+      "produccionMinimaColores": null
     }
   },
   {
