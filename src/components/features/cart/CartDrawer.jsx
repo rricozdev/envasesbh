@@ -45,7 +45,7 @@ export default function CartDrawer() {
       />
 
       {/* Drawer */}
-      <aside
+      <div
         ref={drawerRef}
         role="dialog"
         aria-modal="true"
@@ -185,7 +185,7 @@ export default function CartDrawer() {
             </button>
           </div>
         )}
-      </aside>
+      </div>
     </>
   );
 }
