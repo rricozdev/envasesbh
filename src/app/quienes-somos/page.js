@@ -26,13 +26,18 @@ export const metadata = {
   description:
     "Empresa 100% mexicana con más de 25 años fabricando envases PET para la industria alimentaria, cosmética, química y hotelera.",
   alternates: {
-    canonical: "https://envasesbh.mx/quienes-somos",
+    canonical: "https://www.envasesbh.mx/quienes-somos",
+    languages: {
+      "es-MX": "https://www.envasesbh.mx/quienes-somos",
+      es: "https://www.envasesbh.mx/quienes-somos",
+      "x-default": "https://www.envasesbh.mx/quienes-somos",
+    },
   },
   openGraph: {
     title: "Quiénes Somos | Envases BH - Fabricante de Envases PET en México",
     description:
       "Empresa 100% mexicana con más de 25 años fabricando envases PET para la industria alimentaria, cosmética, química y hotelera.",
-    url: "https://envasesbh.mx/quienes-somos",
+    url: "https://www.envasesbh.mx/quienes-somos",
     siteName: "Envases BH",
     locale: "es_MX",
     type: "website",

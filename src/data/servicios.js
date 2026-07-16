@@ -6,7 +6,7 @@ export const servicios = [
     subtitulo: "Etiquetas en BOPP",
     descripcion:
       "Ofrecemos el servicio de etiquetado en BOPP para envases de la división de alimentos y bebidas, con alta precisión y acabado profesional.",
-    imagen: "/img/etiquetado.png",
+    imagen: "/img/servicios_etiquetado_pigmentacion.webp",
     imagenAlt: "Servicio de etiquetado BOPP para envases plásticos",
     cta: {
       label: "Solicitar información",
@@ -30,7 +30,7 @@ export const servicios = [
     subtitulo: "Pigmentado Estándar y Especial",
     descripcion:
       "Ofrecemos el servicio de pigmentado en algunos envases con varios colores de línea, además de desarrollo e igualación de colores específicos para necesidades particulares.",
-    imagen: "/img/pigmentado.png",
+    imagen: "/img/img_etiquetado.webp",
     imagenAlt: "Servicio de pigmentación de envases plásticos",
     cta: {
       label: "Solicitar información",

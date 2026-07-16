@@ -1,13 +1,14 @@
-// lib/metadata-helpers-productos.ts (actualizado)
 import { baseMetadata } from "./metadata-config";
 
+const SITE_URL = "https://www.envasesbh.mx";
+
 export function generateProductMetadata(producto) {
-  const titulo = `${producto.nombre} | Envases PET `;
+  const titulo = `${producto.nombre} | Envases PET`;
   const descripcion = `${producto.descripcion}${
     producto.capacidad ? ` Capacidad: ${producto.capacidad}.` : ""
   } Envases PET de calidad para bebidas, alimentos y agroindustria.`;
 
-  const url = `https://envasesbh.mx/productos/${producto.slug || producto.id}`;
+  const url = `${SITE_URL}/productos/${producto.slug || producto.id}`;
 
   return {
     ...baseMetadata,
@@ -26,11 +27,11 @@ export function generateProductMetadata(producto) {
       ...baseMetadata.openGraph,
       title: titulo,
       description: descripcion,
-      url: url,
+      url,
       type: "website",
       images: [
         {
-          url: `https://envasesbh.mx${producto.imagen}`,
+          url: `${SITE_URL}${producto.imagen}`,
           width: 800,
           height: 800,
           alt: producto.nombre,
@@ -43,7 +44,7 @@ export function generateProductMetadata(producto) {
       ...baseMetadata.twitter,
       title: titulo,
       description: descripcion,
-      image: `https://envasesbh.mx${producto.imagen}`,
+      image: `${SITE_URL}${producto.imagen}`,
     },
 
     alternates: {
@@ -51,12 +52,12 @@ export function generateProductMetadata(producto) {
       languages: {
         "es-MX": url,
         es: url,
+        "x-default": url,
       },
     },
   };
 }
 
-// JSON-LD Schema para producto
 export function generateProductJsonLd(producto) {
   const specs = producto.especificaciones;
 
@@ -65,7 +66,7 @@ export function generateProductJsonLd(producto) {
     "@type": "Product",
     name: producto.nombre,
     description: producto.descripcion,
-    image: `https://envasesbh.mx${producto.imagen}`,
+    image: `${SITE_URL}${producto.imagen}`,
     brand: {
       "@type": "Brand",
       name: "Envases BH",

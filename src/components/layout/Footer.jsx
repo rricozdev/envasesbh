@@ -21,21 +21,22 @@ export default function Footer() {
     },
     { name: "Tarros Especiales", href: "/productos?categoria=Boston" },
     { name: "Pigmentación", href: "/servicios#pigmentado" },
+    { name: "Rincón de Promociones", href: "/promociones" },
   ];
 
   const contactInfo = [
     {
       type: "email",
       name: "Email Mayoreo",
-      value: "direccionventas@envasesbh.com",
-      href: "mailto:direccionventas@envasesbh.com",
+      value: "direccionventas@envasesbh.mx",
+      href: "mailto:direccionventas@envasesbh.mx",
       icon: Mail,
     },
     {
       type: "email",
       name: "Email Menudeo",
-      value: "ventas3@envasesbh.com",
-      href: "mailto:ventas3@envasesbh.com",
+      value: "ventas3@envasesbh.mx",
+      href: "mailto:ventas3@envasesbh.mx",
       icon: Mail,
     },
     {
@@ -90,9 +91,9 @@ export default function Footer() {
                 <Image
                   src="/logo-bh-3a.png"
                   alt="Envases BH"
-                  width={120}
-                  height={40}
-                  className="w-auto"
+                  width={140}
+                  height={47}
+                  className="max-h-[50px]"
                 />
               </div>
 

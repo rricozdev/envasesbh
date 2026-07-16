@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { navLinks } from "@/config/nav.config";
 import MobileMenu from "./MobileMenu";
 import CartButton from "../../features/cart/CartButton";
-import GlobalSearchBar from "../../ui/GlobalSearchBar";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +12,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-primary w-full shadow-lg">
-      {/* --- DESKTOP: NAV + SEARCHBAR INLINE --- */}
+      {/* --- DESKTOP: NAV --- */}
       <div className="hidden md:flex max-w-6xl mx-auto items-stretch">
         <div className="flex justify-center flex-1 font-medium text-white text-[13px] uppercase tracking-wide">
           {navLinks.map((link) => {
@@ -38,9 +37,6 @@ export default function Navbar() {
           })}
           <CartButton className="!fixed !bottom-auto !right-auto relative p-2 ml-4 text-white hover:bg-cyan-600/30 rounded-full transition-colors duration-200" />
         </div>
-        <div className="flex items-center pr-3 pl-2 border-l border-cyan-600/40">
-          <GlobalSearchBar compact />
-        </div>
       </div>
 
       {/* --- MÓVIL: NAV --- */}
@@ -57,11 +53,6 @@ export default function Navbar() {
         >
           {isOpen ? "✕" : "☰"}
         </button>
-      </div>
-
-      {/* --- MÓVIL: SEARCHBAR --- */}
-      <div className="md:hidden border-t border-cyan-600/40 px-4 py-2">
-        <GlobalSearchBar compact />
       </div>
 
       {/* MENÚ DESPLEGABLE (LÓGICA APARTE) */}

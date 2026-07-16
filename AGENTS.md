@@ -114,6 +114,78 @@ El chatbot es un **sistema conversacional basado en nodos predefinidos**, no int
 - **Problema:** 7 productos con `corona: 110` (Rosca 110 = Vitrolero) tenían `nombre` empezando con "Tarro" en lugar de "Vitrolero".
 - **Solución:** Se cambió `nombre` y `slug` de esos 7 productos en `productos.js` y `productos.with-specs.json`. Se añadió `"tarro "` a `PREFIJOS_EN_NOMBRE` en `productDomainModel.js` para evitar doble prefijo. Se eliminó el band-aid de `ProductCard.jsx` (ya no necesario).
 
+#### SEO — Correcciones Masivas (2026-07-03)
+
+**Contexto:** Screaming Frog SEO Spider reportó 14 issues en `https://www.envasesbh.mx`. Google Search Console reportaba 48 páginas con 403, 175 sin indexar y solo 68 indexadas. El objetivo es posicionar #1 para "Envases PET México" (actualmente #5).
+
+##### Dominio estandarizado: `envasesbh.mx` → `www.envasesbh.mx`
+El sitemap usaba `www.envasesbh.mx` pero canonicals, hreflangs, OG y JSON-LD usaban `envasesbh.mx` (sin www). Esto creaba señales contradictorias para Google. Se unificó todo a `https://www.envasesbh.mx` en:
+- `src/lib/metadata-config.js` — `metadataBase`, `openGraph.url`, `alternates.canonical`, `alternates.languages`, `baseJsonLd`
+- `src/lib/metadata-helper-productos.js` — URLs de producto, OG images, JSON-LD
+- Todas las páginas: `page.js`, `productos/page.js`, `contacto/page.js`, `servicios/page.js`, `quienes-somos/page.js`, `proyectos-a-tu-medida/page.js`, `blog/page.js`, `blog/[slug]/page.js`
+
+##### Canonicals por página (antes heredaban el root)
+`/productos`, `/blog`, `/contacto`, `/blog/[slug]` heredaban `canonical: "https://envasesbh.mx"` del `baseMetadata`. Cada página ahora tiene su propio canonical apuntando a su URL real. `generateMetadata` en `blog/[slug]/page.js` ahora retorna metadata completa (OG, canonical, alternates).
+
+##### hreflang x-default
+Se añadió `"x-default"` a todas las configuraciones de `alternates.languages` en metadata-config, metadata-helper-productos y todas las páginas.
+
+##### Security headers en `.htaccess`
+El servidor cPanel no tenía headers de seguridad. Se añadieron al `.htaccess`:
+- `X-Frame-Options: SAMEORIGIN`
+- `X-Content-Type-Options: nosniff`
+- `Referrer-Policy: strict-origin-when-cross-origin`
+- `Content-Security-Policy` (estricta para sitio estático)
+- `Permissions-Policy`
+
+##### Error 403 masivo (48 páginas) — Causa raíz y fix
+**Diagnóstico:** El log de errores del servidor (`docs/Latest web server error log messages.odt`) reveló que Apache intentaba servir directorios físicos vacíos (`/productos/`, `/contacto/`, etc.) en lugar de aplicar la regla de rewrite a `index.html`. Al no encontrar `DirectoryIndex` dentro del directorio, devolvía 403 Forbidden.
+**Fix:** `Options All -Indexes` → `Options +FollowSymLinks +MultiViews -Indexes` en `.htaccess`. `+MultiViews` le dice a Apache que `/productos` → `productos.html` sin requerir directorios físicos.
+
+##### Enlaces rotos (4xx) corregidos en código
+| # | Archivo | Corrección |
+|---|---|---|
+| F1-F2 | `src/data/servicios.js` | `/img/etiquetado.png` → `/img/servicios_etiquetado_pigmentacion.webp`; `/img/pigmentado.png` → `/img/img_etiquetado.webp` |
+| F5 | `src/lib/metadata-config.js` | JSON-LD `logo-bh-3.png` → `logo-bh-3a.png` (no existía `logo-bh-3.png`) |
+| F6 | `src/app/proyectos-a-tu-medida/page.js` | OG image `/exploracion_envases.webp` → `/img/steps/exploracion_envases.webp` |
+| F7 | `src/components/layout/Footer.jsx` | Emails `@envasesbh.com` → `@envasesbh.mx` |
+| F15 | `src/data/productos.js` | Categoría `"Tapas , Bombas y Triggers"` → `"Tapas, Bombas y Triggers"` (espacios rompían filtros del chatbot, 18 productos) |
+
+##### Imágenes: atributo `sizes`
+Se añadió `sizes` a componentes que usaban `next/image fill` sin él: `PigmentacionSection.jsx`, `PostCard.jsx`, `ProccesCard.jsx`, `blog/[slug]/page.js`.
+
+##### Metadata página de privacidad
+`src/app/legal/privacidad/page.jsx` no tenía `export const metadata`. Se añadió con title, description, canonical y `robots: { index: false }`.
+
+##### Sitemap
+`next-sitemap.config.js` ahora asigna prioridades diferenciadas: home 1.0, productos 0.9, productos/detalle 0.8, blog 0.6, legal 0.3. Frecuencias: `weekly`, `monthly`, `yearly` según la sección.
+
+##### Slug con mayúscula
+`1lt-boston-C` → `1lt-boston-c` en `src/data/productos.js`.
+
+##### Verification codes
+`metadata-config.js` tenía placeholders `"tu-google-verification-code"`. Se reemplazó por el código real de Google Search Console.
+
+##### Google Search Console — Pendientes post-deploy
+1. Validar corrección del problema "403 — acceso no permitido" (48 páginas)
+2. Reenviar sitemap
+3. Solicitar recrawleo de URLs afectadas
+
+##### Issues NO resueltos (requieren acciones externas al código)
+- **5 imágenes >100 kB:** requieren compresión manual (WebP/AVIF)
+- **Imágenes sin width/height:** `next/image fill` + `output: export` no genera atributos HTML de tamaño por limitación del stack
+- **URLs con parámetros:** no solucionable en static export (filtros cliente-side)
+- **Redirects 3xx:** son legítimos (HTTP→HTTPS, non-www→www)
+
+#### Rincón de Promociones — Nueva sección `/promociones` (2026-07-16)
+
+- **Datos:** `src/data/promociones.js` — cada promoción referencia un producto del catálogo por `slugProducto` (sin duplicar datos). `TIPOS_PROMOCION` soporta: descuento, volumen, bundle, envioGratis, temporal, liquidacion, lanzamiento, precioEspecial. IDs auto-generados con `.map()` (mismo patrón que `productos.js`).
+- **Dominio:** `src/components/features/promociones/promocionesModel.js` — estados por vigencia (`activa`/`proxima`/`expirada`, fin de día inclusivo), join con `PRODUCTOS`, formateo de fechas, mensaje de WhatsApp por promoción. Las expiradas nunca se renderizan.
+- **Componentes:** `PromocionCard.jsx` (card nueva basada en el lenguaje visual de `ProductCard`, con badge de tipo, beneficio, vigencia y CTA a WhatsApp), `PromocionBadge.jsx`, `PromocionesGrid.jsx` (secciones activas/próximas + empty state; re-evalúa vigencias en cliente con `useSyncExternalStore` porque el estado se calcula en build por el static export).
+- **Página:** `src/app/promociones/page.js` — hero con patrón de `servicios/page.js`, pasos "cómo funciona", metadata completa (OG, Twitter, canonical, hreflang x-default), JSON-LD `ItemList` de `Offer` con `validFrom`/`validThrough`, enlaces internos a `/productos` y `/servicios`.
+- **Integración:** link `PROMOCIONES` en `nav.config.js` (Navbar/MobileMenu/Footer lo consumen), entrada en columna "Productos & Servicios" del Footer, `routes.promociones` en `metadata-config.js`, prioridad 0.8/weekly en `next-sitemap.config.js`.
+- **Conversión:** el CTA de cada card abre `wa.me` vía `sendMessgeWassap()` con mensaje pre-formateado (producto + beneficio). No hay checkout.
+
 ### Comandos
 
 ```bash

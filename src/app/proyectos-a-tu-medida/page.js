@@ -26,11 +26,11 @@ export const metadata = {
     title: "Proyectos a tu Medida | Envases BH",
     description:
       "Proceso completo de diseño y fabricación de envases PET. 5 etapas desde tu concepto hasta el producto final.",
-    url: "https://envasesbh.mx/proyectos-a-tu-medida",
+    url: "https://www.envasesbh.mx/proyectos-a-tu-medida",
     type: "website",
     images: [
       {
-        url: "https://envasesbh.mx/exploracion_envases.webp",
+        url: "https://www.envasesbh.mx/img/steps/exploracion_envases.webp",
         width: 1200,
         height: 630,
         alt: "Proceso de Proyectos a tu Medida - Envases BH",
@@ -44,14 +44,15 @@ export const metadata = {
     title: "Proyectos a tu Medida | Envases BH",
     description:
       "Diseño y fabricación de envases PET personalizados en 5 etapas.",
-    image: "https://envasesbh.mx/exploracion_envases.webp",
+    image: "https://www.envasesbh.mx/img/steps/exploracion_envases.webp",
   },
 
   alternates: {
-    canonical: "https://envasesbh.mx/proyectos-a-tu-medida",
+    canonical: "https://www.envasesbh.mx/proyectos-a-tu-medida",
     languages: {
-      "es-MX": "https://envasesbh.mx/proyectos-a-tu-medida",
-      es: "https://envasesbh.mx/proyectos-a-tu-medida",
+      "es-MX": "https://www.envasesbh.mx/proyectos-a-tu-medida",
+      es: "https://www.envasesbh.mx/proyectos-a-tu-medida",
+      "x-default": "https://www.envasesbh.mx/proyectos-a-tu-medida",
     },
   },
 };
