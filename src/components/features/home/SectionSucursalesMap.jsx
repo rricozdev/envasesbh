@@ -223,6 +223,7 @@ export default function SectionSucursalesMap() {
                     setActive(e.target.value);
                     setShowMobileInfo(true);
                   }}
+                  aria-label="Seleccionar sucursal"
                   className="
                     h-12
                     w-full

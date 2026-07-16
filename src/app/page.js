@@ -1,12 +1,23 @@
+import dynamic from "next/dynamic";
 import Hero from "@/components/features/home/Hero";
-import SectionSucursalesMap from "@/components/features/home/SectionSucursalesMap";
-import { SectoinTestimonials } from "@/components/features/home/SectionTestimonials";
-import { SectionVehiculos } from "@/components/features/home/SectionVehiculos";
 import { SectionWhyUs } from "@/components/features/home/SectionWhyUs";
 import { SectionHighlight } from "@/components/features/home/Sectionhighlight";
 import Button from "@/components/ui/Button";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
 import { baseMetadata } from "@/lib/metadata-config";
+
+const SectionVehiculos = dynamic(
+  () => import("@/components/features/home/SectionVehiculos").then((m) => ({ default: m.SectionVehiculos })),
+  { ssr: true }
+);
+const SectionSucursalesMap = dynamic(
+  () => import("@/components/features/home/SectionSucursalesMap"),
+  { ssr: true }
+);
+const SectoinTestimonials = dynamic(
+  () => import("@/components/features/home/SectionTestimonials").then((m) => ({ default: m.SectoinTestimonials })),
+  { ssr: true }
+);
 
 export const metadata = {
   ...baseMetadata,

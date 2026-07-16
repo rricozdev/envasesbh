@@ -1,8 +1,13 @@
-import PigmentacionSection from "@/components/features/servicios/PigmentaciónSection";
+import dynamic from "next/dynamic";
 import SectionContent from "@/components/ui/SectionContent";
 import { servicios } from "@/data/servicios";
 import { baseMetadata } from "@/lib/metadata-config";
 import Image from "next/image";
+
+const PigmentacionSection = dynamic(
+  () => import("@/components/features/servicios/PigmentaciónSection"),
+  { ssr: true }
+);
 
 const [etiquetado, pigmentado] = servicios;
 
