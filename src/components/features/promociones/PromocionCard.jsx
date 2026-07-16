@@ -51,14 +51,14 @@ export default function PromocionCard({ promocion }) {
         />
 
         {/* TIPO — sticker esquina superior izquierda */}
-        <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-red text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
+        <div className="absolute top-3 left-3 z-10 max-w-[48%] truncate flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-red text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
           <Tag size={11} aria-hidden="true" />
           {obtenerLabelTipo(promocion.tipo)}
         </div>
 
         {/* ESTADO — chip esquina superior derecha */}
         <div
-          className={`absolute top-3 right-3 z-10 flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full backdrop-blur-sm ${
+          className={`absolute top-3 right-3 z-10 max-w-[48%] truncate flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full backdrop-blur-sm ${
             esProxima
               ? "bg-yellow-600/90 text-white"
               : "bg-green-600/90 text-white"
@@ -70,7 +70,7 @@ export default function PromocionCard({ promocion }) {
 
         {/* BENEFICIO — banda degradada inferior con texto */}
         <div className="absolute inset-x-0 bottom-0 z-10">
-          <div className="bg-gradient-to-t from-black/75 via-black/40 to-transparent px-4 pt-10 pb-4">
+          <div className="bg-gradient-to-t from-black/75 via-black/40 to-transparent px-4 pr-14 pt-10 pb-4">
             <p className="text-white text-lg sm:text-xl font-extrabold leading-tight line-clamp-2 drop-shadow-lg">
               {promocion.beneficio}
             </p>
@@ -81,6 +81,21 @@ export default function PromocionCard({ promocion }) {
             )}
           </div>
         </div>
+
+        {/* FAB WhatsApp */}
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            sendMessgeWassap(
+              WHATSAPP_NUMBER,
+              generarMensajePromocion(promocion, nombreCompleto)
+            );
+          }}
+          className="absolute bottom-3 right-3 z-20 w-11 h-11 flex items-center justify-center bg-primary text-white rounded-full shadow-lg hover:bg-accent hover:scale-110 transition-all duration-300 cursor-pointer"
+          aria-label={`Consultar ${promocion.beneficio}`}
+        >
+          <MessageCircle size={18} aria-hidden="true" />
+        </button>
       </Link>
 
       {/* TALÓN PERFORADO */}
@@ -111,20 +126,6 @@ export default function PromocionCard({ promocion }) {
           <CalendarDays size={12} className="text-red shrink-0" aria-hidden="true" />
           {obtenerTextoVigencia(promocion, estado)}
         </p>
-
-        <button
-          onClick={() =>
-            sendMessgeWassap(
-              WHATSAPP_NUMBER,
-              generarMensajePromocion(promocion, nombreCompleto)
-            )
-          }
-          className="mt-3 inline-flex items-center justify-center gap-2 bg-primary text-white text-sm font-bold py-2.5 rounded-lg hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors duration-300 cursor-pointer"
-          aria-label={`Consultar por WhatsApp la promoción ${promocion.beneficio} de ${nombreCompleto}`}
-        >
-          <MessageCircle size={15} aria-hidden="true" />
-          Consultar
-        </button>
       </div>
     </article>
   );
