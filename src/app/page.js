@@ -15,10 +15,10 @@ export const metadata = {
   openGraph: {
     ...baseMetadata.openGraph,
     title: "Envases PET de Calidad para Manufactura | Envases BH",
-    url: "https://envasesbh.mx",
+    url: "https://www.envasesbh.mx",
     images: [
       {
-        url: "https://envasesbh.mx/logo-bh_11zon.webp",
+        url: "https://www.envasesbh.mx/logo-bh_11zon.webp",
         width: 1200,
         height: 630,
         alt: "Envases BH - Fabricante de Envases PET",
@@ -31,7 +31,7 @@ export const metadata = {
     title: "Envases PET de Calidad | Envases BH México",
     description:
       "Fabricante de envases PET. Calidad garantizada, entregas confiables.",
-    image: "https://envasesbh.mx/logo-bh_11zon.webp",
+    image: "https://www.envasesbh.mx/logo-bh_11zon.webp",
   },
 };
 

@@ -1,15 +1,15 @@
-// lib/metadata-config.ts
-export const baseMetadata = {
-  metadataBase: new URL("https://envasesbh.mx"),
+const SITE_URL = "https://www.envasesbh.mx";
 
-  // Información general de la empresa
+export const baseMetadata = {
+  metadataBase: new URL(SITE_URL),
+
   applicationName: "Envases BH",
   title: {
     template: "%s | Envases BH",
-    default: "Envases BH - Fabricante  de Envases PET en México",
+    default: "Envases BH - Fabricante de Envases PET en México",
   },
   description:
-    "Fabricante  de envases PET de alta calidad en México, ofrecemos soluciones personalizadas para tu industria PET",
+    "Fabricante de envases PET de alta calidad en México, ofrecemos soluciones personalizadas para tu industria PET",
   keywords: [
     "envases PET",
     "fabricante envases",
@@ -18,15 +18,14 @@ export const baseMetadata = {
     "empaques México",
   ],
 
-  // OpenGraph base
   openGraph: {
     type: "website",
     locale: "es_MX",
     siteName: "Envases BH",
-    url: "https://envasesbh.mx",
+    url: SITE_URL,
     images: [
       {
-        url: "https://envasesbh.mx/logo-bh_11zon.webp",
+        url: `${SITE_URL}/logo-bh_11zon.webp`,
         width: 1200,
         height: 630,
         alt: "Envases BH - Fabricante de Envases PET",
@@ -35,14 +34,12 @@ export const baseMetadata = {
     ],
   },
 
-  // Twitter
   twitter: {
     card: "summary_large_image",
     site: "@EnvasesBH",
     creator: "@EnvasesBH",
   },
 
-  // Robots
   robots: {
     index: true,
     follow: true,
@@ -56,80 +53,65 @@ export const baseMetadata = {
     },
   },
 
-  // Verificaciones
-  // TODO: COLOCAR LAS VERIFICACIONES ACA
   verification: {
-    google: "tu-google-verification-code",
-    yandex: ["tu-yandex-verification"],
+    google: "b8cdd1aa84812a36",
   },
 
-  // Icons
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
     shortcut: "/favicon-16x16.png",
   },
 
-  // Categoría
   category: "Business",
 
-  // Formato de detección
   formatDetection: {
     telephone: true,
     email: true,
     address: true,
   },
 
-  // Alternates para multi-idioma
   alternates: {
-    canonical: "https://envasesbh.mx",
+    canonical: SITE_URL,
     languages: {
-      "es-MX": "https://envasesbh.mx",
-      es: "https://envasesbh.mx",
+      "es-MX": SITE_URL,
+      es: SITE_URL,
+      "x-default": SITE_URL,
     },
   },
 
-  // Authors
   authors: [
     {
       name: "Envases BH",
-      url: "https://envasesbh.mx",
+      url: SITE_URL,
     },
   ],
 
   creator: "Envases BH",
   publisher: "Envases BH",
 
-  // Información de contacto
   referrer: "strict-origin-when-cross-origin",
-
-  // Viewport, movido a app/layout.js para evitar warning en browser console
-  // viewport: {
-  //   width: "device-width",
-  //   initialScale: 1,
-  //   maximumScale: 5,
-  //   viewportFit: "cover",
-  // },
 };
 
-// JSON-LD Schema global
+const SITE_URL_JSONLD = "https://www.envasesbh.mx";
+
 export const baseJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://envasesbh.mx/#organization",
+      "@id": `${SITE_URL_JSONLD}/#organization`,
       name: "Envases BH",
-      url: "https://envasesbh.mx",
+      url: SITE_URL_JSONLD,
       logo: {
         "@type": "ImageObject",
-        url: "https://envasesbh.mx/logo-bh-3.png",
-        width: 180,
-        height: 50,
-      },
-      image: "https://envasesbh.mx/logo-bh-3.png",
+      url: `${SITE_URL_JSONLD}/logo-bh-3a.png`,
+      width: 180,
+      height: 50,
+    },
+    image: `${SITE_URL_JSONLD}/logo-bh-3a.png`,
       description:
-        "Fabricante  de envases PET de alta calidad. 10+ años de experiencia sirviendo a +50 empresas en México.",
+        "Fabricante de envases PET de alta calidad. 10+ años de experiencia sirviendo a +50 empresas en México.",
       foundingDate: "2014",
       foundingLocation: {
         "@type": "Place",
@@ -153,9 +135,9 @@ export const baseJsonLd = {
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://envasesbh.mx/#business",
+      "@id": `${SITE_URL_JSONLD}/#business`,
       name: "Envases BH",
-      url: "https://envasesbh.mx",
+      url: SITE_URL_JSONLD,
       telephone: "+52-155-5824-7722",
       email: "info@envasesbh.mx",
       address: {
@@ -176,8 +158,8 @@ export const baseJsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://envasesbh.mx/#website",
-      url: "https://envasesbh.mx",
+      "@id": `${SITE_URL_JSONLD}/#website`,
+      url: SITE_URL_JSONLD,
       name: "Envases BH",
       description: "Fabricante de envases PET en México",
       potentialAction: {
@@ -206,6 +188,7 @@ export const contactInfo = {
 export const routes = {
   home: "/",
   productos: "/productos",
+  promociones: "/promociones",
   servicios: "/servicios",
   proyectos: "/proyectos-a-tu-medida",
   quienesSomos: "/quienes-somos",
@@ -218,5 +201,5 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/company/envasesbh",
   facebook: "https://www.facebook.com/envasesbh",
   instagram: "https://www.instagram.com/envasesbh",
-  youtube: "https://www.youtube.com/@envasesbh",
+  youtube: "https://www.youtube.com/@davidambe5803",
 };

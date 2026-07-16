@@ -13,6 +13,14 @@ export const metadata = {
   ...baseMetadata,
   title: "Contáctanos",
   description: "Contáctanos por WhatsApp, email o visítanos en nuestra sede.",
+  alternates: {
+    canonical: "https://www.envasesbh.mx/contacto",
+    languages: {
+      "es-MX": "https://www.envasesbh.mx/contacto",
+      es: "https://www.envasesbh.mx/contacto",
+      "x-default": "https://www.envasesbh.mx/contacto",
+    },
+  },
 };
 
 export default function ContactoPage() {

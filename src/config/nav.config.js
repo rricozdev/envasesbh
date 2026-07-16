@@ -4,6 +4,7 @@ export const navLinks = [
   { name: "INICIO", href: "/" },
   { name: "QUIENES SOMOS", href: "/quienes-somos" },
   { name: "PRODUCTOS", href: "/productos" },
+  { name: "PROMOCIONES", href: "/promociones" },
   { name: "SERVICIOS", href: "/servicios" },
   { name: "PROYECTOS A TU MEDIDA", href: "/proyectos-a-tu-medida" },
   { name: "BLOG", href: "/blog" },
