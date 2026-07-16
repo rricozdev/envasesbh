@@ -1841,6 +1841,28 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
+  {
+    nombre: "Silueta 500 ml",
+    categoria: "Limpieza",
+    imagen: "/img/productos/limpieza/imagen_silueta_500.webp",
+    slug: "silueta-500-ml",
+    specs: {
+      peso: [28],
+      corona: "28 PCO",
+      altura: 170,
+      capacidad: 500,
+      unidad: "ml",
+      pzsEmpaque: 130,
+      tipoEmpaque: "Bolsa",
+      colores: ["Cristal"],
+      liner: [],
+      produccionMinima: null,
+      sobrePedido: false,
+      stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
+    },
+  },
   // PUBLICITARIOS
   {
     nombre: "Cilindro Recto 750 ml",
