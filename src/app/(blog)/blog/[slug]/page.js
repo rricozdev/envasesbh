@@ -15,9 +15,35 @@ export async function generateMetadata({ params }) {
 
   if (!post) return { title: "Blog | Envases BH" };
 
+  const url = `https://www.envasesbh.mx/blog/${slug}`;
+
   return {
     title: post.seo?.title || post.title,
     description: post.seo?.description || post.excerpt,
+    openGraph: {
+      title: post.seo?.title || post.title,
+      description: post.seo?.description || post.excerpt,
+      url,
+      type: "article",
+      images: post.cover
+        ? [
+            {
+              url: `https://www.envasesbh.mx${post.cover}`,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ]
+        : [],
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        "es-MX": url,
+        es: url,
+        "x-default": url,
+      },
+    },
   };
 }
 
@@ -103,6 +129,7 @@ export default async function BlogPostPage({ params }) {
             src={post.cover}
             alt={post.title}
             fill
+            sizes="(max-width: 1024px) 100vw, 1280px"
             className="object-cover"
             priority
           />

@@ -1,5 +1,22 @@
 // src/app/legal/privacidad/page.js
 
+import { baseMetadata } from "@/lib/metadata-config";
+
+export const metadata = {
+  ...baseMetadata,
+  title: "Aviso de Privacidad",
+  description:
+    "Aviso de privacidad de Envases BH. Información sobre el tratamiento de datos personales, derechos ARCO y políticas de privacidad.",
+  robots: {
+    ...baseMetadata.robots,
+    index: false,
+    follow: false,
+  },
+  alternates: {
+    canonical: "https://www.envasesbh.mx/legal/privacidad",
+  },
+};
+
 export default function PrivacyPage() {
   return (
     <main className="container mx-auto max-w-4xl px-4 py-16">

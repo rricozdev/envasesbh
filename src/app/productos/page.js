@@ -20,17 +20,25 @@ export const metadata = {
     title: "Catálogo de Envases PET | Envases BH",
     description:
       "Descubre nuestro catálogo de envases PET de alta calidad para la industria mexicana. Variedad de tamaños y formas para bebidas, alimentos y más.",
-    url: "https://envasesbh.mx/productos",
+    url: "https://www.envasesbh.mx/productos",
     type: "website",
     images: [
       {
-        url: "https://envasesbh.mx/img/servicios_etiquetado_pigmentacion.webp",
+        url: "https://www.envasesbh.mx/img/servicios_etiquetado_pigmentacion.webp",
         width: 1200,
         height: 630,
         alt: "Catálogo de envases PET de calidad para la industria mexicana",
         type: "image/webp",
       },
     ],
+  },
+  alternates: {
+    canonical: "https://www.envasesbh.mx/productos",
+    languages: {
+      "es-MX": "https://www.envasesbh.mx/productos",
+      es: "https://www.envasesbh.mx/productos",
+      "x-default": "https://www.envasesbh.mx/productos",
+    },
   },
 };
 

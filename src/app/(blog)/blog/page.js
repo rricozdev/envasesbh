@@ -6,7 +6,7 @@ import { baseMetadata } from "@/lib/metadata-config";
 
 export const metadata = {
   ...baseMetadata,
-  title: "Blog sobre Envases PET, Sostenibilidad e Innovación ",
+  title: "Blog sobre Envases PET, Sostenibilidad e Innovación",
   description:
     "Explora nuestro blog para descubrir artículos sobre innovación en envases PET, sostenibilidad y tendencias en la industria de empaques. Mantente informado con contenido relevante y actualizado.",
   keywords: [
@@ -26,8 +26,16 @@ export const metadata = {
     title: "Blog sobre Envases PET, Sostenibilidad e Innovación | Envases BH",
     description:
       "Explora nuestro blog para descubrir artículos sobre innovación en envases PET, sostenibilidad y tendencias en la industria de empaques. Mantente informado con contenido relevante y actualizado.",
-    url: "https://envasesbh.mx/blog",
+    url: "https://www.envasesbh.mx/blog",
     type: "website",
+  },
+  alternates: {
+    canonical: "https://www.envasesbh.mx/blog",
+    languages: {
+      "es-MX": "https://www.envasesbh.mx/blog",
+      es: "https://www.envasesbh.mx/blog",
+      "x-default": "https://www.envasesbh.mx/blog",
+    },
   },
 };
 

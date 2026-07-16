@@ -10,7 +10,7 @@ export const CATEGORIAS = [
   "Limpieza",
   "Publicitarios",
   "Tarros y Vitroleros",
-  "Tapas , Bombas y Triggers",
+  "Tapas, Bombas y Triggers",
 ];
 
 // SCHEMA de referencia — copiar para cada producto nuevo:
@@ -1000,7 +1000,7 @@ export const _PRODUCTOS = [
     nombre: "Boston C 1 L",
     categoria: "Boston",
     imagen: "/img/productos/boston/imagen_43_1lt-boston-c.webp",
-    slug: "1lt-boston-C",
+    slug: "1lt-boston-c",
     specs: {
       peso: [40],
       corona: "28-410",
@@ -2302,7 +2302,7 @@ export const _PRODUCTOS = [
   // Tapas , Bombas y Triggers
   {
     nombre: "Trigger Sprayer 28-410",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_99_trigger-sprayer.webp",
     slug: "trigger-sprayer-rosca-28410",
@@ -2325,7 +2325,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Trigger Industrial 28",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_100_triger-uso-industrial-rosca28.webp",
     slug: "trigger-industrial-rosca-28",
@@ -2348,7 +2348,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Trigger Cola de Pato 28",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_101_triger-cola-de-pato-rosca28.webp",
     slug: "trigger-cola-de-pato-rosca-28",
@@ -2371,7 +2371,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Mini Trigger Popote Largo 28-410",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_102_mini-trigger-sprayer.webp",
     slug: "trigger-cola-de-pato-rosca-28",
@@ -2394,7 +2394,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Mini Trigger 24",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_103_mini-triger-rosca24.webp",
     slug: "mini-trigger-rosca-24",
@@ -2417,7 +2417,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Atomizador Botón 24-410",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_104_atomizador-boton-rosca-24-410-blanco.webp",
     slug: "atomizador-boton-rosca-24410",
@@ -2440,7 +2440,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Atomizador Botón 20-410",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_105_atomizado-botonrosca-20-410-blanco.webp",
     slug: "atomizador-boton-rosca-20410",
@@ -2463,7 +2463,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Atomizador Botón 18-410",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_106_atomizador-boton-rosca-18-410-blanco.webp",
     slug: "atomizador-boton-rosca-18410",
@@ -2486,7 +2486,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Bomba Dosificadora 28",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_107_bomba-dosificadora.webp",
     slug: "bomba-dosificadora-rosca-28",
@@ -2509,7 +2509,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Bomba Dosificadora Reforzada Azul 28",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_108_bomba-dosificadora-reforzada-azul.webp",
     slug: "bomba-dosificadora-reforzada-azul",
@@ -2532,7 +2532,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Disk Top 24-415",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_109_tapa-disk-top-r24-415.webp",
     slug: "tapa-disk-top-24415",
@@ -2555,7 +2555,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Disk Top 24-410",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_110_tapa-disk-top-r24-410.webp",
     slug: "tapa-disk-top-r24410",
@@ -2578,7 +2578,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Vitrolero 110 mm",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_111_tapa-vitrolero-110mm.webp",
     slug: "tapa-vitrolero-110",
@@ -2601,7 +2601,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Cintillo Refresquera 28 mm",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen: "/img/productos/tapas_bombas_triggers/imagen_112_tapa-28mm.webp",
     slug: "tapa-cintillo-28",
     specs: {
@@ -2623,7 +2623,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Flip Top 24-410",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_113_flip-top-24-410.webp",
     slug: "flip-top-24410",
@@ -2646,7 +2646,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Flip Top 24-415",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_114_flip-top-24-415.webp",
     slug: "flip-top-24415",
@@ -2669,7 +2669,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Flip Top 28-410",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_115_flip-top-28-410.webp",
     slug: "flip-top-28410",
@@ -2692,7 +2692,7 @@ export const _PRODUCTOS = [
   },
   {
     nombre: "Sport 28 mm",
-    categoria: "Tapas , Bombas y Triggers",
+    categoria: "Tapas, Bombas y Triggers",
     imagen:
       "/img/productos/tapas_bombas_triggers/imagen_116_tapa-sport-r28.webp",
     slug: "tapa-sport-28",

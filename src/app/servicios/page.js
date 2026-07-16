@@ -24,11 +24,11 @@ export const metadata = {
     title: "Servicios de Pigmentación | Envases BH",
     description:
       "Transforma tus envases con nuestros servicios de pigmentación de alta precisión. Personalización de color y acabado profesional.",
-    url: "https://envasesbh.mx/servicios",
+    url: "https://www.envasesbh.mx/servicios",
     type: "website",
     images: [
       {
-        url: "https://envasesbh.mx/img/servicios_etiquetado_pigmentacion.webp",
+        url: "https://www.envasesbh.mx/img/servicios_etiquetado_pigmentacion.webp",
         width: 1200,
         height: 630,
         alt: "Servicios de pigmentación para envases",
@@ -42,14 +42,15 @@ export const metadata = {
     title: "Servicios de Pigmentación | Envases BH",
     description:
       "Personaliza tus envases con pigmentación PET profesional. Alta precisión y acabado de calidad.",
-    image: "https://envasesbh.mx/img/servicios_etiquetado_pigmentacion.webp",
+    image: "https://www.envasesbh.mx/img/servicios_etiquetado_pigmentacion.webp",
   },
 
   alternates: {
-    canonical: "https://envasesbh.mx/servicios",
+    canonical: "https://www.envasesbh.mx/servicios",
     languages: {
-      "es-MX": "https://envasesbh.mx/servicios",
-      es: "https://envasesbh.mx/servicios",
+      "es-MX": "https://www.envasesbh.mx/servicios",
+      es: "https://www.envasesbh.mx/servicios",
+      "x-default": "https://www.envasesbh.mx/servicios",
     },
   },
 };
