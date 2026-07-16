@@ -217,6 +217,28 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
+  {
+    nombre: "Olas 1500 ml",
+    categoria: "Agua",
+    imagen: "/img/productos/agua/imagen_1500_olas.webp",
+    slug: "olas-1500-ml",
+    specs: {
+      peso: [33, 38],
+      corona: "28 PCO",
+      altura: 321,
+      capacidad: 1500,
+      unidad: "ml",
+      pzsEmpaque: 130,
+      tipoEmpaque: "Bolsa",
+      colores: ["Cristal"],
+      liner: [],
+      produccionMinima: null,
+      sobrePedido: false,
+      stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
+    },
+  },
 
   // ALIMENTOS Y BEBIDAS
   {
