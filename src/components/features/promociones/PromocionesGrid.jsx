@@ -60,7 +60,7 @@ export default function PromocionesGrid({ activas, proximas }) {
     <div className="space-y-16">
       {/* PROMOCIONES ACTIVAS */}
       {promos.activas.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {promos.activas.map((promo) => (
             <PromocionCard key={promo.id} promocion={promo} />
           ))}
@@ -86,7 +86,7 @@ export default function PromocionesGrid({ activas, proximas }) {
               Próximas promociones
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {promos.proximas.map((promo) => (
               <PromocionCard key={promo.id} promocion={promo} />
             ))}

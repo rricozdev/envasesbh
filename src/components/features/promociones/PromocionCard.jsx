@@ -39,14 +39,14 @@ export default function PromocionCard({ promocion }) {
       {/* IMAGEN */}
       <Link
         href={`/productos/${producto.slug}`}
-        className="block relative aspect-[16/10] bg-white"
+        className="block relative aspect-[16/9] bg-white"
         aria-label={`Ver detalle de ${nombreCompleto}`}
       >
         <Image
           src={producto.imagen}
           alt={nombreCompleto}
           fill
-          sizes="(max-width:768px) 100vw, (max-width:1200px) 33vw, 33vw"
+          sizes="(max-width:768px) 100vw, (max-width:1200px) 33vw, 25vw"
           className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
         />
 
