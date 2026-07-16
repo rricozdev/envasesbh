@@ -79,7 +79,7 @@ export default function PromocionesGrid({ activas, proximas }) {
           <div className="flex items-center gap-2 mb-8">
             <CalendarClock
               size={20}
-              className="text-primary"
+              className="text-red"
               aria-hidden="true"
             />
             <h2 className="text-xl sm:text-2xl font-extrabold text-secondary/90 font-primary">
