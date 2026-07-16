@@ -122,8 +122,8 @@ export default function PromocionesPage() {
       <SectionContent>
         <div className="max-w-3xl">
           {/* BADGE */}
-          <span className="inline-flex items-center gap-2 bg-black/5 border border-black/10 text-black/80 text-[10px] font-medium uppercase tracking-wide px-3 py-1 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+          <span className="inline-flex items-center gap-2 bg-red-50 border border-red-100 text-red-700 text-[10px] font-medium uppercase tracking-wide px-3 py-1 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-red animate-pulse" />
             Ofertas por tiempo limitado
           </span>
 

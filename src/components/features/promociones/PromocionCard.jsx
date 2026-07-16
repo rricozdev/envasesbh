@@ -35,11 +35,11 @@ export default function PromocionCard({ promocion }) {
     .join(" • ");
 
   return (
-    <article className="group flex flex-col h-full bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <article className="group flex flex-col h-full bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-lg hover:border-red-100 transition-all duration-300">
       {/* IMAGEN */}
       <Link
         href={`/productos/${producto.slug}`}
-        className="block relative aspect-[4/3] bg-white"
+        className="block relative aspect-[16/10] bg-white"
         aria-label={`Ver detalle de ${nombreCompleto}`}
       >
         <Image
@@ -47,7 +47,7 @@ export default function PromocionCard({ promocion }) {
           alt={nombreCompleto}
           fill
           sizes="(max-width:768px) 100vw, (max-width:1200px) 33vw, 33vw"
-          className="object-contain transition-transform duration-500 group-hover:scale-105"
+          className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
         />
 
         {/* BADGE TIPO DE PROMOCIÓN */}
@@ -57,60 +57,51 @@ export default function PromocionCard({ promocion }) {
       </Link>
 
       {/* CONTENIDO */}
-      <div className="flex flex-col flex-1 px-5 pb-5 border-t border-gray-100">
+      <div className="flex flex-col flex-1 px-5 pb-4 border-t border-gray-100">
         {/* NOMBRE */}
         <Link href={`/productos/${producto.slug}`} className="block">
-          <h3 className="mt-4 mb-1 text-lg font-bold leading-tight line-clamp-2 text-secondary transition-colors duration-200 group-hover:text-primary">
+          <h3 className="mt-3.5 mb-1 text-base font-bold leading-tight line-clamp-1 text-secondary transition-colors duration-200 group-hover:text-primary">
             {nombreCompleto}
           </h3>
         </Link>
 
         {/* CATEGORÍA + ESTADO */}
-        <div className="flex items-center justify-between mb-3">
-          {categoria ? (
-            <p className="text-xs font-medium text-gray-400 tracking-wide">
-              {categoria}
-            </p>
-          ) : (
-            <span />
-          )}
+        <div className="flex items-center justify-between gap-2 mb-3">
+          <p className="text-xs font-medium text-gray-400 tracking-wide truncate">
+            {[categoria, presentacion].filter(Boolean).join(" • ")}
+          </p>
 
           {esProxima ? (
-            <span className="text-[10px] font-bold uppercase tracking-wider text-yellow-600">
+            <span className="shrink-0 text-[10px] font-bold uppercase tracking-wider text-yellow-600">
               ● Próximamente
             </span>
           ) : (
-            <span className="text-[10px] font-bold uppercase tracking-wider text-green-600">
-              ● Promoción activa
+            <span className="shrink-0 text-[10px] font-bold uppercase tracking-wider text-green-600">
+              ● Activa
             </span>
           )}
         </div>
 
-        {/* PRESENTACIÓN */}
-        {presentacion && (
-          <p className="text-xs text-gray-500 mb-4">{presentacion}</p>
-        )}
-
         {/* BENEFICIO */}
-        <div className="bg-surface-soft border border-gray-100 rounded-lg px-4 py-3 mb-4">
-          <p className="text-lg font-bold text-primary leading-snug">
+        <div className="bg-red-50 border border-red-100 rounded-lg px-4 py-3 mb-3">
+          <p className="text-base font-bold text-red-700 leading-snug line-clamp-1">
             {promocion.beneficio}
           </p>
           {promocion.detalle && (
-            <p className="mt-1 text-sm text-gray-600 leading-relaxed">
+            <p className="mt-0.5 text-sm text-gray-600 leading-relaxed line-clamp-2">
               {promocion.detalle}
             </p>
           )}
         </div>
 
         {/* VIGENCIA */}
-        <p className="flex items-center gap-1.5 text-xs font-medium text-gray-500 mb-5">
-          <CalendarDays size={14} className="text-primary" aria-hidden="true" />
+        <p className="flex items-center gap-1.5 text-xs font-medium text-gray-500 mb-4">
+          <CalendarDays size={14} className="text-red" aria-hidden="true" />
           {obtenerTextoVigencia(promocion, estado)}
         </p>
 
         {/* ACCIONES */}
-        <div className="mt-auto flex flex-col gap-3 pt-3 border-t border-gray-100">
+        <div className="mt-auto flex items-center gap-3 pt-3 border-t border-gray-100">
           <button
             onClick={() =>
               sendMessgeWassap(
@@ -118,16 +109,16 @@ export default function PromocionCard({ promocion }) {
                 generarMensajePromocion(promocion, nombreCompleto)
               )
             }
-            className="inline-flex items-center justify-center gap-2 w-full bg-primary text-white text-sm font-bold py-2.5 px-4 rounded-lg hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors duration-300 cursor-pointer"
+            className="flex-1 inline-flex items-center justify-center gap-2 bg-primary text-white text-sm font-bold py-2.5 px-4 rounded-lg hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors duration-300 cursor-pointer"
             aria-label={`Consultar por WhatsApp la promoción ${promocion.beneficio} de ${nombreCompleto}`}
           >
             <MessageCircle size={16} aria-hidden="true" />
-            Consultar promoción
+            Consultar
           </button>
 
           <Link
             href={`/productos/${producto.slug}`}
-            className="text-center text-sm font-semibold text-secondary hover:text-primary transition-colors"
+            className="shrink-0 text-sm font-semibold text-secondary hover:text-primary transition-colors px-2 py-2"
           >
             Ver producto
           </Link>
