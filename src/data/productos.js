@@ -195,6 +195,28 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
+  {
+    nombre: "Olas 500 ml",
+    categoria: "Agua",
+    imagen: "/img/productos/agua/imagen_500_olas.webp",
+    slug: "olas-500-ml",
+    specs: {
+      peso: [17],
+      corona: "28 PCO",
+      altura: 211.5,
+      capacidad: 500,
+      unidad: "ml",
+      pzsEmpaque: 190,
+      tipoEmpaque: "Bolsa",
+      colores: ["Cristal"],
+      liner: [],
+      produccionMinima: null,
+      sobrePedido: false,
+      stockDisponible: true,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
+    },
+  },
 
   // ALIMENTOS Y BEBIDAS
   {
