@@ -239,6 +239,28 @@ export const _PRODUCTOS = [
       produccionMinimaColores: null,
     },
   },
+  {
+    nombre: "Rombo 1000 ml",
+    categoria: "Agua",
+    imagen: "/img/productos/agua/imagen_Rombo_1000.webp",
+    slug: "rombo-1000-ml",
+    specs: {
+      peso: [33],
+      corona: "28 PCO",
+      altura: 242,
+      capacidad: 1000,
+      unidad: "ml",
+      pzsEmpaque: 96,
+      tipoEmpaque: "Bolsa",
+      colores: ["Cristal"],
+      liner: [],
+      produccionMinima: 20000,
+      sobrePedido: true,
+      stockDisponible: false,
+      coloresBajoPedido: [],
+      produccionMinimaColores: null,
+    },
+  },
 
   // ALIMENTOS Y BEBIDAS
   {
