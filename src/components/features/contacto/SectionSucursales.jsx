@@ -192,6 +192,7 @@ export default function SectionSucursales() {
               <Link
                 href={`https://wa.me/${item.whatsapp}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="mt-3 h-8 w-full inline-flex items-center justify-center gap-1.5 rounded-md bg-primary text-white text-xs font-semibold hover:opacity-90 transition"
               >
                 <MessageCircle className="w-3.5 h-3.5" />

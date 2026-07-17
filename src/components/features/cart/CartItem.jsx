@@ -20,6 +20,8 @@ export default function CartItem({ item }) {
           <img
             src={imagen}
             alt={nombre}
+            width={56}
+            height={56}
             className="w-full h-full object-cover"
           />
         </div>

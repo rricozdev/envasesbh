@@ -14,6 +14,11 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://www.envasesbh.mx/legal/privacidad",
+    languages: {
+      "es-MX": "https://www.envasesbh.mx/legal/privacidad",
+      es: "https://www.envasesbh.mx/legal/privacidad",
+      "x-default": "https://www.envasesbh.mx/legal/privacidad",
+    },
   },
 };
 
