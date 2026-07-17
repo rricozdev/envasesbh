@@ -94,7 +94,7 @@ export default function PromocionesGrid({ activas, proximas }) {
               ))}
             </div>
           </div>
-          <div className="hidden lg:flex items-center justify-center pt-16">
+          <div className="hidden lg:flex items-center justify-center pt-16 -translate-x-6">
             <div className="relative w-full aspect-[3/4] overflow-hidden">
               <Image
                 src="/imagen_promotion_girl.webp"
