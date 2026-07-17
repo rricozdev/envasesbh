@@ -27,6 +27,8 @@ const ProductChip = ({ product }) => (
     <img
       src={product.imagen}
       alt={product.nombre}
+      width={32}
+      height={32}
       className="w-8 h-8 object-contain rounded-md flex-shrink-0"
     />
     <div className="flex flex-col min-w-0">
@@ -74,6 +76,7 @@ const MessageBubble = ({ msg }) => {
             <a
               href={msg.cta.link}
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 mt-2.5 text-[11px] font-semibold text-primary bg-gray-50 hover:bg-gray-100 border border-gray-200 px-3 py-1.5 rounded-lg transition-colors"
             >
               {msg.cta.label}
