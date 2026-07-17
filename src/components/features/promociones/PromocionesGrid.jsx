@@ -94,14 +94,16 @@ export default function PromocionesGrid({ activas, proximas }) {
               ))}
             </div>
           </div>
-          <div className="hidden lg:block relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src="/imagen_promotion_girl.webp"
-              alt="Próximas promociones"
-              fill
-              sizes="(max-width: 1024px) 0vw, 33vw"
-              className="object-cover"
-            />
+          <div className="hidden lg:flex items-center justify-center pt-16">
+            <div className="relative w-full aspect-[3/4] overflow-hidden">
+              <Image
+                src="/imagen_promotion_girl.webp"
+                alt="Próximas promociones"
+                fill
+                sizes="(max-width: 1024px) 0vw, 33vw"
+                className="object-contain object-bottom"
+              />
+            </div>
           </div>
         </div>
       )}
