@@ -3,7 +3,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/config/nav.config";
-import MobileMenu from "./MobileMenu";
+import dynamic from "next/dynamic";
+
+const MobileMenu = dynamic(() => import("./MobileMenu"), { ssr: false });
 import CartButton from "../../features/cart/CartButton";
 
 export default function Navbar() {
