@@ -1,10 +1,14 @@
 import dynamic from "next/dynamic";
-import Hero from "@/components/features/home/Hero";
 import { SectionWhyUs } from "@/components/features/home/SectionWhyUs";
 import { SectionHighlight } from "@/components/features/home/Sectionhighlight";
 import Button from "@/components/ui/Button";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
 import { baseMetadata } from "@/lib/metadata-config";
+
+const Hero = dynamic(
+  () => import("@/components/features/home/Hero"),
+  { ssr: true }
+);
 
 const SectionVehiculos = dynamic(
   () => import("@/components/features/home/SectionVehiculos").then((m) => ({ default: m.SectionVehiculos })),
