@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AnnouncementModal } from "../ui/AnnouncementModal";
+import AnnouncementModalWrapper from "./AnnouncementModalWrapper";
 import Footer from "./Footer";
 import Header from "./Header/Header";
 import TopBar from "./Header/TopBar";
@@ -12,7 +12,7 @@ export default function MainLayout({ children }) {
     <div className="flex flex-col min-h-screen w-full">
       <TopBar />
       {/* Header global de navegación (visible en todas las rutas) */}
-      <AnnouncementModal endDate="2026-06-6">
+      <AnnouncementModalWrapper endDate="2026-06-6">
         <h2 className="text-xl md:text-2xl font-extrabold text-center font-primary leading-tight mb-3 text-primary">
           ¡Ven a conocer nuestras soluciones en envases!
           <span className="block mt-2 text-secondary">
@@ -29,7 +29,7 @@ export default function MainLayout({ children }) {
             src="/img/promocional.webp"
           />
         </div>
-      </AnnouncementModal>
+      </AnnouncementModalWrapper>
       <Header />
       {/* Área principal donde Next.js renderiza las páginas */}
       {/* "grow" permite que este bloque ocupe el espacio disponible */}

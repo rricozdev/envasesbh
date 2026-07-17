@@ -26,7 +26,6 @@ export default function ServicioCard({ servicio, reverse = false }) {
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover"
-        priority
       />
       {/* overlay sutil con color primario */}
       <div className="absolute inset-0 bg-primary/10" />
