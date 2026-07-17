@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useSyncExternalStore } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { CalendarClock, PackageSearch } from "lucide-react";
 
@@ -75,21 +76,32 @@ export default function PromocionesGrid({ activas, proximas }) {
 
       {/* PRÓXIMAS PROMOCIONES */}
       {promos.proximas.length > 0 && (
-        <div>
-          <div className="flex items-center gap-2 mb-8">
-            <CalendarClock
-              size={20}
-              className="text-red"
-              aria-hidden="true"
-            />
-            <h2 className="text-xl sm:text-2xl font-extrabold text-secondary/90 font-primary">
-              Próximas promociones
-            </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-2 mb-8">
+              <CalendarClock
+                size={20}
+                className="text-red"
+                aria-hidden="true"
+              />
+              <h2 className="text-xl sm:text-2xl font-extrabold text-secondary/90 font-primary">
+                Próximas promociones
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {promos.proximas.map((promo) => (
+                <PromocionCard key={promo.id} promocion={promo} />
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {promos.proximas.map((promo) => (
-              <PromocionCard key={promo.id} promocion={promo} />
-            ))}
+          <div className="hidden lg:block relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/imagen_promotion_girl.webp"
+              alt="Próximas promociones"
+              fill
+              sizes="(max-width: 1024px) 0vw, 33vw"
+              className="object-cover"
+            />
           </div>
         </div>
       )}
