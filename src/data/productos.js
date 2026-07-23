@@ -42,28 +42,6 @@ export const CATEGORIAS = [
 export const _PRODUCTOS = [
   //AGUA
   {
-    nombre: "Sinfín 250 ml",
-    categoria: "Agua",
-    imagen: "/img/productos/agua/imagen_1_250ml-sinfin.webp",
-    slug: "envase-sinfin-250-ml",
-    specs: {
-      peso: [14.5],
-      corona: "28 PCO",
-      altura: 121.2,
-      capacidad: 250,
-      unidad: "ml",
-      pzsEmpaque: 200,
-      tipoEmpaque: "Bolsa",
-      colores: ["Cristal", "Azul"],
-      liner: [],
-      produccionMinima: null,
-      sobrePedido: false,
-      stockDisponible: true,
-      coloresBajoPedido: [],
-      produccionMinimaColores: null,
-    },
-  },
-  {
     nombre: "Sinfín 355 ml",
     categoria: "Agua",
     imagen: "/img/productos/agua/imagen_2_355ml-sinfin-r-28.webp",

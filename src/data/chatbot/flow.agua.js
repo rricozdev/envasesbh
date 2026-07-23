@@ -12,7 +12,7 @@ export const flowAgua = {
 
   agua_pequeno: {
     message:
-      "Para menos de 500 ml tenemos el Sinfín 250 ml y 355 ml — ideales para agua purificada y bebidas. Disponibles en cristal y azul.",
+      "Para menos de 500 ml tenemos el Sinfín 355 ml — ideal para agua purificada y bebidas. Disponible en cristal.",
     filter: { categoria: "Agua", capacidadMax: 400 },
     options: [
       { label: "Ver en catálogo", next: "cta_agua_pequeno" },
