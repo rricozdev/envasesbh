@@ -29,15 +29,6 @@ export const TIPOS_PROMOCION = {
 
 const _PROMOCIONES = [
   {
-    slugProducto: "envase-sinfin-250-ml",
-    tipo: "descuento",
-    beneficio: "15% de descuento",
-    detalle: "En compras de 10 bolsas o más.",
-    inicio: "2026-07-01",
-    fin: "2026-08-31",
-    destacada: true,
-  },
-  {
     slugProducto: "250ml-gatillera",
     tipo: "bundle",
     beneficio: "Trigger de regalo",
